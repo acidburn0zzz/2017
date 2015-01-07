@@ -1,0 +1,43 @@
+html body
+	.site-header
+		margin-right auto
+		margin-left auto
+		width 820px
+
+	.main
+		margin-right auto
+		margin-left auto
+		width 700px
+
+	.site-navigation
+		width 100%
+		
+		.home-link
+			padding 0
+
+			a /* balloon logo for home link */
+				background-image none
+				background-repeat no-repeat
+				height auto
+				overflow hidden
+				padding 7px 4px 0 4px
+				width auto
+
+				&:hover, &:active, &:focus
+					background-color black-seventy
+					background-image none
+					border-bottom black-forty solid 2px
+					color black-ten
+					padding 7px 4px 0 4px
+
+	/* Black string balloon logo for active home navigation link */
+	&.home .site-navigation .home-link a,
+	&.launch .site-navigation .home-link a
+		background-color none
+		background-image none
+		border-bottom black-forty solid 2px
+		color white
+		padding 7px 4px 0 4px
+		
+	.site-name a
+		padding-top 130px

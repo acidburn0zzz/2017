@@ -1,0 +1,155 @@
+/* The idea is to keep it simple. */
+
+@import reset
+// // Mixins to calculate sizes based on 16px root em.
+@import mixins
+@import '../../../../assets/stylus/indie-style-core/responsive-pixels'
+@import library
+@import transitions
+@import colours
+@import fonts
+@import '../../../../assets/stylus/indie-style-core/_fonts'
+@import page-navigation
+@import forms
+@import layout
+@import tenets
+@import tickets
+@import signup
+@import intro
+@import cfp
+@import featuring
+@import demos
+@import map
+@import sponsors
+@import team
+@import contact
+@import schedule
+@import '../../../../assets/stylus/indie-style-core/_library'
+@import '../../../../assets/stylus/_navigation'
+@import '../../../../assets/stylus/_sub-navigation'
+
+*
+	border-box()
+
+html
+
+	/* 	By setting the base font size to 1px, I can better visualise font sizes as I work
+	and calculations become easier. */
+	font-size 16px
+	height 100%
+
+body
+	background neutral7
+	color neutral5
+	font-default()
+	font-weight normal
+	font-style normal
+	text-align center
+
+	.wf-active &
+		abril-text-regular()
+
+	@media only screen and (min-width: 760px)
+		.wf-active &
+			font-size 27px
+
+h1
+	border-style dotted
+	border-width 2px 0
+	color neutral2
+	font-size 33px
+	font-weight bold
+	line-height 45px
+	margin -2px 0
+	text-transform uppercase
+
+	.wf-active &
+		abril-text-bold()
+		line-height 40px
+		padding-top 10px
+		padding-bottom 5px
+
+	@media only screen and (min-width: 760px)
+		font-size 60px
+		line-height 120px
+
+		.wf-active &
+			font-size 70px
+			line-height 95px
+			padding-top 10px
+			padding-bottom 0
+
+	a
+		color neutral2
+		font-weight bold
+		text-decoration none
+
+h2
+	color neutral4
+	font-size 22px
+	font-weight bold
+	line-height 30px
+	padding 10px 0
+
+	.wf-active &
+		abril-text-italic()
+		font-size 26px
+		line-height 30px
+
+	@media only screen and (min-width: 760px)
+		font-size 42px
+		line-height 60px
+		padding 15px 0
+
+		.wf-active &
+			font-size 47px
+			line-height 60px
+			padding 11px 0
+
+	.location,
+	.dtstart
+		font-weight bold
+
+		.wf-active &
+			abril-display-extra-bold()
+
+h3
+	color neutral2
+	font-style italic
+
+	.wf-active &
+		abril-text-italic()
+
+h4
+	border-width 3px 0 0 0
+	border-style solid
+	font-size 104px
+
+a
+	color accent
+	transition(.3)
+
+	&:hover, &:active, &:focus
+		color accentdark
+
+::-moz-selection
+	background-color accent
+	color neutral1
+
+::selection
+	background-color accent
+	color neutral1
+
+strong
+	.wf-active &
+		abril-text-bold()
+
+em
+	.wf-active &
+		abril-text-italic()
+
+// Base styles for the bare bones of the navigation
+.site-navigation
+	font-size 18px
+	font-family "Avenir Next", Avenir, 'Helvetica Neue', Helvetica, sans-serif
+	line-height OneLineHeight

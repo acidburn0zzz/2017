@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>ind.ie summit</title>
+    <link rel="stylesheet" href="/css/summit.css">
+</head>
+<body>
+	<nav class="indie-tech-navigation">
+		<ul class="indie-tech-navigation--list">
+			<li>
+				<a href="/">Home</a>
+			</li>
+			<li>
+				<a href="/manifesto">Manifesto</a>
+			</li>
+			<li>
+				<a href="/video">Video</a>
+			</li>
+			<li class="active">
+				<a href="/summit">Summit</a>
+			</li>
+		</ul>
+	</nav>
+	<main class="main vevent h-event">
+		<header class="site-header">
+			<h1 class="title summary p-name"><a href="#" class="url u-url">Indie Tech Summit</a></h1>
+		</header>
+		<h2><em class="in">in</em> <span class="location p-location">Brighton, UK</span> <em class="on">on</em> <span class="dtstart dt-start">July 4th, 2014</span></h2>
+		<p class="workshops">with workshops and other activities on July 5th</p>
+		<h3 class="description"><span class="description--wrap">Declaration of Independence of the Internet</span></h3>
+		<ul class="tenets">
+			<li class="tenets--design p-category">Design</li>
+			<li class="tenets--freedom p-category">Freedom</li>
+			<li class="tenets--independence p-category">Independence</li>
+		</ul>
+		<p class="intro p-summary">200 people will meet to discuss sustainable &amp; ethical alternatives to corporate surveillance &amp; launch the Indie Tech Manifesto.</p>
+		<p class="tickets">Tickets <span class="are">are</span> &pound;75 <span class="and-go-on-sale-on-the">and go on sale on the</span> 19th May, 2014.</p>
+		<p class="call-for-proposals">Join other designers, developers, hardware folks, politicians, activists, academics, and social entrepreneurs working in the area of Indie Tech. Meet, brainstorm, and collaborate. Introduce the community to your product and team. Do you know of someone who should definitely be at the summit? <a href="mailto:jo@ind.ie">Email us today</a>.</p>
+		<p/>
+		<form class="sign-up" id="sign-up-for-updates" method="POST" action="https://indietech-12917.onmodulus.net/indie-tech-summit/subscribe">
+			<h2 class="sign-up--heading">Sign up for updates</h2>
+			<p class="sign-up--no-spam">(no spam, we really respect your privacy)</p>
+			<div id='response' class='sign-up--message--thank-you sign-up--message'>
+				<p>Thank you, you’re now signed up.</p>
+			</div>
+		</form>
+	</main>
+	<script type="text/javascript" src="/js/promise.min.js"></script>
+
+	<script type="text/javascript">
+		WebFontConfig = { fontdeck: { id: '45284' } };
+
+		(function() {
+		  var wf = document.createElement('script');
+		  wf.src = '/js/webfont.js';
+		  wf.type = 'text/javascript';
+		  wf.async = 'true';
+		  var s = document.getElementsByTagName('script')[0];
+		  s.parentNode.insertBefore(wf, s);
+		})();
+
+		// Progressively enhance the sign-up form to submit without a refresh.
+		var signupForm = document.getElementById('sign-up-for-updates');
+		signupForm.onsubmit = function(event){
+			event.preventDefault();
+			var emailTextInput = document.getElementById('email')
+			var email = emailTextInput.value;
+
+			// Disable form to avoid multiple submits.
+			disableForm(true);
+
+			// Remove a previous failure message if it exists.
+			var previousFailureMessage = document.getElementById('failure-message');
+			if (previousFailureMessage) {
+				signupForm.removeChild(previousFailureMessage);
+			}
+
+			var progressIndicator = document.createElement('img');
+			progressIndicator.setAttribute('src', '/images/summit/progress.gif');
+			progressIndicator.setAttribute('id', 'progress-indicator');
+			progressIndicator.setAttribute('class', 'sign-up--message--progress-indicator');
+			document.getElementById('form-elements').appendChild(progressIndicator);
+
+			// Carry out the ajax request as a promise.
+			promise.post('https://indietech-12917.onmodulus.net/indie-tech-summit/subscribe', {email: email}).then(function(error, data, xhr) {
+					// Re-enable the form fields when the call returns.
+					disableForm(false);
+
+					var formElements = document.getElementById('form-elements');
+					formElements.removeChild(progressIndicator);
+
+					// Check the response
+					if (error) {
+						// Give better errors than those returned by Sendy
+						var errorMessage = '';
+						if (xhr.responseText == 'Error: Already subscribed.') {
+							errorMessage = 'You’re already subscribed.';
+						} else {
+							errorMessage = xhr.responseText;
+						}
+
+						var failureMessage = document.createElement('div');
+						failureMessage.setAttribute('id', 'failure-message');
+						failureMessage.setAttribute('class', 'sign-up--message');
+						failureMessage.innerHTML = "<h3 class='sign-up--message--error'>Oops, we couldn’t sign you up.</h3><p class='additional-information'>("+errorMessage+")</p>"
+						signupForm.appendChild(failureMessage);
+
+						return;
+					}
+					formElements.parentNode.removeChild(formElements);
+
+					var successMessage = document.createElement('div');
+					successMessage.setAttribute('class', 'sign-up--message--thank-you sign-up--message');
+					successMessage.innerHTML = 'Thank you, you’re now signed up.';
+					signupForm.appendChild(successMessage);
+				});
+		}
+
+		// Handle disabling/enabling of the form.
+		function disableForm(state) {
+			var opacity = state ? 0.5 : 1.0;
+			var visibility = state ? "hidden" : "visible";
+
+			var emailTextInput = document.getElementById('email')
+			var submitButton = document.getElementById('submit-button')
+
+			emailTextInput.disabled = state;
+			submitButton.disabled = state;
+			submitButton.style.opacity = opacity;
+			submitButton.style.visibility = visibility;
+			emailTextInput.style.opacity = opacity;
+		}
+
+	</script>
+	<script type="text/javascript" src="/js/modernizr-min.js"></script>
+</body>
+</html>

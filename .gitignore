@@ -1,0 +1,13 @@
+/build
+/node_modules
+/.cache
+/aws-keys.json
+/source/summit/assets/videos
+/source/about/summit/assets/videos
+npm-debug.log
+.DS_Store
+/public
+**.mov
+**.mp4
+**.ogv
+**.webm

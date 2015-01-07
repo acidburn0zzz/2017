@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <!-- $title:Ind.ie Blog — Ind.ie Friday Challenge from Open-Xchange-->
+  <!-- @import '../../../assets/includes/head.kit' -->
+  <link rel='stylesheet' type='text/css' href='css/style.css'>
+</head>
+<body class='blog article'>
+  <header class='site-header'>
+    <!-- @import '../../../assets/includes/nav.kit' -->
+    <!-- @import '../../includes/nav.kit' -->
+  </header>
+
+  <div class='main h-entry'>
+    
+    <h1 class='p-name'>Ind.ie Friday Challenge from Open-Xchange</h1>
+
+    <p class='post-date dt-published' datetime="2014-11-21 16:00:00">21st November, 2014 — <span class='p-author'>Aral Balkan</span></p>
+    <div class='e-content'>
+      <div class='notification success'>
+        <p>Thank you! We unlocked the Friday Challenge and got the $10,000 donation from <a href='http://www.open-xchange.com'>Open-Xchange</a>!</p>
+      </div>
+		  <p><a href='https://twitter.com/rafbuff'>Rafael Laguna</a>, CEO of <a href='http://www.open-xchange.com'>Open-Xchange</a>, has issued us with a Friday challenge: If we can get to $65,000 in donations by end of today, Open-Xchange will donate $10,000 to the http://Ind.ie crowdfunding campaign, bringing our total to $75,000.</p>
+      <p>If you haven’t had a chance to donate, now’s the time:</p>
+      <p><a href='https://ind.ie'>https://ind.ie</a></p>
+      <p>Even if you cannot donate, please share this with your friends. Your support today can trigger Open-Xchange’s $10,000 donation and give us a big push towards our goal.</p>
+      <h2>About Rafael and Open-Xchange</h2>
+      <p>I got the chance to spend time both on stage and off with Rafael in Munich recently, during the Open-Xchange Summit, where I presented the opening keynote <a href='https://vimeo.com/106681730'>I, Simulation</a>.</p>
+      <p>In addition to running a successful open source business, Rafael is a fellow campainger for privacy and human rights. Read his recent post on http://Wired.com: <a href='http://www.wired.com/2014/11/battling-the-datenkrakens-business-of-surveillance/'>Battling the Datenkraken’s Business of Surveillance</a>.</p>
+      <p><a href='http://www.open-xchange.com'>Open-Xchange</a> is a privately-owned company headquartered in Nuremberg, Germany. Their flagship product, <a href='http://www.open-xchange.com/ox-app-suite'>OX App Suite</a> is white-labeled software that challenges the status quo of messaging and collaboration software by empowering service providers to take back their customer relationship.</p>
+    </div>
+    <!-- @import '../../../assets/includes/footer-call-to-action.kit' -->
+	<!-- @import '../../../assets/includes/footer.kit' -->
+  </div>
+  <script src='/assets/js/moment.min.js'></script>
+  <script>
+  	// Count-down
+  	var crowdfundingStartDate = moment("20141108", "YYYYMMDD");
+  	var today = moment().subtract(1, "day").hour(0).minute(0).second(0);
+  	var daysRemaining = crowdfundingStartDate.diff(today, 'days');
+  	document.getElementById("days-remaining").innerHTML = daysRemaining;
+  </script>
+</body>
+</html>

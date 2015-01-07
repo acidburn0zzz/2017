@@ -1,0 +1,131 @@
+.featuring
+	overflow hidden
+
+	h2
+		font-size 40px
+		line-height 50px
+		margin-bottom 15px
+
+		.wf-active &
+			abril-display-extra-bold()
+			font-size 45px
+			line-height 60px
+
+			@media only screen and (min-width: 760px)
+				font-size 64px
+				line-height 75px
+
+	figure
+		margin-bottom 45px
+
+		@media only screen and (min-width: 700px)
+			float left
+			width 47.6%
+
+			&:nth-child(even)
+				clear left
+				margin-right 15px
+
+			&:nth-child(odd)
+				margin-left 15px
+
+		&:last-of-type
+			@media only screen and (min-width: 700px)
+				float none
+				margin-right auto
+				margin-left auto
+
+		img
+			display block
+			width 100%
+			max-width 710px
+			border-top 5px solid #444
+			border-bottom 5px solid #444
+
+
+.parenthetical
+	clear both
+	display block
+	font-size 24px
+	font-style italic
+	line-height 25px
+	margin-top 0
+	margin-bottom 10px
+
+	.wf-active &
+		abril-text-italic()
+
+.feature--name
+	font-size 30px
+	font-style normal
+	font-weight bold
+	display block
+	line-height 45px
+	margin-top 20px
+	margin-bottom 5px
+
+	a
+		color neutral2
+		.wf-active &
+			text-decoration none
+			background transparent /* Old browsers */
+			background -moz-linear-gradient(top, neutral1 0%, neutral1 88%, neutral5 88%, neutral5 93%, neutral1 93%) /* FF3.6+ */
+			background -webkit-gradient(linear, left top, left bottom, color-stop(0%,neutral1), color-stop(88%,neutral1), color-stop(88%,neutral5), color-stop(93%,neutral5), color-stop(93%,neutral1)) /* Chrome,Safari4+ */
+			background -webkit-linear-gradient(top, neutral1 0%,neutral1 88%,neutral5 88%,neutral5 93%,neutral1 93%) /* Chrome10+,Safari5.1+ */
+			background -o-linear-gradient(top, neutral1 0%,neutral1 88%,neutral5 88%,neutral5 93%,neutral1 93%) /* Opera 11.10+ */
+			background -ms-linear-gradient(top, neutral1 0%,neutral1 88%,neutral5 88%,neutral5 93%,neutral1 93%) /* IE10+ */
+			background linear-gradient(to bottom, neutral1 0%,neutral1 88%,neutral5 88%,neutral5 93%,neutral1 93%) /* W3C */
+			text-shadow 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1, 0 0 2px neutral1
+
+		&:hover, &:active, &:focus
+			.wf-active &
+				background transparent /* Old browsers */
+				background -moz-linear-gradient(top, neutral1 0%, neutral1 88%, accentdark 88%, accentdark 93%, neutral1 93%) /* FF3.6+ */
+				background -webkit-gradient(linear, left top, left bottom, color-stop(0%,neutral1), color-stop(88%,neutral1), color-stop(88%,accentdark), color-stop(93%,accentdark), color-stop(93%,neutral1)) /* Chrome,Safari4+ */
+				background -webkit-linear-gradient(top, neutral1 0%,neutral1 88%,accentdark 88%,accentdark 93%,neutral1 93%) /* Chrome10+,Safari5.1+ */
+				background -o-linear-gradient(top, neutral1 0%,neutral1 88%,accentdark 88%,accentdark 93%,neutral1 93%) /* Opera 11.10+ */
+				background -ms-linear-gradient(top, neutral1 0%,neutral1 88%,accentdark 88%,accentdark 93%,neutral1 93%) /* IE10+ */
+				background linear-gradient(to bottom, neutral1 0%,neutral1 88%,accentdark 88%,accentdark 93%,neutral1 93%) /* W3C */
+
+	.wf-active &
+		abril-display-extra-bold()
+		font-size 36px
+
+		@media only screen and (min-width: 760px)
+			font-size 33px
+			line-height 45px
+
+.feature--name a::-moz-selection
+	text-shadow 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent
+
+.feature--name a::selection
+	text-shadow 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent, 0 0 2px accent
+
+.feature--description
+	display block
+	font-style normal
+	font-size 18px
+	line-height 25px
+	margin-bottom 40px
+
+	@media only screen and (min-width: 530px)
+		font-size 21px
+
+	@media only screen and (min-width: 700px)
+		line-height 30px
+		margin-top 15px
+		margin-bottom 0
+
+.featuring--note
+	border-top neutral9 1px solid
+	clear both
+	font-size 20px
+	font-weight bold
+	margin-bottom 30px
+	padding-top 15px
+
+	h3
+		font-style normal
+
+	.parenthetical
+		font-size 18px

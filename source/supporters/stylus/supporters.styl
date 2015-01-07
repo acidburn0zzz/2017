@@ -1,0 +1,80 @@
+.mega-supporters
+	margin 0
+	.mega-supporter
+		font-size 16px
+		margin-bottom OneLineHeight
+		overflow hidden
+
+		@media only screen and (min-width: 725px)
+			display block
+
+		h2, p
+			color #325F96
+			text-align center
+
+		p
+			/* this will only work if user has Open Sans installed, but that's a nice touch, rather than loading in a big font file for such a small bit of text */
+			font-family "Open Sans", "Avenir Next", Avenir, 'Helvetica Neue', Helvetica, sans-serif
+
+			@media only screen and (min-width: 725px)
+				text-align left
+				margin-bottom HalfLineHeight
+
+		a, strong
+			color #325F96
+
+		h2
+			font-size 24px
+			font-family "Avenir Next Bold", "Avenir Next", Avenir, 'Helvetica Neue', Helvetica, sans-serif
+			margin-bottom 0
+
+			@media only screen and (min-width: 725px)
+				margin-bottom HalfLineHeight
+
+		.logo
+			display block
+			margin-top HalfLineHeight
+			margin-bottom 0
+			margin-right auto
+			margin-left auto
+			width 150px
+
+			@media only screen and (min-width: 725px)
+				border-box()
+				float left
+				margin-top 0
+				padding-right OneLineHeight
+
+			img
+				@media only screen and (min-width: 725px)
+					margin-top 5px
+
+.supporters
+	.supporters-list
+		section
+			margin-bottom ThreeLineHeights
+
+		h2
+			text-align center
+
+		ul
+			margin OneAndAHalfLineHeights 0 OneLineHeight 0
+
+			@media only screen and (min-width: 600px)
+				display -webkit-flex
+				display -moz-flex
+				display flex
+				-webkit-flex-flow row wrap
+				-moz-flex-flow row wrap
+				flex-flow row wrap
+
+			li
+				list-style-type none
+				text-align center
+
+				@media only screen and (min-width: 600px)
+					border-box()
+					-webkit-flex 1 0 30%
+					-moz-flex 1 0 30%
+					flex 1 0 30%
+					padding 0 HalfLineHeight

@@ -1,0 +1,27 @@
+
+.baseline {
+  font-size: 1em;
+  background: none; /* Removes any pre existing background */
+  background-image: -webkit-linear-gradient(rgba(0,0,0,0.2) 1px, transparent 1px);
+  background-image: -moz-linear-gradient(rgba(0,0,0,0.2) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(0,0,0,0.2) 1px, transparent 1px);
+  background-size: 100% 1.5em;    /* line-height */
+  background-origin: content-box; /* regardless of padding, background will begin in the corner of the box */
+  background-attachment: local;   /* for scrolling */
+}
+
+body { position:relative; }
+body:hover:before {
+    width: 100%; height: 100%;         /* sizes element */
+    display: block; content: "";       /* displays element */
+    position: absolute; z-index: 9999; /* positions element */
+    pointer-events:none;               /* click through overlay */
+
+    background-size: 100% 15px;       /* sets baseline height */
+    background-origin: content-box;    /* for correct display of grid */
+    background-attachment: local;      /* for scrolling */
+
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, .25) 1px, transparent 1px);
+    background-image: -moz-linear-gradient(rgba(0, 0, 0, .25) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(0, 0, 0, .25) 1px, transparent 1px);
+}

@@ -1,0 +1,144 @@
+.site-navigation
+	background black-eighty
+	border-bottom 5px solid black-thirty
+
+	.site-navigation--list
+		margin 0
+		overflow hidden
+		padding 0
+		/* flex box to centre children */
+		display -webkit-flex
+		display -moz-flex
+		display flex
+		-webkit-flex-flow row wrap
+		-moz-flex-flow row wrap
+		flex-flow row wrap
+		-webkit-justify-content center
+		-moz-justify-content center
+		justify-content center
+
+	li
+		float left
+		list-style-type none
+		margin-bottom 0
+		padding 0 10px 5px 10px
+
+		@media only screen and (min-width: 600px)
+			padding 0
+
+		a
+			border-bottom black-eighty solid 2px
+			color white
+			display block
+			float left
+			font-size 16px
+			padding 7px 4px 0 4px
+			text-decoration none
+			background-transition(.3s)
+
+			&:hover, &:active, &:focus
+				background none
+				border-bottom black-forty solid 2px
+				color black-ten
+
+			@media only screen and (min-width: 600px)
+				border-bottom none
+				padding QuarterLineHeight HalfLineHeight
+
+				&:hover, &:active, &:focus
+					background black-seventy
+					border-bottom none
+					padding QuarterLineHeight HalfLineHeight
+
+		&.home-link
+			padding 0
+
+			a /* balloon logo for home link */
+				background-image url('/assets/images/sprite.png')
+				background-position 15px -35px
+				background-repeat no-repeat
+				height 0
+				overflow hidden
+				padding 40px 0 0 75px
+				width 0
+
+				.svg &
+					background-image url('/assets/images/sprite.svg')
+
+				&:hover, &:active, &:focus
+					background-color background black-seventy
+					background-image url('/assets/images/sprite.png')
+					background-position 15px -35px
+					border-bottom none
+					color black-ten
+					padding 40px 0 0 75px
+
+					.svg &
+						background-image url('/assets/images/sprite.svg')
+
+					@media only screen and (min-width: 600px)
+						padding 42px 0 0 75px
+
+/* Black string balloon logo for active home navigation link */
+.home .site-navigation .home-link a,
+.launch .site-navigation .home-link a
+	background-color black-thirty
+	background-position 14px -76px
+	border-bottom none
+	color white
+	padding 40px 0 0 75px
+
+	&:hover, &:active, &:focus
+		background-position 14px -76px
+
+	@media only screen and (min-width: 600px)
+		background-color black-thirty
+		border-bottom none
+		color black-ninety
+		padding 42px 0 0 75px
+
+		&:hover, &:active, &:focus
+			padding 42px 0 0 75px
+
+/* Active navigation styles */
+.launch .site-navigation .fund-link,
+.launch-video-transcript .site-navigation .fund-link,
+.launch-video-credits .site-navigation .fund-link,
+.foundation .site-navigation .foundation-link,
+.phone .site-navigation .phone-link,
+.phone-faq .site-navigation .phone-link,
+.phone-press .site-navigation .phone-link,
+.pulse .site-navigation .pulse-link,
+.team .site-navigation .about-link,
+.privacy .site-navigation .about-link,
+.contact .site-navigation .about-link,
+.blog .site-navigation .about-link,
+.events .site-navigation .about-link,
+.newsletter .site-navigation .about-link,
+.manifesto .site-navigation .about-link,
+.declaration .site-navigation .about-link,
+.summit .site-navigation .about-link,
+.summit-videos .site-navigation .about-link,
+.summit-video .site-navigation .about-link,
+.phoenix .site-navigation .about-link,
+.waystone .site-navigation .waystone-link,
+.heartbeat .site-navigation .heartbeat-link,
+.stratosphere .site-navigation .stratosphere-link,
+.pulse-blog .site-navigation .pulse-link,
+.fund .site-navigation .fund-link
+	padding 0
+
+	@media only screen and (min-width: 600px)
+		padding 0
+
+	a
+		background none
+		border-bottom black-twenty solid 2px
+		color white
+		padding 7px 4px 0 4px
+
+		@media only screen and (min-width: 600px)
+			background black-thirty
+			border-bottom none
+			color black-ninety
+			padding QuarterLineHeight HalfLineHeight

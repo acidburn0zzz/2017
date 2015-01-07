@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="220px" height="220px" viewBox="0 0 220 220" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>pulse-logomark-dark-bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="full-logo-on-black" sketch:type="MSArtboardGroup" transform="translate(-53.000000, -38.000000)">
+            <g id="logo-mark" sketch:type="MSLayerGroup" transform="translate(53.000000, 38.000000)">
+                <rect id="Rectangle-11" sketch:type="MSShapeGroup" x="0" y="0" width="220" height="220"></rect>
+                <path d="M210,110 C210,54.771525 165.228475,10 110,10 C54.771525,10 10,54.771525 10,110 C10,165.228475 54.771525,210 110,210 C165.228475,210 210,165.228475 210,110 Z M15,110 C15,57.5329488 57.5329488,15 110,15 C162.467051,15 205,57.5329488 205,110 C205,162.467051 162.467051,205 110,205 C57.5329488,205 15,162.467051 15,110 Z" id="outer-ring" fill="#BEBEBE" sketch:type="MSShapeGroup"></path>
+                <path d="M169,110 C169,77.4151998 142.5848,51 110,51 C77.4151998,51 51,77.4151998 51,110 C51,142.5848 77.4151998,169 110,169 C142.5848,169 169,142.5848 169,110 Z M95,110 C95,101.715729 101.715729,95 110,95 C118.284271,95 125,101.715729 125,110 C125,118.284271 118.284271,125 110,125 C101.715729,125 95,118.284271 95,110 Z" id="inner-ring" fill="#727272" sketch:type="MSShapeGroup"></path>
+                <circle id="node" fill="#C41515" sketch:type="MSShapeGroup" cx="76.5" cy="18.5" r="12.5"></circle>
+                <circle id="node-2" fill="#C41515" sketch:type="MSShapeGroup" cx="204.5" cy="125.5" r="12.5"></circle>
+                <circle id="node-3" fill="#C41515" sketch:type="MSShapeGroup" cx="45.5" cy="183.5" r="12.5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

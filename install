@@ -1,0 +1,15 @@
+npm config set registry https://npm-proxy.fury.io/XNENtG1qsapqYWiw9zh5/indie/
+npm config set strict-ssl true
+npm config set ca ""
+npm install -g grunt
+npm install
+touch aws-keys.json
+echo '{"key":"", "secret": ""}' > aws-keys.json
+echo 'Remember to update aws-key.json with your actual keys if you want to deploy.'
+git submodule init
+git submodule update
+cd source/assets/stylus/indie-style-core/
+git submodule init
+git submodule update
+echo 'Done. Project installed for development.'
+echo './dev to start the dev server.'

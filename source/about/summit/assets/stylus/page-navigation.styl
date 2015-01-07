@@ -1,0 +1,37 @@
+.page-navigation
+	ul
+		display -webkit-flex
+		display -moz-flex
+		display flex
+		-webkit-flex-flow row wrap
+		-moz-flex-flow row wrap
+		flex-flow row wrap
+		-webkit-justify-content center
+		-moz-justify-content center
+		justify-content center
+		padding 0 0 15px 0
+
+	li
+		float left
+		list-style-type none
+
+	a
+		display inline-block
+		color neutral2
+		font-size 16px
+		float left
+		padding 0 6px
+
+		@media only screen and (min-width: 560px)
+			font-size 16px
+			padding 0 10px
+			text-transform uppercase
+
+			.wf-active &
+				font-size 17px
+
+		@media only screen and (min-width: 960px)
+			font-size 17px
+
+			.wf-active &
+				font-size 18px

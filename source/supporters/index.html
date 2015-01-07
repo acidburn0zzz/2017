@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- $title:Ind.ie — Supporters -->
+	<!-- @import '../assets/includes/head.kit' -->
+	<link rel='stylesheet' type='text/css' href='css/style.css'>
+	<script src='/assets/js/promise.js'></script>
+</head>
+<body class='supporters'>
+	<header class='site-header'>
+		<!-- @import '../assets/includes/nav.kit' -->
+	</header>
+	<div class='main'>
+		
+		<h1>Supporters</h1>
+
+		<ul class='mega-supporters'>
+			<li class='mega-supporter'>
+	            <a href='http://www.open-xchange.com' class='logo'><img alt='OpenXchange' src='images/logo-open-xchange.svg'/></a>
+	            <p>Thank you <a href='http://www.open-xchange.com'>Open-Xchange</a>!. When our supporters unlocked the Friday Challenge and got us to $65,000, Open-XChange donated $10,000.</p>
+			</li>
+		</ul>
+
+		<div id='results' class='supporters-list'></div>
+
+		<div id='error'></div>
+
+        <!-- @import '../assets/includes/footer-call-to-action.kit' -->
+		<!-- @import '../assets/includes/footer.kit' -->
+	</div>
+	<script>
+		promise.get('http://10.0.1.123:5000/api/supporters').then(function(error, result, xhr) {
+			if (error) {
+				document.getElementById('error').innerHTML = '<p class="notification warning message">Sorry, we could not load the list of supporters at this time.</p>';
+				console.log(xhr.status);
+				return;
+			}
+
+			var supporters = JSON.parse(result).supporters;
+
+			var resultsDiv = document.getElementById('results');
+
+			for (var i = 0; i < supporters.length; i++) {
+				var supporter = supporters[i];
+
+				// TODO: rename in API to tier.
+				var tierTitle = supporter['reward'];
+				var names = supporter['names']
+
+				var section = document.createElement('section');
+				var title = document.createElement('h2');
+				var titleText = document.createTextNode(tierTitle);
+
+				title.appendChild(titleText);
+
+				section.appendChild(title);
+
+				var listOfNames = document.createElement('ul');
+
+				for (var j = 0; j < names.length; j++) {
+					var name = names[j];
+					var nameListItem = document.createElement('li');
+					var nameText = document.createTextNode(name);
+					nameListItem.appendChild(nameText);
+					listOfNames.appendChild(nameListItem);
+				}
+
+				section.appendChild(listOfNames);
+
+				resultsDiv.appendChild(section);
+			}
+		});
+	</script>
+</body>
+</html>

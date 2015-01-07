@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <!-- $title:Ind.ie Blog — Ind.ie Thunderclap Begins-->
+  <!-- @import '../../../assets/includes/head.kit' -->
+  <link rel='stylesheet' type='text/css' href='css/style.css'>
+</head>
+<body class='blog article thunderclap'>
+  <header class='site-header'>
+    <!-- @import '../../../assets/includes/nav.kit' -->
+    <!-- @import '../../includes/nav.kit' -->
+  </header>
+
+  <div class='main h-entry'>
+    <h1 class='p-name'>Ind.ie Thunderclap Begins</h1>
+
+    <p class='post-date dt-published' datetime="2014-10-24 16:00:00">24th October, 2014 — <span class='p-author'>Laura Kalbag</span></p>
+    <div class='e-content'>
+		<h1 class='countdown'>
+			<strong class='days'><span class='days-remaining' id='days-remaining'>…</span> days</strong> <span class='to-freedom'>to freedom.</span>
+		</h1>
+		<p class='join-thunderclap'>
+			<a href='http://thndr.it/1D5QKuO' class='button button-alt'>Join our Thunderclap!</a>
+		</p>
+		<h2>Lend us your voice on November 8.</h2>
+		<p class='intro'>“Google and Facebook spy on you. Help us create
+ alternatives that don’t. #iamindie”</p>
+ 		<p>Lend us your voice! Send a simple message from your <a href='https://aralbalkan.com/notes/spyware-2.0/'>spyware</a>* accounts on November 8, 2014 to support our launch. With your help, we can develop independent alternatives so you won’t need spyware accounts in the future.</p>
+		<p>* Twitter, Facebook, Tumblr.</p>
+		<h3>How does Thunderclap work?</h3>
+		<p>Thunderclap is a ‘crowd-speaking’ platform. When enough supporters sign up, Thunderclap will post a pre-approved post on their Twitter, Facebook and/or Tumblr feeds on the appointed date (in our case, the 8th of November, 2014).</p>
+    </div>
+    <!-- @import '../../../assets/includes/footer-call-to-action.kit' -->
+	<!-- @import '../../../assets/includes/footer.kit' -->
+  </div>
+  <script src='/assets/js/moment.min.js'></script>
+  <script>
+  	// Count-down
+  	var crowdfundingStartDate = moment("20141108", "YYYYMMDD");
+  	var today = moment().subtract(1, "day").hour(0).minute(0).second(0);
+  	var daysRemaining = crowdfundingStartDate.diff(today, 'days');
+  	document.getElementById("days-remaining").innerHTML = daysRemaining;
+  </script>
+</body>
+</html>

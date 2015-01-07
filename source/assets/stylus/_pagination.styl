@@ -1,0 +1,48 @@
+.pagination
+	overflow hidden
+	@media only screen and (min-width: 360px)
+		display -webkit-flex
+		display flex
+		-webkit-flex-flow row wrap
+		flex-flow row wrap
+		-webkit-justify-content center
+		justify-content center
+
+.pagination--title
+	font-size 16px
+	margin-top QuarterLineHeight
+	text-align center
+
+	@media only screen and (min-width: 360px)
+		-webkit-flex 0 0 auto
+		flex 0 0 auto
+		margin-top HalfLineHeight
+		text-align left
+
+.pagination
+	.pages
+		display -webkit-flex
+		display flex
+		-webkit-flex-flow row wrap
+		flex-flow row wrap
+		-webkit-justify-content center
+		justify-content center
+		margin-left HalfLineHeight
+
+		li
+			float left
+			list-style-type none
+
+			a
+				background black-ten
+				display block
+				font-size 16px
+				margin-right 5px
+				padding 0 10px
+				text-align center
+				-webkit-flex 0 0 auto
+				flex 0 0 auto
+
+				&.active
+					font-weight bold
+					text-decoration none

@@ -1,0 +1,55 @@
+form
+	overflow hidden
+
+label
+	clear both
+	display block
+	font-size 22px
+
+input
+	background neutral1
+	border 1px solid neutral5
+	border-box()
+	display block
+	font-default()
+	height 45px
+	width 70%
+	-webkit-appearance none
+
+	.wf-active &
+		abril-text-regular()
+
+textarea
+	border-box()
+	-webkit-appearance none
+
+button[type=submit]
+	background neutral4
+	border none
+	border-radius 5px
+	color neutral1
+	display block
+	font-default()
+	font-size 21px
+	font-weight normal
+	margin 0 auto 15px auto
+	padding 0 10px
+	text-align center
+	text-transform uppercase
+	height 45px
+	width 50%
+
+	&:hover, &:active, &:focus
+		background neutral3
+		transition(.3)
+
+	.wf-active &
+		abril-text-regular()
+		text-transform none
+
+select
+	min-width 60px
+	padding-left 10px
+	border 1px solid #555
+	font-size 24px
+	display inline

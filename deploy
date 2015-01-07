@@ -1,0 +1,2 @@
+echo Please run the deploy command from within ./dev
+./dev

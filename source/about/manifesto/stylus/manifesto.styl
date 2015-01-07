@@ -1,0 +1,158 @@
+.manifesto
+	h1
+		margin-bottom 0
+		padding-bottom 0
+
+	h2
+		margin-top HalfLineHeight
+
+	dfn
+		cursor pointer
+
+.definition-expanded
+	border 1px solid black-thirty
+	margin OneLineHeight 0
+	padding OneLineHeight OneLineHeight 0 OneLineHeight
+
+	strong
+		display block
+		margin-bottom OneLineHeight
+
+	h3
+		color black-ninety
+		margin-top 0
+
+.definition-expanded.hidden
+	border none
+	height 0
+	margin 0
+	overflow hidden
+	padding 0
+
+.full-description
+	font-style italic
+
+.description
+	margin-top 0
+	position static
+
+	@media only screen and (min-width: 820px)
+		padding 0 OneLineHeight 0 TwoLineHeights
+
+.toggle
+	background-color black-ten
+	background-image url('/assets/images/right-arrow.png')
+	background-size 24px 24px
+	background-position 100% 50%
+	background-repeat no-repeat
+	margin-top 0
+	margin-bottom HalfLineHeight
+	padding QuarterLineHeight
+	padding-top 0
+	padding-bottom 0
+
+.toggle:hover
+	background-color black-twenty
+	cursor pointer
+	cursor hand
+
+.toggleActive, .toggleActive:hover
+	background-color white
+	background-image url('/assets/images/down-arrow.png')
+
+#characteristics
+	margin OneLineHeight 0 OneLineHeight 0
+
+#end
+	border-bottom 2px solid black-seventy
+	padding-bottom OneAndAHalfLineHeights
+
+#our-goal
+	margin-left -7px /* -QuarterLineHeight */
+
+.summary
+	border-top 2px solid black-eighty
+	border-bottom 2px solid black-eighty
+	font-size 24px
+	font-style italic
+	line-height OneAndAQuarterLineHeights
+	margin-top OneLineHeight
+	margin-bottom OneAndAHalfLineHeights
+	padding-top OneLineHeight
+	padding-bottom OneLineHeight
+	text-align center
+
+	@media only screen and (min-width: 600px)
+		padding-right HalfLineHeight
+		padding-left HalfLineHeight
+
+	@media only screen and (min-width: 820px)
+		font-size 30px
+		line-height OneAndAHalfLineHeights
+		padding-top OneAndAHalfLineHeights
+		padding-bottom OneAndAHalfLineHeights
+
+#sign-manifesto
+	h3
+		font-size 30px
+		text-align center
+
+.sign-manifesto
+	border-top 2px solid black-eighty
+	border-bottom 1px dashed black-fifty
+	margin-top TwoLineHeights
+	overflow hidden
+
+	h2
+		margin-top TwoLineHeights
+		margin-bottom OneAndAHalfLineHeights
+		text-align center
+
+	.note
+		text-align center
+
+	.button
+		display block
+		float none
+		margin-right auto
+		margin-left auto
+		max-width 100px
+
+.signature--number
+	text-align center
+
+.signatures
+	margin TwoLineHeights 0 OneLineHeight 0
+
+	@media only screen and (min-width: 600px)
+		display -webkit-flex
+		display -moz-flex
+		display flex
+		-webkit-flex-flow row wrap
+		-moz-flex-flow row wrap
+		flex-flow row wrap
+
+	li
+		list-style-type none
+		text-align center
+
+		@media only screen and (min-width: 600px)
+			-webkit-flex 1 0 30%
+			-moz-flex 1 0 30%
+			flex 1 0 30%
+
+		&.my-signature
+			color success
+			font-weight bold
+			padding-bottom 10px
+
+			@media only screen and (min-width: 600px)
+				-webkit-flex 1 0 100%
+				-moz-flex 1 0 100%
+				flex 1 0 100%
+
+			.notification
+				color success
+
+			.notification.warning
+				color warning

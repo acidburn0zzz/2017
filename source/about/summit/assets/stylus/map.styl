@@ -1,0 +1,86 @@
+.venues
+	border-top neutral3 2px dotted
+	overflow hidden
+
+	h2
+		font-style normal
+		font-weight bold
+
+		.wf-active &
+			abril-display-extra-bold()
+			font-weight normal
+
+	@media only screen and (min-width: 760px)
+		padding-bottom 15px
+
+	h3
+		border-top neutral9 1px solid
+		color neutral3
+		font-size 21px
+		font-style normal
+		font-weight bold
+		margin-top 10px
+		margin-bottom 10px
+		padding-top 10px
+
+		.wf-active &
+			abril-display-extra-bold()
+			font-weight normal
+
+		@media only screen and (min-width: 400px)
+			margin-bottom 5px
+
+		@media only screen and (min-width: 760px)
+			border-top none
+			font-size 15px
+			line-height 30px
+			margin-top 0
+			margin-bottom 0
+			text-align left
+
+			.wf-active &
+				font-size 17px
+
+		a
+			color neutral3
+			font-weight bold
+			text-decoration none
+
+			.wf-active &
+				font-weight normal
+
+	p
+		font-size 17px
+		margin-bottom 10px
+
+		@media only screen and (min-width: 760px)
+			font-size 16px
+			line-height 20px
+			text-align left
+
+	.venues--map--view-larger
+		clear both
+		font-size 16px
+		margin 0
+		width 100%
+
+	.venues--sallis-benney
+		@media only screen and (min-width: 760px)
+			border-right neutral9 1px solid
+			float left
+			width 50%
+
+	.venues--middle-st
+		@media only screen and (min-width: 760px)
+			float left
+			padding-left 30px
+			width 50%
+
+.venues--map
+	display block
+	height 350px
+	margin 15px 0
+	width 100%
+
+	@media only screen and (min-width: 760px)
+		margin-bottom 0

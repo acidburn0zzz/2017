@@ -1,0 +1,67 @@
+.site-footer
+	clear both
+	margin-top FourLineHeights
+	text-align justify
+
+	.designing-hope
+		border-bottom 1px solid black-twenty
+		color black-eighty
+		font-size 21px
+		font-family "Avenir Next", Avenir, 'Helvetica Neue', Helvetica, sans-serif
+		line-height OneAndAHalfLineHeights
+		margin-top OneLineHeight
+		margin-bottom HalfLineHeight
+		padding-bottom OneLineHeight
+		text-align center
+
+	.view-source-wrap
+		border-top 1px solid black-twenty
+		margin-top 15px
+		margin-bottom 30px
+		padding 30px 20px
+
+	.view-source
+		background black-sixty
+		border none
+		border-box()
+		border-radius 5px
+		color white
+		display block
+		font-size 18px
+		line-height OneAndAHalfLineHeights
+		margin HalfLineHeight auto HalfLineHeight auto
+		padding 0 ThreeQuartersLineHeight
+		text-align center
+		text-decoration none
+		transition(.3s)
+		width 150px
+
+		&:hover, &:active, &:focus
+			background black-eighty
+
+.site-name
+	width 100%
+
+	a
+		background url('/assets/images/indie-balloon-logo.png') no-repeat center center
+		border-bottom none
+		display block
+		height 0
+		margin-right auto
+		margin-left auto
+		margin-bottom HalfLineHeight
+		overflow hidden
+		padding-top 130px /* height of logo */
+		padding-left 100% /* ensure width of logo doesn't overflow width of container */
+		width 0
+
+		.svg &
+			background-image url('/assets/images/indie-balloon-logo.svg')
+
+		@media only screen and (min-width: 385px)
+			background-size 300px 130px /* width and height of logo */
+			margin-bottom HalfLineHeight
+			padding-left 300px /* width of logo */
+
+		@media only screen and (min-width: 600px)
+			margin-bottom ThreeQuartersLineHeight

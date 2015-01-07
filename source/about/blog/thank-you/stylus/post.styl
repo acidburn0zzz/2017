@@ -1,0 +1,19 @@
+body.thank-you .p-name
+	background url('/about/blog/thank-you/images/balloon-logo-many.svg') bottom center no-repeat
+	line-height ThreeLineHeights
+	margin-top OneLineHeight
+	margin-bottom OneLineHeight
+	padding-top 220px
+
+	.no-svg &
+		background-image url('/about/blog/thank-you/images/balloon-logo-many.png')
+
+	/* full background rule declared twice to get round bug with Responsive Pixels */
+	@media only screen and (min-width: 700px)
+		background url('/about/blog/thank-you/images/balloon-logo-many.svg') top center no-repeat
+		margin-top TwoAndAHalfLineHeights
+		margin-bottom OneAndAHalfLineHeights
+		padding-top 340px
+
+		.no-svg &
+			background-image url('/about/blog/thank-you/images/balloon-logo-many.png')

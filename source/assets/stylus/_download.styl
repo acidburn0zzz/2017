@@ -1,0 +1,130 @@
+.download-area
+	background black-ten
+	border-radius(10px)
+	margin TwoLineHeights 0 0 0
+	padding HalfLineHeight OneLineHeight OneLineHeight
+
+	h3
+		margin-top OneLineHeight
+
+	p
+		text-align center
+
+.button.download
+	float none
+	font-size 24px
+	font-weight bold
+	height TwoLineHeights
+	line-height TwoLineHeights
+	margin HalfLineHeight auto OneLineHeight
+	padding 0 TwoAndAHalfLineHeights 0 OneLineHeight /* enough right padding to accommodate icon */
+	position relative
+	max-width 220px
+
+	&:after /* download icon */
+		background-image url('/assets/images/sprite.png')
+		background-position -6px -697px
+		background-repeat no-repeat
+		content ""
+		display block
+		height 32px
+		margin-top HalfLineHeight
+		position absolute
+		right ThreeQuartersLineHeight /* align the icon from the right edge */
+		top 0
+		width 32px
+
+		.svg &
+			background-image url('/assets/images/sprite.svg')
+
+.quick-download-area
+	background black-ten
+	border-radius(10px)
+	margin OneLineHeight 0
+	overflow hidden
+	padding HalfLineHeight
+
+	@media only screen and (min-width: 780px)
+		margin-top OneAndAHalfLineHeights
+		margin-bottom TwoLineHeights
+
+	h2
+		margin 0
+
+	.download
+		font-size 21px
+		height OneAndAHalfLineHeights
+		line-height OneAndAHalfLineHeights
+		margin-top 0
+		margin-bottom HalfLineHeight
+		max-width 190px
+		padding 0 TwoLineHeights 0 ThreeQuartersLineHeight /* enough right padding to accommodate icon */
+
+		&:after
+			background-position -6px -756px
+			margin-top 10px
+
+	p
+		font-size 17px
+		line-height ThreeQuartersLineHeight
+		margin-bottom 0
+		text-align center
+
+.other-platform
+	display -webkit-flex
+	display flex
+	-webkit-flex-flow row wrap
+	flex-flow row wrap
+	-webkit-justify-content center
+	justify-content center
+	overflow hidden
+	text-align center
+
+	.image-button, .iframe-button
+		display block
+		margin HalfLineHeight auto
+
+		@media only screen and (min-width: 390px)
+			-webkit-flex none
+			flex none
+			float left
+			margin HalfLineHeight
+
+		@media only screen and (min-width: 460px)
+			margin OneLineHeight
+
+		img
+			margin 0
+
+	.image-button
+		background-position top left
+		background-repeat no-repeat
+		background-size 100%
+		display block
+		height 0
+		padding-top 60px /* height of @1x image */
+		margin-top HalfLineHeight
+		margin-bottom HalfLineHeight
+		overflow hidden
+		padding-left 172px /* width of @1x image */
+		width 0
+
+		&.google-play
+			background-image url('../images/google-play.png')
+
+			.svg &
+				background-image url('../images/google-play.svg')
+
+		&.f-droid
+			background-image url('../images/f-droid.png')
+
+			.svg &
+				background-image url('../images/f-droid.svg')
+
+	.iframe-button
+		height TwoLineHeights
+		margin-top OneLineHeight
+		margin-bottom 0
+
+		@media only screen and (min-width: 460px)
+			margin-bottom HalfLineHeight
