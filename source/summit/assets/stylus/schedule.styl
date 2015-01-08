@@ -1,0 +1,116 @@
+.schedule
+	border-top neutral3 2px dotted
+
+.schedule--list
+	border 1px solid neutral9
+	border-bottom none
+	margin 15px 0
+
+	.schedule--session
+		border-bottom 1px solid neutral9
+		list-style-type none
+		overflow hidden
+		padding 10px 0 10px 0
+
+	.schedule-session-detail
+		border-bottom 1px dashed neutral9
+
+	.schedule--break
+		background-color #ddd
+		background-image url('/summit/assets/images/grey-stripes.png')
+		background-size 5px 5px
+
+		.schedule--session--title
+
+			.wf-active &
+				abril-text-regular()
+				font-weight normal
+
+	.schedule--topic
+		background neutral7
+		border-bottom 5px solid neutral9
+
+		.schedule--session--time
+			font-size 20px
+			line-height 30px
+			color neutral2
+
+		.schedule--session--title
+			.wf-active &
+				abril-text-regular()
+				font-weight normal
+
+	.schedule--session--time
+		font-size 17px
+		line-height 30px
+		color #666
+
+		@media only screen and (min-width: 500px)
+			float left
+			padding 0 10px
+			text-align right
+			width 23.6% // Let’s be golden ;)
+
+	.schedule--topic
+		.schedule--session--title
+			color neutral2
+			font-size 20px
+
+	.schedule--session--title
+		border-top none
+		color neutral2
+		font-size 18px
+		font-weight bold
+		line-height 33px
+		margin-bottom 5px
+
+		.wf-active &
+			abril-text-bold()
+
+		@media only screen and (min-width: 500px)
+			float right
+			text-align left
+			width 76.4%
+
+	.schedule--session--description
+		margin-bottom 10px
+
+	.schedule--session--description,
+	.session--video-and-transcript
+		font-size 16px
+		line-height 20px
+		padding 0 5px
+
+		@media only screen and (min-width: 500px)
+			float right
+			text-align left
+			padding 0
+			width 76.4%
+
+	.session--video-and-transcript
+		margin-bottom 10px
+
+		a
+			color neutral5
+			display inline-block
+			position relative
+
+			&:before
+				background url('/summit/assets/images/sprites.svg') 0 0
+				content ""
+				display inline-block
+				position relative
+				height 18px
+				top 3px
+				width 25px
+
+		.session--video
+			&:before
+				background-position 0 -221px
+
+		.session--transcript
+			margin-left 10px
+
+			&:before
+				background-position 0 -160px
+				width 20px

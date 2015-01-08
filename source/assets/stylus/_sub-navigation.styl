@@ -39,7 +39,10 @@
 				color black
 
 .blog .sub-navigation .news-link a,
-.events .sub-navigation .events-link a
+.events .sub-navigation .events-link a,
+.summit .sub-navigation .summit-link a,
+.summit-videos .sub-navigation .videos-link a,
+.summit-video .sub-navigation .videos-link a
 	background black-twenty
 	border-bottom none
 	border-radius QuarterLineHeight
@@ -58,14 +61,3 @@
 
 		.svg &
 			background-image url('/assets/images/sprite.svg')
-
-/* As summit navigation shows below more sub-navgation, make it use styles without the arrow */
-.summit .summit-navigation .summit-link a,
-.summit-videos .summit-navigation .videos-link a,
-.summit-video .summit-navigation .videos-link a
-	background black-twenty
-	border-bottom none
-	border-radius QuarterLineHeight
-	display inline-block
-	margin-top 11px
-	padding QuarterLineHeight HalfLineHeight
