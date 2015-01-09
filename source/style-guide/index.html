@@ -499,10 +499,60 @@ $image-path = '/assets/stylus/indie-style-core/images/'
 					</div><!-- end container for captions and video -->
 					<div class='px-video-controls'></div>
 				</div><!-- end video container -->
+				<h4>Code for video</h4>
+				<h5>HTML</h5>
+				<pre><code class='html'>&lt;div class='px-video-container' id='myvid'&gt;
+	&lt;div class='px-video-img-captions-container'&gt;
+		&lt;div class='px-video-captions hide'&gt;&lt;/div&gt;
+		&lt;div class='px-video-wrapper'&gt;
+			&lt;video poster='images/spyware-2.0.jpg' class='px-video' controls&gt;
+				&lt;!-- video files --&gt;
+				&lt;source src='https://ind.ie/videos/spyware-2.0/spyware-2.0.mp4' type='video/mp4' /&gt;
+				&lt;source src='https://ind.ie/videos/spyware-2.0/spyware-2.0.webm' type='video/webm' /&gt;
+				&lt;source src='https://ind.ie/videos/spyware-2.0/spyware-2.0.ogv' type='video/ogg' /&gt;
+
+				&lt;!-- text track file --&gt;
+				&lt;track kind='captions' label='English captions' src='media/captions-spyware-2.0-en.vtt' srclang='en' default /&gt;
+
+				&lt;!-- fallback for browsers that don't support the video element --&gt;
+				&lt;div&gt;
+					&lt;a href='https://ind.ie/videos/spyware-2.0/spyware-2.0.mp4'&gt;
+					&lt;img src='images/spyware-2.0.jpg' width='640' height='360' alt='download video' /&gt;
+					&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/video&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;&lt;!-- end container for captions and video --&gt;
+	&lt;div class='px-video-controls'&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;!-- end video container --&gt;</code></pre>
+				<h5>JavaScript</h5>
+				<pre><code class='html'>&lt;script src='/assets/js/px-video.js'&gt;&lt;/script&gt;
+&lt;script&gt;
+	// Initialize
+	var video1 = new InitPxVideo({
+		'videoId': 'myvid',
+		'captionsOnDefault': false,
+		'seekInterval': 20,
+		'videoTitle': 'Ind.ie Launch',
+		'debug': true
+	});
+&lt;/script&gt;</code></pre>
+				<h5>Styles</h5>
+				<pre><code class='stylus'>/* 
+Include video partial in the primary stylus file 
+(Located in assets/stylus/_video.styl)
+*/
+@import _video</code></pre>
 
 				<h3>Notification Message</h3>
-
 				<p>Used to highlight a particular message or action.</p>
+				<h4>Code for notification messages</h4>
+				<h5>Styles</h5>
+				<pre><code class='stylus'>/* 
+Notifications are included through the core stylus files
+*/
+/* The core must go first, as it has the CSS reset and other base rules */
+@import '../../assets/stylus/indie-style-core/_core'</code></pre>
 
 				<div class='example'>
 					<div class='notification message'>
@@ -510,49 +560,72 @@ $image-path = '/assets/stylus/indie-style-core/images/'
 						<p>Thank you, an email has been sent to the address you provided. Please follow the link in that message to complete your subscription to the ind.ie Newsletter.</p>
 				    </div><!--/.notification-->
 				</div>
+				<h5>HTML for notification message</h5>
+				<pre><code class='html'>&lt;div class='notification message'&gt;
+	&lt;h2&gt;Please confirm your email address to complete your subscription.&lt;/h2&gt;
+	&lt;p&gt;Thank you, an email has been sent to the address you provided. Please follow the link in that message to complete your subscription to the ind.ie Newsletter.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
 
 				<h4>A success message</h4>
-
 				<div class='example'>
 					<div class='notification message success'>
 					<h2>Please confirm your email address to complete your subscription.</h2>
 						<p>Thank you, an email has been sent to the address you provided. Please follow the link in that message to complete your subscription to the ind.ie Newsletter.</p>
 					</div><!--/.notification-->
 				</div>
+				<h5>HTML for success message</h5>
+				<pre><code class='html'>&lt;div class='notification message success'&gt;
+	&lt;h2&gt;Please confirm your email address to complete your subscription.&lt;/h2&gt;
+	&lt;p&gt;Thank you, an email has been sent to the address you provided. Please follow the link in that message to complete your subscription to the ind.ie Newsletter.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
 
 				<h4>An alert message</h4>
-
 				<div class='example'>
 					<div class='notification message alert'>
 						<h2>Please confirm your email address to complete your subscription.</h2>
 						<p>Thank you, an email has been sent to the address you provided. Please follow the link in that message to complete your subscription to the ind.ie Newsletter.</p>
 					</div><!--/.notification-->
 				</div>
+				<h5>HTML for alert message</h5>
+				<pre><code class='html'>&lt;div class='notification message alert'&gt;
+	&lt;h2&gt;Please confirm your email address to complete your subscription.&lt;/h2&gt;
+	&lt;p&gt;Thank you, an email has been sent to the address you provided. Please follow the link in that message to complete your subscription to the ind.ie Newsletter.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
 
 				<h4>A warning message</h4>
-
 				<div class='example'>
 					<div class='notification message warning'>
 						<h2>Please confirm your email address to complete your subscription.</h2>
 						<p>Thank you, an email has been sent to the address you provided. Please follow the link in that message to complete your subscription to the ind.ie Newsletter.</p>
 					</div><!--/.notification-->
 				</div>
+				<h5>HTML for warning message</h5>
+				<pre><code class='html'>&lt;div class='notification message warning'&gt;
+	&lt;h2&gt;Please confirm your email address to complete your subscription.&lt;/h2&gt;
+	&lt;p&gt;Thank you, an email has been sent to the address you provided. Please follow the link in that message to complete your subscription to the ind.ie Newsletter.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
 
 				<h4>A loading message</h4>
-
 				<div class='example'>
 					<div class='notification--subtle message warning loading'>
 						<p><span class='spinner'></span>Checking card details…</p>
 					</div><!--/.notification-->
 				</div>
+				<h5>HTML for loading message</h5>
+				<pre><code class='html'>&lt;div class='notification--subtle message warning loading'&gt;
+	&lt;p&gt;&lt;span class='spinner'&gt;&lt;/span&gt;Checking card details…&lt;/p&gt;
+&lt;/div&gt;</code></pre>
 
 				<h4>An alternative, no-warning, loader</h4>
-
 				<div class='example'>
 					<div class='notification--subtle message loading'>
 						<p><span class='spinner'></span>Loading something…</p>
 					</div><!--/.notification-->
 				</div>
+				<h5>HTML for alternative, no-warning, loader</h5>
+				<pre><code class='html'>&lt;div class='notification--subtle message loading'&gt;
+	&lt;p&gt;&lt;span class='spinner'&gt;&lt;/span&gt;Loading something…&lt;/p&gt;
+&lt;/div&gt;</code></pre>
 
 				<h3>Pagination</h3>
 
