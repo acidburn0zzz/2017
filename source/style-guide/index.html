@@ -474,6 +474,28 @@ $image-path = '/assets/stylus/indie-style-core/images/'
 				<p>Design and mark-up patterns unique to this site.</p>
 
 				<h3>Video</h3>
+				<p>In order to support as many modern browsers as possible, multiple file formats need to be included for each video. For wide support, at least .mp4, .webm and .ogv files should be used.</p>
+				<p>When adding videos using S3, ensure the correct mimetype is set for each file:</p>
+				<table cellpadding='0' cellspacing='0'>
+					<thead>
+						<th>File format</th>
+						<th>Mimetype</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>.mp4</td>
+							<td>video/mp4</td>
+						</tr>
+						<tr>
+							<td>.webm</td>
+							<td>video/webm</td>
+						</tr>
+						<tr>
+							<td>.ogv</td>
+							<td>video/ogg</td>
+						</tr>
+					</tbody>
+				</table>
 				<p>Closed captions should be included as often as possible. I’ve written a <a href='/blog/accessible-video-player/'>guide on how to create closed captions</a> on the blog.</p>
 				<div class='px-video-container' id='myvid'>
 					<div class='px-video-img-captions-container'>
