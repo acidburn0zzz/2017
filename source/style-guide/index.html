@@ -475,15 +475,30 @@ $image-path = '/assets/stylus/indie-style-core/images/'
 
 				<h3>Video</h3>
 
-				<figure class='session--video'>
-					<video id='lena_reinhard_video' class='video-js vjs-indie-skin' controls preload='auto' poster='/summit/assets/images/posters/LenaReinhard.jpg'>
-						<source src='//player.vimeo.com/external/102531729.hd.mp4?s=f6b727260094ddebd890f3cfc3db6a1a' type='video/mp4' />
-						<source src='/summit/assets/videos/6-lena-reinhard.ogv' type='video/ogv' />
-						<source src='/summit/assets/videos/6-lena-reinhard.webm' type='video/webm' />
-						<p class='vjs-no-js'>To view this video please consider upgrading to a web browser that supports HTML5 video, or enable JavaScript.</p>
-					</video>
-					<figcaption class='session--speaker'>Lena Reinhard</figcaption>
-				</figure>
+				<div class='px-video-container' id='myvid'>
+					<div class='px-video-img-captions-container'>
+						<div class='px-video-captions hide'></div>
+						<div class='px-video-wrapper'>
+							<video poster='images/spyware-2.0.jpg' class='px-video' controls>
+								<!-- video files -->
+								<source src='https://ind.ie/videos/spyware-2.0/spyware-2.0.mp4' type='video/mp4' />
+								<source src='https://ind.ie/videos/spyware-2.0/spyware-2.0.webm' type='video/webm' />
+								<source src='https://ind.ie/videos/spyware-2.0/spyware-2.0.ogv' type='video/ogg' />
+
+								<!-- text track file -->
+								<track kind='captions' label='English captions' src='media/captions-spyware-2.0-en.vtt' srclang='en' default />
+
+								<!-- fallback for browsers that don't support the video element -->
+								<div>
+									<a href='https://ind.ie/videos/spyware-2.0/spyware-2.0.mp4'>
+									<img src='images/spyware-2.0.jpg' width='640' height='360' alt='download video' />
+									</a>
+								</div>
+							</video>
+						</div>
+					</div><!-- end container for captions and video -->
+					<div class='px-video-controls'></div>
+				</div><!-- end video container -->
 
 				<h3>Notification Message</h3>
 
@@ -654,38 +669,18 @@ $image-path = '/assets/stylus/indie-style-core/images/'
 			<!-- @import '../assets/includes/footer.kit' -->
 		</div>
 	</div>
+	<script src='/assets/js/px-video.js'></script>
+	<script>
+		// Initialize
+		var video1 = new InitPxVideo({
+			'videoId': 'myvid',
+			'captionsOnDefault': false,
+			'seekInterval': 20,
+			'videoTitle': 'Ind.ie Launch',
+			'debug': true
+		});
+	</script>
 	<script src="/assets/js/highlight.pack.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
-	<script type='text/javascript' src='/assets/js/video.dev.js'></script>
-	<script type='text/javascript' src='/assets/js/video-quality-selector.js'></script>
-	<script type='text/javascript' src='/assets/js/summitVideo.js'></script>
-	<script type='text/javascript'>
-	(function () {
-
-	    // Set up Brave new world video player
-	    initializeSummitPlayer({
-			element: '#lena_reinhard_video',
-			sources:
-			    [
-			        {
-			            type: 'application/x-mpegURL',
-			            res: 'HD',
-			            src: '//player.vimeo.com/external/102531729.m3u8?p=high,standard&s=c1d697171acf069e7a5b112e3f608a9a'
-			        },
-			        {
-			            type: 'video/mp4',
-			            res: 'SD',
-			            src: '//player.vimeo.com/external/102531729.sd.mp4?s=99ec6e6f928dc44c75641064f0a1b606'
-			        },
-			        {
-			            type: 'video/mp4',
-			            res: 'HD',
-			            src: '//player.vimeo.com/external/102531729.hd.mp4?s=f6b727260094ddebd890f3cfc3db6a1a'
-			        },
-			    ]
-	    });
-
-	}());
-	</script>
 </body>
 </html>
