@@ -7,10 +7,9 @@ npm install
 touch aws-keys.json
 echo '{"key":"", "secret": ""}' > aws-keys.json
 echo 'Remember to update aws-key.json with your actual keys if you want to deploy.'
-cd node_modules
-git clone git@source.ind.ie:project/node-kit-0-8-0.git node-kit
-cd ..
-cd source/assets/stylus/
-git clone git@source.ind.ie:project/indie-style-core.git
+git clone git@source.ind.ie:project/node-kit-0-8-0.git node_modules/node-kit
+git clone git@source.ind.ie:project/indie-style-core.git source/assets/stylus/indie-style-core
+git clone git@source.ind.ie:project/responsive-pixels.git source/assets/stylus/indie-style-core/responsive-pixels/
+git clone 
 echo 'Done. Project installed for development.'
 echo './dev to start the dev server.'

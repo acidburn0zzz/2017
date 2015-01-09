@@ -943,8 +943,9 @@ fsExistsAsync('.cache/site').then (exists) ->
 	if exists
 		boot()
 	else
-		fs.mkdirAsync('.cache/site').then ->
-			boot()
+		fs.mkdirAsync('.cache').then =>
+			fs.mkdirAsync('site').then =>
+				boot()
 
 boot = ->
 
