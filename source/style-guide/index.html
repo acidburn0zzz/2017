@@ -465,7 +465,7 @@ $image-path = '/assets/stylus/indie-style-core/images/'
 @import stratosphere
 @import _sub-navigation
 @import thunderclap
-@import _videos
+@import _video
 @import waystone</code></pre>
 			</section>
 			<section class='segment'>
@@ -544,6 +544,8 @@ Include video partial in the primary stylus file
 */
 @import _video</code></pre>
 
+				<hr />
+
 				<h3>Notification Message</h3>
 				<p>Used to highlight a particular message or action.</p>
 				<h4>Code for notification messages</h4>
@@ -553,6 +555,8 @@ Notifications are included through the core stylus files
 */
 /* The core must go first, as it has the CSS reset and other base rules */
 @import '../../assets/stylus/indie-style-core/_core'</code></pre>
+
+				<hr />
 
 				<div class='example'>
 					<div class='notification message'>
@@ -565,6 +569,8 @@ Notifications are included through the core stylus files
 	&lt;h2&gt;Please confirm your email address to complete your subscription.&lt;/h2&gt;
 	&lt;p&gt;Thank you, an email has been sent to the address you provided. Please follow the link in that message to complete your subscription to the ind.ie Newsletter.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
+
+				<hr />
 
 				<h4>A success message</h4>
 				<div class='example'>
@@ -579,6 +585,8 @@ Notifications are included through the core stylus files
 	&lt;p&gt;Thank you, an email has been sent to the address you provided. Please follow the link in that message to complete your subscription to the ind.ie Newsletter.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
 
+				<hr />
+
 				<h4>An alert message</h4>
 				<div class='example'>
 					<div class='notification message alert'>
@@ -591,6 +599,8 @@ Notifications are included through the core stylus files
 	&lt;h2&gt;Please confirm your email address to complete your subscription.&lt;/h2&gt;
 	&lt;p&gt;Thank you, an email has been sent to the address you provided. Please follow the link in that message to complete your subscription to the ind.ie Newsletter.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
+
+				<hr />
 
 				<h4>A warning message</h4>
 				<div class='example'>
@@ -605,6 +615,8 @@ Notifications are included through the core stylus files
 	&lt;p&gt;Thank you, an email has been sent to the address you provided. Please follow the link in that message to complete your subscription to the ind.ie Newsletter.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
 
+				<hr />
+
 				<h4>A loading message</h4>
 				<div class='example'>
 					<div class='notification--subtle message warning loading'>
@@ -616,6 +628,8 @@ Notifications are included through the core stylus files
 	&lt;p&gt;&lt;span class='spinner'&gt;&lt;/span&gt;Checking card details…&lt;/p&gt;
 &lt;/div&gt;</code></pre>
 
+				<hr />
+
 				<h4>An alternative, no-warning, loader</h4>
 				<div class='example'>
 					<div class='notification--subtle message loading'>
@@ -626,6 +640,8 @@ Notifications are included through the core stylus files
 				<pre><code class='html'>&lt;div class='notification--subtle message loading'&gt;
 	&lt;p&gt;&lt;span class='spinner'&gt;&lt;/span&gt;Loading something…&lt;/p&gt;
 &lt;/div&gt;</code></pre>
+
+				<hr />
 
 				<h3>Pagination</h3>
 				<div class='example'>
@@ -655,6 +671,8 @@ Include pagination partial in the primary stylus file
 */
 @import _pagination</code></pre>
 
+				<hr />
+
 				<h3>Quick newsletter signup</h3>
 				<div class='example'>
 					<!-- @import '../assets/includes/newsletter-signup-quick.kit' -->
@@ -670,6 +688,8 @@ Include newsletter signup partial in the primary stylus file
 */
 @import _newsletter-signup</code></pre>
 
+				<hr />
+
 				<h3>Longer newsletter signup</h3>
 				<div class='example'>
 					<!-- @import '../assets/includes/newsletter-signup.kit' -->
@@ -683,6 +703,8 @@ Include newsletter signup partial in the primary stylus file
 */
 @import _newsletter-signup</code></pre>
 
+				<hr />
+
 				<h3>Speaker transcripts</h3>
 				<p>We have transcripts with all of our videos, to make them more accessible and for anyone who prefers to read the content. There are slightly different formats for transcripts with a single speaker, and transcripts with multiple speakers, to clearly distinguish who’s speaking.</p>
 				<h4>Code for speaker transcripts</h4>
@@ -692,6 +714,9 @@ Include video partial in the primary stylus file
 (Located in assets/stylus/_video.styl)
 */
 @import _video</code></pre>
+
+				<hr />
+
 				<h4>Single speaker transcript</h4>
 				<div class='example'>
 					<div id='transcript' class='transcript'>
@@ -707,6 +732,8 @@ Include video partial in the primary stylus file
 	&lt;p&gt;&lt;em&gt;(applause)&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;</code></pre>
 				<p>The <code>id='transcript'</code> is used so that the transcript can be linked to directly from the URL.</p>
+
+				<hr />
 
 				<h4>Multiple speaker transcript</h4>
 				<div class='example'>
@@ -727,6 +754,8 @@ Include video partial in the primary stylus file
 	&lt;p&gt;&lt;em&gt;(applause)&lt;/em&gt;&lt;/p&gt;
  &lt;/div&gt;</code></pre>
  				<p>The <code>id='transcript'</code> is used so that the transcript can be linked to directly from the URL.</p>
+
+				<hr />
 
 				<h3>List of blog posts (with and without post summaries)</h3>
 				<div class='example'>
@@ -766,6 +795,8 @@ Include blog partial in the primary stylus file
 */
 @import _blog</code></pre>
 
+				<hr />
+
 				<h3>Blog date and author</h3>
 				<div class='example'>
 					<p class='newsletter-date dt-published' datetime="2014-10-01 18:00:00">1st October, 2014 — <span class='p-author'>Aral Balkan</span></p>
@@ -779,6 +810,8 @@ Include blog partial in the primary stylus file
 (Located in assets/stylus/_blog.styl)
 */
 @import _blog</code></pre>
+
+				<hr />
 
 				<h3>Textarea for copy-pasting code</h3>
 
