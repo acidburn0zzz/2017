@@ -1,15 +1,16 @@
 npm config set registry https://npm-proxy.fury.io/XNENtG1qsapqYWiw9zh5/indie/
 npm config set strict-ssl true
 npm config set ca ""
-npm install -g grunt
+npm install -g
+n 0.10.35
 npm install
 touch aws-keys.json
 echo '{"key":"", "secret": ""}' > aws-keys.json
 echo 'Remember to update aws-key.json with your actual keys if you want to deploy.'
-git submodule init
-git submodule update
-cd source/assets/stylus/indie-style-core/
-git submodule init
-git submodule update
+cd node_modules
+git clone git@source.ind.ie:project/node-kit-0-8-0.git node-kit
+cd ..
+cd source/assets/stylus/
+git clone git@source.ind.ie:project/indie-style-core.git
 echo 'Done. Project installed for development.'
 echo './dev to start the dev server.'
