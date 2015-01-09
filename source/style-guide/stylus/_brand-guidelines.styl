@@ -1,3 +1,7 @@
+.style-guide
+	h1, h2, h3, h4
+		clear both
+
 .swatches
 	margin 0
 
@@ -21,21 +25,58 @@
 			position relative
 			width 0
 
-.on-black
-	background black
-	max-width 500px
-	padding TwoLineHeights
+.csscolumns .logos
+	@media only screen and (min-width: 700px)
+		-moz-column-count 2
+		-moz-column-gap HalfLineHeight
+		-webkit-column-count 2
+		-webkit-column-gap HalfLineHeight
+		column-count 2
+		column-gap HalfLineHeight
 
-.on-grey
-	background black-fifty
-	max-width 500px
-	padding TwoLineHeights
+		.logo
+			-webkit-column-break-inside avoid /* Chrome, Safari, Opera */
+			page-break-inside avoid /* Firefox */
+			break-inside avoid /* IE 10+ */
+			float none
+			margin-right 0
+			max-width 100%
 
-.on-white
-	background white
+.logo
+	border 1px solid black-ten
+	border-box()
+	margin 0 0 HalfLineHeight 0
 	max-width 500px
-	padding TwoLineHeights
+	padding HalfLineHeight
 
-/* put more space between logo headings */
-figure
-	margin-bottom TwoLineHeights
+	@media only screen and (min-width: 700px)
+		float left
+		margin-right 2.5%
+		max-width 45%
+
+	img
+		border-box()
+		margin-top 0
+		width 100%
+
+	.on-black, .on-grey, .on-white
+		padding OneLineHeight
+
+	.on-black
+		background black
+
+	.on-grey
+		background black-fifty
+
+	.on-white
+		background white
+
+	figcaption
+		margin-bottom 0
+
+		h3
+			font-size 18px
+			line-height OneLineHeight
+
+		p
+			margin-bottom 0
