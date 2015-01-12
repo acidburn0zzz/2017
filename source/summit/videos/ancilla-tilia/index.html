@@ -12,15 +12,25 @@
 	</header>
 	<div class='main'>
 		<h1 class='long-title'>Becoming a pirate</h1>
-		<figure class='session--video'>
-			<video id='ancilla_tilia_video' class='video-js vjs-indie-skin' controls preload='auto' poster='../../assets/images/posters/AncillaTilia.jpg'>
-				<source src='//player.vimeo.com/external/103319835.hd.mp4?s=55d162eb21e7c5ccde17f83686976aa1' type='video/mp4' />
-				<source src='/videos/22-ancilla-tilia.ogv' type='video/ogv' />
-				<source src='/videos/22-ancilla-tilia.webm' type='video/webm' />
-	            <p class='vjs-no-js'>To view this video please consider upgrading to a web browser that supports HTML5 video, or enable JavaScript.</p>
-	        </video>
-	        <figcaption class='session--speaker'>Ancilla Tilia</figcaption>
-	    </figure>
+		<div class='px-video-container' id='ancilla_tilia_video'>
+			<div class='px-video-img-captions-container'>
+				<div class='px-video-captions hide'></div>
+				<div class='px-video-wrapper'>
+					<video class='px-video' controls poster='../../assets/images/posters/AncillaTilia.jpg'>
+						<source src='//player.vimeo.com/external/103319835.hd.mp4?s=55d162eb21e7c5ccde17f83686976aa1' type='video/mp4' />
+						<source src='https://ind.ie/videos/summit/22-ancilla-tilia.ogv' type='video/ogv' />
+						<source src='https://ind.ie/videos/summit/22-ancilla-tilia.webm' type='video/webm' />
+			            <!-- fallback for browsers that don't support the video element -->
+						<div>
+							<a href='//player.vimeo.com/external/103319835.hd.mp4?s=55d162eb21e7c5ccde17f83686976aa1'>
+							<img src='../../assets/images/posters/AncillaTilia.jpg' width='640' height='360' alt='download video' />
+							</a>
+						</div>
+					</video>
+				</div>
+			</div><!-- end container for captions and video -->
+			<div class='px-video-controls'></div>
+		</div><!-- end video container -->
 		<div id='transcript' class='transcript'>
 			<h3 class='transcript--name'>Aral:</h3>
 			<p>Hello again. So, between the 16th and the 22nd of June of this year, so, last month, I curated something called BeDemocracy; an Exhibit for the Nobel Peace Centre in Oslo, and I curated it through Twitter and the exhibit actually takes place at the Nobel Peace Centre next to the more permanent exhibits like the Peace Prize, and all those panels that you're seeing are various tweets that are being displayed, so as I was curating, those panels were actually lighting up and people if they liked it they could do a thumbs up; I wonder where we got that idea from. And Heidi, who I was working with there, couldn't be here today, but she said instead, how about we ask you to nominate one of the curators for October, and so when I looked through the line-up I was like, who would be great. And one person just totally stuck out, and she also happens to be the person I'm going to be interviewing next, and that is Ancilla. </p>
@@ -210,36 +220,16 @@
 		<!-- @import '../../../assets/includes/footer-call-to-action.kit' -->
 		<!-- @import '../../../assets/includes/footer.kit' -->
 	</div>
-	<script type='text/javascript' src='/assets/js/video.dev.js'></script>
-	<script type='text/javascript' src='/assets/js/video-quality-selector.js'></script>
-	<script type='text/javascript' src='/assets/js/summitVideo.js'></script>
-	<script type='text/javascript'>
-	(function () {
-
-	    // Set up Brave new world video player
-	    initializeSummitPlayer({
-	        element: '#ancilla_tilia_video',
-	        sources:
-	            [
-	                {
-	                    type: 'application/x-mpegURL',
-	                    res: 'HD',
-	                    src: '//player.vimeo.com/external/103319835.m3u8?p=high,standard&s=93e24f14c87389b273e29cbe07bd2a3a'
-	                },
-	                {
-	                    type: 'video/mp4',
-	                    res: 'SD',
-	                    src: '//player.vimeo.com/external/103319835.sd.mp4?s=ef2eb40e7304f4349b1a9a91c9a6ca33'
-	                },
-	                {
-	                    type: 'video/mp4',
-	                    res: 'HD',
-	                    src: '//player.vimeo.com/external/103319835.hd.mp4?s=55d162eb21e7c5ccde17f83686976aa1'
-	                },
-	            ]
-	    });
-
-	}());
+<script src='/assets/js/px-video.js'></script>
+	<script>
+		// Initialize
+		var video1 = new InitPxVideo({
+			'videoId': 'ancilla_tilia_video',
+			'captionsOnDefault': false,
+			'seekInterval': 20,
+			'videoTitle': 'Ancillia Tilia',
+			'debug': true
+		});
 	</script>
 </body>
 </html>

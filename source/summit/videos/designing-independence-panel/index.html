@@ -12,15 +12,25 @@
 	</header>
 	<div class='main'>
 		<h1 class='long-title'>Designing Independence</h1>
-		<figure class='session--video'>
-			<video id='designing_independence_video' class='video-js vjs-indie-skin' controls preload='auto' poster='../../assets/images/posters/DesigningIndependence.jpg'>
-				<source src='//player.vimeo.com/external/102535263.hd.mp4?s=7c57ca870af997d3a6e7ce015cf082c8' type='video/mp4' />
-				<source src='/videos/7-designing-independence.ogv' type='video/ogv' />
-				<source src='/videos/7-designing-independence.webm' type='video/webm' />
-	            <p class='vjs-no-js'>To view this video please consider upgrading to a web browser that supports HTML5 video, or enable JavaScript.</p>
-	        </video>
-	        <figcaption class='session--speaker'>Panel with Cole Peters, Ivanka Majic, Laura Kalbag, Lena Reinhard, with questions from participants.</figcaption>
-	    </figure>
+		<div class='px-video-container' id='designing_independence_video'>
+			<div class='px-video-img-captions-container'>
+				<div class='px-video-captions hide'></div>
+				<div class='px-video-wrapper'>
+					<video class='px-video' controls poster='../../assets/images/posters/DesigningIndependence.jpg'>
+						<source src='//player.vimeo.com/external/102535263.hd.mp4?s=7c57ca870af997d3a6e7ce015cf082c8' type='video/mp4' />
+						<source src='https://ind.ie/videos/summit/7-designing-independence.ogv' type='video/ogv' />
+						<source src='https://ind.ie/videos/summit/7-designing-independence.webm' type='video/webm' />
+			            <!-- fallback for browsers that don't support the video element -->
+						<div>
+							<a href='//player.vimeo.com/external/102535263.hd.mp4?s=7c57ca870af997d3a6e7ce015cf082c8'>
+							<img src='i../../assets/images/posters/DesigningIndependence.jpg' width='640' height='360' alt='download video' />
+							</a>
+						</div>
+					</video>
+				</div>
+			</div><!-- end container for captions and video -->
+			<div class='px-video-controls'></div>
+		</div><!-- end video container -->
 		<div id='transcript' class='transcript'>
 			<h2>Transcript</h2>
 			<h3 class='transcript--name'>Laura:</h3>
@@ -186,36 +196,16 @@
 		<!-- @import '../../../assets/includes/footer-call-to-action.kit' -->
 		<!-- @import '../../../assets/includes/footer.kit' -->
 	</div>
-	<script type='text/javascript' src='/assets/js/video.dev.js'></script>
-	<script type='text/javascript' src='/assets/js/video-quality-selector.js'></script>
-	<script type='text/javascript' src='/assets/js/summitVideo.js'></script>
-	<script type='text/javascript'>
-	(function () {
-
-	    // Set up Brave new world video player
-	    initializeSummitPlayer({
-	        element: '#designing_independence_video',
-	        sources:
-	            [
-	                {
-	                    type: 'application/x-mpegURL',
-	                    res: 'HD',
-	                    src: '//player.vimeo.com/external/102535263.m3u8?p=high,standard&s=e501190e51ea318f92470a1b14405b78'
-	                },
-	                {
-	                    type: 'video/mp4',
-	                    res: 'SD',
-	                    src: '//player.vimeo.com/external/102535263.sd.mp4?s=e41c6e52b52c94f430fd0ecb0b74503b'
-	                },
-	                {
-	                    type: 'video/mp4',
-	                    res: 'HD',
-	                    src: '//player.vimeo.com/external/102535263.hd.mp4?s=7c57ca870af997d3a6e7ce015cf082c8'
-	                },
-	            ]
-	    });
-
-	}());
+	<script src='/assets/js/px-video.js'></script>
+	<script>
+		// Initialize
+		var video1 = new InitPxVideo({
+			'videoId': 'designing_independence_video',
+			'captionsOnDefault': false,
+			'seekInterval': 20,
+			'videoTitle': 'Designing Independence panel',
+			'debug': true
+		});
 	</script>
 </body>
 </html>
