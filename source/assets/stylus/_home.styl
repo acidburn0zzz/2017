@@ -1,8 +1,26 @@
 .home
-	background black
+	.main
+		p
+			text-align center
 
-	.charlie
-		a
-			display block
-			margin 0 auto
-			max-width 482px
+	.site-footer
+		@media only screen and (min-width: 500px)
+			margin-top FiveLineHeights
+
+.heartbeat-logo
+	background url('/assets/images/heartbeat-logo.png') top center no-repeat
+	line-height FourLineHeights
+	margin-top FourLineHeights
+	margin-bottom HalfLineHeight
+	padding-top 120px
+
+	.svg &
+		background url('/assets/images/heartbeat-logo.svg') top center no-repeat
+
+	@media only screen and (min-width: 780px)
+		background url('/assets/images/heartbeat-logo-large.png') top center no-repeat
+		margin-bottom OneLineHeight
+		padding-top 270px
+
+		.svg &
+			background url('/assets/images/heartbeat-logo-large.svg') top center no-repeat

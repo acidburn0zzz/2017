@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <!-- $title:Ind.ie Blog — Pulse: a new beginning-->
+  <!-- @import '../../assets/includes/head.kit' -->
+  <link rel='stylesheet' type='text/css' href='css/style.css'>
+</head>
+<body class='blog article'>
+  <header class='site-header'>
+    <!-- @import '../../assets/includes/nav.kit' -->
+    <!-- @import '../includes/nav.kit' -->
+  </header>
+  <div class='main h-entry'>
+    <h1 class='p-name'>Pulse: a new beginning</h1>
+
+    <p class='post-date dt-published' datetime="2014-11-17 14:00:00">17th November, 2014 — <span class='p-author'>Aral Balkan</span></p>
+    <div class='e-content'>
+		<img src='/pulse/images/pulse-screenshot.png' alt='Ind.ie Pulse'/>
+
+    <h2>We’ll always have Munich</h2>
+
+    <p>A few weeks ago, I got to spend a lovely day in Munich with <a href='https://nym.se'>Jakob Borg</a>, author of <a href='https://nym.se'>Syncthing</a>. I updated Jakob on how we were using Syncthing at Ind.ie (it’s what powers <a href='/heartbeat'>Heartbeat</a> and is at the heart of the Ind.ie platform).</p>
+
+    <p>I remember telling him: “I know you didn’t ask for this, but this wonderful engine you’ve created as a hobby is going to one day power a new web.”</p>
+
+    <p>To cut a long story short, after discussing it in detail, Jakob and I decided that Ind.ie should take stewardship of the Syncthing project and rebrand it as <a href='/pulse'>Pulse</a>. As part of this, Ind.ie would hire a full time person to help Jakob with this work and Jakob could continue doing what he loves: working on his baby. As part of the change, we also moved the license from MIT to GNU GPL so no one could close it off in the future and decline to share their improvements.</p>
+
+    <p>Unfortunately, changing an existing culture is hard.</p>
+
+    <h2>Hassles</h2>
+
+    <p>Since we announced the migration and the name change, poor Jakob has been inundated with resistance from the Syncthing community <a href='https://discourse.syncthing.net/t/introducing-pulse-and-ind-ie/1074/31'>on the name change</a> and <a href='https://discourse.syncthing.net/t/license-question/1066/20'>the license change</a>.</p>
+
+    <p>Instead of working on what he loves, Jakob’s had to spend time answering questions about Ind.ie. This is not fair on him. He’s an awesome guy and, although he supports us fully in what we want to achieve, he’s made it clear that this is our fight, not his, and he has other things on his plate. In the same vein, it’s become clear to me that we need to have complete control over what is the core of our platform.</p>
+
+    <p>As such, we had a very amicable talk with Jakob and agreed the best thing to do would be to tackle this issue with a slightly different approach that should make everyone happy.</p>
+
+    <p>So, from today, <a href='/pulse'>Pulse</a> is now an officially-sanctioned fork of Syncthing.</p>
+
+    <h2>Twice the fun</h2>
+
+    <p>Syncthing will go back to being Syncthing and developed out in the open. Make sure you also <a href='https://discourse.syncthing.net/t/syncthing-is-still-syncthing/1372'>read Jakob’s post</a> on it. This way, Jakob and the community can evolve Syncthing as they’ve always done. We’ll be tracking the changes and incorporating the ones that make sense for Ind.ie into Pulse. In the same vein, we will be improving Pulse also and, of course, those changes will be available to the Syncthing project.</p>
+
+    <p>The separation means that we can concentrate on rapidly improving Pulse in line with the needs of the Ind.ie platform. It’s our hope that the Syncthing project can make use of those improvements also. We are starting by devoting an excellent full-time developer to Pulse and tackling some of the bigger issues around it.</p>
+
+    <h2>Introducing George</h2>
+
+    <p>To underscore our commitment to Pulse, and given that <a href='/'>our crowdfunding campaign</a> is progressing on target, it is my pleasure to announce that <a href='http://georgemac.com/about/'>George MacRorie</a> is in the process of joining our team to work full-time on Pulse.</p>
+
+    <p>George spent the last week forking Syncthing in the evenings (in what I can only describe as a heroic effort) after working full days at his current job. He’s done an amazing job with it and this is only the beginning. We are going to do great things together.</p>
+
+    <h2>What’s new</h2>
+
+    <p>Here are the highlights of the fork:</p>
+
+    <ul>
+      <li><a href='https://source.ind.ie/project/pulse/tree/master'>The source</a> is now indepedently hosted on <a href='https://source.ind.ie/public/projects'>source.ind.ie</a></li>
+      <li>We have <a href='http://ci.ind.ie:8080/job/pulse-release/'>our own release process</a> that uses our Jenkins server</li>
+      <li>Binary downloads are hosted at <a href='http://download.ind.ie/#!/pulse/'>download.ind.ie/#!/pulse/</a>.</li>
+      <li>We’ve issued <a href='http://download.ind.ie/#!/pulse/latest/'>the initial release of Pulse, version 0.1.0</a>, which corresponds to <a href=''>Syncthing version 0.10.5</a>.</li>
+      <li>We have our own Pulse discovery server, running at <em>discovery.ind.ie</em></li>
+      <li>As part of the process, <a href='https://registry.hub.docker.com/u/indie/discosrv/'>we Dockerised the discovery server</a> and we hope the Syncthing folks also find it useful. George has written <a href='/pulse/blog/dockerising-the-pulse-discovery-service/'>a blog post describing it</a>.</li>
+    </ul>
+
+    <p>Basically, Pulse is now a fully independent project.</p>
+
+    <h2>What’s different?</h2>
+
+    <p>Right now, very little is different in terms of functionality:</p>
+
+    <ul>
+       <li>We have turned off the opt-in analytical data collection option until we’ve had a chance to review it in detail.</li>
+    </ul>
+
+    <p>In terms of development process, we use a focussed, design-led process. We will, however, be taking part in the Syncthing forums and be accessible to the community from there.</p>
+
+    <p>The combination of the two approaches, working on the same problem, should provide some fruitful results and benefit one another with their positive aspects while hopefully compensating for the negative aspects of the other.</p>
+
+    <h2>Roadmap</h2>
+
+    <p>In our near-term roadmap, we are going to be tackling the following issues:</p>
+
+    <ul>
+      <li><a href='https://pulse-forum.ind.ie/t/getting-rid-of-restarts/1206'>Getting rid of restarts on configuration changes.</a></li>
+      <li><a href='https://pulse-forum.ind.ie/t/support-for-limited-permissions-in-repositories-file-size-file-type/1208'>Implementing limited permissions in repositories</a></li>
+      <li><a href='https://pulse-forum.ind.ie/t/event-streaming-interface-instead-of-polling/1209'>Event/streaming interface for detecting file changes (instead of polling)</a></li>
+      <li><a href='https://github.com/syncthing/syncthing/issues/109'>Support for encrypted nodes.</a></li>
+    </ul>
+
+    <h2>Onwards and upwards</h2>
+
+    <p>While this wasn’t our original plan, I actually believe we’re at a better place than we were a week ago. Pulse is now totally within our control and we can quickly iterate on the important features using a design-led process with a full-time developer at the helm.</p>
+
+    <p>I also hope that the Syncthing project will benefit from our improvements and we look forward to working closely with them and staying compatible with the <a href='https://source.ind.ie/project/pulse/blob/master/protocol/PROTOCOL.md'>Block Exchange Protocol</a>.</p>
+
+  </div>
+  <!-- @import '../../assets/includes/footer-call-to-action.kit' -->
+  <!-- @import '../../assets/includes/footer.kit' -->
+  </div>
+</body>
+</html>

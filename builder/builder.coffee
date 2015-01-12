@@ -225,10 +225,14 @@ program
 #
 
 program
-	.command('build')
-	.description('Builds the whole site')
-	.action () ->
-		buildSite()
+	.command('build [options]')
+	.description('Builds the whole site. Options: no-cache (full rebuild, very slow), partials (ignores .html and .styl), or pass in an extension to ignore the cache for (e.g., build .styl or build .html')
+	.action (options) ->
+		if options == 'no-cache'
+			fs.removeAsync('.cache/site').then ->
+				buildSite()
+		else
+			buildSite(options)
 
 #
 # Deploy
@@ -499,7 +503,7 @@ cleanBuildFolder = ->
 # Build the entire site
 #
 
-buildSite = ->
+buildSite = (options) ->
 
 	# cleanBuildFolder().then ->
  	# stopBuildServer()
@@ -534,8 +538,19 @@ buildSite = ->
 
 			cachePath = filePath.replace 'source', '.cache/site'
 			# log 'Checking cache for file: ' + cachePath
+
+			skipCache = false
+			pathExtension = path.extname(cachePath)			
+			if options == 'partials'
+				skipCache = pathExtension == '.html' || pathExtension == '.styl'
+			else if options != undefined
+				skipCache = pathExtension == options
+			
+			# if skipCache
+			# 	console.log 'Skipping cache for ' + pathExtension + '.'
+
 			fsExistsAsync(cachePath).then (exists) ->
-				if exists
+				if exists && !skipCache
 					fs.statAsync(filePath).then (stats) ->
 						if stats.isFile()
 							fs.readFileAsync(cachePath).then (cacheMD5) ->
