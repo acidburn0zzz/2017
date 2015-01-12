@@ -225,10 +225,16 @@ program
 #
 
 program
-	.command('build')
+	.command('build [options]')
 	.description('Builds the whole site')
-	.action () ->
-		buildSite()
+	.action (options) ->
+		if options == ''
+			buildSite()
+		else if options == 'no-cache'
+			fs.removeAsync('.cache/site').then ->
+				buildSite()
+		else if options == 'partials'
+			buildSite(true)
 
 #
 # Deploy
@@ -499,7 +505,7 @@ cleanBuildFolder = ->
 # Build the entire site
 #
 
-buildSite = ->
+buildSite = (partials) ->
 
 	# cleanBuildFolder().then ->
  	# stopBuildServer()
@@ -534,8 +540,17 @@ buildSite = ->
 
 			cachePath = filePath.replace 'source', '.cache/site'
 			# log 'Checking cache for file: ' + cachePath
+
+			skipCacheAsContentCouldIncludePartials = false
+			if partials
+				pathExtension = path.extname(cachePath)
+				skipCacheAsContentCouldIncludePartials = pathExtension == '.html' || pathExtension == '.styl'
+
+				# if skipCacheAsContentCouldIncludePartials
+				# 	console.log 'Partials: Skipping cache as ' + pathExtension + ' could include partials.'
+
 			fsExistsAsync(cachePath).then (exists) ->
-				if exists
+				if exists && !skipCacheAsContentCouldIncludePartials
 					fs.statAsync(filePath).then (stats) ->
 						if stats.isFile()
 							fs.readFileAsync(cachePath).then (cacheMD5) ->
