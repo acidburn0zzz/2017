@@ -12,15 +12,25 @@
 	</header>
 	<div class='main'>
 		<h1 class='long-title'>Stopgaps</h1>
-		<figure class='session--video'>
-			<video id='stopgaps_video' class='video-js vjs-indie-skin' controls preload='auto' poster='../../assets/images/posters/Stopgaps.jpg'>
-				<source src='//player.vimeo.com/external/102618971.hd.mp4?s=0113244783255ff4608774b126c1046d' type='video/mp4' />
-				<source src='/videos/16-stop-gaps.ogv' type='video/ogv' />
-				<source src='/videos/16-stop-gaps.webm' type='video/webm' />
-	            <p class='vjs-no-js'>To view this video please consider upgrading to a web browser that supports HTML5 video, or enable JavaScript.</p>
-	        </video>
-        	<figcaption class='session--speaker'>Panel with Jeremy Keith, Pernille Tranberg, Tor Krill, James Ball, Matt McAlister, Thomas Marzano, Jamie Young, Georgia Kontesidou and Benjamin Andre with questions from participants.</figcaption>
-	    </figure>
+		<div class='px-video-container' id='stopgaps_video'>
+			<div class='px-video-img-captions-container'>
+				<div class='px-video-captions hide'></div>
+				<div class='px-video-wrapper'>
+					<video class='px-video' controls poster='../../assets/images/posters/Stopgaps.jpg'>
+						<source src='//player.vimeo.com/external/102618971.hd.mp4?s=0113244783255ff4608774b126c1046d' type='video/mp4' />
+						<source src='https://ind.ie/videos/summit/16-stop-gaps.ogv' type='video/ogv' />
+						<source src='https://ind.ie/videos/summit/16-stop-gaps.webm' type='video/webm' />
+	           			<!-- fallback for browsers that don't support the video element -->
+						<div>
+							<a href='//player.vimeo.com/external/102618971.hd.mp4?s=0113244783255ff4608774b126c1046d'>
+							<img src='../../assets/images/posters/Stopgaps.jpg' width='640' height='360' alt='download video' />
+							</a>
+						</div>
+					</video>
+				</div>
+			</div><!-- end container for captions and video -->
+			<div class='px-video-controls'></div>
+		</div><!-- end video container -->
 		<div id='transcript' class='transcript'>
 			<h2>Transcript</h2>
 			<h3>Aral:</h3>
@@ -335,36 +345,16 @@
 		<!-- @import '../../../assets/includes/footer-call-to-action.kit' -->
 		<!-- @import '../../../assets/includes/footer.kit' -->
 	</div>
-	<script type='text/javascript' src='/assets/js/video.dev.js'></script>
-	<script type='text/javascript' src='/assets/js/video-quality-selector.js'></script>
-	<script type='text/javascript' src='/assets/js/summitVideo.js'></script>
-	<script type='text/javascript'>
-	(function () {
-
-	    // Set up Brave new world video player
-	    initializeSummitPlayer({
-	        element: '#stopgaps_video',
-	        sources:
-	            [
-	                {
-	                    type: 'application/x-mpegURL',
-	                    res: 'HD',
-	                    src: '//player.vimeo.com/external/102618971.m3u8?p=high,standard&s=2ca5e6d9eb23f9917aa633a8adf2af09'
-	                },
-	                {
-	                    type: 'video/mp4',
-	                    res: 'SD',
-	                    src: '//player.vimeo.com/external/102618971.sd.mp4?s=455b50bb61e3528b3fd8694bac67e37c'
-	                },
-	                {
-	                    type: 'video/mp4',
-	                    res: 'HD',
-	                    src: '//player.vimeo.com/external/102618971.hd.mp4?s=0113244783255ff4608774b126c1046d'
-	                },
-	            ]
-	    });
-
-	}());
+<script src='/assets/js/px-video.js'></script>
+	<script>
+		// Initialize
+		var video1 = new InitPxVideo({
+			'videoId': 'stopgaps_video',
+			'captionsOnDefault': false,
+			'seekInterval': 20,
+			'videoTitle': 'Stopgaps panel',
+			'debug': true
+		});
 	</script>
 </body>
 </html>

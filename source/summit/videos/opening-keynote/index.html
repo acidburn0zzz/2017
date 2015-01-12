@@ -12,15 +12,25 @@
 	</header>
 	<div class='main'>
 		<h1 class='long-title'>Brave New World</h1>
-		<figure class='session--video'>
-			<video id='brave_new_world_video' class='video-js vjs-indie-skin' controls preload='auto' poster='../../assets/images/posters/BraveNewWorld.jpg'>
-				<source src='//player.vimeo.com/external/102406465.m3u8?p=high,standard&s=a4b396f430d5cc067fa1172015053560' type='video/mp4' />
-				<source src='/videos/1-introduction.ogv' type='video/ogv' />
-				<source src='/videos/1-introduction.webm' type='video/webm' />
-	            <p class='vjs-no-js'>To view this video please consider upgrading to a web browser that supports HTML5 video, or enable JavaScript.</p>
-	        </video>
-	        <figcaption class='session--speaker'>Aral Balkan</figcaption>
-	    </figure>
+		<div class='px-video-container' id='brave_new_world_video'>
+			<div class='px-video-img-captions-container'>
+				<div class='px-video-captions hide'></div>
+				<div class='px-video-wrapper'>
+					<video class='px-video' controls poster='../../assets/images/posters/BraveNewWorld.jpg'>
+						<source src='//player.vimeo.com/external/102406465.hd.mp4?s=e9c5f1fcab5ebf112f5ec4f2da5d8f7e' type='video/mp4' />
+						<source src='https://ind.ie/videos/summit/1-introduction.ogv' type='video/ogv' />
+						<source src='https://ind.ie/videos/summit/1-introduction.webm' type='video/webm' />
+			            <!-- fallback for browsers that don't support the video element -->
+						<div>
+							<a href='//player.vimeo.com/external/102406465.hd.mp4?s=e9c5f1fcab5ebf112f5ec4f2da5d8f7e'>
+							<img src='../../assets/images/posters/BraveNewWorld.jpg' width='640' height='360' alt='download video' />
+							</a>
+						</div>
+					</video>
+				</div>
+			</div><!-- end container for captions and video -->
+			<div class='px-video-controls'></div>
+		</div><!-- end video container -->
 		<div id='transcript' class='transcript'>
 			<h2>Transcript</h2>
 			<p>Three years ago, we started Schnailmail with an important, important but simple goal: to bring the world together, one letter, one postcard to a loved one, one package at a time. And boy, have we delivered a million times over. Today, we mark the one billionth letter sent. And I want to share it with you right now. It's from Susan Bennett to her mum. Let's see what Susan wrote. It says, "Mummy". That's so cute! "John and I are loving Barbados". Disposable income. Guys, disposable income. "I hope you're feeling better." Can we find out what's wrong with Susan's mum and just make sure her insurance company knows too? "See you soon", it says, Let's put some coupons for travel in there as well. "Love, Susan."</p>
@@ -72,36 +82,16 @@
 		<!-- @import '../../../assets/includes/footer-call-to-action.kit' -->
 		<!-- @import '../../../assets/includes/footer.kit' -->
 		</div>
-	<script type='text/javascript' src='/assets/js/video.dev.js'></script>
-	<script type='text/javascript' src='/assets/js/video-quality-selector.js'></script>
-	<script type='text/javascript' src='/assets/js/summitVideo.js'></script>
-	<script type='text/javascript'>
-	(function () {
-
-	    // Set up Brave new world video player
-	    initializeSummitPlayer({
-	        element: '#brave_new_world_video',
-	        sources:
-	            [
-	                {
-	                    type: 'application/x-mpegURL',
-	                    res: 'HD',
-	                    src: '//player.vimeo.com/external/102406465.m3u8?p=high,standard&s=a4b396f430d5cc067fa1172015053560'
-	                },
-	                {
-	                    type: 'video/mp4',
-	                    res: 'SD',
-	                    src: '//player.vimeo.com/external/102406465.sd.mp4?s=0fe7e8f368054ede997b42423ff33878'
-	                },
-	                {
-	                    type: 'video/mp4',
-	                    res: 'HD',
-	                    src: '//player.vimeo.com/external/102406465.hd.mp4?s=e9c5f1fcab5ebf112f5ec4f2da5d8f7e'
-	                },
-	            ]
-	    });
-
-	}());
+<script src='/assets/js/px-video.js'></script>
+	<script>
+		// Initialize
+		var video1 = new InitPxVideo({
+			'videoId': 'brave_new_world_video',
+			'captionsOnDefault': false,
+			'seekInterval': 20,
+			'videoTitle': 'Opening Keynote',
+			'debug': true
+		});
 	</script>
 </body>
 </html>

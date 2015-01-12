@@ -12,15 +12,25 @@
 	</header>
 	<div class='main'>
 		<h1 class='long-title'>A personal cloud</h1>
-		<figure class='session--video'>
-			<video id='tor_krill_video' class='video-js vjs-indie-skin' controls preload='auto' poster='../../assets/images/posters/TorKrill.jpg'>
-				<source src='//player.vimeo.com/external/102538760.hd.mp4?s=7ce84cd266d48ffc4a0be20c96b0cc15' type='video/mp4' />
-				<source src='/videos/10-tor-krill.ogv' type='video/ogv' />
-				<source src='/videos/10-tor-krill.webm' type='video/webm' />
-	            <p class='vjs-no-js'>To view this video please consider upgrading to a web browser that supports HTML5 video, or enable JavaScript.</p>
-	        </video>
-	        <figcaption class='session--speaker'>Tor Krill</figcaption>
-	    </figure>
+		<div class='px-video-container' id='tor_krill_video'>
+			<div class='px-video-img-captions-container'>
+				<div class='px-video-captions hide'></div>
+				<div class='px-video-wrapper'>
+					<video class='px-video' controls poster='../../assets/images/posters/TorKrill.jpg'>
+						<source src='//player.vimeo.com/external/102538760.hd.mp4?s=7ce84cd266d48ffc4a0be20c96b0cc15' type='video/mp4' />
+						<source src='https://ind.ie/videos/summit/10-tor-krill.ogv' type='video/ogv' />
+						<source src='https://ind.ie/videos/summit/10-tor-krill.webm' type='video/webm' />
+				        <!-- fallback for browsers that don't support the video element -->
+						<div>
+							<a href='//player.vimeo.com/external/102538760.hd.mp4?s=7ce84cd266d48ffc4a0be20c96b0cc15'>
+							<img src='../../assets/images/posters/TorKrill.jpg' width='640' height='360' alt='download video' />
+							</a>
+						</div>
+					</video>
+				</div>
+			</div><!-- end container for captions and video -->
+			<div class='px-video-controls'></div>
+		</div><!-- end video container -->
 		<div id='transcript' class='transcript'>
 			<h2>Transcript</h2>
 			<p>Yes, hi, thank you for letting me talk to you.</p>
@@ -55,36 +65,16 @@
 		<!-- @import '../../../assets/includes/footer-call-to-action.kit' -->
 		<!-- @import '../../../assets/includes/footer.kit' -->
 	</div>
-	<script type='text/javascript' src='/assets/js/video.dev.js'></script>
-	<script type='text/javascript' src='/assets/js/video-quality-selector.js'></script>
-	<script type='text/javascript' src='/assets/js/summitVideo.js'></script>
-	<script type='text/javascript'>
-	(function () {
-
-	    // Set up Brave new world video player
-	    initializeSummitPlayer({
-	        element: '#tor_krill_video',
-	        sources:
-	            [
-	                {
-	                    type: 'application/x-mpegURL',
-	                    res: 'HD',
-	                    src: '//player.vimeo.com/external/102538760.m3u8?p=high,standard&s=670613337e2f6544da4ef834eb5b13ae'
-	                },
-	                {
-	                    type: 'video/mp4',
-	                    res: 'SD',
-	                    src: '//player.vimeo.com/external/102538760.sd.mp4?s=498f1dbd128b6fe7a7a0c5a3d80daf36'
-	                },
-	                {
-	                    type: 'video/mp4',
-	                    res: 'HD',
-	                    src: '//player.vimeo.com/external/102538760.hd.mp4?s=7ce84cd266d48ffc4a0be20c96b0cc15'
-	                },
-	            ]
-	    });
-
-	}());
+	<script src='/assets/js/px-video.js'></script>
+	<script>
+		// Initialize
+		var video1 = new InitPxVideo({
+			'videoId': 'tor_krill_video',
+			'captionsOnDefault': false,
+			'seekInterval': 20,
+			'videoTitle': 'Tor Krill',
+			'debug': true
+		});
 	</script>
 </body>
 </html>

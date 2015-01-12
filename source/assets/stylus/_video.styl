@@ -1,3 +1,106 @@
+.section--title
+	border-top 1px solid black-thirty
+	clear both
+	font-size 38px
+	line-height OneAndThreeQuartersLineHeights
+	margin-top OneAndAHalfLineHeights
+	padding-top OneLineHeight
+
+	@media only screen and (min-width 600px)
+		font-size 42px
+		line-height TwoLineHeights
+		width 100%
+
+.video-thumbnail
+	clear both
+	margin-top HalfLineHeight
+	margin-bottom HalfLineHeight
+	overflow hidden
+
+	img
+		@media only screen and (min-width 670px)
+			float left
+			margin-top OneLineHeight
+			width 45%
+
+.session--title,
+.session--speaker,
+.session--description,
+.session--transcript,
+.session--watch
+	@media only screen and (min-width 670px)
+		float right
+		margin-left 5%
+		width 50%
+
+.session--watch
+	.button
+		max-width 140px
+
+.session--title
+	font-size 27px
+	line-height OneAndAQuarterLineHeights
+
+	a
+		color black-seventy
+		text-decoration none
+
+	@media only screen and (min-width 670px)
+		margin-top OneLineHeight
+		margin-bottom HalfLineHeight
+
+.session--speaker,
+.session--description,
+.session--transcript
+	margin-bottom HalfLineHeight
+
+.session--video
+	margin-bottom ThreeQuartersLineHeight
+
+	.session--speaker
+		clear both
+		float none
+		margin-left 0
+		margin-bottom QuarterLineHeight
+		text-align center
+		width 100%
+
+	p
+		text-align center
+
+.transcript
+	h2
+		font-family "Avenir Next", Avenir, 'Helvetica Neue', Helvetica, sans-serif
+		font-size 36px
+		line-height TwoLineHeights
+		margin-top OneLineHeight
+
+		@media only screen and (min-width: 820px)
+			font-size 42px
+			line-height ThreeLineHeights
+
+	h3
+		font-weight bold
+		line-height OneAndAHalfLineHeights
+		margin-bottom QuarterLineHeight
+		font-size 20px
+
+	p /* break really long links that are written out on the page so they don't break narrow viewport layouts */
+		word-wrap break-word
+
+		@media only screen and (min-width 500px)
+			word-wrap normal
+
+.session--watch
+	margin-bottom HalfLineHeight
+
+	.button
+		background black-sixty
+		margin-top QuarterLineHeight
+
+		&:hover, &:active, &:focus
+			background black-seventy
+
 /* utilities */
 .sr-only
 	position absolute
