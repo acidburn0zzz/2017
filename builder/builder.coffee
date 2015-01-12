@@ -228,7 +228,7 @@ program
 	.command('build [options]')
 	.description('Builds the whole site')
 	.action (options) ->
-		if options == ''
+		if options == undefined
 			buildSite()
 		else if options == 'no-cache'
 			fs.removeAsync('.cache/site').then ->
