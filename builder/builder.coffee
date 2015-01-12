@@ -831,13 +831,14 @@ deploy = ->
 
 deployAsync = ->
 	rsync = new Rsync()
-		.flags('vaz')		
+		.flags('vaz')
+		.exclude(['.*/'])
 		.source(process.cwd() + '/build/')
 		.destination(process.cwd() + '/public/')
-		# .flags('delete') # If we do this then the .git folder gets deleted :(
+		.flags('delete')
 		# .dry()
 
-	# log rsync.command()
+	log rsync.command()
 
 	return new Promise ((fulfill, reject) ->
 		rsync.execute (error, code, cmd) =>
