@@ -32,7 +32,7 @@
 			background-transition(.3s)
 
 			@media only screen and (min-width: 400px)
-				padding QuarterLineHeight HalfLineHeight
+				padding QuarterLineHeight 20px
 
 			&:hover, &:active, &:focus
 				background black-seventy
@@ -43,7 +43,15 @@
 			padding-left HalfLineHeight
 
 			@media only screen and (min-width: 400px)
-				padding-left ThreeQuartersLineHeight
+				padding-left 30px
+
+			&:hover, &:active, &:focus
+				margin-left 5px
+				padding-left 10px
+
+				@media only screen and (min-width: 400px)
+					margin-left 10px
+					padding-left 20px
 
 		&.home-link
 			padding 0
@@ -119,9 +127,9 @@
 .press .site-navigation .about-link,
 .contact .site-navigation .about-link
 	a
-		margin-left QuarterLineHeight
-		padding-left QuarterLineHeight
+		margin-left 5px
+		padding-left 10px
 
 		@media only screen and (min-width: 400px)
-			margin-left QuarterLineHeight
-			padding-left HalfLineHeight
+			margin-left 10px
+			padding-left 20px
