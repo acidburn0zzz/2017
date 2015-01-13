@@ -37,17 +37,13 @@
 			&:hover, &:active, &:focus
 				background black-seventy
 				border-bottom none
-				padding QuarterLineHeight 10px
-
-				@media only screen and (min-width: 400px)
-					padding QuarterLineHeight HalfLineHeight
 
 		/* don't have gap between balloon link and about link, fill the space with button padding because it looks less odd */
 		&.about-link a
-			padding-left 15px
+			padding-left HalfLineHeight
 
 			@media only screen and (min-width: 400px)
-				padding-left 20px
+				padding-left ThreeQuartersLineHeight
 
 		&.home-link
 			padding 0
@@ -58,63 +54,45 @@
 				background-repeat no-repeat
 				height 0
 				overflow hidden
-				/* write padding rules out to account for responsive pixels issues */
-				padding 0
-				padding-top 42px
-				padding-left 50px
+				padding 42px 0 0 55px
 				width 0
+				-moz-transition none
+				-ms-transition none
+				-o-transition none
+				transition none
 
 				.svg &
 					background-image url('/assets/images/sprite.svg')
 
 				&:hover, &:active, &:focus
 					background-color background black-seventy
-					background-image url('/assets/images/sprite.png')
 					background-position 1px -36px
-					border-bottom none
 					color black-ten
-					/* write padding rules out to account for responsive pixels issues */
-					padding 0
-					padding-top 42px
-					padding-left 50px
+					padding 42px 0 0 55px
 
-					.svg &
-						background-image url('/assets/images/sprite.svg')
+				@media only screen and (min-width: 400px)
+					background-position 10px -36px
+					padding 42px 0 0 70px
 
-				@media only screen and (min-width: 600px)
-					/* write padding rules out to account for responsive pixels issues */
-					padding 0
-					padding-top 42px
-					padding-left 50px
+					&:hover, &:active, &:focus
+						background-position 10px -36px
+						padding 42px 0 0 70px
 
 /* Black string balloon logo for active home navigation link */
 .home .site-navigation .home-link a
 	background-color black-thirty
 	background-position 3px -77px
-	border-bottom none
 	color white
-	/* write padding rules out to account for responsive pixels issues */
-	padding 0
-	padding-top 42px
-	padding-left 50px
 
 	&:hover, &:active, &:focus
 		background-position 3px -77px
 
-	@media only screen and (min-width: 600px)
+	@media only screen and (min-width: 400px)
 		background-position 12px -77px
 		color black-ninety
-		/* write padding rules out to account for responsive pixels issues */
-		padding 0
-		padding-top 42px
-		padding-left 70px
 
 		&:hover, &:active, &:focus
 			background-position 12px -77px
-			/* write padding rules out to account for responsive pixels issues */
-			padding 0
-			padding-top 42px
-			padding-left 70px
 
 /* Active navigation styles */
 .blog .site-navigation .blog-link,
@@ -131,27 +109,19 @@
 .contact .site-navigation .about-link
 	a
 		background black-seventy
-		padding QuarterLineHeight HalfLineHeight
 
-/* don't have gap between balloon link and about link, fill the space with button padding because it looks less odd */
-.declaration .site-navigation .home-link,
-.manifesto .site-navigation .home-link,
-.team .site-navigation .home-link,
-.privacy .site-navigation .home-link,
-.vision .site-navigation .home-link,
-.press .site-navigation .home-link,
-.contact .site-navigation .home-link
+/* Add gap to left of active about navigation so there's space between link and balloon */
+.declaration .site-navigation .about-link,
+.manifesto .site-navigation .about-link,
+.team .site-navigation .about-link,
+.privacy .site-navigation .about-link,
+.vision .site-navigation .about-link,
+.press .site-navigation .about-link,
+.contact .site-navigation .about-link
 	a
-		background-position 10px -36px
-		padding-left 50px
-
-		&:hover, &:active, &:focus
-			background-position 10px -36px
+		margin-left QuarterLineHeight
+		padding-left QuarterLineHeight
 
 		@media only screen and (min-width: 400px)
-			background-position 10px -36px
-			padding-left 70px
-
-			&:hover, &:active, &:focus
-				background-position 10px -36px
-				padding-left 70px
+			margin-left QuarterLineHeight
+			padding-left HalfLineHeight
