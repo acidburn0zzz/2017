@@ -92,7 +92,24 @@
 			word-wrap normal
 
 .transcript-link
-	text-align right
+	display block
+	font-size 15px
+	float right
+	line-height OneLineHeight
+	margin-top -10px
+
+	@media only screen and (min-width 620px)
+		float left
+		font-size 17px
+		margin-top -44px
+
+	&:after /* clear fix */
+		display block
+		font-size 0
+		content " "
+		clear both
+		height 0
+		visibility hidden
 
 .session--watch
 	margin-bottom HalfLineHeight
