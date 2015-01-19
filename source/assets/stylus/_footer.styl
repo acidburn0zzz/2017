@@ -43,7 +43,7 @@
 	width 100%
 
 	a
-		background url('/assets/images/indie-balloon-logo.png') no-repeat center center
+		background url('/assets/images/indie-balloon-logo.svg') no-repeat center center
 		border-bottom none
 		display block
 		height 0
@@ -55,8 +55,8 @@
 		padding-left 100% /* ensure width of logo doesn't overflow width of container */
 		width 0
 
-		.svg &
-			background-image url('/assets/images/indie-balloon-logo.svg')
+		.no-svg &
+			background-image url('/assets/images/indie-balloon-logo.png')
 
 		@media only screen and (min-width: 385px)
 			background-size 300px 130px /* width and height of logo */
