@@ -97,9 +97,13 @@
 	.photo
 		border-radius 50% /* make image circular */
 		display block
+		margin-bottom HalfLineHeight
 		margin-right auto
 		margin-left auto
 		max-width 160px
+
+		@media only screen and (min-width: 780px)
+			margin-bottom OneLineHeight
 
 	.h-card
 		display block
