@@ -24,7 +24,7 @@
 			</ul>
 		</div>
 		<section class='segment'>
-			<h2 id='name'>Ind.ie name</h2>
+			<h2 id='name' tabindex='-1'>Ind.ie name</h2>
 			<p>Our organisation name is <strong>Ind.ie</strong>, pronounced “<em>indie</em>”. When we’re explaining it to others, we often spell it out as “<em>i-n-d-dot-i-e</em>” so people know that it’s also our URL.</p>
 			<h3>Logo use</h3>
 			<div class='logos'>
@@ -66,7 +66,7 @@
 			</div>
 		</section>
 		<section class='segment'>
-			<h2 id='logos'>Ind.ie and Heartbeat Logos</h2>
+			<h2 id='logos' tabindex='-1'>Ind.ie and Heartbeat Logos</h2>
 			<div class='logos'>
 				<figure class='logo'>
 					<img class='on-white' src='images/indie-full-logo.svg' alt='Ind.ie Logo'/>
@@ -117,7 +117,7 @@
 			</div>
 		</section>
 		<section class='segment'>
-			<h2 id='pulse-logo'>Pulse Logo</h2>
+			<h2 id='pulse-logo' tabindex='-1'>Pulse Logo</h2>
 			<div class='logos'>
 				<figure class='logo'>
 					<img class='on-white' src='images/pulse-full-logo.svg' alt='Pulse logo for light backgrounds'/>
@@ -195,7 +195,7 @@
 			</div>
 		</section>
 		<section class='segment'>
-			<h3 id='waystone-logo'>Waystone Logo</h3>
+			<h3 id='waystone-logo' tabindex='-1'>Waystone Logo</h3>
 			<div class='logos'>
 				<figure class='logo'>
 					<img class='on-white' src='images/waystone-logomark.svg' alt='Waystone logo mark for light backgrounds'/>
@@ -221,7 +221,7 @@
 			</div>
 		</section>
 		<section class='segment'>
-			<h3 id='phoenix-logo'>Phoenix Logo</h3>
+			<h3 id='phoenix-logo' tabindex='-1'>Phoenix Logo</h3>
 			<figure class='logo'>
 				<img class='on-white' src='images/phoenix-logomark.svg' alt='Phoenix logo mark for light backgrounds'/>
 				<figcaption>
@@ -231,7 +231,7 @@
 			</figure>
 		</section>
 		<section class='segment'>
-			<h2 id='branding'>General Branding</h2>
+			<h2 id='branding' tabindex='-1'>General Branding</h2>
 			<h3>Colour</h3>
 				<p>These are the colours we use in our branding.</p>
 				<h4>Tones</h4>
@@ -404,7 +404,7 @@
 				</ul>
 			</section>
 			<section class='segment'>
-			<h2 id='writing'>Writing</h2>
+			<h2 id='writing' tabindex='-1'>Writing</h2>
 			<h3>Tone</h3>
 			<p>Our tone is clear and concise, but friendly. We’re individuals, and our writing is attributed to us as individuals, but we stay consistent with a simple and accessible writing style.</p>
 			<h3>Proper punctuation</h3>
@@ -465,7 +465,7 @@
 			</table>
 		</section>
 			<section class='segment'>
-				<h2 id='core-and-library'>Core and Library</h2>
+				<h2 id='core-and-library' tabindex='-1'>Core and Library</h2>
 				<p>Styles that are consistent across all Ind.ie web projects are contained within the <a href='https://source.ind.ie/project/indie-style-core'>indie-style-core</a>. These styles include:</p>
 				<ul>
 					<li><a href='https://source.ind.ie/project/indie-style-core/blob/master/_library.styl'>Library</a> of brand colours, line-height measurements, and simple mixins</li>
@@ -508,7 +508,7 @@ $image-path = '/assets/stylus/indie-style-core/images/'
 @import waystone</code></pre>
 			</section>
 			<section class='segment'>
-				<h2 id='patterns'>Patterns</h2>
+				<h2 id='patterns' tabindex='-1'>Patterns</h2>
 
 				<p>Design and mark-up patterns unique to this site.</p>
 
@@ -789,25 +789,25 @@ Include video partial in the primary stylus file
 
 				<h4>Single speaker transcript</h4>
 				<div class='example'>
-					<div id='transcript' class='transcript'>
+					<div id='transcript' class='transcript' tabindex='-1'>
 						<p><em>(applause)</em></p>
 						<p>Hi. Thank you, I'm happy to be here. My name is Lena and I'm usually working mainly on marketing communications and community management, and this is the reason why I care about diversity, and this is the reason why I want to show you why diversity is a non-negotiable prerequisite when we want to create an independent future for the web.</p>
 						<p><em>(applause)</em></p>
 					</div>
 				</div>
 				<h5>HTML for single speaker transcript</h5>
-				<pre><code class='html'>&lt;div id='transcript' class='transcript'&gt;
+				<pre><code class='html'>&lt;div id='transcript' class='transcript'  tabindex='-1'&gt;
 	&lt;p&gt;&lt;em&gt;(applause)&lt;/em&gt;&lt;/p&gt;
 	&lt;p&gt;Hi. Thank you, I'm happy to be here. My name is Lena and I'm usually working mainly on marketing communications and community management, and this is the reason why I care about diversity, and this is the reason why I want to show you why diversity is a non-negotiable prerequisite when we want to create an independent future for the web.&lt;/p&gt;
 	&lt;p&gt;&lt;em&gt;(applause)&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;</code></pre>
-				<p>The <code>id='transcript'</code> is used so that the transcript can be linked to directly from the URL.</p>
+				<p>The <code>id='transcript'</code> is used so that the transcript can be linked to directly from the URL. The element contains <code>tabindex='-1'</code> so that the correct area recieves focus with keyboard navigation.</p>
 
 				<hr />
 
 				<h4>Multiple speaker transcript</h4>
 				<div class='example'>
-					<div id='transcript' class='transcript'>
+					<div id='transcript' class='transcript'  tabindex='-1'>
 						<h3 class='transcript--name'>Aral:</h3>
 						<p>To be honest, if I thought that it was easier than actually making a whole phone, I'd be doing that. I think that's easier than changing that culture. Changing culture is next to impossible.</p>
 						<h3 class='transcript--name'>Ivanka:</h3>
@@ -816,14 +816,14 @@ Include video partial in the primary stylus file
 					 </div>
 				</div>
 				<h5>HTML for multiple speaker transcript</h5>
-				<pre><code class='html'>&lt;div id='transcript' class='transcript'&gt;
+				<pre><code class='html'>&lt;div id='transcript' class='transcript'  tabindex='-1'&gt;
 	&lt;h3 class='transcript--name'&gt;Aral:&lt;/h3&gt;
 	&lt;p&gt;To be honest, if I thought that it was easier than actually making a whole phone, I'd be doing that. I think that's easier than changing that culture. Changing culture is next to impossible.&lt;/p&gt;
 	&lt;h3 class='transcript--name'&gt;Ivanka:&lt;/h3&gt;
 	&lt;p&gt;Changing culture is a whole skill in of itself; it's a whole different area of study and it's hard, yes.&lt;/p&gt;
 	&lt;p&gt;&lt;em&gt;(applause)&lt;/em&gt;&lt;/p&gt;
  &lt;/div&gt;</code></pre>
- 				<p>The <code>id='transcript'</code> is used so that the transcript can be linked to directly from the URL.</p>
+ 				<p>The <code>id='transcript'</code> is used so that the transcript can be linked to directly from the URL. The element also contains <code>tabindex='-1'</code> so that the correct area recieves focus with keyboard navigation.</p>
 
 				<hr />
 
