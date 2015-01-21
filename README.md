@@ -43,3 +43,7 @@ There’s a central area for assets (currently in `/source/assets`) which contai
 ### Modular assets
 
 Assets that are required by only that page are kept in that page’s folder, in the same `/assets`-less structure.
+
+## Why use .kit files?
+
+We’re using `.kit` files to `@include`/`@import` partial HTML files in our HTML pages. The `@include`/`@import` works perfectly well with `.html` file extensions, however we use .kit variables in some of these files, which can only be used with `.kit` file extensions. :)
