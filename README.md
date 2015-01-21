@@ -28,6 +28,8 @@ We’re aiming to keep the site as modular as possible, with each page using it�
 
 Every imported file’s URL should be relative to the root, rather than relative to that file. This will allow for the page to be moved without the URL breaking. The exception to this is for modular assets kept within the same folder as the page (see modular assets below).
 
+Unfortunately, the Codekit .kit file `@include`/`@import` requires files to be relative to the folder, so all of these URLs must be relative to the page, rather than the root.
+
 ### Assets
 
 We’re moving away from using `/assets` as a name, rather keeping assets in folders named after their type:
