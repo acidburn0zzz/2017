@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 	<!-- $title:Ind.ie — Supporters -->
-	<!-- @import '../assets/includes/head.kit' -->
+	<!-- @import '../assets/includes/_head.kit' -->
 	<link rel='stylesheet' type='text/css' href='css/style.css'>
 	<script src='/assets/js/promise.js'></script>
 </head>
 <body class='supporters'>
 	<header class='site-header'>
-		<!-- @import '../assets/includes/nav.kit' -->
+		<!-- @import '../assets/includes/_nav.kit' -->
 	</header>
 	<div class='main'>
 		
@@ -25,8 +25,8 @@
 
 		<div id='error'></div>
 
-        <!-- @import '../assets/includes/footer-call-to-action.kit' -->
-		<!-- @import '../assets/includes/footer.kit' -->
+        <!-- @import '../assets/includes/_footer-call-to-action.kit' -->
+		<!-- @import '../assets/includes/_footer.kit' -->
 	</div>
 	<script>
 		promise.get('http://10.0.1.123:5000/api/supporters').then(function(error, result, xhr) {
