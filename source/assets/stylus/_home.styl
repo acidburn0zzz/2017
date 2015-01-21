@@ -8,19 +8,19 @@
 			margin-top FiveLineHeights
 
 .heartbeat-logo
-	background url('/assets/images/heartbeat-logo.png') top center no-repeat
+	background url('/assets/images/heartbeat-logo.svg') top center no-repeat
 	line-height FourLineHeights
 	margin-top FourLineHeights
 	margin-bottom HalfLineHeight
 	padding-top 120px
 
-	.svg &
-		background url('/assets/images/heartbeat-logo.svg') top center no-repeat
+	.no-svg &
+		background url('/assets/images/heartbeat-logo.png') top center no-repeat
 
 	@media only screen and (min-width: 780px)
-		background url('/assets/images/heartbeat-logo-large.png') top center no-repeat
+		background url('/assets/images/heartbeat-logo-large.svg') top center no-repeat
 		margin-bottom OneLineHeight
 		padding-top 270px
 
-		.svg &
-			background url('/assets/images/heartbeat-logo-large.svg') top center no-repeat
+		.no-svg &
+			background url('/assets/images/heartbeat-logo-large.png') top center no-repeat

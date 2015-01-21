@@ -22,7 +22,7 @@
 	max-width 220px
 
 	&:after /* download icon */
-		background-image url('/assets/images/sprite.png')
+		background-image url('/assets/images/sprite.svg')
 		background-position -6px -697px
 		background-repeat no-repeat
 		content ""
@@ -34,8 +34,8 @@
 		top 0
 		width 32px
 
-		.svg &
-			background-image url('/assets/images/sprite.svg')
+		.no-svg &
+			background-image url('/assets/images/sprite.png')
 
 .quick-download-area
 	background black-ten
@@ -110,16 +110,16 @@
 		width 0
 
 		&.google-play
-			background-image url('../images/google-play.png')
+			background-image url('../images/google-play.svg')
 
-			.svg &
-				background-image url('../images/google-play.svg')
+			.no-svg &
+				background-image url('../images/google-play.png')
 
 		&.f-droid
-			background-image url('../images/f-droid.png')
+			background-image url('../images/f-droid.svg')
 
-			.svg &
-				background-image url('../images/f-droid.svg')
+			.no-svg &
+				background-image url('../images/f-droid.png')
 
 	.iframe-button
 		height TwoLineHeights
