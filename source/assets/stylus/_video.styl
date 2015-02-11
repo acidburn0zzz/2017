@@ -91,6 +91,34 @@
 		@media only screen and (min-width 500px)
 			word-wrap normal
 
+.transcript-navigation
+	overflow hidden
+
+	ul
+		display -webkit-flex
+		display flex
+		-webkit-flex-flow row wrap
+		flex-flow row wrap
+		-webkit-justify-content center
+		justify-content center
+		margin-bottom 0
+		margin-left 0
+		overflow hidden
+
+		li
+			float left
+			-webkit-flex none
+			flex none
+			list-style-type none
+			margin-bottom 0
+
+			@media only screen and (min-width 390px)
+				margin-right HalfLineHeight
+				margin-left HalfLineHeight
+
+			a
+				display block
+
 .transcript-link
 	display block
 	font-size 15px
