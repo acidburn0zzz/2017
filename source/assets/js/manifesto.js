@@ -1,8 +1,43 @@
 (function () {
     var request = superagent;
 
+    // TODO: link the definitions to their definition text with aria
+
+    // TODO: put the aria-expanded attributes on the definitions, not the definition text
+
+    // TODO: turn definition text links into buttons
+
+    // toggle the visible state of the definitions
     function toggleDefinitionText(dfn) {
-        document.querySelector('#' + dfn.dataset.definitionTextId).classList.toggle('hidden');
+
+        var e = document.querySelector('#' + dfn.dataset.definitionTextId);
+            // console.log(dfn.dataset.definitionTextId);
+            if (e.hasAttribute('aria-hidden')) {
+                // Toggle the visible state.
+                var ariaHidden = (e.getAttribute('aria-hidden') === "true");
+                hide(e, !ariaHidden);
+                // console.log(typeof ariaHidden);
+            } else {
+                // First time through, we know that it is showing. Hide it.
+                hide(e, true);
+            }
+    }
+
+    // Set the state of an element.
+    function hide(element, shouldHide) {
+        if (shouldHide) {
+            // Hide the element.
+            // console.log("Hiding element: " + element.id)
+            element.classList.add('hidden');
+            element.setAttribute('aria-hidden', 'true');
+            element.setAttribute('aria-expanded', 'false');
+        } else {
+            // Show the element.
+            // console.log("Showing element: " + element.id)
+            element.classList.remove('hidden');
+            element.setAttribute('aria-hidden', 'false');
+            element.setAttribute('aria-expanded', 'true');
+        }
     }
 
     function closeAllDefinitionText() {
@@ -14,6 +49,7 @@
     function addDefinitionClickHandlers() {
         Array.prototype.forEach.call(document.querySelectorAll('dfn'), function (dfn) {
             dfn.addEventListener('click', function (event) {
+                // console.log("a click!");
                 toggleDefinitionText(event.currentTarget);
             });
         });
@@ -312,9 +348,12 @@
 
     signButton.addEventListener('click', signupButtonClicked);
 
+    // changeLinksToButtons();
+    connectDefinitions();
+
     closeAllDefinitionText();
 
-    addDefinitionClickHandlers();
+   addDefinitionClickHandlers();
 
     document.addEventListener('DOMContentLoaded', function(event) {
         getSignatories(processSignatories);
