@@ -9,7 +9,16 @@
 	dfn
 		cursor pointer
 
-.definition-link
+.definition-link, .definition-link:hover, .definition-link:active, .definition-link:focus
+	/* undo button styles */
+	background none
+	border-bottom 1px dashed black-sixty
+	border-radius 0
+	color black-eighty
+	font-weight bold
+	height auto
+	margin 0
+	padding 0
 	text-decoration none
 
 .definition-expanded
@@ -25,7 +34,7 @@
 		color black-ninety
 		margin-top 0
 
-.definition-expanded.hidden
+.definition-collapsed
 	border none
 	height 0
 	margin 0
