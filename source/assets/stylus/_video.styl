@@ -335,30 +335,30 @@
 
 /* rewind button */
 .px-video-controls button.px-video-rewind
-	background-position -11px -187px
+	background-position -9px -187px
 
 	&:hover, &:focus
-		background-position -11px -151px
+		background-position -9px -151px
 
 	@media only screen and (min-width: 620px)
-		background-position -11px -295px
+		background-position -9px -295px
 
 		&:hover, &:focus
-			background-position -11px -238px
+			background-position -9px -238px
 
 
 /* play button */
 .px-video-controls button.px-video-play
-	background-position -11px -43px
+	background-position -8px -43px
 
 	&:hover, &:focus
-		background-position -11px -7px
+		background-position -8px -7px
 
 	@media only screen and (min-width: 620px)
-		background-position -11px -67px
+		background-position -8px -67px
 
 		&:hover, &:focus
-			background-position -11px -10px
+			background-position -8px -10px
 
 
 /* pause button */
@@ -378,16 +378,16 @@
 
 /* forward button */
 .px-video-controls button.px-video-forward
-	background-position -13px -259px
+	background-position -10px -259px
 
 	&:hover, &:focus
-		background-position -13px -223px
+		background-position -10px -223px
 
 	@media only screen and (min-width: 620px)
-		background-position -13px -409px
+		background-position -10px -409px
 
 		&:hover, &:focus
-			background-position -13px -352px
+			background-position -10px -352px
 
 /* captions button */
 .px-video-captions-btn-container
@@ -402,9 +402,12 @@
 		display inline-block
 		width 25px
 		height 20px
-		margin-top 5px /* line up with big buttons */
+		margin-top 3px /* line up with big buttons */
 		background no-repeat url('/assets/images/px-video-sprite.svg')
 		background-position -6px -835px
+
+		@media only screen and (min-width: 540px)
+			margin-top 4px /* line up with big buttons */
 
 		.no-svg &
 			/* use with Modernizr to provide a no-svg class on <html> to support browsers that don't support SVG */
@@ -429,28 +432,27 @@
 
 /* mute button */
 .px-video-volume-controls
-	float right
+	float left
 	overflow hidden
 	min-width 133px /* width of mute button and width of volume slider */
-	width 50% /* half width of player */
 
 	@media only screen and (min-width: 540px)
 		margin-top: 1px
 
-	@media only screen and (min-width: 620px)
-		width 35%
-
 .px-video-mute-btn-container
-	float right
+	float left
 	width 26px /* width of mute button */
 
 	label
 		display inline-block
 		width 25px
 		height 20px
-		margin-top 6px /* line up with big buttons */
+		margin-top 3px /* line up with big buttons */
 		background no-repeat url('/assets/images/px-video-sprite.svg')
 		background-position -6px -476px
+
+		@media only screen and (min-width: 540px)
+			margin-top 6px /* line up with big buttons */
 
 		.no-svg &
 			/* use with Modernizr to provide a no-svg class on <html> to support browsers that don't support SVG */
@@ -480,7 +482,7 @@
 
 /* volume range input */
 .px-video-volume-slider
-	float right
+	float left
 	width 95px /* width of volume slider */
 
 .px-video-controls .controls
@@ -490,11 +492,14 @@
 		-webkit-appearance none
 		height 6px
 		width 85px
-		margin-top 8px
+		margin-top 9px
 		margin-right 0
 		margin-left 5px
 		background-color #E6E6E6
-		outlinenone
+		outline none
+
+		@media only screen and (min-width: 540px)
+			margin-top 12px
 
 	input[type='range']:focus::-webkit-slider-thumb
 		outline 1px #999 dotted

@@ -184,16 +184,16 @@ function InitPxVideo(options) {
 				'<button class="px-video-forward"><span class="sr-only">forward <span class="px-seconds">10</span> seconds</span></button>' +
 			'</div>' +
 			'<div class="px-video-volume-controls">' +
-				'<div class="px-video-captions-btn-container hide">' +
-					'<input class="px-video-btnCaptions sr-only" id="btnCaptions'+obj.randomNum+'" type="checkbox" />' +
-					'<label for="btnCaptions'+obj.randomNum+'"><span class="sr-only">Captions</span></label>' +
+				'<div class="px-video-mute-btn-container">' +
+					'<input class="px-video-mute sr-only" id="btnMute'+obj.randomNum+'" type="checkbox" />' +
+					'<label id="labelMute'+obj.randomNum+'" for="btnMute'+obj.randomNum+'"><span class="sr-only">Mute</span></label>' +
 				'</div>' +
 				'<div class="px-video-volume-slider">' +
 					'<label for="volume'+obj.randomNum+'" class="sr-only">Volume:</label><input id="volume'+obj.randomNum+'" class="px-video-volume" type="range" min="0" max="10" value="5" />' +
 				'</div>' +
-				'<div class="px-video-mute-btn-container">' +
-					'<input class="px-video-mute sr-only" id="btnMute'+obj.randomNum+'" type="checkbox" />' +
-					'<label id="labelMute'+obj.randomNum+'" for="btnMute'+obj.randomNum+'"><span class="sr-only">Mute</span></label>' +
+				'<div class="px-video-captions-btn-container hide">' +
+					'<input class="px-video-btnCaptions sr-only" id="btnCaptions'+obj.randomNum+'" type="checkbox" />' +
+					'<label for="btnCaptions'+obj.randomNum+'"><span class="sr-only">Captions</span></label>' +
 				'</div>' +
 			'</div>' +
 		'</div>';
