@@ -14,10 +14,10 @@
 				select.setAttribute('id','transcript-select')
 
 			// get the list item
-			var listItem = list.getElementsByTagName('li');
-			// console.log(listItem);
+			var listItems = list.getElementsByTagName('li');
+			// console.log(listItems);
 
-			Array.prototype.forEach.call(listItem, function (listItem) {
+			Array.prototype.forEach.call(listItems, function (listItem) {
 				// for each list item:
 				// - add the list item to the select
 				var option = document.createElement('option');
