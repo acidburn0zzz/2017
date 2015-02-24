@@ -3,7 +3,10 @@
 	function transcriptListIntoDropdown() {
 		Array.prototype.forEach.call(document.querySelectorAll('.transcript-navigation'), function (list) {
 			// find the transcript navigation list
-			var list = document.querySelector('.transcript-navigation');
+			var transcriptNavigation = document.querySelector('.transcript-navigation');
+				var list = transcriptNavigation.getElementsByTagName('ul')[0];
+				// console.log(list);
+				list.classList.add('transcript-navigation-list');
 			// turn the navigation list into a select input
 			// create an empty select
 			var select = document.createElement('select');
@@ -37,6 +40,8 @@
 			list.parentNode.insertBefore(select, list);
 			// add linking functionality to select
 			select.setAttribute('onchange','window.location.href=this.value');
+			// remove list from page (as select has replaced functionality)
+			list.parentNode.removeChild(list);
 		});
 	}
 
