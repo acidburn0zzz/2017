@@ -52,17 +52,21 @@
 		});
 	}
 
-	// connect together option and div so aria knows that the option controls the visibility of the div
+	function hideAllTranscripts() {
+	// find transcripts and hide them
+		Array.prototype.forEach.call(document.querySelectorAll('.transcript-single'), function (transcript) {
+			var transcriptID = transcript.id;
+			var transcriptOption = document.querySelector('[data-transcript-id=' + transcriptID + ']');
+
+			transcript.setAttribute('aria-hidden', 'true');
+			transcript.classList.add('hidden');
+			transcriptOption.setAttribute('aria-expanded', 'false');
+		});
+	}
 
 	// fold up transcripts so only the English one is visible
 	function hideOtherTranscripts() {
-		// find transcripts and hide them
-		Array.prototype.forEach.call(document.querySelectorAll('.transcript-single'), function (transcript) {
-			transcript.setAttribute('aria-hidden', 'true');
-			transcript.classList.add('hidden');
-			console.log(transcript);
-		});
-
+		hideAllTranscripts();
 		// choose the transcript that is going to be shown (English by default, this can be adjusted later)
 		var visibleTranscript = document.getElementById('transcript-en');
 		// console.log(visibleTranscript)
@@ -71,6 +75,8 @@
 		visibleTranscriptID = visibleTranscript.id;
 		// console.log(visibleTranscriptID);
 		visibleTranscriptOption = document.querySelector('[data-transcript-id=' + visibleTranscriptID + ']');
+		// set aria expanded true on select menu option
+		visibleTranscriptOption.setAttribute('aria-expanded', 'true');
 	}
 
 	// Set the state of the transcript.
@@ -81,8 +87,8 @@
 		if (shouldShow) {
 			// Show the transcript.
 			console.log("Showing transcript: " + transcript.id)
+			hideAllTranscripts();
 			transcript.classList.remove('hidden', 'transcript-collapsed');
-			transcript.classList.add('transcript-expanded');
 			transcript.setAttribute('aria-hidden', 'false');
 
 			// set aria expanded true on select menu option
@@ -91,7 +97,6 @@
 			// Hide the transcript.
 			console.log("Hiding transcript: " + transcript.id)
 			transcript.classList.add('hidden', 'transcript-collapsed');
-			transcript.classList.remove('transcript-expanded');
 			transcript.setAttribute('aria-hidden', 'true');
 
 			// set aria expanded false on select menu option
@@ -102,21 +107,22 @@
 	// switch the visible state of the transcripts
 	function switchTranscript(transcriptSelect) {
 		var selectedOption = transcriptSelect.getAttribute('data-transcript-id');
-		// console.log(selectedOption);
+		console.log("Selected option:" + selectedOption);
 		var selectedTranscript = document.querySelector('#' + selectedOption);
-		// console.log(selectedTranscript);
+		console.log("Selected transcript:" + selectedTranscript);
 
 		// if the selected selectedTranscript isn't hidden, don't do anything
 		// if the selectedTranscript isn't the selected selectedTranscript, hide it
 		// if the selected selectedTranscript is hidden, show it
 
-		// show the chosen selectedTranscript
-		var isHidden = (selectedTranscript.classList.contains('hidden') === 'true');
-		console.log(isHidden)
+		// if the transcript has the hidden class
+		var isHidden = (selectedTranscript.className.match('hidden') === 'true');
+		console.log("Is it hidden?" + isHidden)
 
+		// run the transcript through the show/hide function
 		show(selectedTranscript, !isHidden);
 		// find all other transcripts, and hides them
-		// show(transcript, true);
+
 	}
 
 	// when the relevant transcript is selected from the dropdown, show that transcript text
