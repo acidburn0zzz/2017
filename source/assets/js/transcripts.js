@@ -1,3 +1,6 @@
+// TODO: make select voiceover accessible (doesn't do anything with keyboard navigation)
+// TODO: make correct transcript selected dependent on URL (in case someone arrives at #transcript-es etc)
+
 (function () {
 
 	function transcriptListIntoDropdown() {
