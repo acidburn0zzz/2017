@@ -48,8 +48,6 @@
 			});
 			// add select to the page
 			list.parentNode.insertBefore(select, list);
-			// add linking functionality to select
-			// select.setAttribute('onchange','window.location.href=this.value');
 			// remove list from page (as select has replaced functionality)
 			list.parentNode.removeChild(list);
 		});
