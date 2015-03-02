@@ -180,6 +180,7 @@
 			// Handle the transcript switch.
 			var selectedOption = selectionBox.options[selectionBox.selectedIndex]
 			switchTranscript(selectedOption);
+
 		}, true);
 	}
 
