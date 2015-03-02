@@ -69,22 +69,28 @@
 	function findURLIDandMatchingTranscript() {
 		// get the URL's ID
 		var urlID = window.location.hash;
-		// console.log("The URL ID is: " + urlID);
+		console.log("The URL ID is: " + urlID);
 
 		// if the URL has an ID, get it
 		if (urlID === "") {
-			// console.log("There's no ID")
+			console.log("There's no ID")
 			visibleTranscript = document.getElementById('transcript-en');
 		} else {
-			// console.log("There's an ID")
-			// get the first character in the string to the end of the string (everything)
-			var urlIDWithoutTheHash = urlID.substr(1);
+			if (urlID === "#transcript") {
+				console.log("There's an ID, it's #transcript")
+				// if following the #transcript URL from another page
+				visibleTranscript = document.getElementById('transcript-en');
+			} else {
+				console.log("There's an ID, it's not #transcript")
+				// get the first character in the string to the end of the string (everything)
+				var urlIDWithoutTheHash = urlID.substr(1);
 
-			// check if there's a transcript with the same ID
-			var matchingTranscript = document.getElementById(urlIDWithoutTheHash);
-			matchingTranscriptId = matchingTranscript.id;
-			// console.log("The matching transcript is: " + matchingTranscriptId);
-			visibleTranscript = document.getElementById(matchingTranscriptId);
+				// check if there's a transcript with the same ID
+				var matchingTranscript = document.getElementById(urlIDWithoutTheHash);
+				matchingTranscriptId = matchingTranscript.id;
+				// console.log("The matching transcript is: " + matchingTranscriptId);
+				visibleTranscript = document.getElementById(matchingTranscriptId);
+			}
 		}
 	}
 
