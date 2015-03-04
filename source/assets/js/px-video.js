@@ -159,6 +159,9 @@ function InitPxVideo(options) {
 	obj.movie = obj.container.getElementsByTagName('video')[0];
 	obj.controls = obj.container.getElementsByClassName('px-video-controls')[0];
 
+	// Add class to video container (this is only in the ind.ie source, as it enables our transcript styles)
+	obj.container.classList.add('custom-controls');
+
 	// Remove native video controls
 	obj.movie.removeAttribute("controls");
 
