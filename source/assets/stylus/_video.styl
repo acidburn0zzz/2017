@@ -144,7 +144,6 @@
 	@media only screen and (min-width 620px)
 		float left
 		font-size 17px
-		margin-top -44px
 
 	&:after /* clear fix */
 		display block
@@ -153,6 +152,12 @@
 		clear both
 		height 0
 		visibility hidden
+
+// If the custom controls have loaded, pull them up on wider viewports
+// This relies on JS enabling the custom-controls class in px-video.js
+.custom-controls .transcript-link
+	@media only screen and (min-width 620px)
+		margin-top -44px
 
 .transcript-single
 	border-bottom 2px solid black-thirty
@@ -188,6 +193,7 @@
 
 /* video */
 .px-video-container
+	overflow hidden
 	min-width 300px /* so video controls don't fall in on themselves in narrow browsers */
 
 .px-video-img-captions-container
