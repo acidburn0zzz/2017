@@ -1,33 +1,19 @@
 .past-events
 	color black-seventy
-	margin-top ThreeLineHeights
-	margin-bottom OneAndAHalfLineHeights
+
+	@media only screen and (min-width: 620px)
+		margin-top ThreeLineHeights
+		margin-left 230px
+		margin-bottom OneAndAHalfLineHeights
 
 .past-posts
 	color black-sixty
 
 	time
-		background-color black-sixty
-
-	.event-link
-		background-color black-ten
 		color black-sixty
 
-		&:hover, &:active, &:focus
-			background-color black-sixty
-			color white
+	.p-name a
+		color black-fifty
 
-.posts-list
-	li
-		@media only screen and (min-width: 620px)
-			padding-left 170px
-
-	.time-wrap
-		@media only screen and (min-width: 620px)
-			display block
-			float left
-			margin-left -170px
-			width 160px
-
-			time
-				float right
+	.p-summary
+		color black-seventy
