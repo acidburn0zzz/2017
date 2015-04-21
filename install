@@ -2,7 +2,7 @@ npm config set registry https://npm-proxy.fury.io/XNENtG1qsapqYWiw9zh5/indie/
 npm config set strict-ssl true
 npm config set ca ""
 npm install -g
-n 0.10.35
+n stable
 npm install
 touch aws-keys.json
 echo '{"key":"", "secret": ""}' > aws-keys.json

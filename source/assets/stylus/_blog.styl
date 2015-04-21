@@ -14,11 +14,11 @@
 	h2
 		font-size 32px
 		font-weight bold
-		line-height TwoLineHeights
+		line-height OneAndThreeQuartersLineHeights
 
 	h3
 		font-size 26px
-		line-height OneLineHeight
+		line-height OneAndAHalfLineHeights
 		margin-top OneAndAHalfLineHeights
 		margin-bottom OneLineHeight
 
@@ -56,69 +56,41 @@
 	li
 		list-style-type none
 
-	h2, h3, p
-		text-align center
-
-	p
-		margin-bottom QuarterLineHeight
-
-.post-link, .event-link
-	text-decoration none
-	color black-eighty
-	background-color black-twenty
-	border-radius 6px
-	padding 4px 10px
-
-.post-link:hover,
-.post-link:active,
-.event-link:hover,
-.event-link:active
-	color white
-	background-color black-eighty
-
 .posts-list
 	margin-left 0
 
 	.p-name
-		display block
-		clear both
-		float left
-		font-size 18px
-		font-family "Avenir Next", Avenir, 'Helvetica Neue', Helvetica, sans-serif
-		line-height OneAndAHalfLineHeights
-		margin-top 0
-		margin-bottom 0
-		text-align left
+		margin-top QuarterLineHeight
+		margin-bottom QuarterLineHeight
 
-		@media only screen and (min-width: 620px)
-			clear none
+		@media only screen and (min-width: 820px)
+			margin-top 0
+			float left
+			line-height OneAndAHalfLineHeights
+			margin-top 0
+			margin-left 20px
+			width 470px
+
+		a
+			font-size 28px
+			font-weight bold
+			text-decoration none
 
 	li
 		list-style-type none
-		line-height OneAndAHalfLineHeights
-		margin-bottom OneLineHeight
+		margin-bottom TwoLineHeights
 		overflow hidden
 
-		@media only screen and (min-width: 620px)
-			padding-left 125px
-
 	time, .date-range
-		background-color black-eighty
-		clear both
-		color white
-		border-radius 4px
-		display block
-		float left
-		font-size 14px
-		font-style normal
-		line-height 23px
-		margin-top 10px
-		margin-bottom 5px
-		padding 0 10px
-		position relative
+		color black-ninety
+		font-size 17px
 
-		@media only screen and (min-width: 620px)
-			margin-left -125px
+		@media only screen and (min-width: 820px)
+			float left
+			line-height OneAndAHalfLineHeights
+			margin-top 2px
+			text-align right
+			width 210px
 
 .p-summary
 	clear both
@@ -126,7 +98,10 @@
 	font-size 16px
 	line-height OneLineHeight
 	margin-bottom 0
-	padding-left 10px
+
+	@media only screen and (min-width: 820px)
+		margin-left 230px
+		width 470px
 
 .post-date
 	font-style italic
@@ -138,3 +113,13 @@
 	margin-top 0
 	margin-bottom HalfLineHeight
 	max-width 50%
+
+.links-list
+	margin-left 0
+
+	li
+		list-style-type none
+		margin-bottom OneLineHeight
+
+	.link-title
+		margin-bottom HalfLineHeight

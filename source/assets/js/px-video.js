@@ -159,6 +159,9 @@ function InitPxVideo(options) {
 	obj.movie = obj.container.getElementsByTagName('video')[0];
 	obj.controls = obj.container.getElementsByClassName('px-video-controls')[0];
 
+	// Add class to video container (this is only in the ind.ie source, as it enables our transcript styles)
+	obj.container.classList.add('custom-controls');
+
 	// Remove native video controls
 	obj.movie.removeAttribute("controls");
 
@@ -184,16 +187,16 @@ function InitPxVideo(options) {
 				'<button class="px-video-forward"><span class="sr-only">forward <span class="px-seconds">10</span> seconds</span></button>' +
 			'</div>' +
 			'<div class="px-video-volume-controls">' +
-				'<div class="px-video-captions-btn-container hide">' +
-					'<input class="px-video-btnCaptions sr-only" id="btnCaptions'+obj.randomNum+'" type="checkbox" />' +
-					'<label for="btnCaptions'+obj.randomNum+'"><span class="sr-only">Captions</span></label>' +
+				'<div class="px-video-mute-btn-container">' +
+					'<input class="px-video-mute sr-only" id="btnMute'+obj.randomNum+'" type="checkbox" />' +
+					'<label id="labelMute'+obj.randomNum+'" for="btnMute'+obj.randomNum+'"><span class="sr-only">Mute</span></label>' +
 				'</div>' +
 				'<div class="px-video-volume-slider">' +
 					'<label for="volume'+obj.randomNum+'" class="sr-only">Volume:</label><input id="volume'+obj.randomNum+'" class="px-video-volume" type="range" min="0" max="10" value="5" />' +
 				'</div>' +
-				'<div class="px-video-mute-btn-container">' +
-					'<input class="px-video-mute sr-only" id="btnMute'+obj.randomNum+'" type="checkbox" />' +
-					'<label id="labelMute'+obj.randomNum+'" for="btnMute'+obj.randomNum+'"><span class="sr-only">Mute</span></label>' +
+				'<div class="px-video-captions-btn-container hide">' +
+					'<input class="px-video-btnCaptions sr-only" id="btnCaptions'+obj.randomNum+'" type="checkbox" />' +
+					'<label for="btnCaptions'+obj.randomNum+'"><span class="sr-only">Captions</span></label>' +
 				'</div>' +
 			'</div>' +
 		'</div>';
