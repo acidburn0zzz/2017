@@ -5,13 +5,16 @@
     function definitionTextIntoButton(dfn) {
         var definitionText = dfn;
         var definitionDescriptionID = dfn.getAttribute('data-definition-text-id');
+        console.log(definitionText);
 
         // create button
         var definitionButton = document.createElement('button');
         // put text from link into button
         // get text from link
         var definitionLink = dfn.getElementsByTagName('a')[0].childNodes[0];
+        console.log(definitionLink);
         var definitionLinkText = definitionLink.textContent;
+        // console.log(definitionLinkText);
         // assign link text to button
         definitionButton.innerHTML = definitionLinkText;
         // put data attribute from text into button
