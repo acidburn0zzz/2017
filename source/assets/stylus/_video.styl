@@ -177,12 +177,12 @@
 
 /* utilities */
 .sr-only
-	position absolute !important
+	position absolute
 	clip rect(1px, 1px, 1px, 1px)
-	padding 0 !important
-	border 0 !important
-	height 1px !important
-	width 1px !important
+	padding 0
+	border 0
+	height 1px
+	width 1px
 	overflow hidden
 
 .hide
@@ -322,6 +322,7 @@
 	height 25px
 	overflow hidden
 	background no-repeat url('/assets/images/px-video-sprite.svg')
+	transition-property none
 
 	@media only screen and (min-width: 620px)
 		background-size 150%
@@ -576,7 +577,7 @@
 		border none
 
 	input[type='range']::-webkit-slider-thumb
-		-webkit-appearance none !important
+		-webkit-appearance none
 		height 10px
 		width 6px
 		background-color #666
