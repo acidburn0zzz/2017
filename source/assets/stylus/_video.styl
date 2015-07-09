@@ -177,12 +177,12 @@
 
 /* utilities */
 .sr-only
-	position absolute
+	position absolute !important
 	clip rect(1px, 1px, 1px, 1px)
-	padding 0
-	border 0
-	height 1px
-	width 1px
+	padding 0 !important
+	border 0 !important
+	height 1px !important
+	width 1px !important
 	overflow hidden
 
 .hide
@@ -193,7 +193,7 @@
 
 /* video */
 .px-video-container
-	overflow hidden
+	overflow hidden /* ensure height of video doesn't overlap elements below */
 	min-width 300px /* so video controls don't fall in on themselves in narrow browsers */
 
 .px-video-img-captions-container
@@ -205,8 +205,6 @@
 	position absolute
 	top 0
 	left 0
-	margin-top 0
-	margin-bottom 0
 	width 100%
 	height 100%
 
@@ -238,6 +236,12 @@
 
 	@media only screen and (min-width: 480px)
 		width 92.5%
+
+	@media only screen and (min-width: 970px)
+		width 95%
+
+	@media only screen and (min-width: 1795px)
+		width 97.5%
 
 .px-video-controls
 	margin-bottom 10px /* a little space below the player */
@@ -279,9 +283,9 @@
 
 /* caption area */
 .px-video-captions
-	border-box()
+	box-sizing border-box
 	position absolute
-	top 0
+	top 1px /* stop captions background showing above image */
 	left 0
 	width 100%
 	padding .5em
@@ -297,8 +301,7 @@
 .px-video-playback-buttons
 	float left
 	line-height 20px
-	min-width 140px /* accommodate width of buttons */
-	width 50% /* half width of player */
+	min-width 145px /* accommodate width of buttons */
 
 	@media only screen and (min-width: 620px)
 	/* centre the playback buttons when the viewport is wider */
@@ -311,7 +314,7 @@
 
 
 .px-video-controls button
-	border 1px #fff solid
+	border 1px transparent solid
 	background transparent
 	padding 0
 	margin 0 5px
@@ -335,7 +338,6 @@
 
 .px-video-controls button
 	cursor pointer
-	transition-property none
 
 /* restart button */
 .px-video-controls button.px-video-restart
@@ -406,10 +408,50 @@
 
 		&:hover, &:focus
 			background-position -10px -352px
+			
+.px-video-fullscreen-btn-container
+	float left
+	width 25px
+	
+	label
+		display inline-block
+		width 25px
+		height 20px
+		margin-top 3px
+		margin-left 1px
+		background no-repeat url('/assets/images/px-video-sprite.svg')
+		background-position -6px -943px
+
+		@media only screen and (min-width: 540px)
+			margin-top 5px /* line up with big buttons */
+
+	.no-svg &
+		/* use with Modernizr to provide a no-svg class on <html> to support browsers that don't support SVG */
+		background no-repeat url('/assets/images/px-video-sprite.png')
+
+.px-video-fullscreen-btn-container input[type="checkbox"]:focus+label
+	outline 1px #999 dotted
+	background-position -6px -907px
+
+.px-video-fullscreen-btn-container input[type="checkbox"]:hover+label
+	background-position -6px -907px
+	cursor pointer
+
+.px-video-fullscreen-btn-container input[type="checkbox"]:focus+label
+	outline 1px #999 dotted
+	background-position -6px -907px
+
+.px-video-fullscreen-btn-container input[type="checkbox"]:checked+label
+	background-position -6px -979px
+
+.px-video-fullscreen-btn-container input[type="checkbox"]:checked:hover+label
+	background-position -6px -1015px
+
+
 
 /* captions button */
 .px-video-captions-btn-container
-	float right
+	float left
 
 	@media only screen and (min-width: 540px)
 		clear none
@@ -430,6 +472,7 @@
 		.no-svg &
 			/* use with Modernizr to provide a no-svg class on <html> to support browsers that don't support SVG */
 			background no-repeat url('/assets/images/px-video-sprite.png')
+
 
 .px-video-captions-btn-container
 	input[type="checkbox"]:focus+label
@@ -498,10 +541,13 @@
 		background-position -6px -656px
 
 
-/* volume range input */
+/* volume range input  */
 .px-video-volume-slider
 	float left
-	width 95px /* width of volume slider */
+	width 80px /* width of volume slider */
+	
+	@media only screen and (min-width: 540px)
+		width 95px /* width of volume slider */
 
 .px-video-controls .controls
 	position relative
@@ -509,7 +555,7 @@
 	input[type='range']
 		-webkit-appearance none
 		height 6px
-		width 85px
+		width 70px
 		margin-top 9px
 		margin-right 0
 		margin-left 5px
@@ -518,6 +564,7 @@
 
 		@media only screen and (min-width: 540px)
 			margin-top 12px
+			width 85px
 
 	input[type='range']:focus::-webkit-slider-thumb
 		outline 1px #999 dotted
@@ -535,6 +582,7 @@
 		background-color #666
 
 	input[type='range']::-moz-range-thumb
+		background-color #666
 		height 12px
 		width 8px
 

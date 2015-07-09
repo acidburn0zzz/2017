@@ -116,6 +116,44 @@ function InitPxVideo(options) {
 		return [browserName, majorVersion];
 	}
 
+	//https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Using_full_screen_mode
+	// launch fullscreen
+	function launchFullScreen(elem) {
+	  if (!elem.fullscreenElement &&    // alternative standard method
+	      !elem.mozFullScreenElement && !elem.webkitFullscreenElement && !elem.msFullscreenElement ) {  // current working methods				
+  		var requestFullScreen = elem.requestFullscreen || elem.msRequestFullscreen || elem.mozRequestFullScreen || elem.webkitRequestFullscreen;
+  		requestFullScreen.call(elem);
+	  }
+	}
+ 
+	// change styles of fullscreen accordingly
+	function fullScreenStyles() {
+		if (document.fullscreen || document.mozFullScreen || document.webkitIsFullScreen || document.msFullscreenElement) {
+			obj.fullScreenBtn.checked = true;
+			//must apply other styles in container
+			obj.container.setAttribute("style", "width: 100%; height: 100%;");
+			obj.controls.className = "px-video-controls js-fullscreen-controls";
+			obj.captionsContainer.className = "px-video-captions js-fullscreen-captions";
+			obj.movie.setAttribute('width', '100%'); 
+			obj.movie.setAttribute('height', '100%'); 
+		} else {
+			obj.fullScreenBtn.checked = false;
+		// revert back to default styles
+			// obj.container.setAttribute("style", "width:" + obj.movieWidth + "px");
+			obj.controls.className = "px-video-controls"; 
+			obj.captionsContainer.className = "px-video-captions";
+			obj.movie.setAttribute('width', obj.movieWidth); 
+			obj.movie.setAttribute('height', obj.movieHeight);
+		}
+	}
+ 
+	// exit fullscreen
+	function exitFullScreen() {
+		// get appropriate vendor prefix and then call it with respect to the document
+		var exitFullScreen = document.exitFullscreen || document.msExitFullscreen || document.mozCancelFullScreen || document.webkitExitFullscreen;
+    exitFullScreen.call(document);
+	}
+
 	// Global variable
 	var obj = {};
 
@@ -159,9 +197,6 @@ function InitPxVideo(options) {
 	obj.movie = obj.container.getElementsByTagName('video')[0];
 	obj.controls = obj.container.getElementsByClassName('px-video-controls')[0];
 
-	// Add class to video container (this is only in the ind.ie source, as it enables our transcript styles)
-	obj.container.classList.add('custom-controls');
-
 	// Remove native video controls
 	obj.movie.removeAttribute("controls");
 
@@ -198,6 +233,10 @@ function InitPxVideo(options) {
 					'<input class="px-video-btnCaptions sr-only" id="btnCaptions'+obj.randomNum+'" type="checkbox" />' +
 					'<label for="btnCaptions'+obj.randomNum+'"><span class="sr-only">Captions</span></label>' +
 				'</div>' +
+				'<div class="px-video-fullscreen-btn-container show">' +
+				'<input class="px-video-btnFullScreen sr-only" id="btnFullscreen'+obj.randomNum+'" type="checkbox" />' +
+				'<label for="btnFullscreen'+obj.randomNum+'"><span class="sr-only">Fullscreen</span></label>' +
+			'</div>' +
 			'</div>' +
 		'</div>';
 
@@ -211,6 +250,9 @@ function InitPxVideo(options) {
 	// Adjust layout per width of video - controls/mute offset
 	obj.labelMute = document.getElementById("labelMute" + obj.randomNum);
 	obj.labelMuteOffset = obj.movieWidth - 390;
+	if (obj.browserName==="Firefox") { // adjust for Firefox rendering
+		obj.labelMuteOffset = obj.labelMuteOffset - 10;
+	}
 	if (obj.labelMuteOffset < 0) {
 		obj.labelMuteOffset = 0;
 	}
@@ -271,6 +313,8 @@ function InitPxVideo(options) {
 	obj.captionsBtnContainer = obj.container.getElementsByClassName('px-video-captions-btn-container')[0];
 	obj.duration = obj.container.getElementsByClassName('px-video-duration')[0];
 	obj.txtSeconds = obj.container.getElementsByClassName('px-seconds');
+	obj.fullScreenBtn = obj.container.getElementsByClassName('px-video-btnFullScreen')[0];
+	obj.fullScreenBtnContainer = obj.container.getElementsByClassName('px-video-fullscreen-btn-container')[0];
 
 	// Update number of seconds in rewind and fast forward buttons
 	obj.txtSeconds[0].innerHTML = obj.seekInterval;
@@ -359,6 +403,24 @@ function InitPxVideo(options) {
 			obj.movie.muted = true;
 		}
 	}, false);
+ 
+	obj.btnMute.onkeypress = function(e) {
+		if(e.keyCode == 13){ // enter key
+			e.preventDefault();
+			if (this.checked == true) {
+				this.checked = false;
+			}
+			else {
+				this.checked = true;
+			}
+			if (obj.movie.muted === true) {
+				obj.movie.muted = false;
+			}
+			else {
+				obj.movie.muted = true;
+			}
+		}
+	}
 
 	// Duration
 	obj.movie.addEventListener("timeupdate", function() {
@@ -393,6 +455,28 @@ function InitPxVideo(options) {
 		}
 	});
 
+	// Toggle display of fullscreen button
+	obj.fullScreenBtn.addEventListener('click', function() { 
+		if (this.checked) {
+			launchFullScreen(obj.container);
+		} else {
+			exitFullScreen();
+		}
+	}, false);
+	obj.fullScreenBtn.onkeypress = function(e) {
+		if (e.keyCode == 13){ // enter key
+			e.preventDefault();
+			if (this.checked == true) {
+				this.checked = false;
+				exitFullScreen();
+			}
+			else {
+				this.checked = true;
+				launchFullScreen(obj.container);
+			}
+		}
+	}
+
 	// Clear captions at end of video
 	obj.movie.addEventListener('ended', function() {
 		obj.captionsContainer.innerHTML = "";
@@ -403,13 +487,34 @@ function InitPxVideo(options) {
 	// ***
 
 	// Toggle display of captions via captions button
-	obj.captionsBtn.addEventListener('click', function() {
+	obj.captionsBtn.addEventListener('click', function() { 
 		if (this.checked) {
 			obj.captionsContainer.className = "px-video-captions show";
 		} else {
 			obj.captionsContainer.className = "px-video-captions hide";
 		}
+	  // if fullscreen add fullscreen class
+    if (document.fullscreen || document.mozFullScreen || document.webkitIsFullScreen || document.msFullscreenElement) {
+      var currClass = obj.captionsContainer.className;
+      obj.captionsContainer.className = currClass + ' js-fullscreen-captions';
+    }
 	}, false);
+	obj.captionsBtn.onkeypress = function(e) {
+		if (e.keyCode == 13){ // enter key
+			e.preventDefault();
+			if (this.checked == true) {
+				this.checked = false;
+			}
+			else {
+				this.checked = true;
+			}
+			if (this.checked) {
+				obj.captionsContainer.className = "px-video-captions show";
+			} else {
+				obj.captionsContainer.className = "px-video-captions hide";
+			}
+		}
+	}
 
 	// If no caption file exists, hide container for caption text
 	if (!obj.captionExists) {
@@ -419,13 +524,14 @@ function InitPxVideo(options) {
 	// If caption file exists, process captions
 	else {
 
-		// If IE 10/11 or Firefox 31+ or Safari 7+, don't use native captioning (still doesn't work although they claim it's now supported)
-		if ((obj.browserName==="IE" && obj.browserMajorVersion===10) ||
-				(obj.browserName==="IE" && obj.browserMajorVersion===11) ||
-				(obj.browserName==="Firefox" && obj.browserMajorVersion>=31) ||
+		// Can't use native captioning in the follow browsers:
+		if ((obj.browserName==="IE" && obj.browserMajorVersion===10) || 
+				(obj.browserName==="IE" && obj.browserMajorVersion===11) || 
+				(obj.browserName==="Firefox" && obj.browserMajorVersion>=31) || 
+				(obj.browserName==="Chrome" && obj.browserMajorVersion===43) || 
 				(obj.browserName==="Safari" && obj.browserMajorVersion>=7)) {
 			if (options.debug) {
-				console.log("Detected IE 10/11 or Firefox 31+ or Safari 7+");
+				console.log("Detected browser unable to play HTML5 captions; using custom captions");
 			}
 			// set to false so skips to 'manual' captioning
 			obj.isTextTracks = false;
@@ -540,4 +646,20 @@ function InitPxVideo(options) {
 		}
 
 	}
+
+	document.addEventListener("fullscreenchange", function () {
+		fullScreenStyles();
+	}, false);
+	 
+	document.addEventListener("mozfullscreenchange", function () {
+		fullScreenStyles();
+	}, false);
+	 
+	document.addEventListener("webkitfullscreenchange", function () {
+	  fullScreenStyles();
+	}, false);
+	 
+	document.addEventListener("msfullscreenchange", function () {
+	 	fullScreenStyles();
+	}, false);
 };
