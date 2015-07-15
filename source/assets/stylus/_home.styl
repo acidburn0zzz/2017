@@ -2,6 +2,8 @@
 	.intro
 		font-size 42px
 		line-height TwoLineHeights
+		padding-bottom OneLineHeight
+		text-align center
 		
 		a
 			text-decoration none
@@ -9,29 +11,120 @@
 			.text /* fix standard link underline with 1px bottom border offset to smaller lineheight with text using white shadows to cut through line */
 				border-bottom 1px solid black-seventy
 				display inline
-				text-shadow 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 2px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white
-		
-	.main
-		p
-			text-align center
+				text-shadow 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 2px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 2px white, 0 0 4px white, 0 0 4px white
+				
+				@media only screen and (min-width: 450px)
+					display inline-block
+					line-height OneAndAHalfLineHeights
 
 	.site-footer
 		@media only screen and (min-width: 500px)
-			margin-top FiveLineHeights
+			margin-top TwoLineHeights
 
 .heartbeat
-	background url('/assets/images/heartbeat-hot-air-balloon.png') top center no-repeat
-	background-size 320px
-	line-height FourLineHeights
-	margin-top TwoLineHeights
-	margin-bottom HalfLineHeight
-	padding-top 320px
+	border-top 1px solid black-thirty
 
-	@media only screen and (min-width: 460px)
-		background-size 460px
-		padding-top 460px
+	h2
+		text-align center
+		
+	p
+		@media only screen and (min-width: 780px)
+			float left
+			max-width 203px
 
+.heartbeat-icon
+	display block
+	width 100%
+	
+	@media only screen and (min-width: 380px)
+		margin HalfLineHeight auto
+		max-width 360px
+		
 	@media only screen and (min-width: 780px)
-		margin-top FourLineHeights
-		margin-bottom OneLineHeight
-		padding-top 480px
+		float left
+		margin 0 QuarterLineHeight OneLineHeight QuarterLineHeight
+		max-width 270px
+
+// .heartbeat
+// 	background url('/assets/images/heartbeat-hot-air-balloon.png') top center no-repeat
+// 	background-size 320px
+// 	line-height FourLineHeights
+// 	margin-top TwoLineHeights
+// 	margin-bottom HalfLineHeight
+// 	padding-top 320px
+
+// 	@media only screen and (min-width: 460px)
+// 		background-size 460px
+// 		padding-top 460px
+
+// 	@media only screen and (min-width: 780px)
+// 		margin-top FourLineHeights
+// 		margin-bottom OneLineHeight
+// 		padding-top 480px
+
+.callouts
+	border-top 2px solid black-fifty
+	clear both
+	font-size 16px
+	line-height OneLineHeight
+	list-style-type none
+	overflow hidden
+	padding HalfLineHeight 0
+	margin HalfLineHeight 0
+	
+	h2
+		font-size 21px
+		line-height OneAndAHalfLineHeights
+		margin-top HalfLineHeight
+		margin-bottom QuarterLineHeight
+
+		@media only screen and (min-width: 820px)
+			font-size 21px
+			line-height OneAndAHalfLineHeights
+			margin-bottom QuarterLineHeight
+	
+	h3
+		font-size 18px
+		line-height OneLineHeight
+		margin-top HalfLineHeight
+		margin-bottom QuarterLineHeight
+		
+		@media only screen and (min-width: 820px)
+			margin-bottom QuarterLineHeight
+		
+		a
+			font-weight bold
+			
+	.p-name
+		margin-top 0
+		margin-bottom 0
+	
+	.dt-published
+		font-size 16px
+		line-height OneLineHeight
+		margin-bottom HalfLineHeight
+			
+.callout
+	border-bottom 1px solid black-thirty
+	padding-bottom HalfLineHeight
+	
+	@media only screen and (min-width: 780px)
+		border-bottom none
+		float left
+		width 29.3%
+		
+.support
+	@media only screen and (min-width: 780px)
+		padding-right OneLineHeight
+	
+.news
+	@media only screen and (min-width: 780px)
+		padding-right HalfLineHeight
+		padding-left HalfLineHeight
+	
+.featured
+	@media only screen and (min-width: 780px)
+		padding-left OneLineHeight
+
+.callout-link
+	display block
