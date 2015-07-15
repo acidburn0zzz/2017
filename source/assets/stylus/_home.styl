@@ -22,24 +22,24 @@
 
 .heartbeat
 	border-top 1px solid black-thirty
+	position relative
 
-	h2
+	.before-icon
 		@media only screen and (min-width: 780px)
 			float left
-		
-	p
+			margin-bottom HalfLineHeight
+			width 280px
+			
+	.after-icon
 		@media only screen and (min-width: 780px)
 			float right
-			max-width 203px
+			margin-top OneAndThreeQuartersLineHeights
+			margin-bottom OneAndAHalfLineHeights
 			text-align right
-		
-			&:nth-of-type(1)
-				float left
-				clear left
-				text-align left
-				
-			&:nth-of-type(2)
-				margin-top -56px
+			width 280px
+			
+			p
+				margin-bottom HalfLineHeight
 
 .heartbeat-icon
 	display block
@@ -50,10 +50,10 @@
 		max-width 360px
 		
 	@media only screen and (min-width: 780px)
-		float left
-		margin 0 QuarterLineHeight OneLineHeight QuarterLineHeight
-		margin-top -155px
+		margin-left 210px
+		margin-top -35px
 		max-width 270px
+		position absolute
 
 .callouts
 	border-top 2px solid black-fifty
@@ -83,19 +83,21 @@
 		margin-bottom QuarterLineHeight
 		
 		@media only screen and (min-width: 820px)
+			line-height 22px
 			margin-bottom QuarterLineHeight
 		
 		a
 			font-weight bold
 			
 	.p-name
+		font-size 16px
 		margin-top 0
-		margin-bottom HalfLineHeight
+		margin-bottom 0
 	
 	.dt-published
 		font-size 15px
 		line-height 17px
-		margin-bottom HalfLineHeight
+		margin-bottom 0
 			
 .callout
 	border-bottom 1px solid black-thirty
