@@ -1,21 +1,20 @@
 .home
 	.intro
-		font-size 42px
-		line-height TwoLineHeights
-		padding-bottom OneLineHeight
+		font-family "Avenir Next", Avenir, 'Helvetica Neue', Helvetica, sans-serif
+		font-size 36px
+		font-weight bold
+		line-height OneAndAHalfLineHeights
+		padding-bottom 0
 		text-align center
 		
+		@media only screen and (min-width: 500px)
+			font-size 42px
+			line-height TwoLineHeights
+			padding-bottom OneLineHeight
+		
 		a
-			text-decoration none
-			
-			.text /* fix standard link underline with 1px bottom border offset to smaller lineheight with text using white shadows to cut through line */
-				border-bottom 1px solid black-seventy
-				display inline
-				text-shadow 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 2px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 2px white, 0 0 4px white, 0 0 4px white
-				
-				@media only screen and (min-width: 450px)
-					display inline-block
-					line-height OneAndAHalfLineHeights
+			color black-seventy
+			font-weight bold
 
 	.site-footer
 		@media only screen and (min-width: 500px)
@@ -25,12 +24,22 @@
 	border-top 1px solid black-thirty
 
 	h2
-		text-align center
+		@media only screen and (min-width: 780px)
+			float left
 		
 	p
 		@media only screen and (min-width: 780px)
-			float left
+			float right
 			max-width 203px
+			text-align right
+		
+			&:nth-of-type(1)
+				float left
+				clear left
+				text-align left
+				
+			&:nth-of-type(2)
+				margin-top -56px
 
 .heartbeat-icon
 	display block
@@ -43,30 +52,14 @@
 	@media only screen and (min-width: 780px)
 		float left
 		margin 0 QuarterLineHeight OneLineHeight QuarterLineHeight
+		margin-top -155px
 		max-width 270px
-
-// .heartbeat
-// 	background url('/assets/images/heartbeat-hot-air-balloon.png') top center no-repeat
-// 	background-size 320px
-// 	line-height FourLineHeights
-// 	margin-top TwoLineHeights
-// 	margin-bottom HalfLineHeight
-// 	padding-top 320px
-
-// 	@media only screen and (min-width: 460px)
-// 		background-size 460px
-// 		padding-top 460px
-
-// 	@media only screen and (min-width: 780px)
-// 		margin-top FourLineHeights
-// 		margin-bottom OneLineHeight
-// 		padding-top 480px
 
 .callouts
 	border-top 2px solid black-fifty
 	clear both
-	font-size 16px
-	line-height OneLineHeight
+	font-size 15px
+	line-height 23px
 	list-style-type none
 	overflow hidden
 	padding HalfLineHeight 0
@@ -97,11 +90,11 @@
 			
 	.p-name
 		margin-top 0
-		margin-bottom 0
+		margin-bottom HalfLineHeight
 	
 	.dt-published
-		font-size 16px
-		line-height OneLineHeight
+		font-size 15px
+		line-height 17px
 		margin-bottom HalfLineHeight
 			
 .callout
