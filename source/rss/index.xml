@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+ <channel>
+  <title>Ind.ie Blog and Labs Blog</title>
+  <link>https://ind.ie/rss/</link>
+  <description>The combined Ind.ie blog and Ind.ie Labs blog feeds.</description>
+  <lastBuildDate>Wed, 22 Jul 2015 19:13:25 GMT</lastBuildDate>
+  <generator>ListGarden Program 1.3.1</generator>
+  <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+ </channel>
+</rss>

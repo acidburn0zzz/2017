@@ -4,229 +4,30 @@
   <title>Ind.ie News</title>
   <link>https://ind.ie/blog</link>
   <description>The latest news and updates from Ind.ie</description>
-  <lastBuildDate>Tue, 21 Jul 2015 12:37:05 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 22 Jul 2015 20:02:16 GMT</lastBuildDate>
   <generator>ListGarden Program 1.3.1</generator>
   <docs>http://blogs.law.harvard.edu/tech/rss</docs>
   <item>
    <title>Fight for your right to (Crypto) Party</title>
    <link>https://ind.ie/blog/fight-for-your-right-to-crypto-party/</link>
-   <description>&lt;p&gt;As with any David and Goliath battle, the fight for privacy is an uphill challenge. To win it, we’ll need the dedication and tenacity of as many allies as possible. At Ind.ie, our goal is to create beautiful, easy to use, privacy respecting tools that help you do simple things, like communicating directly with friends, without sharing your data with third parties. For the average person, taking control of your privacy should not require special training or expert knowledge. It should be convenient and seamless.&lt;/p&gt;
-
-      &lt;p&gt;That’s our approach, but many groups are tackling the same issues from different angles and doing important work in the privacy sphere. One such group is &lt;a href='https://cryptoparty.in'&gt;Crypto Party&lt;/a&gt;. On a recent trip to London I attended my first ever Crypto Party and was lucky to gain some insight into what they do, and the amazing people in the community behind it.&lt;/p&gt;
-
-      &lt;h2&gt;Crypto Party&lt;/h2&gt;
-
-      &lt;p&gt;Crypto Party is an international, decentralised, community-run organisation, working to raise awareness about and train non-technical folk in the use of encryption and privacy technology. Today, the effectiveness of most commonly-used privacy tools is let down by how difficult they are to use. They can seem intimidating, even stigmatised, to many people. As an attempt to counter this, Crypto Party host regular, free events, where anyone can come along and learn basic cryptography skills.&lt;/p&gt;
-
-      &lt;p&gt;The Crypto Party I attended was hosted by Silkie Carlo and Arjen Kamphuis, co-authors of &lt;a href='http://www.tcij.org/resources/handbooks/infosec'&gt;Information Security for Journalists&lt;/a&gt;. Silkie and Arjen were fantastic hosts, showing patience and enthusiasm in equal measures. Crypto Party’s guiding principle is ‘Be excellent to each other’ and you could feel it thriving at this event.The entire evening felt like a supportive, judgement free space. The trainers weren’t just interested in getting us tooled up, they took the time to ensure everyone knew what they were doing and why. I want to share a few of my favourite points from the night, and maybe even inspire some of you to attend a Crypto Party too.&lt;/p&gt;
-
-      &lt;h2&gt;Facebook - The digital asbestos of the 21st Century&lt;/h2&gt;
-
-      &lt;p&gt;Could there be any better metaphor for our current relationship with Facebook than Arjen’s “Digital Asbestos” analogy? Just decades ago, the battle to ban this carcinogenic building material saw concerned citizens and experts alike take on the powerful asbestos industry. The industry, in return, fought hard to protect its own economic interests, &lt;a href='http://www.mesothelioma.co/asbestos/asbestos-industry-cover-up/altered-medical-research.aspx'&gt;even at the cost of human safety&lt;/a&gt;. (Interestingly, the negative health effects of asbestos, while only scientifically proven in the 20th century, were &lt;a href='http://environmentalchemistry.com/yogi/environmental'&gt;recorded as early as Romans times&lt;/a&gt; with Pliny the Elder (AD 23 – 79) noting that “quarry slaves from asbestos mines not be purchased because ‘they die young.’”)&lt;/p&gt;
-
-      &lt;p&gt;Today, it’s unthinkable that we tolerated such unacceptable harms for so long and yet we allow Facebook to do to our digital selves what asbestos did to our physical selves. We willingly hand over swathes of personal data, allowing them to analyse, sell and use it however they see fit. We exchange free services for our digital souls.&lt;/p&gt;
-
-      &lt;p&gt;We’re already beginning to see the initial consequences of this Faustian bargain in the &lt;a href='http://www.telegraph.co.uk/technology/facebook/10944613/Facebook-conducted-widespread-experiments-on-user-data-to-alter-peoples-behaviour.html'&gt;psychological testing and manipulation that is carried out on us without ethical oversight&lt;/a&gt; and in the &lt;a href='http://www.pnas.org/content/110/15/5802.full?sid=5efa0b8d-205a-49f8-ac64-70f2d15edf53'&gt;hugely personal predictions being made about us&lt;/a&gt; from aggregated data sets. What effects will we be suffering in 10, 20, 50 years time, when many orders of magnitude more information about us is owned by corporations and analysis techniques and processing power have increased exponentially?&lt;/p&gt;
-
-      &lt;p&gt;As a society, we’re failing to treat our digital selves with the same level of respect as our physical selves, in spite of the hugely vulnerable position that puts us in. With asbestos, we eventually reached a tipping point, and were able to either ban it outright or at least strongly regulate its use. Unfortunately, this came only after many lives had been ruined. Hopefully, as we come to better know the harms that free services such as Facebook cause, the tide will turn there also and society will demand that human rights take precedence over the selfish, exploitative business model of &lt;a href='https://aralbalkan.com/notes/spyware-2.0/'&gt;Spyware 2.0&lt;/a&gt; that rules mainstream technology today.&lt;/p&gt;
-
-      &lt;h2&gt;It's not all about you&lt;/h2&gt;
-
-      &lt;p&gt;For anyone who understands and cares about privacy, the ‘I’ve got nothing to hide’ argument falls flat on its face. As Snowden put it:&lt;/p&gt;
-
-      &lt;blockquote&gt;
-        &lt;p&gt;“When you say I don’t care about the right to privacy because I have nothing to hide, that is no different than saying I don’t care about freedom of speech because I have nothing to say or freedom of the press because I have nothing to write.”&lt;/p&gt;
-      &lt;/blockquote&gt;
-
-      &lt;p&gt;Giving up a fundamental right because you don’t think you need it right now, is both selfish and shortsighted. Not only do you not know how your data is being used today; you also don’t know how it might be used in the future, or by whom. None of us can make a truly informed decision to hand over our data, because many of the harms that may result could come about through techniques that have yet to be invented, or at the hands of governments that have yet to take power.&lt;/p&gt;
-
-      &lt;p&gt;Regardless, even if you choose not to care about your privacy, it’s important to remember that using privacy protecting technology isn’t just about protecting you: it’s also about protecting those around you, including people who are in more vulnerable situations. It’s about recognising the need for it to exist, and supporting those who depend upon it for their safety. Today the use of tools like PGP and Tor is relatively uncommon. Consequently, if you are a political dissident, or an activist, or anyone else whose life depends upon effective email encryption or online anonymity, using these tools can increase authorities’ interest in you.&lt;/p&gt;
-
-      &lt;p&gt;Given the recent revelations that GCHQ spied on NGOs like &lt;a href='http://www.theguardian.com/uk-news/2015/jul/01/gchq-spied-amnesty-international-tribunal-email'&gt;Amnesty International&lt;/a&gt;, it’s clear that — even in a supposedly democratic country like the UK — people working to safeguard the rights of the vulnerable are being targeted. So simply using these tools (as opposed to not) is a really easy way to help those who fight for our rights. Whether you use PGP to send banal emails to your friends, or Tor to search for kitten images, you can add noise to the network, increasing the safety and effectiveness for people who really need it. It’s standing up and crying out “I’m Spartacus” for the digital age. With more kittens.&lt;/p&gt;
-
-      &lt;h2&gt;Talk about it&lt;/h2&gt;
-
-      &lt;p&gt;Every taboo that is now socially acceptable had to go through the phase when people started talking openly about it even though it was socially unacceptable. The current narrative being churned out by government agencies says that if you use encryption, you must be a terrorist. Vladimir Putin uses a similar tactic to demonise homosexuality, (&lt;a href='http://www.huffingtonpost.com/2014/01/19/putin-gays-pedophiles_n_4627438.html'&gt;by grouping it together with paedophilia&lt;/a&gt;).&lt;/p&gt;
-
-      &lt;p&gt;These kinds of cheap non-sequiturs can be powerful when used against the uninformed, especially when there’s no counter-narrative. By talking about privacy, encryption, and the tools you use to protect yourself day-to-day, you can help create a counter-narrative. It’s easy to smear something most people have never heard of outside of their government’s fear mongering. It’s a lot harder to smear something that society accepts as mundane and normal.&lt;/p&gt;
-
-      &lt;h2&gt;Talk to them&lt;/h2&gt;
-
-      &lt;p&gt;&lt;a href='http://xkcd.com/525/'&gt;&lt;img src='http://imgs.xkcd.com/comics/i_know_youre_listening.png' alt='Cartoon: Now and then I announce “I know you’re listening” to empty rooms. If I’m wrong, no one knows. If I’m right, maybe I just freaked the hell out of some secret organization.'/&gt;&lt;/a&gt;&lt;/p&gt;
-
-      &lt;p&gt;Perhaps my favourite piece of advice from the night: If you think you’re being surveilled, talk to the spies. As Edward Snowden proved, at least some of the people working in these organisations are good people with a sense of right and wrong. We aren’t going to stop needing whistleblowers any time soon, and if you can make someone stop for a moment, and consider whether they’re fighting for the right side, you might just help create the next Snowden.&lt;/p&gt;
-
-      &lt;h2&gt;Information Security for Journalists&lt;/h2&gt;
-
-      &lt;p&gt;On the night, the trainers set us up with a fantastic range of tools, but there’s always more to learn. Silkie and Arjen’s book is a great resource not just for journalists but for anyone who wants to start protecting their privacy. It offers step-by-step guidance on a wide range of privacy tools and talks further about why you should be protecting yourself online. It’s &lt;a href='http://www.tcij.org/resources/handbooks/infosec'&gt;available for free online&lt;/a&gt; (under a &lt;a href='https://creativecommons.org/licenses/by-nc-sa/4.0/'&gt;Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license&lt;/a&gt;) and definitely worth a read. Meanwhile, remember to check out &lt;a href='https://cryptoparty.in'&gt;Crypto Party&lt;/a&gt; to find out what you can do today to stay safe, change the narrative, and fight for a world where privacy isn’t a dirty word.&lt;/p&gt;</description>
+   <description>&lt;p&gt;Jo writes about her first ever Crypto Party experience in London.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://ind.ie/blog/fight-for-your-right-to-crypto-party/&quot;&gt;Read the full post on the Ind.ie blog&lt;/a&gt;.&lt;/p&gt;</description>
    <pubDate>Mon, 20 Jul 2015 17:00:00 GMT</pubDate>
+<author>Jo Porter</author>
   </item>
   <item>
    <title>Tethered Beings</title>
    <link>https://ind.ie/blog/tethered-beings/</link>
-   <description> &lt;img src='https://ind.ie/blog/tethered-beings/images/we-the-corporations.jpg' alt='Hand signing declaration of We The People, crossing out People and replacing with Corporations'/&gt;
-
-      &lt;p&gt;The roundup is back! Aral and I are settling into our new office in the shed, and I’ve been itching to share links with you all week.&lt;/p&gt;
-
-      &lt;h2&gt;UK High court rules data retention and surveillance legislation unlawful&lt;/h2&gt;
-
-      &lt;p&gt;Big news! The &lt;a href='https://ind.ie/blog/british-government-goes-bananas'&gt;British government has been going bananas&lt;/a&gt;, but today the high court has ruled that the &lt;a href='http://www.theguardian.com/world/2015/jul/17/data-retention-and-surveillance-legislation-ruled-unlawful'&gt;Data Retention and Investigatory Powers Act (Dripa) 2014 was unlawful&lt;/a&gt;. This law was rushed through by the coalition government last year, and allowed the police and security services to spy on citizens without proper safeguards, making it incompatible with human rights regarding privacy and data retention.&lt;/p&gt;
-
-      &lt;p&gt;This legislation was overturned thanks to a judicial challenge by Tom Watson (Labour MP) and David Davis (Conservative MP), supported by the human rights group, Liberty. The overturning of the legislation means that the UK parliament has to go back, look at the legislation again, put it right, and bring those changes into effect by next March.&lt;/p&gt;
-
-      &lt;p&gt;Today’s victory shows that we have some hope in political figures such as Tom Watson and David Davis, regardless of their party allegiances. There will still be work to do. We must ensure that the same, or similar, legislation isn’t passed over the next year, especially now the UK is subject to the witless Conservative government. &lt;a href='http://arstechnica.co.uk/tech-policy/2015/07/key-part-of-uk-surveillance-legislation-ruled-unlawful-by-high-court/'&gt;The Home Office has already said it will appeal&lt;/a&gt;.&lt;/p&gt;
-
-      &lt;h2&gt;U-Turns that aren’t U-Turns&lt;/h2&gt;
-
-      &lt;p&gt;The UK Prime Minister, David Cameron, has &lt;a href='http://www.theguardian.com/technology/2015/jan/13/david-cameron-encrypted-messaging-apps-ban'&gt;come under fire&lt;/a&gt; in the last six months for &lt;a href='http://www.theguardian.com/technology/2015/jan/15/david-cameron-encryption-anti-terror-laws'&gt;attacking encryption&lt;/a&gt;, and generally &lt;a href='http://boingboing.net/2015/01/13/what-david-cameron-just-propos.html'&gt;not understanding encryption&lt;/a&gt; at all. So this week, when &lt;a href='http://uk.businessinsider.com/uk-government-not-going-to-ban-encryption-2015-7'&gt;Number 10 seemed to do a U-turn on encryption&lt;/a&gt;, saying “We accept and completely recognise the importance of encryption,” a lot of folk breathed a sigh of relief.&lt;/p&gt;
-
-      &lt;p&gt;However, in &lt;a href='http://www.wired.co.uk/news/archive/2015-07/15/cameron-ban-encryption-u-turn'&gt;an article on the supposed U-turn in Wired&lt;/a&gt;, Eerke Boiten has suggested that these bold declarations and U-turns are designed to confuse and deceive, leaving the general population believing that the current levels of government surveillance are an acceptable compromise:&lt;/p&gt;
-
-      &lt;blockquote&gt;
-        &lt;p&gt;“Cameron’s advisors are smart enough to know that you can’t ban encryption, and probably also to know that you can’t build in secure and reliable government backdoors. But that’s too complex and subtle for a large number of politicians let alone the majority of the population, so they can get away with Cameron grandstanding on loose sand.”&lt;/p&gt;
-      &lt;/blockquote&gt;
-
-      &lt;p&gt;Chris Lamb has &lt;a href='https://chris-lamb.co.uk/posts/wheres-the-principled-opposition-whatsapp-ban'&gt;an objection to the backdoor objectors&lt;/a&gt;: why are the defenders of encryption just using the argument of “it literally can’t be done.” “Where's the principled opposition to the ‘&lt;a href='http://thehackernews.com/2015/07/whatsapp-ban.html'&gt;WhatsApp ban&lt;/a&gt;’?”&lt;/p&gt;
-
-      &lt;blockquote&gt;
-        &lt;p&gt;“Whilst it's certainly easier to dissect illiberal measures on technical merit than to make an impassioned case for abstract freedoms, every time we gleefully cackle &quot;it won't work&quot; we are, in essence, conceding the central argument to the authoritarian and the censorious. If one is right but for the wrong reasons, were we even right to begin with?”&lt;/p&gt;
-      &lt;/blockquote&gt;
-
-      &lt;p&gt;Another &lt;a href='http://www.wired.co.uk/news/archive/2015-07/15/how-spies-will-circumvent-encryption-anyway'&gt;interesting article by Gordon Corera&lt;/a&gt; pointed out that the UK Government Communications Headquarters (GCHQ) will continue to circumvent encryption no matter what. Governments will continue to lie (knowingly or unknowingly) about what goes on behind the scenes. Spies will be spies. A long article on &lt;a href='http://www.dailydot.com/politics/encryption-crypto-war-james-comey-fbi-privacy/'&gt;The Crypto Wars&lt;/a&gt; explains why this is also the case in the US.&lt;/p&gt;
-
-      &lt;p&gt;This doesn’t mean that we should give up on &lt;a href='https://ind.ie/blog/the-war-on-encryption-and-fighting-trade-agreements/#encryption'&gt;encryption&lt;/a&gt;. But it does point out the importance of our continuing battle against mass surveillance, and the significance of the overturning of DRIPA. It’s important that intercepting the communications of every citizen is considered an illegal invasion of our privacy and human rights.&lt;/p&gt;
-
-      &lt;p&gt;Another report was released this week from the Royal United Services Institute panel looking at the privacy implications of UK government surveillance in the wake of the Snowden revelations. &lt;a href='http://www.theguardian.com/commentisfree/2015/jul/14/mass-suveillance-reform-gchq-uk-intelligence-gathering-rusi-report'&gt;A Guardian article by panelist, and journalist, Heather Brooke&lt;/a&gt;, contains fascinating insight into how the panelists attempted to balance privacy and security, oversight and transparency, but the resulting &lt;a href='http://www.theguardian.com/world/2015/jul/14/uk-surveillance-report-makes-concessions-to-privacy-lobby'&gt;report seems diplomatic and, ultimately, a bit limp&lt;/a&gt;.&lt;/p&gt;
-
-      &lt;h2&gt;Not such good news in Europe&lt;/h2&gt;
-
-      &lt;p&gt;Europe has not had a good week with Germany, and other countries, &lt;a href='http://time.com/3959164/germany-greece-bailout-deal-athens-merkel/'&gt;bullying Greece into austerity&lt;/a&gt;. &lt;a href='http://www.theguardian.com/commentisfree/2015/jul/12/ttip-your-data-privacy-is-a-barrier-to-economic-growth'&gt;Evgeny Morozov pointed out that the media attention on Greece has distracted Europe&lt;/a&gt; from the European Parliament passing a non-binding resolution on the Transatlantic Trade and Investment Partnership (TTIP). We looked at &lt;a href='https://ind.ie/blog/the-war-on-encryption-and-fighting-trade-agreements/#trade-agreements'&gt;the dangers of TTIP and similar trade agreements&lt;/a&gt; a few weeks ago.&lt;/p&gt;
-
-      &lt;p&gt;As Evgeny emphasised in his article, it doesn’t matter if &lt;a href='http://arstechnica.co.uk/tech-policy/2015/05/ttip-explained-the-secretive-us-eu-treaty-that-undermines-democracy/4/#h1'&gt;ISDS (Investor-State Dispute Settlement)&lt;/a&gt;, which would allow corporations to sue governments for decisions made that compromise corporate interests, is removed from TTIP. We’re already subject to corporate interests through capitalism, and these corporate interests are inherently anti-privacy because our data is worth so much money:&lt;/p&gt;
-
-      &lt;blockquote&gt;
-        &lt;p&gt;“Essentially, citizens not only won’t have a right to privacy but their very attempts to hide something will be interpreted as either an offence against free trade or as an effort to undermine national security. But even if citizens vote to elect a government that promises to reverse this despicable trend, that government itself is likely to be sued out of it; the treaties will contain all the necessary legal instruments to do so. The 21st century of transatlantic prosperity has arrived, indeed.”&lt;/p&gt;
-      &lt;/blockquote&gt;
-
-      &lt;p&gt;It’s grim. Remember to &lt;a href='http://www.nottip.org.uk'&gt;contact your MP or MEP to make sure your thoughts on TTIP are heard&lt;/a&gt;.&lt;/p&gt;
-
-      &lt;h2&gt;The Internet Of Things (That Spy On You)&lt;/h2&gt;
-
-      &lt;p&gt;This week &lt;a href='http://www.theguardian.com/technology/2015/jul/15/internet-of-things-mass-surveillance'&gt;Julia Powles executed a wonderful takedown&lt;/a&gt; of Philip N Howard’s Pax Technica: How the Internet of Things May Set Us Free or Lock Us Up. Philip’s thesis heralds a new Internet Of Things age, where everything is interconnected, data is free flowing between governments and corporations, social media informs our every decision, and helps satisfy our every whim. And it’s all in our best interests. Julia explains how she is terrified, not excited, by this vision:&lt;/p&gt;
-
-      &lt;blockquote class='multi-paragraph'&gt;
-        &lt;p&gt;“By tracking us in intensive and intrusive ways – not only in our homes, but in our vehicles and bodies – data-driven devices can nudge, manipulate and mould our behaviours, habits and preferences, limit our autonomy, and bring quantification, segregation and discrimination to what is currently a political economy held together by social fuzziness.&lt;/p&gt;
-
-        &lt;p&gt;This fuzziness assists us individually – because we have control over who has, and importantly who does not have, personal information about us. But it is also important socially, unless we want to turn into an intensely individualistic, segmented, micro-financialised network of semi-autonomous, tethered beings.
-
-        &lt;p&gt;We deserve a smarter solution that offers more than empty marketing rhetoric for “open”, “inclusive” monopolistic big tech business models.”&lt;/p&gt;
-      &lt;/blockquote&gt;
-
-      &lt;p&gt;Heeding Julia’s warnings in mind, and keeping on the theme of frightening future scenarios, Quentin Hardy’s piece on ‘&lt;a href='http://bits.blogs.nytimes.com/2015/07/11/the-more-real-threat-posed-by-powerful-computers/'&gt;The Real Threat Posed by Powerful Computers&lt;/a&gt;’ will really give you the heebie-jeebies. Quentin writes that we’re less at threat from Terminator-like conscious technology and artificial intelligence than we are from “artificial stupidity.” Machine learning isn’t stored and generalised the same way as human learning. Despite neural networks and early “transfer learning,” artifical intelligence still has a long way to go before it truly understands context. Team the lack of context-aware computers with the visions of an algorithmically-run Internet Of Things-based future, and we really have the makings of a sci-fi dystopia.&lt;/p&gt;
-
-      &lt;h2&gt;What have those cheeky corporations been up to this week…?&lt;/h2&gt;
-
-      &lt;p&gt;Of course there’s no mass surveillance without corporate surveillance, and it’s been a while since we looked at the activities of our favourite Silicon Valley pals…&lt;/p&gt;
-
-      &lt;h3&gt;Google&lt;/h3&gt;
-
-      &lt;p&gt;&lt;a href='http://www.fastcompany.com/3048463/tech-forecast/google-can-tell-if-an-email-came-from-you-or-an-impostor'&gt;Google can tell if an email is from you or an imposter&lt;/a&gt;. Google &lt;a href='http://gmailblog.blogspot.fr/2015/07/the-mail-you-want-not-spam-you-dont.html'&gt;has been showing off&lt;/a&gt; its artificial neural network which can tell a genuine email from a company from a phishing attempt. Great news for victims of spam, but it also emphasises just how capable Google is of analysing the data of its users.&lt;/p&gt;
-
-      &lt;h3&gt;Google and the right to be forgotten&lt;/h3&gt;
-
-      &lt;p&gt;Google has released a transparency report this week, and accidentally leaked data on the “right to be forgotten” which was &lt;a href='http://www.theguardian.com/technology/2015/jul/14/google-accidentally-reveals-right-to-be-forgotten-requests'&gt;shrewdly picked up by the Guardian&lt;/a&gt;. The &lt;a href='https://en.wikipedia.org/wiki/Right_to_be_forgotten'&gt;right to be forgotten&lt;/a&gt; is a largely EU concept and directive which gives a citizen the right to suppress information from their past as part of protecting their privacy. As a “data controller,” Google is required by law to remove data that is “inadequate, irrelevant, or no longer relevant” upon request. We covered this briefly in &lt;a href='https://ind.ie/blog/the-destiny-machine/#google'&gt;an earlier roundup&lt;/a&gt; where we showed how Google is punishing the EU in its search results. Google is clearly against the directive and claims “that dangerous criminals and shady public figures are using European law to request that Google removes information about them.”&lt;/p&gt;
-
-      &lt;p&gt;However, the Guardian’s examination of the data leaked in Google’s transparency report shows otherwise:&lt;/p&gt;
-
-      &lt;blockquote&gt;
-        &lt;p&gt;“Google tells us that this was a test categorisation of data, not considered reliable enough to release publicly. Yet even with a very big margin of error, the data would still show that the right to be forgotten issue is overwhelmingly about everyday people, often with little public profile – victims of algorithmic failure on the indelible web.”&lt;/p&gt;
-      &lt;/blockquote&gt;
-
-      &lt;p&gt;As Julia Powles writes further, this shows Google has a worrying level of control as the judge, jury and executioner of our data: “Google is the web’s main arbiter of information, and has immense control over how we are represented and identified digitally.”&lt;/p&gt;
-
-      &lt;h3&gt;Apple, Google, and cars&lt;/h3&gt;
-
-      &lt;p&gt;&lt;a href='http://www.thestar.com.my/Tech/Tech-News/2015/07/10/Carmakers-to-tech-partners-Keep-your-hands-off-our-data/'&gt;Car manufacturers, Ford and Audi, are limiting the amount of data they share with Apple and Google&lt;/a&gt; through Apple’s CarPlay and Google’s Android Auto products. Not in the interest of the drivers, mind. Mathias Halliger, Audi’s senior systems architect for connected vehicle technologies said:&lt;/p&gt;
-
-      &lt;blockquote&gt;
-        &lt;p&gt;“This enables a business model that completely belongs to the&amp;nbsp;carmaker”&lt;/p&gt;
-      &lt;/blockquote&gt;
-
-      &lt;p&gt;Yup. Audi don’t want to let Apple and Google at your valuable data, because they want to keep it all to themselves.&lt;/p&gt;
-
-      &lt;h3&gt;Apple patent&lt;/h3&gt;
-
-      &lt;p&gt;People with keen eyes on patents noticed this week that &lt;a href='http://gizmodo.com/apples-thinking-about-showing-people-ads-based-on-their-1718218638'&gt;Apple have been awarded a patent&lt;/a&gt; “to analyze the user’s available credit in order to assess the likelihood of a user being able to purchase advertised goods and/or services.” This doesn’t sound compatible with &lt;a href='https://ind.ie/blog/big-data-privacy-and-ethics/#apple'&gt;Tim Cook’s stance on privacy&lt;/a&gt;, so here’s hoping they don’t ever use it.&lt;/p&gt;
-
-      &lt;hr/&gt;
-
-      &lt;p&gt;That’s all for this week, and a big thanks goes to John Hagemeister for giving me a heads-up on the fabulous Chris Lamb piece. If you have any suggestions for interesting privacy news and writeups, please &lt;a href='mailto:laura@ind.ie'&gt;send me an email&lt;/a&gt;, or &lt;a href='http://twitter.com/laurakalbag'&gt;a tweet&lt;/a&gt;.&lt;/p&gt;</description>
+   <description>&lt;p&gt;The roundup is back! Aral and I are settling into our new office in the shed, and I’ve been itching to share links with you all week.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://ind.ie/blog/tethered-beings/&quot;&gt;Read the full post on the Ind.ie blog&lt;/a&gt;.&lt;/p&gt;</description>
    <pubDate>Fri, 17 Jul 2015 18:00:00 GMT</pubDate>
+<author>Laura Kalbag</author>
   </item>
   <item>
    <title>Farewell Caspar</title>
    <link>https://ind.ie/blog/farewell-caspar/</link>
-   <description> &lt;figure&gt;&lt;img src='https://ind.ie/blog/farewell-caspar/images/caspar.jpg' alt='Caspar Bowden'/&gt;
-      &lt;figcaption&gt;Photograph by &lt;a href='https://commons.wikimedia.org/wiki/User:Rama'&gt;Rama&lt;/a&gt;, Wikimedia Commons (Cc-by-sa-2.0-fr)&lt;/figcaption&gt;
-      &lt;/figure&gt;
-
-    &lt;p&gt;We were sad to hear &lt;a href='https://en.wikipedia.org/wiki/Caspar_Bowden'&gt;Caspar Bowden&lt;/a&gt; died this week. It’s a huge blow to our community, and every citizen who has, and will still, benefit from his tenacious work for human rights.&lt;/p&gt;
-
-    &lt;p&gt;Those of us who have come to privacy advocacy since the Snowden revelations may not know the full length, breadth, and depth of Caspar’s work. At Ind.ie we got the chance to meet him in person when we attended the &lt;a href='http://internetrightsandprinciples.org/site/live-blogging-from-goldsmiths-defending-human-rights-in-a-digital-age/'&gt;Defending Human Rights In A Digital Age&lt;/a&gt; panel at Goldsmiths University in February.&lt;/p&gt;
-
-    &lt;p&gt;Caspar stood out as someone who cared a huge amount about privacy, and didn’t want to waste any time on superficial discussion or empty platitudes. His experience, and depth of understanding, of both the technological and legal sides of privacy issues, gave him the unique ability to make his points accessible to the audience.&lt;/p&gt;
-
-    &lt;p&gt;There are &lt;a href='http://boingboing.net/2015/07/09/rip-caspar-bowden-tireless.html'&gt;many sites with wonderful tributes to Caspar&lt;/a&gt;, written by people who knew him and his work well. We thought it’d be a fitting tribute to look at Caspar’s work, and how we can continue to advocate for these issues.&lt;/p&gt;
-
-    &lt;h2&gt;Privacy and human rights&lt;/h2&gt;
-
-    &lt;p&gt;Caspar was a long-standing privacy advocate, co-founding the think tank &lt;a href='http://www.fipr.org/about.html'&gt;Foundation for Information Policy Research&lt;/a&gt; (FIPR) in 1998, focusing on policy implications at the intersection of technology, business, government, and society. Before many privacy advocates were of legal drinking age, FIPR was investigating how technology issues affected “business, freedom of speech, privacy, democratic governance, and the accountability and efficiency of public administration.” As it says on the FIPR &lt;a href='http://www.fipr.org/policy.html'&gt;policy page&lt;/a&gt;, “Government policy making is not always informed by a full appreciation of the consequences either for business or for the individual consumer and citizen.”&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;“He was tireless, fierce, and had an encyclopedic knowledge of privacy legislation, regulation, and technology.” — &lt;a href='http://boingboing.net/2015/07/09/rip-caspar-bowden-tireless.html'&gt;Cory Doctorow&lt;/a&gt;&lt;/p&gt;
-    &lt;/blockquote&gt;
-
-    &lt;h3&gt;Right to encrypt&lt;/h3&gt;
-
-    &lt;p&gt;In the 1990s Crypto Wars, &lt;a href='https://www.minds.com/blog/view/466125815520698368/in-memoriam-caspar-bowden'&gt;Caspar was a key figure in the British fight for the right to encrypt&lt;/a&gt;. As a technology adviser for Scientists for Labour, he convinced the out-of-power British Labour party to adopt a civil liberties platform that was “strongly pro-privacy and pro-encryption.” Unfortunately, when Labour gained power in 1997, they “began drafting a potentially catastrophic law that would have mandated compulsory crypto backdoors in the UK.” &lt;a href='https://www.techdirt.com/articles/20150528/07001931137/uk-government-goes-full-orwell-snoopers-charter-encryption-backdoors-free-speech-suppression.shtml'&gt;Sound familiar?&lt;/a&gt;&lt;/p&gt;
-
-    &lt;h2&gt;Guilty of being a foreigner&lt;/h2&gt;
-
-    &lt;p&gt;One of Caspar’s key fights was against the US’s ability to collect and analyse intelligence on any person outside the US, without a particular warrant, through mass surveillance. As the US legal system doesn’t protect anyone outside of the US (US citizens are protected under the Fourth Amendment,) &lt;a href='http://b2fxxx.blogspot.co.uk/2015/07/rip-caspar.html'&gt;he referred to s702&lt;/a&gt; in the Foreign Intelligence Surveillance Amendment Act 2008 (FISAA) as the “guilty of being a foreigner” provision. &lt;a href='https://www.academia.edu/6004312/Is_EU_data_safe_in_US_Clouds_'&gt;Caspar pointed out that it wasn’t safe to store EU data in US-based clouds&lt;/a&gt;. His report explained that privacy and data protection are challenged in the name of security and the fight against terrorism, “both in the case of the Patriot Act and in the case of the Foreign Intelligence Surveillance Amendment Act (FISAA) of 2008.”&lt;/p&gt;
-
-    &lt;h2&gt;Backdoors&lt;/h2&gt;
-
-    &lt;p&gt;After working as a privacy advisor for Microsoft between 2002 and 2011, Caspar &lt;a href='http://www.theguardian.com/technology/2015/jul/10/outspoken-privacy-campaigner-caspar-bowden-dies-after-battle-with-cancer'&gt;was dissatisfied by the protections of civil liberties in European law&lt;/a&gt;, and &lt;a href='http://www.theguardian.com/world/2013/sep/30/microsoft-privacy-chief-nsa'&gt;no longer trusted Microsoft&lt;/a&gt; and the other proprietary technology that likely had backdoors for government access. He turned to open source technology as the underlying code could be examined for security breaches, recently working with &lt;a href='https://www.torproject.org/about/board.html.en'&gt;Tor&lt;/a&gt; and &lt;a href='https://www.qubes-os.org/'&gt;Qubes&lt;/a&gt;. As Ray Corrigan says, “He was prepared to wrestle with the user unfriendly inconveniences of privacy enhancing technologies.” This is why we must continue to make privacy enhancing technologies accessible to everybody, without such unfriendly inconveniences.&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;“Where others would have been slowed down by false reassurance, or given up in the face of intimidating detail, Caspar would read the legislation, read the code, understand the context, and keep going until he had a way forward.” — &lt;a href='http://bengoldacre.tumblr.com/post/123674393456/bravo-caspar-bowden'&gt;Ben Goldacre&lt;/a&gt;&lt;/p&gt;
-    &lt;/blockquote&gt;
-
-    &lt;h2&gt;Privacy before Snowden&lt;/h2&gt;
-
-    &lt;p&gt;In 2012, a year before the &lt;a href='https://en.wikipedia.org/wiki/Global_surveillance_disclosures_(2013–present)'&gt;Snowden revelations&lt;/a&gt;, Caspar was warning people about how &lt;a href='http://www.europarl.europa.eu/RegData/etudes/etudes/join/2012/462509/IPOL-LIBE_ET%282012%29462509_EN.pdf'&gt;government mass surveillance would infringe the privacy rights of citizens&lt;/a&gt;. He pointed out how the &lt;a href='https://en.wikipedia.org/wiki/Regulation_of_Investigatory_Powers_Act_2000'&gt;Regulation of Investigatory Powers Act 2000&lt;/a&gt; (RIP Act) granted the government powers to scan the contents of all the data carried by an internet service provider without a warrant. The data could also potentially be stored infinitely for future reference and analysis. Caspar also explained how retaining this data in the name of terrorism was disproportionate, and security should never be cited as a reason for blanket surveillance.&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;“Caspar frequently had the frustrating experience of seeing his most pessimistic predictions disregarded as alarmist, only to turn out to be true all along.” — &lt;a href='https://www.eff.org/deeplinks/2015/07/memoriam-caspar-bowden'&gt;Danny O’Brien&lt;/a&gt;&lt;/p&gt;
-    &lt;/blockquote&gt;
-
-    &lt;p&gt;The report he co-wrote for the European Parliament expressed concern over people storing data in the cloud, not so much as an issue for fraud or “cyber crime,” but because people lose control over their data when it’s stored in somebody else’s space. The report examined issues with data stored in the cloud being subject to inconsistent, or entirely absent, protection and regulation because of differing laws in different countries and jurisdictions. And that the relationships between public authorities, private entities and public and private authorities often used data protection and privacy as negotiating chips, frequently in the name of security and the fight against terrorism, to the detriment of the individuals’ rights.&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;“His was one of the few voices shouting about the huge and growing risks to privacy — from cloud computing, from big data, from connected devices and increasingly interwoven datasets — when few ears were listening.” — &lt;a href='http://techcrunch.com/2015/07/09/caspar-bowden-pro-privacy-campaigner-dies-of-cancer/'&gt;Natasha Lomas&lt;/a&gt;&lt;/p&gt;
-    &lt;/blockquote&gt;
-
-    &lt;p&gt;RIP Act was followed by the &lt;a href='https://en.wikipedia.org/wiki/Data_Retention_and_Investigatory_Powers_Act_2014'&gt;Data Retention and Investigatory Powers Act 2014&lt;/a&gt;, where mass surveillance was allowed to continue, but retention time was limited. &lt;a href='https://en.wikipedia.org/wiki/Draft_Communications_Data_Bill'&gt;The Communications Data Bill&lt;/a&gt; (also know as The Snoopers’ Charter) is now being drafted to amend, and add further mass surveillance powers, to the RIP Act 2000. We can help fight against the Snooper’s Charter with campaigns such as Open Rights Group’s &lt;a href='https://www.openrightsgroup.org/campaigns/dont-let-the-snoopers-charter-bounce-back'&gt;Don’t Let The Snoopers’ Charter Bounce Back&lt;/a&gt;.&lt;/p&gt;
-
-    &lt;h2&gt;Post-Snowden&lt;/h2&gt;
-
-    &lt;p&gt;After the Snowden revelations, Caspar wrote another report for the European Parliament on &lt;a href='http://www.europarl.europa.eu/meetdocs/2009_2014/documents/libe/dv/briefingnote_/briefingnote_en.pdf'&gt;The US surveillance programmes and their impact on EU citizens' fundamental rights&lt;/a&gt;. This report explains the NSA’s PRISM programme, amongst other surveillance programmes, and their historical context. Caspar continued to fight for the rights of non-US citizens targeted by these programmes, as well as US citizens not adequately protected by the Fourth Amendment. He again examined the challenges surrounding cloud computing, how it undermines data protection, and why the legislation put in place to address these issues now mainly serve as loopholes to perpetuate the surveillance’s existence. He then gave recommendations for institutional reform, keeping data inside Europe, and protecting the rights of whistleblowers. &lt;a href='https://youtu.be/A9XRFxevw1Y'&gt;The material of this report also features in many of his talks&lt;/a&gt;.&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;“Yes, he could be abrupt, and yes, he often ‘bent’ convention by asking direct and probing questions in ways that risked alienating the policymakers he sought to influence. But I never saw him do so rudely, inappropriately, or in a way that demonstrated anything less than total integrity. That took strong moral principles, intellectual rigour, and courage.” — &lt;a href='https://jumpingqi.wordpress.com/2015/07/09/caspar-bowden/'&gt; Robin Wilton&lt;/a&gt;&lt;/p&gt;
-    &lt;/blockquote&gt;
-
-    &lt;p&gt;Caspar, you will be missed.&lt;/p&gt;</description>
+   <description>&lt;p&gt;We were sad to hear Caspar Bowden died this week. It’s a huge blow to our community, and every citizen who has, and will still, benefit from his tenacious work for human rights.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://ind.ie/blog/farewell-caspar/&quot;&gt;Read the full post on the Ind.ie blog&lt;/a&gt;.&lt;/p&gt;</description>
    <pubDate>Fri, 10 Jul 2015 19:00:00 GMT</pubDate>
   </item>
  </channel>
