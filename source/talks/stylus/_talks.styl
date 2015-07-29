@@ -1,21 +1,23 @@
 .talks blockquote
-	border-top 2px solid black-eighty
-	border-bottom 2px solid black-eighty
-	font-size 21px
+	font-size 20px
 	font-style italic
-	line-height OneAndAQuarterLineHeights
-	margin-top OneLineHeight
-	margin-bottom OneLineHeight
+	line-height OneLineHeight
+	margin-top HalfLineHeight
+	margin-bottom HalfLineHeight
 	padding-top HalfLineHeight
 	padding-bottom HalfLineHeight
-	text-align center
 
 	@media only screen and (min-width: 600px)
+		margin-top OneLineHeight
+		margin-bottom OneLineHeight
 		padding-right HalfLineHeight
 		padding-left HalfLineHeight
 
 	@media only screen and (min-width: 820px)
-		font-size 24px
-		line-height OneAndAHalfLineHeights
+		font-size 21px
+		line-height OneAndAQuarterLineHeights
 		padding-top OneLineHeight
 		padding-bottom OneLineHeight
+
+.talks blockquote p
+	margin-bottom 0
