@@ -16,9 +16,16 @@
 
 		<p>Ind.ie is currently supported by <a href='https://en.wikipedia.org/wiki/Bootstrapping'>bootstrapping</a> and <a href='/fund'>crowdfunding</a>. We take on some <a href='/talks'>speaking</a> and consulting work to help us fund Ind.ie. <em class='quiet'>Please note that we can’t afford to accept unpaid speaking engagements. All fees from event appearances go towards funding Ind.ie.</em></p>
 
-		<h2>About Aral</h2>
+		<h2 id='aral'>About Aral</h2>
 
-		<p>Aral has spoken at over 75 events in 18 countries.</p>
+		<p>Aral is a designer, coder, and human rights activist. He’s the founder and lead designer of Ind.ie, and has spoken at over 75 events in 18 countries.</p>
+		
+		<p>Aral’s keynotes are inspirational explorations of the topics of his everyday work. They combine lighthearted critiques of surveillance capitalism with inspirational introductions to ethical design.</p>
+
+		<figure>
+			<img src='images/aral-speaking.jpg' alt='Aral speaking at re:publica in 2015'/>
+			<figcaption><small>Photo by re:publica/Gregor Fischer (CC BY 2.0)</small></figcaption>
+		</figure>
 
 		<h3>Testimonials for Aral’s talks</h3>
 
@@ -34,9 +41,16 @@
 			<p>“Amazing, energetic and inspiring keynote ... could have listened all day.” – Andrew Ebling</p>
 		</blockquote>
 
-		<h2>About Laura</h2>
+		<h2 id='laura'>About Laura</h2>
 
-		<p>Laura has spoken at over 35 events in 8 countries.</p>
+		<p>Laura is a designer and web developer who focuses on privacy, accessibility, and diversity. She helped found Ind.ie, and has spoken at over 35 events in 8 countries.</p>
+
+		<p>Laura’s talks are easy-to-understand introductions to privacy, ethical design, and accessibility.</p>
+
+		<figure>
+			<img src='images/laura-speaking.jpg' alt='Laura speaking on stage at 24devs in 2014'/>
+			<figcaption><small>Photo by Alex Jegtnes</small></figcaption>
+		</figure>
 
 		<h3>Testimonials for Laura’s talks</h3>
 
@@ -111,6 +125,35 @@
 		</div><!-- end video container -->
 
 		<p>Aral speaks about experience design at Thinking Digital in May 2013.</p>
+
+		<hr/>
+
+		<h3>Great design should empower, amuse, and delight</h3>
+
+		<div class='px-video-container' id='ted-talk'>
+			<div class='px-video-img-captions-container'>
+				<div class='px-video-captions hide'></div>
+					<div class='px-video-wrapper'>
+						<video poster='images/poster-ted-talk.jpg' class='px-video' controls>
+							<!-- video files -->
+							<source src='https://player.vimeo.com/external/134835662.m3u8?p=standard&s=481cf7bf7e89744578179010ebde876f' type='application/x-mpegURL' />
+							<source src='https://player.vimeo.com/external/134835662.sd.mp4?s=33d5f76b99cb7757ab09f2769db9ae05&profile_id=112' type='video/mp4' />
+							<source src='https://ind.ie/videos/ted-talk/ted-talk.webm' type='video/webm' />
+							<source src='https://ind.ie/videos/ted-talk/ted-talk.ogv' type='video/ogg' />
+
+							<!-- fallback for browsers that don’t support the video element -->
+							<div>
+								<a href='//player.vimeo.com/external/133430959.hd.mp4?s=8a96e7ede72482a65add5610be0271eb&profile_id=119'>
+								<img src='images/poster-ted-talk.jpg' width='640' height='360' alt='download video' />
+								</a>
+							</div>
+						</video>
+					</div>
+				</div><!-- end container for captions and video -->
+			<div class="px-video-controls"></div>
+		</div><!-- end video container -->
+
+		<p>Aral speaks about experience design at TED in July 2012.</p>
 
 		<hr/>
 
@@ -195,6 +238,15 @@
 		    "captionsOnDefault": false,
 		    "seekInterval": 20,
 		    "videoTitle": "Superheroes and Villains in Design",
+		    "debug": true
+		});
+
+		// Initialize
+		new InitPxVideo({
+		    "videoId": "ted-talk",
+		    "captionsOnDefault": false,
+		    "seekInterval": 20,
+		    "videoTitle": "Great design should empower, amuse, and delight",
 		    "debug": true
 		});
 
