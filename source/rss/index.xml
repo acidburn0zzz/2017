@@ -5,7 +5,17 @@
             <link>https://ind.ie</link>
             <description>The latest news and updates from the Ind.ie blog and Ind.ie labs blog</description>
             <atom:link href="https://ind.ie/rss/index.xml" rel="self" type="application/rss+xml" />
-            <lastBuildDate>Mon, 27 Jul 2015 16:41:00 GMT</lastBuildDate>
+            <lastBuildDate>Fri, 31 Jul 2015 17:30:00 GMT</lastBuildDate>
+                <item>
+                    <title>Windows To Your Soul</title>
+                    <link>https://ind.ie/blog/windows-to-your-soul/</link>
+                    <guid>https://ind.ie/blog/windows-to-your-soul/</guid>
+                    <description>&lt;p&gt;This week&apos;s roundup brings you privacy, politics, tracking, Timelines, and a little thing called &quot;corporate nullification.&quot;&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://ind.ie/blog/windows-to-your-soul/&quot;&gt;Read the full post on the Ind.ie blog&lt;/a&gt;.&lt;/p&gt;
+                    </description>
+                    <pubDate>Fri, 31 Jul 2015 17:30:00 GMT</pubDate>
+                    <author>laura@ind.ie (Laura Kalbag)</author>
+                    <discourseUsername>laura</discourseUsername>
+                </item>
                 <item>
                     <title>The Social Web: A Glorious Dystopia</title>
                     <link>https://ind.ie/blog/the-social-web-a-glorious-dystopia/</link>
