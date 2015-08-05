@@ -781,7 +781,7 @@ deploy = ->
 			# Replace necessary strings.
 			#
 			makeDeploymentStringReplacements(). then ->
-				# message += 'Made deployment string replacements.\n\n'
+				# console.log 'Made deployment string replacements.\n\n'
 				return
 		.then ->
 			#
@@ -799,22 +799,30 @@ deploy = ->
 
 							rsync = new Rsync()
 								.shell("ssh" + sshPublicKeyPath)
-								.flags('a', 'v', 'z', 'perms', 'chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r')
-								.exclude(['.*/'])
+								.flags('v', 'r', 'c', 'progress', 'delete', 'chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r')
+								# .exclude(['.*/'])
 								.source(process.cwd() + '/public/')
 								.destination("#{user}static.ind.ie:/var/www/")
-								.flags('delete')
+								# .flags('delete')
 								# .dry()
+								.output (data) ->
+									console.log data.toString()
+								, (data) ->
+									console.log data.toString()
 
 							# log rsync.command()
 
 							return new Promise ((fulfill, reject) ->
+								# console.log "New promise!"
+								# console.log rsync
 								rsync.execute (error, code, cmd) =>
+									
 									if error
-										errorMessage = (chalk.red.inverse 'Error in rsync: ') + code + '. ' + cmd
+										errorMessage = (chalk.red.inverse 'Error in rsync: ') + error + '. ' + cmd
 										reject errorMessage
 									else
 										# Rsync complete.
+										# console.log "Rsync to server complete."
 										fulfill()
 							)
 		.then ->
@@ -828,7 +836,7 @@ deploy = ->
 deployAsync = ->
 	rsync = new Rsync()
 		.flags('vaz')
-		.exclude(['.*/'])
+		# .exclude(['.*/'])
 		.source(process.cwd() + '/build/')
 		.destination(process.cwd() + '/public/')
 		.flags('delete')
@@ -842,7 +850,7 @@ deployAsync = ->
 				errorMessage = (chalk.red.inverse 'Error in rsync: ') + code + '. ' + cmd
 				reject errorMessage
 			else
-				# console.log 'Rsync build to public folder complete.s'
+				# console.log 'Rsync build to public folder complete.'
 				fulfill()
 	)
 
