@@ -12,3 +12,5 @@ npm-debug.log
 **.mp4
 **.ogv
 **.webm
+ssh-user
+ssh-public-key-path
