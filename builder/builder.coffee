@@ -420,7 +420,7 @@ processSourceFile = (event, filePath) ->
 									verbose 'Styles changed: ' + filePath 
 
 									if event is 'build'
-										# Just compile this current file
+										# Just compile this current file
 										compileStylusFile(event, filePath)
 									else					
 										# We need to compile this (for pages that use the old way.)
@@ -439,7 +439,7 @@ processSourceFile = (event, filePath) ->
 											compileStylusFile(event, mainStylusFile).then ->
 												#
 												# …And then compile the style file itself
-												# (To handle pages that do it the new, better encapsulated way)
+												# (To handle pages that do it the new, better encapsulated way)
 												#
 												compileStylusFile(event, filePath)
 
@@ -699,7 +699,7 @@ compileStylusFile = (event, filePath) ->
 		# .catch(console.error.bind(console))
 		.catch ((e) ->
 			log (chalk.red.inverse 'Stylus error: ') + e
-		)		
+		)
 		.then((css) -> 
 			writeFileAsync event, filePath, 'stylus', 'css', '.styl', '.css', css
 		)
@@ -733,7 +733,7 @@ writeFileAsync = (event, filePath, oldFolder, newFolder, oldExtension, newExtens
 	# log 'TO: ' + outputFilePath
 	# log 'CONTENT: ' + content
 
-	if !program.dryRun				
+	if !program.dryRun
 		fs.ensureFileAsync(outputFilePath).then( ->
 			fs.writeFileAsync(outputFilePath, content).then( ->
 				logCompileMessage(event, filePath)
@@ -748,9 +748,22 @@ writeFileAsync = (event, filePath, oldFolder, newFolder, oldExtension, newExtens
 #
 # Deployment
 #
-# Simply rsyncs the build/ folder to the public/ folder.
+# 1. Rsyncs the build folder to the public folder.
+# 2. Makes deployment-time string replacements in the public folder.
+# 3. Rsyncs the public folder to static.ind.ie via ssh.
 #
-# (The public folder is synchronised to the server via Pulse.)
+# Unless you are using your default SSH identity and/or if your
+# username differs between your development machine and the
+# deployment machine, you can create two configuration files:
+#
+# ssh-user: holds your username on the development machine e.g.,
+#
+# laura
+#
+# ssh-public-key-path: holds the path to your public key. e.g.,
+#
+# ~/.ssh/id_rsa2
+#
 #
 ######################################################################
 
@@ -763,66 +776,57 @@ deploy = ->
 
 
 	deployAsync()
-		.then (message) ->
+		.then ->
 			#
 			# Replace necessary strings.
 			#
 			makeDeploymentStringReplacements(). then ->
-				message += 'Made deployment string replacements.\n\n'
-				return message
-		.then (message) ->
+				# console.log 'Made deployment string replacements.\n\n'
+				return
+		.then ->
 			#
-			# Git commit the release so that we can
-			# roll back at any time.
+			# Deploy to server via rsync.
 			#
 
-			execAsync('cd public && git status && cd ..').then (output) ->
-				reply = output[0]
-				if (reply.indexOf 'nothing to commit') > 0
-					#
-					# Nothing to commit; nothing to deploy
-					#
-					throw('No new changes to deploy.')
-				else
-					#
-					# Deploy the changes
-					#
-					execAsync('cd public && git stash && git pull && git stash pop && cd ..').then (output) ->
-						# log '>> ' + output
+			# Read the shell command from the ssh config file.
+			fs.readFileAsync path.join process.cwd(), 'ssh-user'
+				.then (sshUser) ->
+					fs.readFileAsync path.join process.cwd(), 'ssh-public-key-path'
+						.then (sshPublicKeyPath) ->
 
-						#
-						# Handle deployment time
-						#
-						deploymentTime = moment().format() # ISO 8601
+							user = if (sshUser.length == 0) then '' else "#{sshUser}@"
+							sshPublicKeyPath = if (sshPublicKeyPath.length == 0) then '' else " -i #{sshPublicKeyPath}"
 
-						lastDeploymentTimeFile = 'public/.deployment-time'
-						fs.ensureFileAsync(lastDeploymentTimeFile).then ->
-							fs.readFileAsync(lastDeploymentTimeFile, 'utf-8').then (lastDeploymentTime) ->
-								# log 'Last deployment time: ' + lastDeploymentTime
-								fs.writeFileAsync(lastDeploymentTimeFile, deploymentTime).then ->
-									getLogEntriesSinceLastDeploymentCommand = 'git log --since "' + lastDeploymentTime + '" -10'
+							rsync = new Rsync()
+								.shell("ssh" + sshPublicKeyPath)
+								.flags('v', 'r', 'c', 'progress', 'delete', 'chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r')
+								# .exclude(['.*/'])
+								.source(process.cwd() + '/public/')
+								.destination("#{user}static.ind.ie:/var/www/")
+								# .flags('delete')
+								# .dry()
+								.output (data) ->
+									console.log data.toString()
+								, (data) ->
+									console.log data.toString()
 
-									# log '>> ' + getLogEntriesSinceLastDeploymentCommand
+							# log rsync.command()
 
-									execAsync(getLogEntriesSinceLastDeploymentCommand, {env: process.env}).then (summaryOfCommits) ->
-										changeToPublicFolderCommand = 'cd public'
-										
-										gitAddCommand = 'git add --all'
-										gitCommitCommand = 'git commit -am "Version ' + deploymentTime + '\n\nIncludes following commits: \n\n' + summaryOfCommits + '"'
-
-										gitPushCommand = 'git push origin master'
-
-										changeBackToSourceFolderCommand = 'cd ..'
-
-										fullGitCommand = changeToPublicFolderCommand + ' && ' + gitAddCommand + ' && ' + gitCommitCommand + ' && ' + gitPushCommand + ' && ' + changeBackToSourceFolderCommand
-
-										execAsync(fullGitCommand).then (result) ->
-											message += 'Git: \n\n' + result
-											return message
-										.catch Promise.OperationalError, (e) ->
-											log 'Operational error: ' + e.message
-		.then (message) ->
-			log message + '\n' + (chalk.green.inverse 'Site deployed.' ) + '\n'
+							return new Promise ((fulfill, reject) ->
+								# console.log "New promise!"
+								# console.log rsync
+								rsync.execute (error, code, cmd) =>
+									
+									if error
+										errorMessage = (chalk.red.inverse 'Error in rsync: ') + error + '. ' + cmd
+										reject errorMessage
+									else
+										# Rsync complete.
+										# console.log "Rsync to server complete."
+										fulfill()
+							)
+		.then ->
+			log '\n' + (chalk.green.inverse 'Site deployed.' ) + '\n\nhttps://ind.ie\n'
 		.catch Promise.OperationalError, (e) =>
 			log 'Operational error: ' + e.message
 		.catch ((e) ->
@@ -831,10 +835,11 @@ deploy = ->
 
 deployAsync = ->
 	rsync = new Rsync()
-		.flags('vaz')		
+		.flags('vaz')
+		# .exclude(['.*/'])
 		.source(process.cwd() + '/build/')
 		.destination(process.cwd() + '/public/')
-		# .flags('delete') # If we do this then the .git folder gets deleted :(
+		.flags('delete')
 		# .dry()
 
 	# log rsync.command()
@@ -845,8 +850,8 @@ deployAsync = ->
 				errorMessage = (chalk.red.inverse 'Error in rsync: ') + code + '. ' + cmd
 				reject errorMessage
 			else
-				successMessage = 'Rsync complete:\n\nLocal copy:\nhttp://localhost:8001/\n\nRemote copy:\nhttps://ind.ie\n\nSync status:\n https://localhost:8080\n\n'
-				fulfill successMessage
+				# console.log 'Rsync build to public folder complete.'
+				fulfill()
 	)
 
 ######################################################################
@@ -858,7 +863,7 @@ deployAsync = ->
 
 parseCommand = (commandString) ->
 	commandString = commandString.trim()	# Remove any extra spaces
-	
+
 	# Create an array as would argv so we can use Commander’s parser 
 	# (so we don’t create redundancy in parsing commands)
 	# Regex courtesy of http://stackoverflow.com/questions/13796594/how-to-split-string-into-arguments-and-options-in-javascript#comment21935456_13796877
@@ -867,7 +872,7 @@ parseCommand = (commandString) ->
 	# Hack: Add a dummy process name and path to make it look exactly like an argv array 
 	# for Commander (who will splice out the first two elements anyway)
 	commandArray = ['Ind.ie Site', 'cli'].concat commandArray
-	
+
 	# Get Commander to parse the commandArray and fire off a comand if necessary.
 	program.parse commandArray
 
