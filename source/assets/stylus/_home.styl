@@ -24,12 +24,16 @@
 .heartbeat
 	position relative
 	
-	h2
-		text-align center
-	
 	@media only screen and (min-width: 780px)
 		border-top 1px solid black-thirty
 		text-align left
+	
+	h2
+		text-align center
+		
+		@media only screen and (min-width: 780px)
+			text-align left
+
 
 	.part-one
 		@media only screen and (min-width: 780px)
@@ -82,7 +86,7 @@
 			max-width 300px
 		
 		.meaningless-shape-holder-one
-			//background #dd0000 /* use this background colour to debug the shape */
+			// background #dd0000 /* use this background colour to debug the shape */
 			-webkit-shape-outside polygon(25% 0, 100% 0, 100% 100%, 80% 100%, 75% 75%, 52% 55%, 27% 25%)
 			shape-outside polygon(25% 0, 100% 0, 100% 100%, 80% 100%, 75% 75%, 52% 55%, 27% 25%)
 			// the clip rules are so we can see the output in the browser
