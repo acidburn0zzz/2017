@@ -5,7 +5,17 @@
             <link>https://ind.ie</link>
             <description>The latest news and updates from the Ind.ie blog and Ind.ie labs blog</description>
             <atom:link href="https://ind.ie/rss/index.xml" rel="self" type="application/rss+xml" />
-            <lastBuildDate>Fri, 14 Aug 2015 18:30:00 GMT</lastBuildDate>
+            <lastBuildDate>Fri, 21 Aug 2015 16:00:00 GMT</lastBuildDate>
+                <item>
+                    <title>Silicon Valley Doublethink</title>
+                    <link>https://ind.ie/blog/silicon-valley-doublethink/</link>
+                    <guid>https://ind.ie/blog/silicon-valley-doublethink/</guid>
+                    <description>&lt;p&gt;When is a hacker not a hacker? Morality, ethics, and privacy policies gone wild&hellip;&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://ind.ie/blog/silicon-valley-doublethink/&quot;&gt;Read the full post on the Ind.ie blog&lt;/a&gt;.&lt;/p&gt;
+                    </description>
+                    <pubDate>Fri, 21 Aug 2015 16:00:00 GMT</pubDate>
+                    <author>laura@ind.ie (Laura Kalbag)</author>
+                    <discourseUsername>laura</discourseUsername>
+                </item>
                 <item>
                     <title>3… 2… 1… Liftoff!</title>
                     <link>https://ind.ie/blog/3-2-1-liftoff/</link>
