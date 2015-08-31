@@ -420,7 +420,7 @@ processSourceFile = (event, filePath) ->
 									verbose 'Styles changed: ' + filePath 
 
 									if event is 'build'
-										# Just compile this current file
+										# Just compile this current file
 										compileStylusFile(event, filePath)
 									else					
 										# We need to compile this (for pages that use the old way.)
@@ -439,7 +439,7 @@ processSourceFile = (event, filePath) ->
 											compileStylusFile(event, mainStylusFile).then ->
 												#
 												# …And then compile the style file itself
-												# (To handle pages that do it the new, better encapsulated way)
+												# (To handle pages that do it the new, better encapsulated way)
 												#
 												compileStylusFile(event, filePath)
 

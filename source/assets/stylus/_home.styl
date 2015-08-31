@@ -161,6 +161,153 @@
 		
 .support
 	@media only screen and (min-width: 780px)
+		border-top 1px solid black-thirty
+		text-align left
+	
+	h2
+		text-align center
+		
+		@media only screen and (min-width: 780px)
+			text-align left
+
+
+	.part-one
+		@media only screen and (min-width: 780px)
+			float left
+			margin-bottom HalfLineHeight
+			width 255px
+			
+	.part-two
+		@media only screen and (min-width: 780px)
+			float right
+			margin-top OneAndThreeQuartersLineHeights
+			margin-bottom OneAndAHalfLineHeights
+			text-align right
+			width 255px
+			
+			p
+				margin-bottom HalfLineHeight
+
+.heartbeat-icon
+	margin-top 0
+	width 100%
+	
+	@media only screen and (min-width: 380px)
+		margin HalfLineHeight auto
+		max-width 360px
+		
+	@media only screen and (min-width: 780px)
+		margin-top -55px
+		margin-left 210px
+		max-width 270px
+		position absolute
+
+.shapes /* if browser supports CSS shapes (and therefore probably supports flexbox too), use CSS to shape text around balloon image */
+	@media only screen and (min-width: 780px)
+    
+		.part-one
+			width 350px
+		
+		.part-two
+			margin-top 0
+			margin-bottom 0
+			width 350px
+			
+			p
+				margin-top OneLineHeight
+				
+				&:nth-of-type(1)
+					margin-top OneAndThreeQuartersLineHeights
+					margin-bottom HalfLineHeight
+				
+				&:nth-of-type(2)
+					margin-top 0
+		
+		.heartbeat-icon
+			margin-top -45px
+			margin-left 195px
+			max-width 300px
+		
+		.meaningless-shape-holder-one
+			// background #dd0000 /* use this background colour to debug the shape */
+			-webkit-shape-outside polygon(25% 0, 100% 0, 100% 100%, 80% 100%, 75% 75%, 52% 55%, 27% 25%)
+			shape-outside polygon(25% 0, 100% 0, 100% 100%, 80% 100%, 75% 75%, 52% 55%, 27% 25%)
+			// the clip rules are so we can see the output in the browser
+			-webkit-clip-path polygon(25% 0, 100% 0, 100% 100%, 80% 100%, 75% 75%, 52% 55%, 27% 25%)
+			clip-path polygon(25% 0, 100% 0, 100% 100%, 80% 100%, 75% 75%, 52% 55%, 27% 25%)
+			float right
+			height 265px
+			width 230px
+			opacity .8
+		
+		.meaningless-shape-holder-two
+			// background #00dddd /* use this background colour to debug the shape */
+			-webkit-shape-outside polygon(70% 0, 67% 25%, 45% 55%, 25% 75%, 15% 100%, 0 100%, 0 0)
+			shape-outside polygon(70% 0, 67% 25%, 45% 55%, 25% 75%, 15% 100%, 0 100%, 0 0)
+			// the clip rules are so we can see the output in the browser
+			-webkit-clip-path polygon(70% 0, 67% 25%, 45% 55%, 25% 75%, 15% 100%, 0 100%, 0 0)
+			clip-path polygon(70% 0, 67% 25%, 45% 55%, 25% 75%, 15% 100%, 0 100%, 0 0)
+			float left
+			height 265px
+			width 220px
+			opacity .8
+
+.callouts
+	border-top 2px solid black-fifty
+	clear both
+	font-size 15px
+	line-height 23px
+	list-style-type none
+	overflow hidden
+	padding HalfLineHeight 0
+	margin HalfLineHeight 0
+	
+	h2
+		font-size 21px
+		line-height OneAndAHalfLineHeights
+		margin-top HalfLineHeight
+		margin-bottom QuarterLineHeight
+
+		@media only screen and (min-width: 820px)
+			font-size 21px
+			line-height OneAndAHalfLineHeights
+			margin-bottom QuarterLineHeight
+	
+	h3
+		font-size 18px
+		line-height OneLineHeight
+		margin-top HalfLineHeight
+		margin-bottom QuarterLineHeight
+		
+		@media only screen and (min-width: 820px)
+			line-height 22px
+			margin-bottom QuarterLineHeight
+		
+		a
+			font-weight bold
+			
+	.p-name, .topic
+		font-size 16px
+		margin-top 0
+		margin-bottom QuarterLineHeight
+	
+	.dt-published, .hot-topic
+		display block
+		font-size 15px
+		line-height 22px
+		margin-bottom QuarterLineHeight
+			
+.callout
+	border-bottom 1px solid black-thirty
+	padding-bottom HalfLineHeight
+	
+	@media only screen and (min-width: 780px)
+		border-bottom none
+		float left
+		width 29.3%
+		
+.support
+	@media only screen and (min-width: 780px)
 		padding-right OneLineHeight
 	
 .news
