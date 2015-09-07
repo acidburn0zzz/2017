@@ -32,7 +32,7 @@
 			background-transition(.3s)
 
 			@media only screen and (min-width: 770px)
-				padding QuarterLineHeight 20px
+				padding QuarterLineHeight 17px
 
 			&:hover, &:active, &:focus
 				background black-seventy
@@ -102,13 +102,16 @@
 		&:hover, &:active, &:focus
 			background-position 12px -77px
 
-/* Active navigation styles */
+/* ACTIVE NAVIGATION styles
+	Follows pattern of: 
+	.body-class .site-navigation .navigation-link-class
+	Both the body class and the navigation link class are the page name
+*/
+
 .fund .site-navigation .fund-link,
 .blog .site-navigation .blog-link,
 .events .site-navigation .blog-link,
-.summit .site-navigation .summit-link,
-.summit-videos .site-navigation .summit-link,
-.summit-video .site-navigation .summit-link,
+.heartbeat .site-navigation .heartbeat-link,
 .labs .site-navigation .labs-link,
 .about .site-navigation .about-link,
 .why .site-navigation .about-link,
@@ -136,7 +139,10 @@
 .press .site-navigation .about-link,
 .contact .site-navigation .about-link,
 .talks .site-navigation .about-link,
-.consulting .site-navigation .about-link
+.consulting .site-navigation .about-link,
+.summit .site-navigation .about-link,
+.summit-videos .site-navigation .about-link,
+.summit-video .site-navigation .about-link
 	a, a:hover, a:active, a:focus
 		margin-left 5px
 		padding-left 10px
