@@ -29,6 +29,7 @@
     "imagemin": "3.1.0",
     "marked": "0.3.2",
     "moment": "2.8.4",
+    "node-kit": "0.8.0",
     "path-extra": "0.3.0",
     "progress": "1.1.8",
     "pwuid": "1.0.2",
