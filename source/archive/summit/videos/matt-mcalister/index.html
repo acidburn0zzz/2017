@@ -6,7 +6,7 @@
     <meta name='viewport' content='width=device-width,initial-scale=1' />
     <title>Ind.ie Summit — Videos — A new approach to independent journalism</title>
     <!--[if lte IE 8]>
-        <script type="text/javascript" href="../../js/html5shiv.js"></script>
+        <script type="text/javascript" src="../../js/html5shiv.js"></script>
     <![endif]-->
     <link rel='shortcut icon' href='https://ind.ie/archive/images/favicon.ico'>
     <link rel='apple-touch-icon' href='https://ind.ie/archive/images/ios-180.png'>
@@ -27,12 +27,13 @@
         <!-- @import '../../includes/_nav.kit' -->
     </header>
     <div class='main'>
+        <!-- @import '../../../../includes/_archive-notice.kit' -->
         <h1 class='long-title'>A new approach to independent journalism</h1>
         <div class='px-video-container' id='matt_mcalister_video'>
             <div class='px-video-img-captions-container'>
                 <div class='px-video-captions hide'></div>
                 <div class='px-video-wrapper'>
-                    <video class='px-video' controls poster='../../assets/images/posters/MattMcAlister.jpg'>
+                    <video class='px-video' controls poster='../../images/posters/MattMcAlister.jpg'>
                         <source src='//player.vimeo.com/external/102538675.m3u8?p=high,standard&s=298f45e8259088dd5b38ccc653f37bb7' type='application/x-mpegURL' />
                         <source src='//player.vimeo.com/external/102538675.hd.mp4?s=9ceeef18b381abb1222e05e7f519aafb' type='video/mp4' />
                         <source src='https://ind.ie/videos/summit/12-matt-mcalister.ogv' type='video/ogv' />
@@ -40,7 +41,7 @@
                         <!-- fallback for browsers that don't support the video element -->
                         <div>
                             <a href='//player.vimeo.com/external/102538675.hd.mp4?s=9ceeef18b381abb1222e05e7f519aafb'>
-                                <img src='../../assets/images/posters/MattMcAlister.jpg' width='640' height='360' alt='download video' />
+                                <img src='../../images/posters/MattMcAlister.jpg' width='640' height='360' alt='download video' />
                             </a>
                         </div>
                     </video>
@@ -67,7 +68,7 @@
         </div>
         <!-- @import '../../../../assets/includes/_footer.kit' -->
     </div>
-    <script type="text/javascript" href="../../js/px-video.js"/>
+    <script type="text/javascript" src="../../js/px-video.js"/>
     <script>
     // Initialize
     var video1 = new InitPxVideo({

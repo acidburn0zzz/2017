@@ -174,7 +174,7 @@ function InitPxVideo(options) {
 
             // Set debug mode
             if (typeof(options.debug)==='undefined') {
-                options.debug = false;
+                options.debug = true;
             }
             obj.debug = options.debug;
 

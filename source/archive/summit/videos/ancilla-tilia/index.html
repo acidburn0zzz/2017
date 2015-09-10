@@ -6,7 +6,7 @@
     <meta name='viewport' content='width=device-width,initial-scale=1' />
     <title>Ind.ie Summit — Videos — Becoming a pirate</title>
     <!--[if lte IE 8]>
-        <script type="text/javascript" href="../../js/html5shiv.js"></script>
+        <script type="text/javascript" src="../../js/html5shiv.js"></script>
     <![endif]-->
     <link rel='shortcut icon' href='https://ind.ie/archive/images/favicon.ico'>
     <link rel='apple-touch-icon' href='https://ind.ie/archive/images/ios-180.png'>
@@ -27,12 +27,13 @@
         <!-- @import '../../includes/_nav.kit' -->
     </header>
     <div class='main'>
+        <!-- @import '../../../../includes/_archive-notice.kit' -->
         <h1 class='long-title'>Becoming a pirate</h1>
         <div class='px-video-container' id='ancilla_tilia_video'>
             <div class='px-video-img-captions-container'>
                 <div class='px-video-captions hide'></div>
                 <div class='px-video-wrapper'>
-                    <video class='px-video' controls poster='../../assets/images/posters/AncillaTilia.jpg'>
+                    <video class='px-video' controls poster='../../images/posters/AncillaTilia.jpg'>
                         <source src='//player.vimeo.com/external/103319835.m3u8?p=high,standard&s=93e24f14c87389b273e29cbe07bd2a3a' type='application/x-mpegURL' />
                         <source src='//player.vimeo.com/external/103319835.hd.mp4?s=55d162eb21e7c5ccde17f83686976aa1' type='video/mp4' />
                         <source src='https://ind.ie/videos/summit/22-ancilla-tilia.ogv' type='video/ogv' />
@@ -40,7 +41,7 @@
                         <!-- fallback for browsers that don't support the video element -->
                         <div>
                             <a href='//player.vimeo.com/external/103319835.hd.mp4?s=55d162eb21e7c5ccde17f83686976aa1'>
-                                <img src='../../assets/images/posters/AncillaTilia.jpg' width='640' height='360' alt='download video' />
+                                <img src='../../images/posters/AncillaTilia.jpg' width='640' height='360' alt='download video' />
                             </a>
                         </div>
                     </video>
@@ -148,7 +149,7 @@
         </div>
         <!-- @import '../../../../assets/includes/_footer.kit' -->
     </div>
-    <script type="text/javascript" href="../../js/px-video.js"/>
+    <script type="text/javascript" src="../../js/px-video.js"/>
     <script>
     // Initialize
     var video1 = new InitPxVideo({

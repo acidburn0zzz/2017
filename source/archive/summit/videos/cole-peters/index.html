@@ -6,7 +6,7 @@
     <meta name='viewport' content='width=device-width,initial-scale=1' />
     <title>Ind.ie Summit — Videos — First Things First</title>
     <!--[if lte IE 8]>
-        <script type="text/javascript" href="../../js/html5shiv.js"></script>
+        <script type="text/javascript" src="../../js/html5shiv.js"></script>
     <![endif]-->
     <link rel='shortcut icon' href='https://ind.ie/archive/images/favicon.ico'>
     <link rel='apple-touch-icon' href='https://ind.ie/archive/images/ios-180.png'>
@@ -27,12 +27,13 @@
         <!-- @import '../../includes/_nav.kit' -->
     </header>
     <div class='main'>
+        <!-- @import '../../../../includes/_archive-notice.kit' -->
         <h1 class='long-title'>First Things First</h1>
         <div class='px-video-container' id='cole_peters_video'>
             <div class='px-video-img-captions-container'>
                 <div class='px-video-captions hide'></div>
                 <div class='px-video-wrapper'>
-                    <video class='px-video' controls poster='../../assets/images/posters/ColePeters.jpg'>
+                    <video class='px-video' controls poster='../../images/posters/ColePeters.jpg'>
                         <source src='//player.vimeo.com/external/102629401.m3u8?p=high,standard&s=45bdb5f7116d847791017bccca9a6a5e' type='application/x-mpegURL' />
                         <source src='//player.vimeo.com/external/102629401.hd.mp4?s=300c44d5b770c747f424a3077420b155' type='video/mp4' />
                         <source src='https://ind.ie/videos/summit/3-cole-peters.ogv' type='video/ogv' />
@@ -40,7 +41,7 @@
                         <!-- fallback for browsers that don't support the video element -->
                         <div>
                             <a href='//player.vimeo.com/external/102629401.hd.mp4?s=300c44d5b770c747f424a3077420b155'>
-                                <img src='../../assets/images/posters/ColePeters.jpg' width='640' height='360' alt='download video' />
+                                <img src='../../images/posters/ColePeters.jpg' width='640' height='360' alt='download video' />
                             </a>
                         </div>
                     </video>
@@ -68,7 +69,7 @@
         </div>
         <!-- @import '../../../../assets/includes/_footer.kit' -->
     </div>
-    <script type="text/javascript" href="../../js/px-video.js"/>
+    <script type="text/javascript" src="../../js/px-video.js"/>
     <script>
     // Initialize
     var video1 = new InitPxVideo({
