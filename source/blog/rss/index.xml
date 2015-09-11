@@ -4,8 +4,18 @@
             <title>Ind.ie News</title>
             <link>https://ind.ie/blog</link>
             <description>The latest news and updates from Ind.ie</description>
-            <lastBuildDate>Fri, 4 Sep 2015 12:30:00 GMT</lastBuildDate>
+            <lastBuildDate>Fri, 11 Sep 2015 22:30:00 GMT</lastBuildDate>
             <atom:link href="https://ind.ie/blog/rss/index.xml" rel="self" type="application/rss+xml" />
+                <item>
+                    <title>It&apos;s all about Heartbeat</title>
+                    <link>https://ind.ie/blog/its-all-about-heartbeat/</link>
+                    <guid>https://ind.ie/blog/its-all-about-heartbeat/</guid>
+                    <description>&lt;p&gt;Today marks a change in direction for the Ind.ie Friday roundup as we shift our focus from the problem to the solution.&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://ind.ie/blog/its-all-about-heartbeat/&quot;&gt;Read the full post on the Ind.ie blog&lt;/a&gt;.&lt;/p&gt;
+                    </description>
+                    <pubDate>Fri, 11 Sep 2015 22:30:00 GMT</pubDate>
+                    <author>laura@ind.ie (Laura Kalbag)</author>
+                    <discourseUsername>laura</discourseUsername>
+                </item>
                  <item>
                     <title>Oh, won&apos;t someone think of the children!</title>
                     <link>https://ind.ie/blog/oh-wont-someone-think-of-the-children/</link>

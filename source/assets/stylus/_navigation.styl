@@ -1,3 +1,14 @@
+/* This is where we pull in all our stylus partials to compile a full stylesheet */
+
+/* The core must go first, as it has the CSS reset and other base rules */
+
+/* Tell the core where to find its images and fonts */
+$font-path = '/assets/stylus/indie-style-core/fonts/'
+$image-path = '/assets/stylus/indie-style-core/images/'
+
+/* Tell the core where to find itself (absolute path) */
+@import 'indie-style-core/_core'
+
 .site-navigation
 	background black-eighty
 	border-bottom 5px solid black-thirty
@@ -32,26 +43,27 @@
 			background-transition(.3s)
 
 			@media only screen and (min-width: 770px)
-				padding QuarterLineHeight 20px
+				padding QuarterLineHeight 17px
 
 			&:hover, &:active, &:focus
 				background black-seventy
 				border-bottom none
 
-		/* don't have gap between balloon link and about link, fill the space with button padding because it looks less odd */
+		/* don't have gap between balloon link and about link, 
+		fill the space with button padding because it looks less odd */
 		&.about-link a
 			padding-left HalfLineHeight
 
 			@media only screen and (min-width: 770px)
-				padding-left 30px
+				padding-left 17px
 
 			&:hover, &:active, &:focus
 				margin-left 5px
 				padding-left 10px
 
 				@media only screen and (min-width: 770px)
-					margin-left 10px
-					padding-left 20px
+					margin-left 2px
+					padding-left 15px
 
 		&.home-link
 			padding 0
@@ -102,43 +114,42 @@
 		&:hover, &:active, &:focus
 			background-position 12px -77px
 
-/* Active navigation styles */
+/* ACTIVE NAVIGATION styles
+	Follows pattern of: 
+	.body-class .site-navigation .navigation-link-class
+	Both the body class and the navigation link class are the page name
+*/
+
 .fund .site-navigation .fund-link,
-.blog .site-navigation .blog-link,
 .events .site-navigation .blog-link,
-.summit .site-navigation .summit-link,
-.summit-videos .site-navigation .summit-link,
-.summit-video .site-navigation .summit-link,
-.labs .site-navigation .labs-link,
+.blog .site-navigation .blog-link,
 .about .site-navigation .about-link,
 .declaration .site-navigation .about-link,
 .manifesto .site-navigation .about-link,
+.archive .site-navigation .about-link,
 .team .site-navigation .about-link,
 .privacy .site-navigation .about-link,
-.vision .site-navigation .about-link,
 .press .site-navigation .about-link,
 .contact .site-navigation .about-link,
-.consulting .site-navigation .consulting-link,
-.talks .site-navigation .talks-link
+.consulting .site-navigation .services-link,
+.talks .site-navigation .services-link
 	a
 		background black-thirty
 		color black-ninety
 
 /* Add gap to left of active about navigation so there's space between link and balloon */
 .about .site-navigation .about-link,
-.declaration .site-navigation .about-link,
 .manifesto .site-navigation .about-link,
+.declaration .site-navigation .about-link,
 .team .site-navigation .about-link,
+.archive .site-navigation .about-link,
 .privacy .site-navigation .about-link,
-.vision .site-navigation .about-link,
 .press .site-navigation .about-link,
-.contact .site-navigation .about-link,
-.talks .site-navigation .about-link,
-.consulting .site-navigation .about-link
+.contact .site-navigation .about-link
 	a, a:hover, a:active, a:focus
 		margin-left 5px
 		padding-left 10px
 
 		@media only screen and (min-width: 770px)
-			margin-left 10px
-			padding-left 20px
+			margin-left 2px
+			padding-left 15px
