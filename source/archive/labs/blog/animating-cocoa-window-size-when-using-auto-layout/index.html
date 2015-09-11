@@ -1,0 +1,211 @@
+<doctype html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1' />
+	<title>Ind.ie Labs - Blog - Animating Cocoa Window Size When Using Auto Layout</title>
+	<!--[if lte IE 8]>
+        <script src='https://ind.ie/assets/js/html5shiv.js'></script>
+    <![endif]-->
+    <link rel='shortcut icon' href='/favicon.ico'>
+    <link rel='apple-touch-icon' href='https://ind.ie/assets/images/ios-180.png'>
+    <link rel='apple-touch-icon' sizes='76x76' href='https://ind.ie/assets/images/ios-76.png'>
+    <link rel='apple-touch-icon' sizes='120x120' href='https://ind.ie/assets/images/ios-120.png'>
+    <link rel='apple-touch-icon' sizes='152x152' href='https://ind.ie/assets/images/ios-152.png'>
+    <link rel='apple-touch-icon' sizes='152x152' href='https://ind.ie/assets/images/ios-180.png'>
+	<link rel='alternate' type='application/rss+xml' title='Ind.ie Labs Blog' href='https://ind.ie/labs/blog/rss/index.xml' />
+	<link rel='stylesheet' href='https://ind.ie/assets/css/lab-styles.css'/>
+	<link rel="stylesheet" href="../css/highlight/kimbie.dark.css">
+	<link rel='stylesheet' href='../css/styles.css'/>
+	<script src="../js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class='labs labs-blog'>
+	<!-- @import '../../../../assets/includes/_nav.kit' -->
+	<div class='main h-entry'>
+        <!-- @import '../../../../includes/_archive-notice.kit' -->
+		<h1 class='p-name long-title'>Animating Cocoa Window Size When Using Auto Layout</h1>
+		<p class='post-date dt-published' datetime='2015-04-06 15:15:00'>6th April, 2015 — <span class='p-author'>Aral Balkan</span></p>
+		<div class='e-content'>
+
+		<figure>
+			<img src='images/window-screenshot.png' style='width:448px; margin:auto; display:block;' alt='Screenshot of the example project.'/>
+			<figcaption>The button cries out to be pushed.</figcaption>
+		</figure>
+
+		<h2>Window animations with Auto Layout</h2>
+
+		<p>The one thing you hear over and over again about Apple’s Auto Layout in Cocoa is that you should never, ever directly manipulate the frame of your views when using it. This makes perfect sense since Auto Layout manages the frames of your views for you based on the constraints you use. What you don’t get told nearly as often is the caveat: <em>unless you want to change the size of your window</em>.</p>
+
+		<p>Until I realised this, I was hitting my head on the wall trying to alter the Window size by setting my constraints so that their priority was higher than that of my window and then animating the constant to, in effect, push the window out to expand it or pull it in to contract it. Needless to say, this was giving me some odd results (like the Window size jumping to the final dimensions directly and the view itself animating within the set duration to fill it up eventually.)</p>
+
+		<h2>A little cartography</h2>
+
+		<p>When working in a complicated project, I frequently jump out of it and create little spikes to test out a feature or a troubleshoot an issue I’m having in isolation. While troubleshooting this particular issue, I also took the opportunity to try out the <a href='https://github.com/robb/Cartography'>Cartography autolayout library</a> by <a href='https://github.com/robb'>Robert Böhnke</a>.</p>
+
+		<p>It’s an absolute joy to work with.</p>
+
+		<h2>Walking through the example</h2>
+
+		<p>If you want to jump right in and play with the example, you can <a href='downloads/CartographySpike.zip'>download the source here.</a> <small><em>(CartographySpike.zip, 118KB)</em></small></p>
+
+		<p><strong>Update:</strong> And here’s one that shows you how to do the same thing in a project that uses an NSSplitViewController. <small><em>(<a href='downloads/CartographySplitViewSpike.zip'>CartographySplitViewSpike.zip</a>, 163KB)</em></small></p>
+
+		<p>Let’s go through the code for the example to see how it works.</p>
+
+    	<p>First, let’s make sure that we have outlets created for the various boxes we’re going to lay out. I find image views with one-pixel colors set to scale <em>axis independently</em> a quick and easy way to prototype layouts. That’s what I’ve used here.</p>
+
+    	<p>(While we’re at it, we’ll also create a couple of properties to hold the constraint groups we’ll be creating using Cartography. Although we don’t make use of them in this example, you can animate constraint changes by replacing the constraints in constraint groups and calling <code>layoutSubtreeIfNeeded()</code> on your view from within an animation block.)</p>
+
+    	<p>In <em>ViewController.swift</em>:</p>
+
+    	<pre>Swift: <code>import Cocoa
+
+class ViewController: NSViewController
+{
+    @IBOutlet weak var background: NSImageView!
+    @IBOutlet weak var longBox: NSImageView!
+    @IBOutlet weak var shortBox: NSImageView!
+    
+    @IBOutlet weak var animateButton: NSButton!
+    
+    var backgroundConstraintGroup:ConstraintGroup?
+    var contentsConstraintGroup:ConstraintGroup?
+
+    // …
+</code></pre>
+
+
+		<p>Next, let’s create the layout constraints.</p>
+
+		<p>When working with Auto Layout, I have a personal preference that might seem rather odd at first: I want to use Interface Builder (IB) to lay out my views and set my constraints but I also want to specify my constraints in code. This allows me to take advantage of the quick, visual prototyping offered by IB (as well as its excellent preview tools for localisation, etc.) and it means that I also know exactly which constraints are being added and have them all in one place in code for easy maintenance. If this sounds like a bit of repitition, it is, but I find that it is worth it to have the best of both worlds.</p>
+
+		<p>So, to start off, I lay out my view in IB. For this quick spike, I didn’t actually set any constraints in IB but normally I would have so I could visually fine-tune its responsiveness. Regardless, IB will add some constraints automatically, and I don’t want these, so we start by removing them in <code>viewWillAppear</code>:</p>
+
+		<pre>Swift: <code>override func viewWillAppear()
+{
+    super.viewWillAppear()
+
+    // Remove constraints added by 
+    // Interface Builder while prototyping.
+    self.view.removeConstraints(self.view.constraints)
+
+    // …</code></pre>
+
+    <p>Next, let’s set up the constraints using Cartography.</p>
+
+    <p>Did I mention that Cartography is a beauty?</p>
+
+    <p>I also looked at <a href='https://github.com/smileyborg/PureLayout'>PureLayout</a> (which led me to try <a href='https://github.com/Masonry/Masonry'>Masonry</a> and <a href='https://github.com/iMartinKiss/KeepLayout'>KeepLayout</a> as well), but Cartography is the one I found most intuitive.</p>
+
+    <p>Continuing with <code>viewWillAppear()</code>:</p>
+
+    <pre>Swift: <code>backgroundConstraintGroup = layout(background)
+{
+    /* with */ background in
+    
+    // Make the background hug the edges of its superview exactly.
+    background.top == background.superview!.top
+    background.bottom == background.superview!.bottom
+    background.left == background.superview!.left
+    background.right == background.superview!.right
+}
+
+contentsConstraintGroup = layout(animateButton, longBox, shortBox)
+{
+    /* with */ animateButton, longBox, shortBox in
+
+    animateButton.center == animateButton.superview!.center
+    
+    longBox.width >= 274.0 ~ 1000   // Specify a minimum width for 
+                                    // the long box and allow it to
+                                    // expand (all constraints at
+                                    // required — 1,000 — priority).
+
+    longBox.height == 34.0 ~ 1000   // Static height.
+
+    // Inset the long box by 20 points from the left and 
+    // bottom edges of its superview.
+    longBox.left == longBox.superview!.left + 20.0 ~ 1000               
+    longBox.bottom == longBox.superview!.bottom - 20.0 ~ 1000           
+    
+    // The short box has a static width and height and is aligned
+    // to the right of the long box by the default Cocoa distance.
+    // Its inset from the bottom and right of its superview by 
+    // 20 points.
+    shortBox.width == 78.0 ~ 1000
+    shortBox.height == 34.0 ~ 1000
+    shortBox.left == longBox.right + 8.0 ~ 1000
+    shortBox.right == shortBox.superview!.right - 20.0 ~ 1000 
+    shortBox.bottom == shortBox.superview!.bottom - 20.0 ~ 1000
+}
+
+println(self.view.constraints)
+}
+</code></pre>
+
+		<p>Finally, let’s create an action for the Animate button which, when pressed, animates the size of the Window to make it expand by 200 points in both dimensions while keeping it centred on the same spot by moving its origin to compensate.</p>
+
+		<p>Continuing in <em>ViewController.swift:</em></p>
+
+		<pre>Swift: <code>@IBAction func animateButtonPressed(sender: NSButton)
+{
+    // Animate the window’s frame.
+    
+    NSAnimationContext.runAnimationGroup(
+        {
+            /* with */ (context: NSAnimationContext!) -> Void in
+            
+            context.duration = 0.33
+            context.allowsImplicitAnimation = true
+
+            var windowFrame:NSRect = self.view.window!.frame
+            windowFrame.size.width += 200.0
+            windowFrame.size.height += 200.0
+            windowFrame.origin.x -= 100.0
+            windowFrame.origin.y -= 100.0
+            
+            self.view.window!.setFrame(windowFrame, display: true, animate: true)
+            
+        },
+        completionHandler:
+        {
+            () -> Void in
+            
+            println("Animation complete. Window is now \(self.view.window!.frame.size.width) × \(self.view.window!.frame.size.height) points.")
+        }
+    )
+}
+</code></pre>
+
+		<p>And that’s basically it.</p>
+
+		<p>The key thing to remember is that while you shouldn’t be setting the frame of your views directly when using Auto Layout, this doesn’t apply for window size changes.</p>
+
+		<p>When you want to smoothly change the size of your window, it’s perfectly permissible to animate its frame and your views that use Auto Layout will animate along beautifully while satisfying their constraints.</p>
+
+		<p>While I won’t go into it here, you can also cause the size of the window to change by expanding/collapsing panels in a split view. Find out more about that technique, as well as the window resize method I use here, in the Best Practices for Cocoa Animation session from <a href='https://developer.apple.com/videos/wwdc/2013/'>WWDC 2013</a> (<a href='http://asciiwwdc.com/2013/sessions/213'>transcript</a>).</p>
+
+		</div>
+		<div id="discourse-comments"></div>
+
+		<footer class="site-footer">
+                <h2 class="site-name"><a href="https://ind.ie">ind.ie</a></h2>
+                <small class="copyright"><abbr title="Copyright">©</abbr> <a href="/about/#trademarks">Article 12</a>. All content is <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a>, unless otherwise stated.</small>
+                <div class="view-source-wrap">
+                    <a class="view-source" href="https://source.ind.ie/project/ind-ie-site/tree/master">View source</a>
+                </div>
+            </footer>
+	</div>
+    <script type='text/javascript'>
+      var discourseUrl = 'https://forum.ind.ie/',
+          discourseEmbedUrl = 'https://ind.ie/labs/blog/animating-cocoa-window-size-when-using-auto-layout/';
+
+      (function() {
+        var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+          d.src = discourseUrl + 'javascripts/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+            })();
+    </script>
+</body>
+</html>

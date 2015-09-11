@@ -1,0 +1,97 @@
+<doctype html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1' />
+	<title>Ind.ie Labs - Blog - Installing NPM packages from GitLab repositories</title>
+	<!--[if lte IE 8]>
+        <script src='https://ind.ie/assets/js/html5shiv.js'></script>
+    <![endif]-->
+    <link rel='shortcut icon' href='/favicon.ico'>
+    <link rel='apple-touch-icon' href='https://ind.ie/assets/images/ios-180.png'>
+    <link rel='apple-touch-icon' sizes='76x76' href='https://ind.ie/assets/images/ios-76.png'>
+    <link rel='apple-touch-icon' sizes='120x120' href='https://ind.ie/assets/images/ios-120.png'>
+    <link rel='apple-touch-icon' sizes='152x152' href='https://ind.ie/assets/images/ios-152.png'>
+    <link rel='apple-touch-icon' sizes='152x152' href='https://ind.ie/assets/images/ios-180.png'>
+	<link rel='alternate' type='application/rss+xml' title='Ind.ie Labs Blog' href='https://ind.ie/labs/blog/rss/index.xml' />
+	<link rel='stylesheet' href='https://ind.ie/assets/css/lab-styles.css'/>
+	<link rel="stylesheet" href="../css/highlight/kimbie.dark.css">
+	<link rel='stylesheet' href='../css/styles.css'/>
+	<script src="../js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class='labs labs-blog'>
+	<!-- @import '../../../../assets/includes/_nav.kit' -->
+	<div class='main h-entry'>
+        <!-- @import '../../../../includes/_archive-notice.kit' -->
+		<h1 class='p-name long-title'>Installing NPM packages from GitLab repositories</h1>
+		<p class='post-date dt-published' datetime='2015-02-15 13:52:00'>15th February, 2015 — <span class='p-author'>Aral Balkan</span></p>
+		<div class='e-content'>
+
+		<p class='tldr'><strong>TL; DR:</strong> If you want to install an NPM package from a GitLab repository, use the <em>git+https</em> (or <em>git+http</em>) protocol, not <em>git://</em> or <em>https://</em>.</p>
+
+		<p>This one always catches me out. If you want to specify that an NPM package should be installed from a GitLab repository (e.g., from <a href='https://source.ind.ie/public/projects'>source.ind.ie</a>), you need to use the <em>git+https</em> protocol (or HTTP if you’re being naughty and running GitLab without TLS).</p>
+
+		<pre>package.json<code>{
+  …
+  "dependencies": {
+    "indie-set": "git+https://source.ind.ie/project/set.git",
+  …
+  }
+}</code></pre>
+		
+		<p>This catches me out as <em>git://</em> URLs work for GitHub repositories. So, for example, the following is perfectly valid and works:</p>
+
+		<pre>package.json<code>{
+  …
+  "dependencies": {
+    "ws": "git://github.com/websockets/ws.git",
+  …
+  }
+}</code></pre>
+
+		<p>If you try that with GitLab, however, you’ll get an error message similar to:</p>
+
+		<pre>npm ERR! git clone git://source.ind.ie/project/set.git Cloning into bare repository '/Users/aral/.npm/_git-remotes/git-source-ind-ie-project-set-git-445a3a05'...
+npm ERR! git clone git://source.ind.ie/project/set.git fatal: unable to connect to source.ind.ie:
+npm ERR! git clone git://source.ind.ie/project/set.git source.ind.ie[0: 37.139.13.136]: errno=Connection refused
+npm ERR! Darwin 14.1.0
+npm ERR! argv "/usr/local/bin/node" "/usr/local/bin/npm" "install"
+npm ERR! node v0.12.0
+npm ERR! npm  v2.5.1
+npm ERR! code 128
+
+npm ERR! Command failed: git clone --template=/Users/aral/.npm/_git-remotes/_templates --mirror git://source.ind.ie/project/set.git /Users/aral/.npm/_git-remotes/git-source-ind-ie-project-set-git-445a3a05
+npm ERR! Cloning into bare repository '/Users/aral/.npm/_git-remotes/git-source-ind-ie-project-set-git-445a3a05'...
+npm ERR! fatal: unable to connect to source.ind.ie:
+npm ERR! source.ind.ie[0: 37.139.13.136]: errno=Connection refused</pre>
+
+		<p>And if you try to install it using just the <em>https</em> protocol, you’ll get an error similar to:</p>
+
+		<pre>npm WARN package.json labs@0.0.1 No repository field.
+npm ERR! fetch failed https://source.ind.ie/project/set.git
+npm WARN retry will retry, error on last attempt: Error: fetch failed with status code 406</pre>
+
+		</div>
+		<div id="discourse-comments"></div>
+
+		<footer class="site-footer">
+                <h2 class="site-name"><a href="https://ind.ie">ind.ie</a></h2>
+                <small class="copyright"><abbr title="Copyright">©</abbr> <a href="/about/#trademarks">Article 12</a>. All content is <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a>, unless otherwise stated.</small>
+                <div class="view-source-wrap">
+                    <a class="view-source" href="https://source.ind.ie/project/ind-ie-site/tree/master">View source</a>
+                </div>
+            </footer>
+	</div>
+    <script type='text/javascript'>
+      var discourseUrl = 'https://forum.ind.ie/',
+          discourseEmbedUrl = 'https://ind.ie/labs/blog/installing-npm-packages-from-gitlab-repositories/';
+
+      (function() {
+        var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+          d.src = discourseUrl + 'javascripts/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+            })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<doctype html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1' />
+	<title>Ind.ie Labs - Blog - Swift: Avoiding double-wrapped optionals with conditional downcasting</title>
+	<!--[if lte IE 8]>
+        <script src='https://ind.ie/assets/js/html5shiv.js'></script>
+    <![endif]-->
+    <link rel='shortcut icon' href='/favicon.ico'>
+    <link rel='apple-touch-icon' href='https://ind.ie/assets/images/ios-180.png'>
+    <link rel='apple-touch-icon' sizes='76x76' href='https://ind.ie/assets/images/ios-76.png'>
+    <link rel='apple-touch-icon' sizes='120x120' href='https://ind.ie/assets/images/ios-120.png'>
+    <link rel='apple-touch-icon' sizes='152x152' href='https://ind.ie/assets/images/ios-152.png'>
+    <link rel='apple-touch-icon' sizes='152x152' href='https://ind.ie/assets/images/ios-180.png'>
+	<link rel='alternate' type='application/rss+xml' title='Ind.ie Labs Blog' href='https://ind.ie/labs/blog/rss/index.xml' />
+	<link rel='stylesheet' href='https://ind.ie/assets/css/lab-styles.css'/>
+	<link rel="stylesheet" href="../css/highlight/kimbie.dark.css">
+	<link rel='stylesheet' href='../css/styles.css'/>
+	<script src="../js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class='labs labs-blog'>
+	<!-- @import '../../../../assets/includes/_nav.kit' -->
+	<div class='main h-entry'>
+        <!-- @import '../../../../includes/_archive-notice.kit' -->
+		<h1 class='p-name long-title'>Swift: Avoiding double-wrapped optionals with conditional downcasting</h1>
+		<p class='post-date dt-published' datetime='2015-01-30 11:30:00'>27th February, 2015 — <span class='p-author'>Aral Balkan</span></p>
+		<div class='e-content'>
+
+		<p>Yesterday, I took the plunge and updated Heartbeat to Xcode 6.3 Beta 2. It was actually not a painful process with the automatic migration tool shouldering the brunt of the work for me.</p>
+
+		<p>One thing I did notice in my code, however, was a double-wrapped optional where I was trying to access the layer of the content view of a window.</p>
+
+		<p>In my original code, I had:</p>
+
+		<pre>Swift: <code> if let layer = self.window?.contentView.layer? { //…</code></pre>
+
+		<p>While that works in the release build, Swift 1.2 in Xcode 6.3 Beta 2 was having none of it.</p>
+
+		<p>My initial, naïve refactoring gave me this:</p>
+
+		<pre>Swift: <code>if let window = self.window, doubleWrappedOptionalWTF = window.contentView.layer, layer = doubleWrappedOptionalWTF { //…</code></pre>
+
+		<p>So, to understand why I was getting a double-wrapped optional (<code>CALayer??</code>), I wrote out the code in longhand:</p>
+
+		<pre>Swift: <code>let window:NSWindow? = self.window
+if let window = window
+{
+    let contentView:NSView? = window.contentView as? NSView
+    if let contentView = contentView
+    {
+        let layer:CALayer? = contentView.layer
+        if let layer = layer
+        {
+            // Do something with the layer…
+        }
+    }
+}</code></pre>
+
+        <p>Ah, well now it’s clear: the “double-wrapping” is because I wasn’t casting <code>contentView</code>, which returns <code>AnyObject</code>.</p>
+
+        <p>So, let’s apply that back to the one-liner:</p>
+
+        <pre>Swift: <code>if let window = self.window, contentView = window.contentView as? NSView, layer = contentView.layer { //…</code></pre>
+
+        <p>Much nicer.</p>
+
+        <p>But I can’t really call it beautiful.</p>
+
+		</div>
+		<div id="discourse-comments"></div>
+
+		<footer class="site-footer">
+                <h2 class="site-name"><a href="https://ind.ie">ind.ie</a></h2>
+                <small class="copyright"><abbr title="Copyright">©</abbr> <a href="/about/#trademarks">Article 12</a>. All content is <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a>, unless otherwise stated.</small>
+                <div class="view-source-wrap">
+                    <a class="view-source" href="https://source.ind.ie/project/ind-ie-site/tree/master">View source</a>
+                </div>
+            </footer>
+	</div>
+    <script type='text/javascript'>
+      var discourseUrl = 'https://forum.ind.ie/',
+          discourseEmbedUrl = 'https://ind.ie/labs/blog/swift-avoiding-double-wrapped-optionals-with-conditional-downcasting/';
+
+      (function() {
+        var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+          d.src = discourseUrl + 'javascripts/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+            })();
+    </script>
+</body>
+</html>

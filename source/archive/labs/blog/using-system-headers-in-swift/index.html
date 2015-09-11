@@ -1,0 +1,196 @@
+<doctype html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1' />
+	<title>Ind.ie Labs - Blog - Using System Headers In Swift – CocoaPods To The Rescue</title>
+	<!--[if lte IE 8]>
+    <script src='https://ind.ie/assets/js/html5shiv.js'></script>
+  <![endif]-->
+  <link rel='shortcut icon' href='/favicon.ico'>
+  <link rel='apple-touch-icon' href='https://ind.ie/assets/images/ios-180.png'>
+  <link rel='apple-touch-icon' sizes='76x76' href='https://ind.ie/assets/images/ios-76.png'>
+  <link rel='apple-touch-icon' sizes='120x120' href='https://ind.ie/assets/images/ios-120.png'>
+  <link rel='apple-touch-icon' sizes='152x152' href='https://ind.ie/assets/images/ios-152.png'>
+  <link rel='apple-touch-icon' sizes='152x152' href='https://ind.ie/assets/images/ios-180.png'>
+	<link rel='alternate' type='application/rss+xml' title='Ind.ie Labs Blog' href='https://ind.ie/labs/blog/rss/index.xml' />
+	<link rel='stylesheet' href='https://ind.ie/assets/css/lab-styles.css'/>
+	<link rel="stylesheet" href="../css/highlight/kimbie.dark.css">
+	<link rel='stylesheet' href='../css/styles.css'/>
+	<script src="../js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+    <style>
+    .long-title {
+        margin-bottom: 15px;
+    }
+    .long-title + .subtitle {
+        margin-top: 0;
+    }
+    </style>
+</head>
+<body class='labs labs-blog'>
+	<!-- @import '../../../../assets/includes/_nav.kit' -->
+	<div class='main h-entry'>
+        <!-- @import '../../../../includes/_archive-notice.kit' -->
+		<h1 class='p-name long-title'>Using System Headers In Swift</h1>
+        <h2 class='subtitle centre-title'>CocoaPods To The Rescue</h2>
+		<p class='post-date dt-published' datetime='2015-05-12 21:05:00'>12th May, 2015 — <span class='p-author'>Stefan van den Oord</span></p>
+		<div class='e-content'>
+<p>One of the nice things about Swift is that is was designed to interact not only <a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithObjective-CAPIs.html#//apple_ref/doc/uid/TP40014216-CH4-XID_25">with Objective-C</a>, but also <a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithCAPIs.html">directly with C</a>. In order for this to work, the C-based APIs need to be exposed as Swift <a href="http://clang.llvm.org/docs/Modules.html">modules</a>. Out of the box the iOS development environment already contains a number of modules for quite a few standard system APIs. For my <a href="https://github.com/svdo/swift-netutils">NetUtils</a> framework, I needed one for <code>ifaddrs.h</code> though, which is not available. Since I couldn't find the information I needed to do this in one place, I am putting it all down in this article.</p>
+
+<h2>Step 1: Set up the framework</h2>
+
+<p>After I had setup my framework, I wanted to start using <code>getifaddrs</code> from <code>ifaddrs.h</code>. Normally, in C you would just type <code>#include &lt;ifaddrs.h&gt;</code>. In Swift, you could do the same in your bridging header when your target is an application, but not when it's a framework. So when I tried to add this include to my umbrella header, I got the following error message:</p>
+
+<pre>Terminal output:<code>/&lt;path_to_project&gt;/NetUtils/NetUtils/NetUtils.h:13:10: error: include of non-modular header inside framework module 'NetUtils'
+#include &lt;ifaddrs.h&gt;
+         ^
+</code></pre>
+
+<p>Setting "Allow Non-modular Includes In Framework Modules" to YES didn't help, I still got the same error message.</p>
+
+<p>After doing some research, I came to the conclusion that I needed to define a module for <code>ifaddrs.h</code> before I could use it. When you search for this on the Internet, you will probably find <a href="http://stackoverflow.com/questions/25248598/importing-commoncrypto-in-a-swift-framework">this Stack Overflow post</a> that describes a way of doing this (in a few variations). Also, I found <a href="https://gist.github.com/fluidsonic/ef8bad0796dbbc36d488">this gist</a> that is quite nice because when you use that, you don't need to change your project's build settings anymore. It does require a custom shell script build phase though.</p>
+
+<h2>Step 2: Using the framework as a CocoaPod</h2>
+
+<p>Both solutions have one problem, though: when you want to use the framework as a CocoaPod, they don't work. The first doesn't work because the required build settings are not used by CocoaPods, and the second because the required shell script build phase is not used by CocoaPods. The reason for this is that CocoaPods creates its own project and target for the pod, and it doesn't know that it needs to apply those custom build settings.</p>
+
+<p>After a few hours of tinkering, trial and error, thinking, and more trial and error, I came up with a solution that I think is quite acceptable. It has two parts: (a) adding the <code>module.modulemap</code> files to the project, and (b) telling CocoaPods that it needs to add the right build settings so that the module map files are used.</p>
+
+<h2>Adding the Module Map Files</h2>
+
+<p>I want my framework to be usable on iOS, iPhone Simulator, and OS X. Since they all have a different path to the <code>ifaddrs.h</code> file, I created three module maps. This is <a href="https://github.com/svdo/swift-netutils/blob/0.4/ifaddrs/iphonesimulator/module.modulemap">the one for the iPhone Simulator</a>, the <a href="https://github.com/svdo/swift-netutils/blob/0.4/ifaddrs/iphoneos/module.modulemap">other</a> <a href="https://github.com/svdo/swift-netutils/blob/0.4/ifaddrs/macosx/module.modulemap">two</a> are similar:</p>
+
+<pre>Module map:<code class="modulemap">module ifaddrs [system] [extern_c] {
+    header "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/include/ifaddrs.h"
+    export *
+}
+</code></pre>
+
+<p>I stored this file in my project at the path <code>$(SRCROOT)/ifaddrs/iphonesimulator/module.modulemap</code>. The other two have their own folders that also contain only this <code>module.modulemap</code> file. In order to be able to build the framework itself, I of course had to tell Xcode to use these module maps by setting the "Import Paths" build setting in the "Swift Compiler - Search Paths" section. You should use the path <code>$(SRCROOT)/ifaddrs/iphonesimulator/module.modulemap</code>; the screen shot below shows the expanded version of that variable.</p>
+
+<p><a href='images/build-settings.png' title='View image full size'><img src="images/build-settings.png" alt="Swift Compiler Search Path - Import Paths" /></a></p>
+
+<p>So now your framework should compile and you should be able to use the <code>ifaddrs</code> module by simply importing it in the header of your Swift files. However, when you try to use it as a CocoaPod, you will get compiler errors saying that the <code>ifaddrs</code> module is unknown.</p>
+
+<h2>Configuring the CocoaPod</h2>
+
+<p>CocoaPods to the rescue! As I wrote before, CocoaPods doesn't know that these special build settings have to be used. Fortunately, there is a way to tell it that it has to, by adding the <code>xcconfig</code> key to the pod spec. In my case, in the (JSON) pod spec, I added these lines:</p>
+
+<pre>Podspec fragment:<code class="json">"xcconfig": {
+    "SWIFT_INCLUDE_PATHS[sdk=iphoneos*]": "$(SRCROOT)/NetUtils/ifaddrs/iphoneos",
+    "SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]": "$(SRCROOT)/NetUtils/ifaddrs/iphonesimulator",
+    "SWIFT_INCLUDE_PATHS[sdk=macosx*]": "$(SRCROOT)/NetUtils/ifaddrs/macosx"
+},
+"preserve_paths": [ "ifaddrs/*" ],
+</code></pre>
+
+<p>The <code>preserve_paths</code> directive is needed because otherwise CocoaPods will discard the module map files.</p>
+
+<p>Please note that the path now also contains <code>NetUtils</code>, which it didn't before. The reason is that CocoaPods uses a folder structure where the <code>Pods.xcodeproj</code> project contains all the pod folders, of which <code>NetUtils</code> (my project's name) is one.</p>
+
+<h2>Not Every Computer Is The Same</h2>
+
+<p>There is one more thing left to do. You might have noticed that the <code>module.modulemap</code> files contain the path of Xcode itself (<code>/Applications/Xcode.app</code>). For my computer that is (currently) fine, because that's what I'm using. Someone else may use different Xcode versions side by side or use a completely different location for Xcode. In order to allow for that, I added a small shell script that replaces the default Xcode path with the configured path on your computer. This is done by calling <code>xcode-select -p</code>, so if you have changed it using <code>xcode-select</code> or even if you have changed it only by setting the <code>DEVELOPER_DIR</code> environment variable, it will use the correct path.</p>
+
+<p>I called this shell script <a href="https://github.com/svdo/swift-netutils/blob/0.4/ifaddrs/injectXcodePath.sh"><code>injectXcodePath.sh</code></a> and it has the following contents. It includes a few utility functions that I regularly use besides the <code>main</code> function.</p>
+
+<pre>Bash:<code class="bash">#!/bin/sh
+
+defaultXcodePath="/Applications/Xcode.app/Contents/Developer"
+realXcodePath="`xcode-select -p`"
+
+fatal() {
+    echo "[fatal] $1" 1&gt;&amp;2
+    exit 1
+}
+
+absPath() {
+    case "$1" in
+        /*)
+            printf "%s\n" "$1"
+            ;;
+        *)
+            printf "%s\n" "$PWD/$1"
+            ;;
+    esac;
+}
+
+scriptDir="`dirname $0`"
+scriptName="`basename $0`"
+absScriptDir="`cd $scriptDir; pwd`"
+
+main() {
+    for f in `find ${absScriptDir} -name module.modulemap`; do
+        cat ${f} | sed "s,${defaultXcodePath},${realXcodePath},g" &gt; ${f}.new || fatal "Failed to update modulemap ${f}"
+        mv ${f}.new ${f} || fatal "Failed to replace modulemap ${f}"
+    done
+}
+
+main $*
+</code></pre>
+
+<p>Now I have to tell CocoaPods to run this script. You can do that using the <code>prepare_command</code> key in the pod spec:</p>
+
+<pre>Podspec fragment:<code class="json">"prepare_command": "ifaddrs/injectXcodePath.sh"
+</code></pre>
+
+<h2>Complete Pod Spec</h2>
+
+<p>That's it, everything should work now. For your convenience, here is the <a href="https://github.com/svdo/swift-netutils/blob/0.4/NetUtils.podspec.json">complete pod spec of version 0.4 of NetUtils</a>:</p>
+
+<pre>CocoaPods podspec:<code class="json">{
+    "name": "NetUtils",
+    "version": "0.4",
+    "summary": "Swift library that simplifies getting information about your network interfaces and their properties, both for iOS and OS X.",
+    "homepage": "https://github.com/svdo/swift-netutils",
+    "license": {
+        "type": "The Unlicense &lt;http://unlicense.org&gt;"
+    },
+    "source": {
+        "git": "https://github.com/svdo/swift-netutils.git",
+        "tag": "0.4"
+    },
+    "authors": "Stefan van den Oord",
+    "platforms": {
+        "ios": "8.0",
+        "osx": "10.9"
+    },
+    "source_files": "NetUtils/**/*.swift",
+    "requires_arc": true,
+    "xcconfig": {
+        "SWIFT_INCLUDE_PATHS[sdk=iphoneos*]": "$(SRCROOT)/NetUtils/ifaddrs/iphoneos",
+        "SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]": "$(SRCROOT)/NetUtils/ifaddrs/iphonesimulator",
+        "SWIFT_INCLUDE_PATHS[sdk=macosx*]": "$(SRCROOT)/NetUtils/ifaddrs/macosx"
+    },
+    "preserve_paths": [ "ifaddrs/*" ],
+    "prepare_command": "ifaddrs/injectXcodePath.sh"
+}
+</code></pre>
+
+<h2>Feedback</h2>
+<p>As always, feedback is much appreciated. This article is <a href="https://medium.com/@stefanvdoord/using-system-headers-in-swift-8731e972adfe">cross-posted on Medium</a>, so that it should be easy for you to do so. Thanks!</p>
+
+		</div>
+        <div id="discourse-comments"></div>
+
+<footer class="site-footer">
+                <h2 class="site-name"><a href="https://ind.ie">ind.ie</a></h2>
+                <small class="copyright"><abbr title="Copyright">©</abbr> <a href="/about/#trademarks">Article 12</a>. All content is <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a>, unless otherwise stated.</small>
+                <div class="view-source-wrap">
+                    <a class="view-source" href="https://source.ind.ie/project/ind-ie-site/tree/master">View source</a>
+                </div>
+            </footer>
+	</div>
+    <script type='text/javascript'>
+      var discourseUrl = 'https://forum.ind.ie/',
+          discourseEmbedUrl = 'https://ind.ie/labs/blog/using-system-headers-in-swift/';
+
+      (function() {
+        var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+          d.src = discourseUrl + 'javascripts/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+            })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<doctype html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1' />
+	<title>Ind.ie Labs - Blog - App Sandbox: Updating NSUserDefaults fails after deleting app’s container directory</title>
+	<!--[if lte IE 8]>
+        <script src='https://ind.ie/assets/js/html5shiv.js'></script>
+    <![endif]-->
+    <link rel='shortcut icon' href='/favicon.ico'>
+    <link rel='apple-touch-icon' href='https://ind.ie/assets/images/ios-180.png'>
+    <link rel='apple-touch-icon' sizes='76x76' href='https://ind.ie/assets/images/ios-76.png'>
+    <link rel='apple-touch-icon' sizes='120x120' href='https://ind.ie/assets/images/ios-120.png'>
+    <link rel='apple-touch-icon' sizes='152x152' href='https://ind.ie/assets/images/ios-152.png'>
+    <link rel='apple-touch-icon' sizes='152x152' href='https://ind.ie/assets/images/ios-180.png'>
+	<link rel='alternate' type='application/rss+xml' title='Ind.ie Labs Blog' href='https://ind.ie/labs/blog/rss/index.xml' />
+	<link rel='stylesheet' href='https://ind.ie/assets/css/lab-styles.css'/>
+	<link rel="stylesheet" href="../css/highlight/kimbie.dark.css">
+	<link rel='stylesheet' href='../css/styles.css'/>
+	<script src="../js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class='labs labs-blog'>
+	<!-- @import '../../../../assets/includes/_nav.kit' -->
+	<div class='main h-entry'>
+        <!-- @import '../../../../includes/_archive-notice.kit' -->
+		<h1 class='p-name long-title'>App Sandbox: Updating NSUserDefaults fails after deleting app’s container directory</h1>
+		<p class='post-date dt-published' datetime='2015-02-26 11:48:00'>26th February, 2015 — <span class='p-author'>Aral Balkan</span></p>
+		<div class='e-content'>
+
+		<p class='tldr'><strong>TL; DR:</strong> You forgot to empty the trash.</p>
+
+		<p>This is a simple thing but it had me scratching my head for a bit last night: If you delete the container folder of your sandboxed app, you might notice that user defaults at <code>NSUserDefaults.standardUserDefaults()</code> are not being persisted. This is the same whether or not you call <code>synchronize()</code> directly (as of 10.8 and later, <a href='http://stackoverflow.com/questions/1725852/nsuserdefaults-are-not-being-written-to-disk#comment28473973_1726001'>you shouldn’t be calling it directly anyway</a>)</p>
+
+		<p>The reason for it is simple: you didn’t empty the trash and the app has a dangling reference to the <code>.plist</code> file in the trash.</p>
+
+		<p>The solution is also simple: empty the trash.</p>
+
+		<p>You can see for yourself by noticing that your application’s property list file is absent as your app runs before you’ve emptied the trash. When you empty the trash and run your app again, it will be created the first time you write to the standard user defaults:</p>
+		
+		<pre> File: <code>~/Library/Containers/your.identifier.AppName/Data/Library/Preferences/your.identifier.AppName.plist</code></pre> 
+
+
+		</div>
+		<div id="discourse-comments"></div>
+
+		<footer class="site-footer">
+                <h2 class="site-name"><a href="https://ind.ie">ind.ie</a></h2>
+                <small class="copyright"><abbr title="Copyright">©</abbr> <a href="/about/#trademarks">Article 12</a>. All content is <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a>, unless otherwise stated.</small>
+                <div class="view-source-wrap">
+                    <a class="view-source" href="https://source.ind.ie/project/ind-ie-site/tree/master">View source</a>
+                </div>
+            </footer>
+	</div>
+    <script type='text/javascript'>
+      var discourseUrl = 'https://forum.ind.ie/',
+          discourseEmbedUrl = 'https://ind.ie/labs/blog/app-sandbox-updating-nsuserdefaults-fails-after-deleting-apps-container-directory/';
+
+      (function() {
+        var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+          d.src = discourseUrl + 'javascripts/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+            })();
+    </script>
+</body>
+</html>

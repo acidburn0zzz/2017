@@ -1,0 +1,176 @@
+/* Blog-specific styles */
+
+.main {
+	padding: 14px;
+	padding-top: 0;
+}
+
+@media only screen and (min-width: 600px) {
+	.main {
+		margin: 0 auto;
+		max-width: 700px;
+		padding: 21px;
+		padding-top: 0;
+	}
+}
+.sub-navigation--list {
+	margin: 0;
+	margin-top: 11px;
+	overflow: hidden;
+	padding: 0;
+/* flex box to centre children */
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	-moz-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	justify-content: center;
+}
+@media only screen and (min-width: 600px) {
+	.sub-navigation--list {
+		margin-top: 0;
+	}
+}
+.sub-navigation--list {
+	margin: 0;
+/* Make sure that the rule is written out only once in case there is no rem substitution */
+	margin: 0;
+	margin-top: 11px;
+	margin-top: 0.6875rem;
+	overflow: hidden;
+	padding: 0;
+/* Make sure that the rule is written out only once in case there is no rem substitution */
+	padding: 0;
+/* flex box to centre children */
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	-moz-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	justify-content: center;
+}
+@media only screen and (min-width: 600px) {
+	.sub-navigation--list {
+		margin-top: 0;
+	}
+}
+.sub-navigation--list li {
+	float: left;
+	list-style-type: none;
+	margin-bottom: 0;
+	padding: 0 13px 1px 1px;
+/* Make sure that the rule is written out only once in case there is no rem substitution */
+	padding: 0 0.8125rem 0.4375rem 0.8125rem;
+}
+.sub-navigation--list li a {
+	border-bottom: 1px solid #191919;
+	border-bottom: 0.0625rem solid #191919;
+	color: #191919;
+	display: block;
+	float: left;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 21px;
+	line-height: 1.3125rem;
+	padding: 18px 1px 1px 1px;
+/* Make sure that the rule is written out only once in case there is no rem substitution */
+	padding: 1.125rem 0.0625rem 0.0625rem 0.0625rem;
+	text-decoration: none;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+.sub-navigation--list li a:hover,
+.sub-navigation--list li a:active,
+.sub-navigation--list li a:focus {
+	border-color: #000;
+	color: #000;
+}
+.labs-projects .sub-navigation .projects-link a,
+.labs-blog .sub-navigation .blog-link a {
+	background: #ccc;
+	border-bottom: none;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	display: inline-block;
+	margin-top: 11px;
+	margin-top: 0.6875rem;
+	padding: 7px 14px 1px 1px;
+/* Make sure that the rule is written out only once in case there is no rem substitution */
+	padding: 0.4375rem 0.875rem;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-ms-transition: none;
+	-o-transition: none;
+	-webkit-transition: all none ease;
+	-moz-transition: all none ease;
+	-ms-transition: all none ease;
+	-o-transition: all none ease;
+	transition: all none ease;
+}
+@media only screen and (min-width: 770px) {
+	.labs-projects .sub-navigation .projects-link a,
+	.labs-blog .sub-navigation .blog-link a {
+		background: url("https://ind.ie/assets/images/sprite.svg") no-repeat top center;
+		border-bottom: 1px solid #191919;
+		border-bottom: 0.0625rem solid #191919;
+		-webkit-border-radius: 0;
+		border-radius: 0;
+		display: block;
+		margin-top: 0;
+		padding: 18px 1px 1px 1px;
+		padding: 1.125rem 0.0625rem 0.0625rem 0.0625rem;
+	}
+	.no-svg .labs-projects .sub-navigation .projects-link a,
+	.no-svg .labs-blog .sub-navigation .blog-link a {
+		background-image: url("https://ind.ie/assets/images/sprite.png");
+	}
+}
+
+.tldr {
+	background-color: #e5e5e5;
+	border-radius: 0.5em;
+	padding:1em;
+	margin-left:-1em;
+	margin-right:-1em;
+	margin-bottom: 1em;
+}
+
+pre {
+	border: 1px solid black;
+	margin-left: -1em;
+	padding-left: 1em;
+	padding-right: 1em;
+	margin-right: -1em;
+	word-wrap:break-word;
+	margin-top: 2em;
+}
+
+pre code.hljs {
+	margin: -1em;
+	padding-left: 1em;
+	margin-top: 0.5em;
+	font-size:13px;
+	line-height:20px;
+}
+
+kbd {
+	background: #eee;
+	border: 2px outset #ddd;
+	border-radius: 5px;
+	color: #333;
+	font-size: 16px;
+	padding: 0 3px;
+}
+
+p {
+	margin-bottom: 24px;
+}

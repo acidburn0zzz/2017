@@ -1,0 +1,139 @@
+<doctype html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1' />
+	<title>Ind.ie Labs - Blog - Build-time optimisation with Xcode build scripts</title>
+	<!--[if lte IE 8]>
+        <script src='https://ind.ie/assets/js/html5shiv.js'></script>
+    <![endif]-->
+    <link rel='shortcut icon' href='/favicon.ico'>
+    <link rel='apple-touch-icon' href='https://ind.ie/assets/images/ios-180.png'>
+    <link rel='apple-touch-icon' sizes='76x76' href='https://ind.ie/assets/images/ios-76.png'>
+    <link rel='apple-touch-icon' sizes='120x120' href='https://ind.ie/assets/images/ios-120.png'>
+    <link rel='apple-touch-icon' sizes='152x152' href='https://ind.ie/assets/images/ios-152.png'>
+    <link rel='apple-touch-icon' sizes='152x152' href='https://ind.ie/assets/images/ios-180.png'>
+	<link rel='alternate' type='application/rss+xml' title='Ind.ie Labs Blog' href='https://ind.ie/labs/blog/rss/index.xml' />
+	<link rel='stylesheet' href='https://ind.ie/assets/css/lab-styles.css'/>
+	<link rel="stylesheet" href="../css/highlight/kimbie.dark.css">
+	<link rel='stylesheet' href='../css/styles.css'/>
+	<script src="../js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script></head>
+</head>
+<body class='labs labs-blog'>
+	<!-- @import '../../../../assets/includes/_nav.kit' -->
+	<div class='main h-entry'>
+        <!-- @import '../../../../includes/_archive-notice.kit' -->
+		
+		<h1 class='p-name long-title'>Build-time optimisation with Xcode build scripts</h1>
+		
+		<p class='post-date dt-published' datetime='2015-02-13 17:30:00'>13th February, 2015 — <span class='p-author'>Aral Balkan</span></p>
+		
+		<div class='e-content'>
+		
+		<p>Yesterday, I sideways-glanced at the binary size for Heartbeat and almost had a heart attack when I saw it was a little over 220MB.</p>
+
+		<p>Say what? There should be nothing in there causing that sort of bloat. Let’s take a closer look:</p>
+
+		<pre>Shell (<a href='http://unix.stackexchange.com/a/22448'>source</a>):<code>find . -type f -exec du -a {} + | sort -n -r</code></pre>
+
+<pre>
+24064	./Heartbeat/node
+19480	./node.js/node_modules/indie-pulse-process/pulse/pulse-linux-amd64-1.0.0+14-gd2cd1f4/pulse
+19480	./node.js/node_modules/indie-pulse-config/node_modules/indie-pulse-process/pulse/pulse-linux-amd64-1.0.0+14-gd2cd1f4/pulse
+19320	./node.js/node_modules/indie-pulse-process/pulse/pulse-macosx-amd64-1.0.0+14-gd2cd1f4/pulse
+19320	./node.js/node_modules/indie-pulse-config/node_modules/indie-pulse-process/pulse/pulse-macosx-amd64-1.0.0+14-gd2cd1f4/pulse
+…</pre>
+
+		<p>The output above is the top view rows from the current source folder (sans .git files), not the <em>Resources</em> folder of the binary, but you get the idea. The actual output from yesterday showed me that the <a href='https://source.ind.ie/project/indie-pulse-process'>Pulse Process</a> module had six checked-in versions of <a href='https://source.ind.ie/project/pulse'>Pulse</a>, and was being included twice as it was being used by the <a href='https://source.ind.ie/project/pulse-config'>Pulse Config</a> module. Those two alone were adding ~120MB to the binary size.</p>
+
+		<p>Eeek!</p>
+
+		<p>So the problem — aside from my willingness to liberally check in different versions of Pulse — was <a href='http://nodejs.org'>Node.js</a>. Or, more precisely, how Node handles dependencies.</p>
+
+		<h2>Wait a minute… did you say Node? In a native Mac app?</h2>
+
+		<p>Yep, Node.</p>
+
+		<p>I’ve separated the presentation and business logic in Heartbeat so that the former is encapsulated in a native Cocoa client and the latter is handled in Node. This keeps the content layer as hackable and portable as possible and still allows me the freedom to try and craft a beautiful, accessible experience that respects the native culture of the Mac platform.</p>
+		
+		<p>It means that if other developers want to port Heartbeat to other platforms in the future, their jobs will be easier. But not at the expense of the experience of every person using it.</p>
+
+		<p>So even though the bulk of the binary size optimisation involved deleting some unused files, it was immediately apparent that there was still more I could do.</p>
+
+		<p>Specifically:</p>
+
+		<ul>
+			<li>Even though I removed most of the Pulse binaries, the indie-pulse-process module still has a Linux version of Pulse checked in. This is important as it is used by Waystone (which runs on an Ubuntu box) and so I can’t remove it from the module. I still should remove it from the final binary, though, as it adds 20MB to it.</li>
+			<li>A number of popular node modules are used by a large number of other modules. At least in my modules, I can make sure that they were using the same versions of these modules and then, in the final binary, keep one copy and create symlinks from everywhere else.</li>
+		</ul>
+		
+		<p>So it became clear that I really needed to be able to do all this during build time.</p>
+
+		<h2>Xcode Run Script Build Phase to the rescue!</h2>
+
+		<p>Thankfully, Xcode has a lovely Run Script Build Phase that I learned about <a href='http://zathras.de/angelweb/x2005-04-18.htm'>thanks to Uli’s post from back in 2005</a>.</p>
+
+		<p>To use it:</p>
+
+		<img src='images/add-a-new-build-phase.png' alt='Xcode interface showing the Build Phases section of the current target.'>
+
+		<ol>
+			<li>Select your Project in the Project Navigator <b>(⌘1)</b>.</li>
+			<li>Select your Target <b>→</b> <em>Build Phases</em>.</li>
+			<li>Press the <b>+</b> button for <em>Add a new Build Phase</em> (see figure).</li>
+			<li>Select <em>New Run Script Phase</em>.</li>
+		</ol>
+
+		<p>You can use any shell that’s installed on your system and you have access to some very useful environment variables.</p>
+
+		<img src='images/env-script.png' alt='The Run Script build phase showing the simple env script.'>
+
+		<p>To see a full list of them, create a script that just has the following in it:</p>
+
+		<pre>Run Script (<a href='http://stackoverflow.com/questions/6910901/how-do-i-print-a-list-of-build-settings-in-xcode-project#comment12062859_6911421'>source</a>):<code>env</code></pre>
+
+
+		<p>Build (⌘B) and then look in the <em>Report Navigator</em> (⌘8)</p>
+
+		<p>Next to Run custom shell script ‘Run Script’, you should see a list of environment variables. But wait, that’s not the best way to view them. For one thing, they’re all jumbled up and, for another, they’re limited to the first 200. To see them in a manner befitting a dev of your stature, click on the <em>Run custom shell script ‘Run Script’</em> line to select it and you should see a little expansion icon appear on the right-most edge.</p>
+
+		<img src='images/expand-button.png' alt='The expand button.'>
+
+		<p>Click that and you will see all the variables you can use in your script in alphabetical order. Neat, huh? (<a href='http://stackoverflow.com/a/9010078/253485'>Source</a>)</p>
+
+		<img src='images/environment-variables.png' alt='Script output showing the environment variables you can use in your scripts.'>
+
+		<p>So, for example, if you want to access the <em>Resources</em> folder in your app’s bundle, in your script you can write:</p>
+
+		<pre>Run Script: <code>cd ${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/Resources/</code></pre>
+
+		<h2>Weight loss through shell scripts</h2>
+
+		<p>So, to cut a long story short, by writing a small shell script that removes the most cursory repetition of node modules in Heartbeat, I was able to bring down the size of the binary from over 220MB yesterday to under 70MB today. And that’s without going through the module structure to find the repeated modules and replacing them with symlinks. (I did do it for an especially large one as a proof-of-concept.)</p>
+
+		<p>I’m sure you’ll find a hundred and one uses for running shell scripts during the build process and I hope that this little post will help you get started if you’re not already using them.</p>
+
+		</div>
+		<div id="discourse-comments"></div>
+
+		<footer class="site-footer">
+                <h2 class="site-name"><a href="https://ind.ie">ind.ie</a></h2>
+                <small class="copyright"><abbr title="Copyright">©</abbr> <a href="/about/#trademarks">Article 12</a>. All content is <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a>, unless otherwise stated.</small>
+                <div class="view-source-wrap">
+                    <a class="view-source" href="https://source.ind.ie/project/ind-ie-site/tree/master">View source</a>
+                </div>
+            </footer>
+	</div>
+    <script type='text/javascript'>
+      var discourseUrl = 'https://forum.ind.ie/',
+          discourseEmbedUrl = 'https://ind.ie/labs/blog/build-time-optimisation-with-xcode-build-scripts/';
+
+      (function() {
+        var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+          d.src = discourseUrl + 'javascripts/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+            })();
+    </script>
+</body>
+</html>

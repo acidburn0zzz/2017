@@ -1,0 +1,119 @@
+<doctype html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1' />
+	<title>Ind.ie Labs - Blog - Node 0.12.0 and native add-on modules</title>
+	<!--[if lte IE 8]>
+        <script src='https://ind.ie/assets/js/html5shiv.js'></script>
+    <![endif]-->
+    <link rel='shortcut icon' href='/favicon.ico'>
+    <link rel='apple-touch-icon' href='https://ind.ie/assets/images/ios-180.png'>
+    <link rel='apple-touch-icon' sizes='76x76' href='https://ind.ie/assets/images/ios-76.png'>
+    <link rel='apple-touch-icon' sizes='120x120' href='https://ind.ie/assets/images/ios-120.png'>
+    <link rel='apple-touch-icon' sizes='152x152' href='https://ind.ie/assets/images/ios-152.png'>
+    <link rel='apple-touch-icon' sizes='152x152' href='https://ind.ie/assets/images/ios-180.png'>
+	<link rel='alternate' type='application/rss+xml' title='Ind.ie Labs Blog' href='https://ind.ie/labs/blog/rss/index.xml' />
+	<link rel='stylesheet' href='https://ind.ie/assets/css/lab-styles.css'/>
+	<link rel="stylesheet" href="../css/highlight/kimbie.dark.css">
+	<link rel='stylesheet' href='../css/styles.css'/>
+	<script src="../js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script></head>
+<body class='labs labs-blog'>
+	<!-- @import '../../../../assets/includes/_nav.kit' -->
+	<div class='main h-entry'>
+        <!-- @import '../../../../includes/_archive-notice.kit' -->
+		
+		<h1 class='p-name long-title'>Node 0.12.0 and native add-on modules</h1>
+		
+		<p class='post-date dt-published' datetime='2015-02-15 14:15:00'>15th February, 2015 — <span class='p-author'>Aral Balkan</span></p>
+		
+		<div class='e-content'>
+		
+		<p class='tldr'><strong>TL; DR:</strong> If your Node projects depend on native add-on modules, they might break in Node 0.12.0. Make sure the latest versions of your dependencies have been updated to support the version of the V8 engine in the latest stable version of Node.</p>
+
+		<p>Now that <a href='http://blog.nodejs.org/2015/02/06/node-v0-12-0-stable/'>Node 0.12.0 stable</a> is out, I’ve updated all our projects to run on it, including Heartbeat’s node component, the main site, and projects like <a href='https://ind.ie/labs/set/'>Set</a>.</p>
+
+		<p>In a nutshell, it has been a seamless experience save for one issue that bit me every time: <a href='https://www.npmjs.com/package/node-gyp'>native add-on module</a> failures.</p>
+
+		<p>I initially ran up against it in Heartbeat, with the <a href='https://github.com/websockets/bufferutil'>bufferutil</a> dependency of the <a href='https://www.npmjs.com/package/ws'>ws</a> module.
+
+		<pre>dyld: lazy symbol binding failed: Symbol not found: __ZN2v86Object3SetENS_6HandleINS_5ValueEEES3_NS_17PropertyAttributeE
+  Referenced from: /Users/aral/Library/Developer/Xcode/DerivedData/Heartbeat-bwptofoniwaoqzcgkxzhjtbmtjak/Build/Products/Debug/Heartbeat.app/Contents/Resources/node.js/node_modules/ws/node_modules/bufferutil/build/Release/bufferutil.node
+  Expected in: dynamic lookup
+
+dyld: Symbol not found: __ZN2v86Object3SetENS_6HandleINS_5ValueEEES3_NS_17PropertyAttributeE
+  Referenced from: /Users/aral/Library/Developer/Xcode/DerivedData/Heartbeat-bwptofoniwaoqzcgkxzhjtbmtjak/Build/Products/Debug/Heartbeat.app/Contents/Resources/node.js/node_modules/ws/node_modules/bufferutil/build/Release/bufferutil.node
+  Expected in: dynamic lookup</pre>
+
+		<p>I updated it to the latest 0.7.1 version (I was on 0.4.x) but that didn’t fix the issue. Updating it to the latest version via <a href='https://github.com/websockets/ws'>the Github repository</a>, however, solved the problem:</p>
+
+		<pre>Package.json <code>{
+  ...
+  "dependencies": {
+    "ws": "git://github.com/websockets/ws.git",
+    ...
+  },
+  ...
+}</code></pre>
+
+		<p>(Which is odd, as I can’t see what <a href='https://github.com/websockets/ws/commits/master'>in the commits since the 0.7.1 release</a> would address the issue. I’m left wondering if there was another variable also that gave me a false negative with 0.7.1.)</p>
+
+		<p>I then ran into a similar issue when updating <a href='https://ind.ie/labs/set'>Set</a>:</p>
+
+		<pre>dyld: lazy symbol binding failed: Symbol not found: __ZN2v86Object3SetENS_6HandleINS_5ValueEEES3_NS_17PropertyAttributeE
+  Referenced from: /Users/aral/ind.ie/projects/labs/node_modules/indie-set/node_modules/jsdom/node_modules/contextify/build/Release/contextify.node
+  Expected in: dynamic lookup
+
+dyld: Symbol not found: __ZN2v86Object3SetENS_6HandleINS_5ValueEEES3_NS_17PropertyAttributeE
+  Referenced from: /Users/aral/ind.ie/projects/labs/node_modules/indie-set/node_modules/jsdom/node_modules/contextify/build/Release/contextify.node
+  Expected in: dynamic lookup</pre>
+
+  		<p>This time with the <a href='https://www.npmjs.com/package/contextify'>contextify</a> dependency in <a href='https://www.npmjs.com/package/jsdom'>JSDOM</a>. I was using a rather old version (1.0.3).</p>
+
+  		<p>I ran <code>npm shrinkwrap</code> on Set and then <code>rm -rf node_modules</code>, followed by <code>npm install</code>.</p>
+
+  		<p>That failed with:</p>
+
+  		<pre>> contextify@0.1.9 install /Users/aral/ind.ie/projects/set/source/node_modules/jsdom/node_modules/contextify
+> node-gyp rebuild
+
+child_process: customFds option is deprecated, use stdio instead.
+  CXX(target) Release/obj.target/contextify/src/contextify.o
+../src/contextify.cc:34:17: error: no member named 'ContextDisposedNotification' in 'v8::V8'
+        v8::V8::ContextDisposedNotification();
+        ~~~~~~~~^
+1 error generated.
+make: *** [Release/obj.target/contextify/src/contextify.o] Error 1</pre>
+
+		<p>Again, updating JSDOM to the latest version (3.1.1) fixed the problem.</p>
+
+		<p>Although I was lucky in those two instances, unfortunately, not every native add-on module has been updated for Node 0.12.0 yet.</p>
+
+		<p>I got bit by the <a href='https://www.npmjs.com/package/gaze'>Gaze</a> module, for example. Although you’ll be fine if you’re using the non-native (and recommended) 0.5.1 release from NPM, I was running the latest 0.6.4. The solution there was to revert the project to using the 0.5.1 release.</p>
+
+		<p>So, all this to say, unless you’re happy learning <a href='http://nodejs.org/api/addons.html#addons_wrapping_c_objects'>the intricacies of wrapping C++ objects</a>, check that the native add-on modules you are using in your project have been updated to support Node 0.12.0 before you take the plunge.</p>
+
+		</div>
+		<div id="discourse-comments"></div>
+
+		<footer class="site-footer">
+                <h2 class="site-name"><a href="https://ind.ie">ind.ie</a></h2>
+                <small class="copyright"><abbr title="Copyright">©</abbr> <a href="/about/#trademarks">Article 12</a>. All content is <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a>, unless otherwise stated.</small>
+                <div class="view-source-wrap">
+                    <a class="view-source" href="https://source.ind.ie/project/ind-ie-site/tree/master">View source</a>
+                </div>
+            </footer>
+	</div>
+    <script type='text/javascript'>
+      var discourseUrl = 'https://forum.ind.ie/',
+          discourseEmbedUrl = 'https://ind.ie/labs/blog/node-0-12-0-and-native-add-on-modules/';
+
+      (function() {
+        var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+          d.src = discourseUrl + 'javascripts/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+            })();
+    </script>
+</body>
+</html>
