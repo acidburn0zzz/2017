@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <!-- $title:Ind.ie Blog — HTML5 Video Player-->
+  <!-- @import '../../assets/includes/_head.kit' -->
+  <link rel='stylesheet' type='text/css' href='css/style.css'>
+	<link rel='alternate' type='application/rss+xml' title='Ind.ie Blog' href='https://ind.ie/blog/rss/index.xml' />
+</head>
+<body class='blog article'>
+  <header class='site-header'>
+    <!-- @import '../../assets/includes/_nav.kit' -->
+    <!-- @import '../includes/_nav.kit' -->
+  </header>
+
+  <div class='main h-entry'>
+    <h1 class='p-name'>Our progressively-enhanced video player</h1>
+
+    <p class='post-date dt-published' datetime="2014-09-10 14:45:00">10th September, 2014 — <span class='p-author'>Laura Kalbag</span></p>
+    <div class='e-content'>
+      <h2>Video hosting</h2>
+      <p>When it came to putting the <a href='https://ind.ie/summit/videos'>Indie Tech Summit videos</a> on our site, we wanted to do it right. Videos are very expensive to host, they consume a lot of bandwidth and take up a lot of space. Because of the expense of hosting videos on your own site, and the difficulty in creating video players that work cross-browser and cross-platform, most people host their videos on a third party site. We aimed to do the same. It took a few iterations to get it right, but I’m pleased with the results.</p>
+      <h3>Vimeo and Google</h3>
+      <p>We knew that Youtube was out right away. Google is one of the largest corporate surveillers, and our data, and the the data of those watching our videos, just wouldn't be safe with Google. We want all of the technology and services we use to be as indie as pragmatically possible. First we tried <a href='http://vimeo.com'>Vimeo</a>. Vimeo has a beautiful, minimal player, and Vimeo Pro is a very affordable platform as it charges a monthly or yearly subscription. However, using <a href='https://www.ghostery.com/en-GB/'>Ghostery</a>, we discovered that Vimeo uses Google Analytics on every embedded video, and you can’t take the analytics tracker out. We started looking at alternative platforms.</p>
+      <h3>Wistia</h3>
+      <p><a href='http://wistia.com/'>Wistia</a> is another beautiful platform for hosting videos. We started adding our first few videos to Wistia, and added them to the site. The player was highly customisable, and the plan was fairly affordable for small businesses. There was also a great way to FTP your videos to their site so we didn’t have to wait on HTML uploaders that couldn’t show us the upload progress. However, I didn’t read the fine print, and within a few days we were wondering why our videos weren’t uploading. It turns out we were <em>way</em> over the monthly storage limit and <em>way</em> over the monthly plays limit with over a thousand plays in a couple of days. And we had a big $300 extra bandwidth bill. We knew Wistia wasn’t sustainable for our bootstrapped business as we were giving videos away for free.</p>
+      <h3>Back to Vimeo</h3>
+      <p>In the meantime, someone helpful on Twitter had pointed out that we could host videos on Vimeo Pro, then use the Vimeo files with our own player, losing the Google Analytics script. <a href='http://twitter.com/robotlovesyou'>Andy</a> found the <a href='http://www.videojs.com/'>VideoJS</a> player which polyfilled HTML5 video syntax with a JavaScript and Flash-based fallback for the browsers that didn’t have full HTML5 support.</p>
+      <p>I styled our player, and made it responsive using Thierry Koblentz's ‘<a href='http://alistapart.com/article/creating-intrinsic-ratios-for-video'>Intrinsic Ratios for Videos</a>’ to keep the height and width of the video to 16:9. We had a fantastic player. At this point we also started adding transcripts of the videos to each video page for an accessible text-only fallback.</p>
+      <h3>Without Flash</h3>
+      <p>Vimeo Pro is great for hosting .mp4 versions of the videos, however mp4s will only play in Safari, Google Chrome and Internet Explorer. This meant all of the other browsers were getting Flash versions of the videos. But what about people who didn’t use Safari, Chrome or IE, and didn’t have Flash installed? Flash used to be an included and/or often-installed plugin for all browsers. However, with fewer sites and apps needing Flash, fewer people are needing to have Flash installed. And a lot of people don’t have it installed on principle (you shouldn’t need a plugin to access a website, that’s so old-fashioned!) Those people just so happen to be the type of people who would want to visit the ind.ie site and watch the Indie Tech Summit videos.</p>
+      <h3>.ogv and .webm</h3>
+      <p>Without Flash, we needed .ogv and .webm formats for each video to ensure they’d play in Opera and Firefox. Ogg Vorbis (.ogv) is also the only free and unpatented video format, so it’s really the only indie video format. Unfortunately, as Vimeo doesn’t host these formats, we had to store the videos on Amazon S3. Hopefully this won’t become prohibitively expensive, as these videos are a fallback for when Flash isn’t installed in the visitor’s browser.</p>
+      <h2>HTML5 without JavaScript</h2>
+      <p>At <a href='https://ind.ie'>ind.ie</a>, we care a great deal about accessibility and progressive enhancement. The web works very well with progressive enhancement, layering on the fancy experiences over the basic experiences, so everyone gets basic access. As our site is mostly very simple, we see no reason why it shouldn’t work without JavaScript. After all, no visitor has JavaScript until JavaScript has loaded. HTML5 video works natively on all of the modern platforms, and that means we can play videos on our site without the need for any JavaScript at all.</p>
+      <p>We had .mp4, .ogv and .webm formats of the videos, so they could work on all the platforms that supported HTML5 video. All I then had to do was change some of the video styles so the player controls and styles that required JavaScript wouldn’t hide the native controls or behaviour if JavaScript wasn't enabled.</p>
+      <p>The rules (shown here in <a href='https://learnboost.github.io/stylus/'>Stylus</a>) that were making our video responsive would hide the native video completely, and add a huge amount of whitespace in its place:</p>
+      <pre><code>.video-js
+      height 0
+      padding-bottom 56.25% /* 16:9 */</code></pre>
+      <p>We’re already using <a href='http://modernizr.com/'>Modernizr</a> to detect SVG support for our icons and graphics, and Modernizr detects if JavaScript is available by default. I used the <code>'js'</code> class, that Modernizr only applies to the <code>&lt;html&gt;</code> element once JS has loaded, to tell my CSS not to apply these rules unless JavaScript has fully loaded.</p>
+      <p>The Stylus looks something like this:</p>
+      <pre><code>.video-js
+        .js & /* only do this when JavaScript is enabled, otherwise it just hides the video */
+            height 0
+            padding-bottom 56.25% /* 16:9 */</code></pre>
+      <p>With this little bit of magic, we suddenly had our videos working cross-browser, cross-platform, with and without Flash, with and without JavaScript. Fully progressively enhanced.</p>
+      <p>There’s probably some bugs, and please <a href='mailto:laura@ind.ie'>let me know by email</a> or via <a href='http://twitter.com/indie'>our Twitter account</a> if you find any. All of the code is visible through the usual web inspector and View Source methods, as it’s all client side. We’re hoping to open up all of our source code soon (once we’ve checked we’ve not accidentally left passwords or rude words anywhere!)</p>
+    </div>
+    <!-- @import '../../assets/includes/_footer-call-to-action.kit' -->
+    <!-- @import '../../assets/includes/_footer.kit' -->
+  </div>
+  <script src="/assets/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
