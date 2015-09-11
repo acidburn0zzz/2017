@@ -10,24 +10,22 @@
 <body class='home'>
 	<!-- @import 'assets/includes/_nav.kit' -->
 
-	<!-- <h1 style='margin-top: 20px; margin-bottom: 0'>Heartbeat</h1> -->
-
 	<div class='main'>
-		<div class='px-video-container' id='you-are-the-product'>
+		<div class='px-video-container' id='heartbeat-pre-alpha-reveal'>
 			<div class='px-video-img-captions-container'>
 				<div class='px-video-captions hide'></div>
 					<div class='px-video-wrapper'>
-						<video poster='/assets/images/heartbeat/poster.png' class='px-video' controls>
+						<video poster='/assets/images/heartbeat/poster.png' class='px-video' alt='Heartbeat' controls>
 							<!-- video files -->
-							<source src='//player.vimeo.com/external/127807966.m3u8?p=high,standard&s=6a3826b8170cc02f3d59fdd1d15b4244' type='application/x-mpegURL' />
-							<source src='//player.vimeo.com/external/127807966.hd.mp4?s=49a0085146751c8c6b160d1aca6caeda&profile_id=113' type='video/mp4' />
-							<source src='https://ind.ie/videos/you-are-the-product/you-are-the-product.webm' type='video/webm' />
-							<source src='https://ind.ie/videos/you-are-the-product/you-are-the-product.ogv' type='video/ogg' />
+							<source src='//player.vimeo.com/external/138997351.m3u8?p=high,standard&s=0067fcefaeb26ca2a79897dce983230b' type='application/x-mpegURL' />
+							<source src='//player.vimeo.com/external/138997351.hd.mp4?s=005a55ef37b7d37a887c1caad7ad817a&profile_id=113' type='video/mp4' />
+							<source src='https://ind.ie/videos/heartbeat-pre-alpha-reveal/heartbeat-pre-alpha-reveal.webm' type='video/webm' />
+							<source src='https://ind.ie/videos/heartbeat-pre-alpha-reveal/heartbeat-pre-alpha-reveal.ogv' type='video/ogg' />
 
 							<!-- fallback for browsers that don’t support the video element -->
 							<div>
-								<a href='https://ind.ie/videos/you-are-the-product/you-are-the-product.mp4'>
-								<img src='/you-are-the-product/images/poster-you-are-the-product.jpg' width='640' height='360' alt='download video' />
+								<a href='https://ind.ie/videos/heartbeat-pre-alpha-reveal/heartbeat-pre-alpha-reveal.mp4' title='Heartbeat'>
+								<img src='/heartbeat-pre-alpha-reveal/images/poster-heartbeat-pre-alpha-reveal.jpg' width='640' height='360' alt='download video' />
 								</a>
 							</div>
 						</video>
@@ -37,41 +35,35 @@
 		</div><!-- end video container -->
 		<!-- <p class='license'><small>Creative Commons Attribution-ShareAlike 3.0 Germany (CC BY-SA 3.0 DE)</small></p> -->
 
-		<ul class='callouts' style='border-top:none; margin-top: 24px;'>
-			<li class='callout support'>
-				<img style='margin-left: auto; margin-right: auto; width: 100px; height; 100px;' src='/assets/images/heartbeat/private.png' alt='Private: padlock'>
-				<div style='padding-top: 12px; border-top: 7px solid #ccc;'>
-					<h2 style='text-align: center;'>Private</h2>
-					<h3>Just between you and your friends.</h3>
-					<p>Messages stay on your device and on your friends’ devices. In transit, they’re protected by the same technology that protects your bank’s web site.</p>
+		<ul class='callouts heartbeat'>
+			<li class='callout private'>
+				<img class='icon' src='/assets/images/heartbeat/private.png' alt='Private: padlock'>
+				<h2>Private</h2>
+				<h3>Just between you and your friends.</h3>
+				<p>Messages stay on your device and on your friends’ devices. In transit, they’re protected by the same technology that protects your bank’s web site.</p>
+			</li>
+			<li class='callout social'>
+				<img class='icon' src='/assets/images/heartbeat/conversations.png' alt='Conversations'>
+				<h2>Social</h2>
+				<h3>Private doesn’t have to mean lonely.</h3>
+				<div class='h-entry'>
+					<p class='p-summary'>Heartbeat is a beautiful, simple Mac app. It’s easy to connect with your friends, chat to them, and share photos, videos, and files.</p>
+					</p>
 				</div>
 			</li>
-			<li class='callout news'>
-				<img style='margin-left: auto; margin-right: auto; width: 100px; height; 100px;' src='/assets/images/heartbeat/conversations.png' alt='Conversations'>
-				<div style='padding-top: 12px; border-top: 7px solid #ccc;'>
-					<h2 style='text-align: center;'>Social</h2>
-					<h3>Private doesn’t have to mean lonely.</h3>
-					<div class='h-entry'>
-						<p class='p-summary'>Heartbeat is a beautiful, simple Mac app. It’s easy to connect with your friends, chat to them, and share photos, videos, and files.</p>
-						</p>
-					</div>
-				</div>
-			</li>
-			<li class='callout featured'>
-				<img style='margin-left: auto; margin-right: auto; width: 100px; height; 100px;' src='/assets/images/heartbeat/public.png' alt='Public: indie web' style='width: 100px; height; 100px;'>
-				<div style='padding-top: 12px; border-top: 7px solid #ccc;'>
-					<h2 style='text-align: center;'>Web</h2>
-					<h3>Talk to the world on your own terms.</h3>
-					<p>Your <em>public</em> posts appear on your own indie web site and are aggregated on Ind.ie.</p>
+			<li class='callout web'>
+				<img class='icon'src='/assets/images/heartbeat/public.png' alt='Public: indie web' style='width: 100px; height; 100px;'>
+				<h2>Web</h2>
+				<h3>Talk to the world on your own terms.</h3>
+				<p>Your <em>public</em> posts appear on your own indie web site and are aggregated on Ind.ie.</p>
 
-					<p>For example, here’s <a href='https://waystone.ind.ie/person/aralbalkan'>Aral’s site</a>.</p>
-				</div>
+				<p>For example, here’s <a href='https://waystone.ind.ie/person/aralbalkan'>Aral’s site</a>.</p>
 			</li>
 		</ul>
 
-		<img style='display: block; margin-left:auto; margin-right:auto; width:107px; height:66px;' src='/assets/images/long-road-to-freedom.png' alt='Person looking at the hope balloon as it floats down a path.'>
+		<img class='illustration illustration-person' src='/assets/images/long-road-to-freedom.png' alt='Person looking at the hope balloon as it floats down a path.'>
 
-		<h2 style='margin-top: 0;'>It’s early days…</h2>
+		<h2 id='early-days'>It’s early days…</h2>
 
 		<p>Heartbeat has just hatched. It’s currently being incubated in <a href='https://forum.ind.ie/t/heartbeat-pre-alpha-release/740'>a private pre-alpha</a>. If you’re technically savvy, you can <a href='https://source.ind.ie/project/heartbeat-cocoa'>grab the source</a> and play with it today. <a href='/forum'>Join us on the forum</a> to keep up with the community and the latest developments.</p>
 
@@ -81,9 +73,9 @@
 
 		<p>Thank you for making it possible for us to build Heartbeat.</p>
 
-		<img style='display: block; margin-left:auto; margin-right:auto; width:132px; height:148px;' src='/assets/images/indie-net-and-heartbeat.png' alt='Person looking at the hope balloon as it floats down a path.'>
+		<img class='illustration illustration-people' src='/assets/images/indie-net-and-heartbeat.png' alt='Circle of people connected surrounding the hope balloon'>
 
-		<ul style='border-top: none;' class='callouts'>
+		<ul class='callouts'>
 			<li class='callout support'>
 				<h2>Upcoming Events</h2>
 				<h3 class='p-name'><a class='post-link u-url' href='blog/events'>See us live!</a></h3>
@@ -92,7 +84,6 @@
 			<li class='callout news'>
 				<h2>Latest News</h2>
 				<div class='h-entry'>
-					<!-- <time datetime='2015-7-31 18:30:00' class='dt-published'>7th August, 2015</time>-->
 					<h3 class='p-name'><a class='post-link u-url' href='blog/oh-wont-someone-think-of-the-children/'>Oh, won’t someone think of the children!</a></h3>
 					<p class='p-summary'>Privacy in education, Google being Google, and how data farming is shaping our economy.</p>
 					</p>
@@ -100,7 +91,6 @@
 			</li>
 			<li class='callout featured'>
 				<h2>Ind.ie Forum</h2>
-				<!-- <p class='hot-topic'>Hot Topic:</p>-->
 				<h3 class='topic'><a href='https://forum.ind.ie/t/young-broke-and-beautiful-thoughts-on-ind-ie-s-path-to-sustainability/874'>Young, Broke, and Beautiful — thoughts on Ind.ie’s path to sustainability</a></h3>
 				<p>Get involved in Heartbeat and Ind.ie discussions <a href='https://forum.ind.ie'>on the forum</a>.</p>
 				</a>
@@ -113,7 +103,7 @@
 	<script>
 		// Initialize
 		new InitPxVideo({
-		    "videoId": "you-are-the-product",
+		    "videoId": "heartbeat-pre-alpha-reveal",
 		    "captionsOnDefault": false,
 		    "seekInterval": 20,
 		    "videoTitle": "You Are The Product",
