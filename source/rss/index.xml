@@ -5,7 +5,17 @@
             <link>https://ind.ie</link>
             <description>The latest news and updates from the Ind.ie blog and Ind.ie labs blog</description>
             <atom:link href="https://ind.ie/rss/index.xml" rel="self" type="application/rss+xml" />
-            <lastBuildDate>Tue, 29 Sep 2015 14:00:00 GMT</lastBuildDate>
+            <lastBuildDate>Wed, 30 Sep 2015 11:00:00 GMT</lastBuildDate>
+                <item>
+                    <title>Internet As A Commons</title>
+                    <link>https://ind.ie/blog/internet-as-a-commons/</link>
+                    <guid>https://ind.ie/blog/internet-as-a-commons/</guid>
+                    <description>&lt;p&gt;Tomorrow, Aral is speaking on a panel at the European Parliament in Brussel at a conference focused on &quot;Internet as a Commons: Public Space in the Digital Age.&quot;&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://ind.ie/blog/internet-as-a-commons/&quot;&gt;Read the full post on the Ind.ie blog&lt;/a&gt;.&lt;/p&gt;
+                    </description>
+                    <pubDate>Wed, 30 Sep 2015 11:00:00 GMT</pubDate>
+                    <author>laura@ind.ie (Laura Kalbag)</author>
+                    <discourseUsername>laura</discourseUsername>
+                </item>
                 <item>
                     <title>Ind.ie joins the Web We Want Coalition</title>
                     <link>https://ind.ie/blog/indie-joins-web-we-want-coalition/</link>
