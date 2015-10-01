@@ -17,13 +17,13 @@
 	
 	h2
 		font-size 21px
-		line-height OneAndAHalfLineHeights
+		line-height OneLineHeight
 		margin-top HalfLineHeight
 		margin-bottom QuarterLineHeight
 
 		@media only screen and (min-width: 820px)
 			font-size 21px
-			line-height OneAndAHalfLineHeights
+			line-height OneLineHeight
 			margin-bottom QuarterLineHeight
 	
 	h3
@@ -78,25 +78,43 @@
 		border-bottom none
 		float left
 		width 29.3%
-		
-.support, .private
+
+// HEARTBEAT callouts
+.private
 	@media only screen and (min-width: 780px)
 		padding-right OneLineHeight
-	
-.news, .social
+		
+.social
 	@media only screen and (min-width: 780px)
 		padding-right HalfLineHeight
 		padding-left HalfLineHeight
+
+.web
+	@media only screen and (min-width: 780px)
+		padding-left OneLineHeight
 		
 .social .icon
 	margin-bottom -12px
 	
 	@media only screen and (min-width: 780px)
 		margin-bottom OneLineHeight
-	
-.featured, .web
+
+// HOMEPAGE FOOTER callouts	
+.support
 	@media only screen and (min-width: 780px)
-		padding-left OneLineHeight
+		padding-right HalfLineHeight
+		width 28.4%
+		
+.featured
+	@media only screen and (min-width: 780px)
+		padding-right HalfLineHeight
+		padding-left HalfLineHeight
+		width 35%
+
+.news
+	@media only screen and (min-width: 780px)
+		padding-left HalfLineHeight
+		width 28.4%
 
 .callout-link
 	display block
