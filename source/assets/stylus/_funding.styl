@@ -15,8 +15,13 @@
 			max-width 70%
 
 	.button
-		float right
-		margin-top 0
-		margin-bottom OneLineHeight
+		margin-left auto
+		margin-right auto
 		padding-right OneAndAHalfLineHeights
 		padding-left OneAndAHalfLineHeights
+		max-width 150px
+		
+		@media only screen and (min-width: 580px)
+			float right
+			margin-top 0
+			margin-bottom OneLineHeight
