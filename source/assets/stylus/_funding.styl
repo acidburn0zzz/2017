@@ -1,7 +1,11 @@
 .fund-us
 	border-top 1px solid black-twenty
 	border-bottom 1px solid black-twenty
+	margin-top TwoLineHeights
 	overflow hidden
+	
+	@media only screen and (min-width: 580px)
+		margin-top FiveLineHeights
 	
 	.flexbox &
 		display -ms-flexbox
@@ -52,17 +56,15 @@
 		margin-left auto
 		margin-bottom OneLineHeight
 		margin-right auto
-		padding-right OneAndAHalfLineHeights
-		padding-left OneAndAHalfLineHeights
-		max-width 150px
+		padding-right OneLineHeight
+		padding-left OneLineHeight
+		max-width 130px
 		
 		@media only screen and (min-width: 620px)
 			float right
 			margin-top 0
 			margin-right 0
 			margin-bottom OneLineHeight
-			padding-right HalfLineHeight
-			padding-left HalfLineHeight
 			
 			.flexbox &
 				-webkit-flex 1 1 25%
