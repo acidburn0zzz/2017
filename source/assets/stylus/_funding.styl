@@ -3,25 +3,70 @@
 	border-bottom 1px solid black-twenty
 	overflow hidden
 	
+	.flexbox &
+		display -ms-flexbox
+		display -webkit-flex
+		display flex
+		-webkit-flex-direction row
+		-ms-flex-direction row
+		flex-direction row
+		-webkit-flex-wrap wrap
+		-ms-flex-wrap wrap
+		flex-wrap wrap
+		-webkit-justify-content flex-start
+		-ms-flex-pack start
+		justify-content flex-start
+		-webkit-align-content stretch
+		-ms-flex-line-pack stretch
+		align-content stretch
+		-webkit-align-items flex-start
+		-ms-flex-align start
+		align-items flex-start
+	
 	h2
 		font-size 26px
 		line-height 35px
 		margin-top OneLineHeight
 		
+		.flexbox &
+			-webkit-flex 0 0 100%
+			-ms-flex 0 0 100%
+			flex 0 0 100%
+		
 	p
-		@media only screen and (min-width: 580px)
+		@media only screen and (min-width: 620px)
 			float left
 			margin-bottom OneLineHeight
 			max-width 70%
+			
+			.flexbox &
+				-webkit-flex 0 1 75%
+				-ms-flex 0 1 75%
+				flex 0 1 75%
+				-webkit-align-self auto
+				-ms-flex-item-align auto
+				align-self auto
 
 	.button
+		margin-top HalfLineHeight
 		margin-left auto
+		margin-bottom OneLineHeight
 		margin-right auto
 		padding-right OneAndAHalfLineHeights
 		padding-left OneAndAHalfLineHeights
 		max-width 150px
 		
-		@media only screen and (min-width: 580px)
+		@media only screen and (min-width: 620px)
 			float right
 			margin-top 0
 			margin-bottom OneLineHeight
+			padding-right HalfLineHeight
+			padding-left HalfLineHeight
+			
+			.flexbox &
+				-webkit-flex 0 1 25%
+				-ms-flex 0 1 25%
+				flex 0 1 25%
+				-webkit-align-self flex-end
+				-ms-flex-item-align end
+				align-self flex-end
