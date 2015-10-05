@@ -3,6 +3,13 @@
 	margin-top FourLineHeights
 	text-align justify
 	
+	.tagline
+		color black-eighty
+		font-size 20px
+		font-weight bold
+		line-height OneLineHeight
+		text-align center
+	
 	.copyright
 		border-top 1px solid black-twenty
 		display block
@@ -41,6 +48,7 @@
 			background black-eighty
 
 .site-name
+	margin-bottom HalfLineHeight
 	width 100%
 
 	a
@@ -50,7 +58,7 @@
 		height 0
 		margin-right auto
 		margin-left auto
-		margin-bottom HalfLineHeight
+		margin-bottom 0
 		overflow hidden
 		padding-top 130px /* height of logo */
 		padding-left 100% /* ensure width of logo doesn't overflow width of container */
@@ -61,8 +69,4 @@
 
 		@media only screen and (min-width: 385px)
 			background-size 300px 130px /* width and height of logo */
-			margin-bottom HalfLineHeight
 			padding-left 300px /* width of logo */
-
-		@media only screen and (min-width: 600px)
-			margin-bottom ThreeQuartersLineHeight
