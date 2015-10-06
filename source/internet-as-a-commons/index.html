@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- $title:Ind.ie — Internet As A Commons -->
+	<!-- @import '../assets/includes/_head.kit' -->
+	<link rel='stylesheet' type='text/css' href='css/style.css'>
+	<link rel='alternate' type='application/rss+xml' title='Ind.ie Blog' href='https://ind.ie/rss/index.xml' />
+</head>
+<body class='internet-as-a-commons'>
+	<header class="site-header">
+		<!-- @import '../assets/includes/_nav.kit' -->
+	</header>
+	<div class='main'>
+		<h1 class='long-title'>Internet As A Commons</h1>
+		<div class='px-video-container' id='internet-as-a-commons'>
+			<div class='px-video-img-captions-container'>
+				<div class='px-video-captions hide'></div>
+					<div class='px-video-wrapper'>
+						<video poster='images/poster-internet-as-a-commons.jpg' class='px-video' controls>
+							<!-- video files -->
+							<source src='//player.vimeo.com/external/140838179.m3u8?p=high,standard&s=a0fe511c705833b906bb0857d61fd81d' type='application/x-mpegURL' />
+							<source src='//player.vimeo.com/external/140838179.hd.mp4?s=b6ec2da1479368a9c4c64647d18c4aad&profile_id=113' type='video/mp4' />
+							<source src='https://ind.ie/videos/internet-as-a-commons/internet-as-a-commons.webm' type='video/webm' />
+							<source src='https://ind.ie/videos/internet-as-a-commons/internet-as-a-commons.ogv' type='video/ogg' />
+
+							<!-- fallback for browsers that don’t support the video element -->
+							<div>
+								<a href='https://ind.ie/videos/internet-as-a-commons/internet-as-a-commons.mp4'>
+								<img src='images/poster-internet-as-a-commons.jpg' width='640' height='360' alt='download video' />
+								</a>
+							</div>
+						</video>
+					</div>
+				</div><!-- end container for captions and video -->
+			<div class="px-video-controls"></div>
+		</div><!-- end video container -->
+		<p>Aral speaking at the European Parliament event on “Internet as a Commons: Public Space in the Digital Age” as part of “The Big Picture” panel.</p>
+		<p>You can watch the <a href='http://greenmediabox.eu/en/ct/107-Internet-as-a-Commons-Public-Space-in-the-Digital-Age'>original video on the Greens’ video archive</a>.</p>
+		<p class='license'><small>Copyright &copy; European Parliament</small></p>
+		<script src="/assets/js/px-video.js"></script>
+		<script>
+			// Initialize
+			new InitPxVideo({
+			    "videoId": "internet-as-a-commons",
+			    "captionsOnDefault": false,
+			    "seekInterval": 20,
+			    "videoTitle": "Internet As A Commons",
+			    "debug": true
+			});
+		</script>
+		<!-- @import '../assets/includes/_footer-call-to-action.kit' -->
+		<!-- @import '../assets/includes/_footer.kit' -->
+	</div>
+</body>
+</html>
