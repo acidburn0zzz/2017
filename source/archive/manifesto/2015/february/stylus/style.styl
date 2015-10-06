@@ -1,0 +1,20 @@
+/* This is where we pull in all our stylus partials to compile a full stylesheet */
+
+/* The core must go first, as it has the CSS reset and other base rules */
+
+/* Tell the core where to find its images and fonts */
+$font-path = '../../../assets/stylus/indie-style-core/fonts/'
+$image-path = '../../../assets/stylus/indie-style-core/images/'
+
+/* Tell the core where to find itself (absolute path) */
+@import '../../../assets/stylus/indie-style-core/_core'
+
+/* apparently if you have the path for the first @import, it'll automatically find all the others */
+@import '../../../assets/stylus/_footer'
+@import _funding
+@import _layout
+@import _navigation
+@import _newsletter-signup
+@import _sub-navigation
+@import _video
+@import _declaration
