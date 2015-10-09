@@ -6,7 +6,7 @@
 			font-size 52px
 			line-height TwoLineHeights
 
-		@media only screen and (min-width: 700px)
+		@media only screen and (min-width: 650px)
 			font-size 70px
 			line-height ThreeLineHeights
 	
@@ -24,8 +24,8 @@
 	@media only screen and (min-width: 580px)
 		width 580px
 		
-	@media only screen and (min-width: 700px)
-		width 700px
+	@media only screen and (min-width: 650px)
+		width 650px
 		
 	@media only screen and (min-width: 820px)
 		margin-left 35px /* centre the whole diagram better */
@@ -74,7 +74,7 @@
 					height 85px
 					top 0
 			
-			@media only screen and (min-width: 700px)
+			@media only screen and (min-width: 650px)
 				padding-top 20px
 				
 				:before /* on wider views, add the pointers */
@@ -83,9 +83,9 @@
 					display block
 					top 35px
 					height 14px /* height of image is 14px, show this much of it */
-					width 90px /* width of image is 110px, show this much of it */
+					width 40px /* width of image is 110px, show this much of it */
 					position absolute
-					left -120px
+					left -70px
 					
 					.no-svg &
 						background-image url('../images/pointer.png')
@@ -137,24 +137,24 @@
 		
 		.one
 			@media only screen and (min-width: 580px)
-				margin-left 355px
+				margin-left 275px
 			
-			@media only screen and (min-width: 700px)
-				margin-left 455px
+			@media only screen and (min-width: 650px)
+				margin-left 375px
 				
 		.two /* offset by diagonal */
 			@media only screen and (min-width: 580px)
-				margin-left 310px
+				margin-left 235px
 			
-			@media only screen and (min-width: 700px)
-				margin-left 410px
+			@media only screen and (min-width: 650px)
+				margin-left 335px
 		
 		.three /* offset by diagonal */
 			@media only screen and (min-width: 580px)
-				margin-left 260px
+				margin-left 180px
 			
-			@media only screen and (min-width: 700px)
-				margin-left 360px
+			@media only screen and (min-width: 650px)
+				margin-left 280px
 			
 		p
 			font-size 15px
@@ -171,7 +171,7 @@
 				line-height 20px
 				margin-top -30px /* offset li padding */
 			
-			@media only screen and (min-width: 700px)
+			@media only screen and (min-width: 650px)
 				margin-top -20px /* no need to offset li padding */
 			
 		.base-tier
@@ -189,13 +189,13 @@
 			@media only screen and (min-width: 580px)
 				/* when it's wider, let the triangle text follow the order of the list items */
 				height 74px
-				margin-left -315px
+				margin-left -235px
 				margin-right 0
 				padding-top 11px
 				top auto
 			
-			@media only screen and (min-width: 700px)
-				margin-left -415px
+			@media only screen and (min-width: 650px)
+				margin-left -335px
 				
 			
 		.middle-tier
@@ -214,13 +214,13 @@
 			@media only screen and (min-width: 580px)
 				/* when it's wider, let the triangle text follow the order of the list items */
 				height 59px
-				margin-left -250px
+				margin-left -175px
 				margin-right 0
 				padding-top 22px
 				top auto
 			
-			@media only screen and (min-width: 700px)
-				margin-left -350px
+			@media only screen and (min-width: 650px)
+				margin-left -275px
 			
 		.top-tier
 			top 0
@@ -238,10 +238,10 @@
 			@media only screen and (min-width: 580px)
 				/* when it's wider, let the triangle text follow the order of the list items */
 				height 35px
-				margin-left -150px
+				margin-left -70px
 				margin-right 0
 				padding-top 51px
 				top auto
 			
-			@media only screen and (min-width: 700px)
-				margin-left -250px
+			@media only screen and (min-width: 650px)
+				margin-left -170px
