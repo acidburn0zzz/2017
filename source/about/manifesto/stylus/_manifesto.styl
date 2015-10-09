@@ -6,7 +6,7 @@
 			font-size 52px
 			line-height TwoLineHeights
 
-		@media only screen and (min-width: 820px)
+		@media only screen and (min-width: 700px)
 			font-size 70px
 			line-height ThreeLineHeights
 
@@ -14,6 +14,15 @@
 	margin-right auto
 	margin-left auto
 	width 320px
+	
+	@media only screen and (min-width: 580px)
+		width 580px
+		
+	@media only screen and (min-width: 700px)
+		width 700px
+		
+	@media only screen and (min-width: 820px)
+		margin-left 35px /* centre the whole diagram better */
 	
 	.three-rs-list
 		background-image url('../images/triangle.svg')
@@ -24,6 +33,10 @@
 		position relative
 		width 320px
 		
+		@media only screen and (min-width: 580px)
+			height 240px
+			padding-top 20px
+		
 		.no-svg
 			background-image url('../images/triangle.png')
 		
@@ -31,10 +44,46 @@
 			margin-left 0
 
 		li /* show the ordered list numbers */
+			font-size 15px /* make the numbers not too big */
 			margin-left 33px
 			
 			@media only screen and (min-width: 340px)
 				margin-left 70px
+				
+			@media only screen and (min-width: 580px)
+				/* when it's wider, reorder the list items to reverse order (base to top) */
+				margin-left 300px
+				padding-top 30px
+				position absolute
+				
+				&.one
+					height 86px
+					top 172px
+				
+				&.two
+					height 81px
+					top 86px
+					
+				&.three
+					height 85px
+					top 0
+			
+			@media only screen and (min-width: 700px)
+				padding-top 20px
+				
+				:before /* on wider views, add the pointers */
+					background url('../images/pointer.svg')
+					content ''
+					display block
+					top 35px
+					height 14px /* height of image is 14px, show this much of it */
+					width 90px /* width of image is 110px, show this much of it */
+					position absolute
+					left -120px
+					
+					.no-svg &
+						background-image url('../images/pointer.png')
+					
 			
 		h3
 			font-size 18px
@@ -42,18 +91,64 @@
 			margin-top HalfLineHeight
 			margin-bottom HalfLineHeight
 			
+			@media only screen and (min-width: 580px)
+				float right
+				font-size 17px
+				height 50px
+				margin-top 0
+				margin-left 3px
+				margin-bottom 0
+				width 230px
+				
+		.one h3
+			@media only screen and (min-width: 580px)
+				width 190px /* so it doesn't escape the left of the viewport on middle-width views */
+
 		li p:before
 			display block
 			font-weight bold
 			
+			@media only screen and (min-width: 580px)
+				display none
+			
 		.base-tier:before
-			content '1'
+			content '1' /* show the corresponding number to the Respect title */
+			
+			@media only screen and (min-width: 580px)
+				content '' /* don't show the number as the title is lined up alongside */
 		
 		.middle-tier:before
-			content '2'
+			content '2' /* show the corresponding number to the Respect title */
+			
+			@media only screen and (min-width: 580px)
+				content '' /* don't show the number as the title is lined up alongside */
 			
 		.top-tier:before
-			content '3'
+			content '3' /* show the corresponding number to the Respect title */
+			
+			@media only screen and (min-width: 580px)
+				content '' /* don't show the number as the title is lined up alongside */
+		
+		.one
+			@media only screen and (min-width: 580px)
+				margin-left 355px
+			
+			@media only screen and (min-width: 700px)
+				margin-left 455px
+				
+		.two /* offset by diagonal */
+			@media only screen and (min-width: 580px)
+				margin-left 310px
+			
+			@media only screen and (min-width: 700px)
+				margin-left 410px
+		
+		.three /* offset by diagonal */
+			@media only screen and (min-width: 580px)
+				margin-left 260px
+			
+			@media only screen and (min-width: 700px)
+				margin-left 360px
 			
 		p
 			font-size 15px
@@ -64,8 +159,17 @@
 			
 			@media only screen and (min-width: 340px)
 				margin-left -30px
+				
+			@media only screen and (min-width: 580px)
+				font-size 16px
+				line-height 20px
+				margin-top -30px /* offset li padding */
+			
+			@media only screen and (min-width: 700px)
+				margin-top -20px /* no need to offset li padding */
 			
 		.base-tier
+			color black-five
 			height 84px
 			margin-left 3px /* -18px offset the list numbers */
 			margin-right 21px
@@ -75,11 +179,23 @@
 			
 			@media only screen and (min-width: 340px)
 				margin-left -34px
+			
+			@media only screen and (min-width: 580px)
+				/* when it's wider, let the triangle text follow the order of the list items */
+				height 74px
+				margin-left -315px
+				margin-right 0
+				padding-top 11px
+				top auto
+			
+			@media only screen and (min-width: 700px)
+				margin-left -415px
 				
 			
 		.middle-tier
 			top 86px
-			border-bottom 2px solid black-fifty
+			border-bottom 2px solid black-eighty
+			color black-ninety
 			height 69px
 			margin-left 27px /* -18px offset the list numbers */
 			margin-right 45px
@@ -88,10 +204,22 @@
 			
 			@media only screen and (min-width: 340px)
 				margin-left -10px
+				
+			@media only screen and (min-width: 580px)
+				/* when it's wider, let the triangle text follow the order of the list items */
+				height 59px
+				margin-left -250px
+				margin-right 0
+				padding-top 22px
+				top auto
+			
+			@media only screen and (min-width: 700px)
+				margin-left -350px
 			
 		.top-tier
 			top 0
-			border-bottom 2px solid black-fifty
+			border-bottom 2px solid black-sixty
+			color black-eighty
 			height 51px
 			margin-left 77px /* -18px offset the list numbers */
 			margin-right 95px
@@ -100,3 +228,14 @@
 			
 			@media only screen and (min-width: 340px)
 				margin-left 40px
+				
+			@media only screen and (min-width: 580px)
+				/* when it's wider, let the triangle text follow the order of the list items */
+				height 35px
+				margin-left -150px
+				margin-right 0
+				padding-top 51px
+				top auto
+			
+			@media only screen and (min-width: 700px)
+				margin-left -250px

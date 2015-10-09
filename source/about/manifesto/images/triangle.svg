@@ -3,8 +3,17 @@
     <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
     <title>triangle</title>
     <desc>Created with Sketch.</desc>
-    <defs></defs>
+    <defs>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#676767" offset="0%"></stop>
+            <stop stop-color="#676767" offset="35.6244701%"></stop>
+            <stop stop-color="#B3B3B3" offset="35.7633842%"></stop>
+            <stop stop-color="#B3B3B3" offset="66.6242733%"></stop>
+            <stop stop-color="#CCCCCC" offset="66.6696948%"></stop>
+            <stop stop-color="#E5E5E5" offset="100%"></stop>
+        </linearGradient>
+    </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <polygon id="triangle" stroke="#343434" stroke-width="2" sketch:type="MSShapeGroup" points="160 1 319 259 1 259 "></polygon>
+        <polygon id="triangle" stroke="#343434" stroke-width="2" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup" points="160 1 319 259 1 259 "></polygon>
     </g>
 </svg>
