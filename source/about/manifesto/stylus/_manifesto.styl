@@ -26,9 +26,6 @@
 		
 	@media only screen and (min-width: 650px)
 		width 650px
-		
-	@media only screen and (min-width: 820px)
-		margin-left 35px /* centre the whole diagram better */
 	
 	.three-rs-list
 		background-image url('../images/triangle.svg')
@@ -48,6 +45,11 @@
 		
 		@media only screen and (min-width: 340px)
 			margin-left 0
+			
+		@media only screen and (min-width: 820px)
+			background-size 410px auto
+			height 315px
+			width 410px
 
 		li /* show the ordered list numbers */
 			font-size 15px /* make the numbers not too big */
@@ -89,7 +91,13 @@
 					
 					.no-svg &
 						background-image url('../images/pointer.png')
+						
+			@media only screen and (min-width: 820px)		
+				&.two
+					margin-top 25px
 					
+				&.one
+					margin-top 40px
 			
 		h3
 			font-size 18px
@@ -137,17 +145,23 @@
 		
 		.one
 			@media only screen and (min-width: 580px)
-				margin-left 275px
+				margin-left 285px
 			
 			@media only screen and (min-width: 650px)
-				margin-left 375px
+				margin-left 385px
+				
+			@media only screen and (min-width: 820px)
+				margin-left 455px
 				
 		.two /* offset by diagonal */
 			@media only screen and (min-width: 580px)
-				margin-left 235px
+				margin-left 233px
 			
 			@media only screen and (min-width: 650px)
-				margin-left 335px
+				margin-left 333px
+				
+			@media only screen and (min-width: 820px)
+				margin-left 397px
 		
 		.three /* offset by diagonal */
 			@media only screen and (min-width: 580px)
@@ -155,6 +169,9 @@
 			
 			@media only screen and (min-width: 650px)
 				margin-left 280px
+			
+			@media only screen and (min-width: 820px)
+				margin-left 330px
 			
 		p
 			font-size 15px
@@ -173,6 +190,10 @@
 			
 			@media only screen and (min-width: 650px)
 				margin-top -20px /* no need to offset li padding */
+				
+			@media only screen and (min-width: 650px)
+				font-size 18px
+				line-height 24px
 			
 		.base-tier
 			color black-five
@@ -189,13 +210,19 @@
 			@media only screen and (min-width: 580px)
 				/* when it's wider, let the triangle text follow the order of the list items */
 				height 74px
-				margin-left -235px
+				margin-left -245px
 				margin-right 0
 				padding-top 11px
 				top auto
 			
 			@media only screen and (min-width: 650px)
-				margin-left -335px
+				margin-left -345px
+				
+			@media only screen and (min-width: 820px)
+				height 80px
+				margin-left -398px
+				padding-top 24px
+				width 300px
 				
 			
 		.middle-tier
@@ -214,13 +241,19 @@
 			@media only screen and (min-width: 580px)
 				/* when it's wider, let the triangle text follow the order of the list items */
 				height 59px
-				margin-left -175px
+				margin-left -173px
 				margin-right 0
 				padding-top 22px
 				top auto
 			
 			@media only screen and (min-width: 650px)
-				margin-left -275px
+				margin-left -273px
+				
+			@media only screen and (min-width: 820px)
+				height 74px
+				margin-left -323px
+				padding-top 28px
+				width 260px
 			
 		.top-tier
 			top 0
@@ -245,3 +278,9 @@
 			
 			@media only screen and (min-width: 650px)
 				margin-left -170px
+				
+			@media only screen and (min-width: 820px)
+				height 50px
+				margin-left -190px
+				padding-top 61px
+				width 130px
