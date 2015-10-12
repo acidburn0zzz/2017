@@ -5,7 +5,17 @@
             <link>https://ind.ie</link>
             <description>The latest news and updates from the Ind.ie blog and Ind.ie labs blog</description>
             <atom:link href="https://ind.ie/rss/index.xml" rel="self" type="application/rss+xml" />
-            <lastBuildDate>Wed, 30 Sep 2015 11:00:00 GMT</lastBuildDate>
+            <lastBuildDate>Mon, 12 Oct 2015 15:30:00 GMT</lastBuildDate>
+                <item>
+                    <title>October Update</title>
+                    <link>https://ind.ie/blog/october-update/</link>
+                    <guid>https://ind.ie/blog/october-update/</guid>
+                    <description>&lt;p&gt;European Parliament video, Ind.ie&apos;s entry in the Knight News Challenge, and recurring donations.&quot;&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://ind.ie/blog/october-update/&quot;&gt;Read the full post on the Ind.ie blog&lt;/a&gt;.&lt;/p&gt;
+                    </description>
+                    <pubDate>Mon, 12 Oct 2015 15:30:00 GMT</pubDate>
+                    <author>laura@ind.ie (Laura Kalbag)</author>
+                    <discourseUsername>laura</discourseUsername>
+                </item>
                 <item>
                     <title>Internet As A Commons at the European Parliament</title>
                     <link>https://ind.ie/blog/internet-as-a-commons/</link>
