@@ -53,6 +53,8 @@
 
 		li /* show the ordered list numbers */
 			font-size 15px /* make the numbers not too big */
+			margin-top 0
+			margin-bottom 0
 			margin-left 33px
 			
 			@media only screen and (min-width: 340px)
@@ -63,24 +65,12 @@
 				margin-left 300px
 				padding-top 30px
 				position absolute
-				
-				&.one
-					height 86px
-					top 172px
-				
-				&.two
-					height 81px
-					top 86px
-					
-				&.three
-					height 85px
-					top 0
 			
 			@media only screen and (min-width: 650px)
 				padding-top 20px
 				
 				:before /* on wider views, add the pointers */
-					background url('../images/pointer.svg')
+					background url('../images/pointer.svg') 0 0 no-repeat
 					content ''
 					display block
 					top 35px
@@ -92,12 +82,44 @@
 					.no-svg &
 						background-image url('../images/pointer.png')
 						
-			@media only screen and (min-width: 820px)		
-				&.two
-					margin-top 25px
+			&.three /* offset by diagonal */
+				@media only screen and (min-width: 580px)
+					height 85px
+					top 0
+					margin-left 230px
+				
+				@media only screen and (min-width: 650px)
+					margin-left 280px
+				
+				@media only screen and (min-width: 820px)
+					margin-top 30px
+					margin-left 360px
 					
-				&.one
+			&.two /* offset by diagonal */
+				@media only screen and (min-width: 580px)
+					height 81px
+					top 86px
+					margin-left 283px
+				
+				@media only screen and (min-width: 650px)
+					margin-left 333px
+					
+				@media only screen and (min-width: 820px)
 					margin-top 40px
+					margin-left 422px
+			
+			&.one
+				@media only screen and (min-width: 580px)
+					height 86px
+					top 172px
+					margin-left 335px
+				
+				@media only screen and (min-width: 650px)
+					margin-left 385px
+					
+				@media only screen and (min-width: 820px)
+					margin-top 53px
+					margin-left 480px
 			
 		h3
 			font-size 18px
@@ -106,7 +128,6 @@
 			margin-bottom HalfLineHeight
 			
 			@media only screen and (min-width: 580px)
-				float right
 				font-size 17px
 				height 50px
 				margin-top 0
@@ -114,68 +135,15 @@
 				margin-bottom 0
 				width 230px
 				
-		.one h3
-			@media only screen and (min-width: 580px)
-				width 190px /* so it doesn't escape the left of the viewport on middle-width views */
-
-		li p:before
-			display block
-			font-weight bold
-			
-			@media only screen and (min-width: 580px)
-				display none
-			
-		.base-tier:before
-			content '1' /* show the corresponding number to the Respect title */
-			
-			@media only screen and (min-width: 580px)
-				content '' /* don't show the number as the title is lined up alongside */
-		
-		.middle-tier:before
-			content '2' /* show the corresponding number to the Respect title */
-			
-			@media only screen and (min-width: 580px)
-				content '' /* don't show the number as the title is lined up alongside */
-			
-		.top-tier:before
-			content '3' /* show the corresponding number to the Respect title */
-			
-			@media only screen and (min-width: 580px)
-				content '' /* don't show the number as the title is lined up alongside */
-		
-		.one
-			@media only screen and (min-width: 580px)
-				margin-left 335px
-			
-			@media only screen and (min-width: 650px)
-				margin-left 385px
-				
-			@media only screen and (min-width: 820px)
-				margin-left 455px
-				
-		.two /* offset by diagonal */
-			@media only screen and (min-width: 580px)
-				margin-left 283px
-			
-			@media only screen and (min-width: 650px)
-				margin-left 333px
-				
-			@media only screen and (min-width: 820px)
-				margin-left 397px
-		
-		.three /* offset by diagonal */
-			@media only screen and (min-width: 580px)
-				margin-left 230px
-			
-			@media only screen and (min-width: 650px)
-				margin-left 280px
-			
-			@media only screen and (min-width: 820px)
-				margin-left 330px
+			.one &
+				@media only screen and (min-width: 580px)
+					width 190px /* so it doesn't escape the left of the viewport on middle-width views */
 			
 		p
 			font-size 15px
 			line-height 19px
+			margin-top 0
+			margin-bottom 0
 			margin-left -18px /* offset the list numbers */
 			position absolute
 			text-align center
@@ -184,7 +152,6 @@
 				margin-left -30px
 				
 			@media only screen and (min-width: 580px)
-				float left
 				line-height 20px
 				margin-top -30px /* offset li padding */
 				position relative
@@ -195,8 +162,34 @@
 			@media only screen and (min-width: 820px)
 				font-size 18px
 				line-height 24px
+		
+			&:before
+				display block
+				font-weight bold
+				
+				@media only screen and (min-width: 580px)
+					display none
+					height 0
 			
-		.base-tier
+			&.base-tier:before
+				content '1' /* show the corresponding number to the Respect title */
+				
+				@media only screen and (min-width: 580px)
+					content '' /* don't show the number as the title is lined up alongside */
+			
+			&.middle-tier:before
+				content '2' /* show the corresponding number to the Respect title */
+				
+				@media only screen and (min-width: 580px)
+					content '' /* don't show the number as the title is lined up alongside */
+				
+			&.top-tier:before
+				content '3' /* show the corresponding number to the Respect title */
+				
+				@media only screen and (min-width: 580px)
+					content '' /* don't show the number as the title is lined up alongside */
+				
+		.base-tier /* one */
 			color black-five
 			height 84px
 			margin-left 3px /* -18px offset the list numbers */
@@ -211,22 +204,23 @@
 			@media only screen and (min-width: 580px)
 				/* when it's wider, let the triangle text follow the order of the list items */
 				height 74px
+				margin-top -68px
 				margin-left -295px
 				margin-right 0
-				padding-top 11px
+				padding-top 0
 				top auto
 			
 			@media only screen and (min-width: 650px)
 				margin-left -345px
+				padding-top 10px
 				
 			@media only screen and (min-width: 820px)
 				height 80px
-				margin-left -398px
-				padding-top 24px
+				margin-left -423px
 				width 300px
 				
 			
-		.middle-tier
+		.middle-tier /* two */
 			top 86px
 			border-bottom 2px solid black-eighty
 			color black-ninety
@@ -242,21 +236,23 @@
 			@media only screen and (min-width: 580px)
 				/* when it's wider, let the triangle text follow the order of the list items */
 				height 59px
+				margin-top -59px
 				margin-left -223px
 				margin-right 0
-				padding-top 22px
+				padding-top 0
 				top auto
 			
 			@media only screen and (min-width: 650px)
 				margin-left -273px
+				padding-top 10px
 				
 			@media only screen and (min-width: 820px)
 				height 74px
-				margin-left -323px
-				padding-top 28px
+				margin-left -347px /* offset li margin */
+				padding-top 3px
 				width 260px
 			
-		.top-tier
+		.top-tier /* three */
 			top 0
 			border-bottom 2px solid black-sixty
 			color black-seventy
@@ -274,7 +270,7 @@
 				height 30px
 				margin-left -120px
 				margin-right 0
-				padding-top 56px
+				padding-top 7px
 				top auto
 			
 			@media only screen and (min-width: 650px)
@@ -282,6 +278,7 @@
 				
 			@media only screen and (min-width: 820px)
 				height 40px
-				margin-left -190px
-				padding-top 71px
-				width 130px
+				margin-top -29px
+				margin-left -222px /* offset li margin */
+				padding-top 1px
+				width 134px
