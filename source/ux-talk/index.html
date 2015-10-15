@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- $title:Ind.ie — Experience Design Talk -->
+    <!-- @import '../assets/includes/_head.kit' -->
+    <link rel='stylesheet' type='text/css' href='css/style.css'>
+    <link rel='alternate' type='application/rss+xml' title='Ind.ie Blog' href='https://ind.ie/rss/index.xml' />
+</head>
+
+<body class='ux-talk'>
+    <header class="site-header">
+        <!-- @import '../assets/includes/_nav.kit' -->
+    </header>
+    <div class='main'>
+        <h1 class='long-title'>Superheroes &amp; Villains in&nbsp;Design</h1>
+        <div class='px-video-container' id='ux-talk'>
+            <div class='px-video-img-captions-container'>
+                <div class='px-video-captions hide'></div>
+                <div class='px-video-wrapper'>
+                    <video poster='images/poster-ux-talk.jpg' class='px-video' controls>
+                        <!-- video files -->
+                        <source src='//player.vimeo.com/external/133430959.m3u8?p=high,standard&s=ba1cc545377722801a7b741d1ba68995' type='application/x-mpegURL' />
+                        <source src='//player.vimeo.com/external/133430959.hd.mp4?s=8a96e7ede72482a65add5610be0271eb&profile_id=119' type='video/mp4' />
+                        <source src='https://ind.ie/videos/ux-talk/ux-talk.webm' type='video/webm' />
+                        <source src='https://ind.ie/videos/ux-talk/ux-talk.ogv' type='video/ogg' />
+                        <!-- fallback for browsers that don’t support the video element -->
+                        <div>
+                            <a href='//player.vimeo.com/external/133430959.hd.mp4?s=8a96e7ede72482a65add5610be0271eb&profile_id=119'>
+                                <img src='images/poster-ux-talk.jpg' width='640' height='360' alt='download video' />
+                            </a>
+                        </div>
+                    </video>
+                </div>
+            </div>
+            <!-- end container for captions and video -->
+            <div class="px-video-controls"></div>
+        </div>
+        <!-- end video container -->
+        <p>Aral speaking about experience design at Thinking Digital in May 2013.</p>
+        <script src="/assets/js/px-video.js"></script>
+        <script>
+        // Initialize
+        new InitPxVideo({
+            "videoId": "ux-talk",
+            "captionsOnDefault": false,
+            "seekInterval": 20,
+            "videoTitle": "Experience Design Talk",
+            "debug": true
+        });
+        </script>
+        <!-- @import '../assets/includes/_footer-call-to-action.kit' -->
+        <!-- @import '../assets/includes/_footer.kit' -->
+    </div>
+</body>
+
+</html>
