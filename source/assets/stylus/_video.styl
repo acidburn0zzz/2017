@@ -237,10 +237,7 @@
 	width 85%
 
 	@media only screen and (min-width: 480px)
-		width 90%
-
-	@media only screen and (min-width: 480px)
-		width 92.5%
+		width 89%
 
 	@media only screen and (min-width: 970px)
 		width 95%
@@ -606,20 +603,69 @@
 			padding 8px
 			min-height 36px
 			
-/* THIS PART ONLY FOR IND.IE, NOT INCLUDED IN UNIVERSAL VIDEO PLAYER */
-/* Adjust width of progress bar for maximum width of videos on Ind.ie video player */
+/* 	FLEXBOX-ONLY CSS.
+	This will only work with the including modernizr.js script, which applies the 
+	.flexbox.flexwrap classes to the body element */
+	
+.flexbox.flexwrap 
+	.px-video-controls
+		display flex // enables flex for all its children */
+		flex-direction row // arrange buttons/inputs in rows, not columns */
+		flex-wrap wrap // run rows from left-to-right, wrap overflowing items to next row */
+		justify-content space-between // stick buttons/inputs to left/right edges with excess space distributed between */
+		align-items center // horizontally centre rows inside container */
+		align-content center // horizontally centre all content inside container when there are multiple rows */
+	
+	.progress-bar
+		flex-grow 1 // flex to fill rest of available space */
+		width 75%
 
-.progress-bar
-	width 85%
+		@media only screen and (min-width: 480px)
+			width 75%
+			
+		@media only screen and (min-width: 590px)
+			width 85%
 
-	@media only screen and (min-width: 480px)
-		width 90%
+		@media only screen and (min-width: 970px)
+			width 85%
 
-	@media only screen and (min-width: 480px)
-		width 90%
+		@media only screen and (min-width: 1795px)
+			width 85%
+	
+	.px-video-progress
+		margin-top 10px
+		width 100%
+		
+	.px-video-time
+		flex-grow 0 // don't grow
+		flex-shrink 0 // don't shrink
+		padding-left 10px // space between time and progress bar
+		margin-top 0
+		
+	.px-video-playback-buttons
+		flex-grow 1 // flex to fill rest of available space
+		min-width auto
 
-	@media only screen and (min-width: 970px)
-		width 94%
+		@media only screen and (min-width: 620px)
+			left auto
+			margin-left auto
+			min-width auto
+			position relative
+			width auto
+			display flex // enables flex for all its children
+			flex-direction row // arrange buttons/inputs in rows, not columns
+			flex-wrap no-wrap // don't let these items wrap
+			justify-content center // stick buttons/inputs to left/right edges with excess space distributed between
+			align-items center // horizontally centre rows inside container
+			align-content center // horizontally centre all content inside container when there are multiple rows
+			padding-left 180px
+			
+	.px-video-controls button
+		margin 0
+				
+	/* mute button */
+	.px-video-volume-controls
+		min-width auto
 
-	@media only screen and (min-width: 1795px)
-		width 94%
+		@media only screen and (min-width: 540px)
+			margin-top 0
