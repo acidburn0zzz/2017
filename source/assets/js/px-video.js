@@ -210,34 +210,32 @@ function InitPxVideo(options) {
 	obj.controls.innerHTML = '<div class="progress-bar">' +
 		'<progress class="px-video-progress" max="100" value="0"><span>0</span>% played</progress>' +
 		'</div>' +
-		'<div class="controls">' +
-			'<div class="px-video-time">' +
-				'<span class="sr-only">time</span> <span class="px-video-duration">00:00</span>' +
+		'<div class="px-video-time">' +
+			'<span class="sr-only">time</span> <span class="px-video-duration">00:00</span>' +
+		'</div>' +
+		'<div class="px-video-playback-buttons">' +
+			'<button class="px-video-restart"><span class="sr-only">Restart</span></button>' +
+			'<button class="px-video-rewind"><span class="sr-only">rewind <span class="px-seconds">10</span> seconds</span></button>' +
+			'<button class="px-video-play" aria-label="'+obj.playAriaLabel+'"><span class="sr-only">Play</span></button>' +
+			'<button class="px-video-pause hide"><span class="sr-only">Pause</span></button>' +
+			'<button class="px-video-forward"><span class="sr-only">forward <span class="px-seconds">10</span> seconds</span></button>' +
+		'</div>' +
+		'<div class="px-video-volume-controls">' +
+			'<div class="px-video-mute-btn-container">' +
+				'<input class="px-video-mute sr-only" id="btnMute'+obj.randomNum+'" type="checkbox" />' +
+				'<label id="labelMute'+obj.randomNum+'" for="btnMute'+obj.randomNum+'"><span class="sr-only">Mute</span></label>' +
 			'</div>' +
-			'<div class="px-video-playback-buttons">' +
-				'<button class="px-video-restart"><span class="sr-only">Restart</span></button>' +
-				'<button class="px-video-rewind"><span class="sr-only">rewind <span class="px-seconds">10</span> seconds</span></button>' +
-				'<button class="px-video-play" aria-label="'+obj.playAriaLabel+'"><span class="sr-only">Play</span></button>' +
-				'<button class="px-video-pause hide"><span class="sr-only">Pause</span></button>' +
-				'<button class="px-video-forward"><span class="sr-only">forward <span class="px-seconds">10</span> seconds</span></button>' +
+			'<div class="px-video-volume-slider">' +
+				'<label for="volume'+obj.randomNum+'" class="sr-only">Volume:</label><input id="volume'+obj.randomNum+'" class="px-video-volume" type="range" min="0" max="10" value="5" />' +
 			'</div>' +
-			'<div class="px-video-volume-controls">' +
-				'<div class="px-video-mute-btn-container">' +
-					'<input class="px-video-mute sr-only" id="btnMute'+obj.randomNum+'" type="checkbox" />' +
-					'<label id="labelMute'+obj.randomNum+'" for="btnMute'+obj.randomNum+'"><span class="sr-only">Mute</span></label>' +
-				'</div>' +
-				'<div class="px-video-volume-slider">' +
-					'<label for="volume'+obj.randomNum+'" class="sr-only">Volume:</label><input id="volume'+obj.randomNum+'" class="px-video-volume" type="range" min="0" max="10" value="5" />' +
-				'</div>' +
-				'<div class="px-video-captions-btn-container hide">' +
-					'<input class="px-video-btnCaptions sr-only" id="btnCaptions'+obj.randomNum+'" type="checkbox" />' +
-					'<label for="btnCaptions'+obj.randomNum+'"><span class="sr-only">Captions</span></label>' +
-				'</div>' +
-				'<div class="px-video-fullscreen-btn-container show">' +
-				'<input class="px-video-btnFullScreen sr-only" id="btnFullscreen'+obj.randomNum+'" type="checkbox" />' +
-				'<label for="btnFullscreen'+obj.randomNum+'"><span class="sr-only">Fullscreen</span></label>' +
+			'<div class="px-video-captions-btn-container hide">' +
+				'<input class="px-video-btnCaptions sr-only" id="btnCaptions'+obj.randomNum+'" type="checkbox" />' +
+				'<label for="btnCaptions'+obj.randomNum+'"><span class="sr-only">Captions</span></label>' +
 			'</div>' +
-			'</div>' +
+			'<div class="px-video-fullscreen-btn-container show">' +
+			'<input class="px-video-btnFullScreen sr-only" id="btnFullscreen'+obj.randomNum+'" type="checkbox" />' +
+			'<label for="btnFullscreen'+obj.randomNum+'"><span class="sr-only">Fullscreen</span></label>' +
+		'</div>' +
 		'</div>';
 
 	// Adjust layout per width of video - container
