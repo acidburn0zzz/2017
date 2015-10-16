@@ -5,7 +5,17 @@
             <link>https://ind.ie</link>
             <description>The latest news and updates from the Ind.ie blog and Ind.ie labs blog</description>
             <atom:link href="https://ind.ie/rss/index.xml" rel="self" type="application/rss+xml" />
-            <lastBuildDate>Mon, 12 Oct 2015 15:30:00 GMT</lastBuildDate>
+            <lastBuildDate>Fri, 16 Oct 2015 16:00:00 GMT</lastBuildDate>
+                <item>
+                    <title>Applying Flexbox to the Video Player</title>
+                    <link>https://ind.ie/labs/blog/video-player-flexbox/</link>
+                    <guid>https://ind.ie/labs/blog/video-player-flexbox/</guid>
+                    <description>&lt;p&gt;Using CSS Flexbox to make the video player layout more robust.&quot;&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://ind.ie/labs/blog/video-player-flexbox/&quot;&gt;Read the full post on the Ind.ie blog&lt;/a&gt;.&lt;/p&gt;
+                    </description>
+                    <pubDate>Fri, 16 Oct 2015 16:00:00 GMT</pubDate>
+                    <author>laura@ind.ie (Laura Kalbag)</author>
+                    <discourseUsername>laura</discourseUsername>
+                </item>
                 <item>
                     <title>October Update</title>
                     <link>https://ind.ie/blog/october-update/</link>
