@@ -4,7 +4,7 @@
 /aws-keys.json
 /source/summit/assets/videos
 /source/about/summit/assets/videos
-source/assets/stylus/indie-style-core
+/source/assets/stylus/indie-style-core
 npm-debug.log
 .DS_Store
 /public
