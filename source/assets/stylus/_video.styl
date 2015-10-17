@@ -178,15 +178,15 @@
 
 		&:hover, &:active, &:focus
 			background black-seventy
-			
+
 /* utilities */
 .sr-only
-	position absolute !important
+	position absolute
 	clip rect(1px, 1px, 1px, 1px)
-	padding 0 !important
-	border 0 !important
-	height 1px !important
-	width 1px !important
+	padding 0
+	border 0
+	height 1px
+	width 1px
 	overflow hidden
 
 .hide
@@ -208,8 +208,8 @@
 .px-video
 	position absolute
 	top 0
-	left 0
 	margin-top 0
+	left 0
 	width 100%
 	height 100%
 
@@ -323,7 +323,8 @@
 	width 25px
 	height 25px
 	overflow hidden
-	background no-repeat url('../images/px-video-sprite.svg')
+	background no-repeat url('/assets/images/px-video-sprite.svg')
+	transition-property none
 
 	@media only screen and (min-width: 620px)
 		background-size 150%
@@ -332,7 +333,7 @@
 
 /* use with Modernizr to provide a no-svg class on <html> to support browsers that don't support SVG */
 .no-svg .px-video-controls button
-	background no-repeat url('../images/px-video-sprite.png')
+	background no-repeat url('/assets/images/px-video-sprite.png')
 
 .px-video-controls button:focus
 	border 1px #999 dotted
@@ -421,7 +422,7 @@
 		height 20px
 		margin-top 3px
 		margin-left 1px
-		background no-repeat url('../images/px-video-sprite.svg')
+		background no-repeat url('/assets/images/px-video-sprite.svg')
 		background-position -6px -943px
 
 		@media only screen and (min-width: 540px)
@@ -429,7 +430,7 @@
 
 	.no-svg &
 		/* use with Modernizr to provide a no-svg class on <html> to support browsers that don't support SVG */
-		background no-repeat url('../images/px-video-sprite.png')
+		background no-repeat url('/assets/images/px-video-sprite.png')
 
 .px-video-fullscreen-btn-container input[type="checkbox"]:focus+label
 	outline 1px #999 dotted
@@ -465,7 +466,7 @@
 		width 25px
 		height 20px
 		margin-top 3px /* line up with big buttons */
-		background no-repeat url('../images/px-video-sprite.svg')
+		background no-repeat url('/assets/images/px-video-sprite.svg')
 		background-position -6px -835px
 
 		@media only screen and (min-width: 540px)
@@ -473,7 +474,7 @@
 
 		.no-svg &
 			/* use with Modernizr to provide a no-svg class on <html> to support browsers that don't support SVG */
-			background no-repeat url('../images/px-video-sprite.png')
+			background no-repeat url('/assets/images/px-video-sprite.png')
 
 
 .px-video-captions-btn-container
@@ -511,7 +512,7 @@
 		width 25px
 		height 20px
 		margin-top 3px /* line up with big buttons */
-		background no-repeat url('../images/px-video-sprite.svg')
+		background no-repeat url('/assets/images/px-video-sprite.svg')
 		background-position -6px -476px
 
 		@media only screen and (min-width: 540px)
@@ -519,7 +520,7 @@
 
 		.no-svg &
 			/* use with Modernizr to provide a no-svg class on <html> to support browsers that don't support SVG */
-			background no-repeat url('../images/px-video-sprite.png')
+			background no-repeat url('/assets/images/px-video-sprite.png')
 
 .px-video-mute-btn-container
 	input[type="checkbox"]:focus+label
@@ -551,7 +552,7 @@
 	@media only screen and (min-width: 540px)
 		width 95px /* width of volume slider */
 
-.px-video-controls
+.px-video-controls .controls
 	position relative
 
 	input[type='range']
@@ -578,7 +579,7 @@
 		border none
 
 	input[type='range']::-webkit-slider-thumb
-		-webkit-appearance none !important
+		-webkit-appearance none
 		height 10px
 		width 6px
 		background-color #666
