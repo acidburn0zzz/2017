@@ -7,13 +7,13 @@
 		margin-top 0 /* remove margin as it's not collapsing against margin above */
 
 .team-names
-	@media only screen and (min-width: 780px)
-		display -webkit-flex
-		display flex
-		-webkit-flex-flow row wrap
-		flex-flow row wrap
-		-webkit-justify-content center
-		justify-content center
+	.hcard
+		@media only screen and (min-width: 780px)
+			font-size 21px
+			
+	.founders, .punctuation
+		@media only screen and (min-width: 780px)
+			font-size 19px
 
 .h-card
 	.mdash
@@ -21,53 +21,9 @@
 		padding-right 2px
 		padding-left 2px
 
-	.p-name
-		margin-top HalfLineHeight
-
 	.p-job-title, .p-role
 		color black-seventy
 		font-size 17px
-
-	@media only screen and (min-width: 780px)
-		float left
-		padding-right 1%
-		padding-left 1%
-		padding-bottom OneLineHeight
-		text-align center
-		width 18%
-		-webkit-flex 0 0 31%
-		flex 0 0 31%
-
-		.mdash
-			height 0
-			overflow hidden
-			padding 0
-			width 0
-
-		.punctuation
-			display inline-block
-			height 0
-			overflow hidden
-			padding 0
-			width 0
-
-.name-jo
-	@media only screen and (min-width: 780px)
-		-webkit-order 1
-		-ms-flex-order 1
-		order 1
-
-.name-aral
-	@media only screen and (min-width: 780px)
-		-webkit-order 2
-		-ms-flex-order 2
-		order 2
-
-.name-laura
-	@media only screen and (min-width: 780px)
-		-webkit-order 3
-		-ms-flex-order 3
-		order 3
 
 .team
 	.p-name, .p-name a, .p-name span
@@ -78,10 +34,18 @@
 		text-decoration none
 
 		@media only screen and (min-width: 780px)
-			display block
 			font-size 21px
 
 .part-time
+	.team-names
+		@media only screen and (min-width: 780px)
+			display -webkit-flex
+			display flex
+			-webkit-flex-flow row wrap
+			flex-flow row wrap
+			-webkit-justify-content center
+			justify-content center
+		
 	.photo
 		border-radius 50% /* make image circular */
 		display block
