@@ -131,10 +131,9 @@
 				// Create the copy to clipboard buton.
 				var copyToClipboardButton = document.createElement('button');
 				copyToClipboardButton.setAttribute("data-code", code);
-				copyToClipboardButton.style.margin = "0 0 0 12px";
 				var textNode = document.createTextNode('Copy as HTML');
-
 				copyToClipboardButton.appendChild(textNode);
+				copyToClipboardButton.style.margin = 0;
 				copyToClipboardButton.addEventListener("click", copyPromptHandler);
 
 				// Replace the code block with our shiny new button.
@@ -142,15 +141,7 @@
 				codeBlock.parentNode.replaceChild(copyToClipboardButton, codeBlock);
 
 				// Adjust the style of the pre block.
-				// preBlock.style.backgroundColor = 'transparent';
 				preBlock.style.textAlign = 'center';
-				// preBlock.style.borderBottom = '1px solid #eee'
-				// preBlock.style.height = '24px';
-				// preBlock.style.padding = '0';
-
-				// var preText = document.createTextNode('Copy code as:');
-				// preBlock.insertBefore(preText, copyToClipboardButton);
-
 			}
 		</script>
 
