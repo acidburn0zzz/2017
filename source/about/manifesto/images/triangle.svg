@@ -14,6 +14,8 @@
         </linearGradient>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <polygon id="triangle" stroke="#343434" stroke-width="2" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup" points="160 1 319 259 1 259 "></polygon>
+        <g id="Web-Assets" sketch:type="MSArtboardGroup" transform="translate(-37.000000, -47.000000)" stroke-width="2" stroke="#343434" fill="url(#linearGradient-1)">
+            <polygon id="triangle" sketch:type="MSShapeGroup" points="197 48 356 306 38 306 "></polygon>
+        </g>
     </g>
 </svg>

@@ -5,6 +5,8 @@
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <path d="M0,12 L32,1 L110,1" id="pointer" stroke="#7F7F7F" stroke-width="2" sketch:type="MSShapeGroup"></path>
+        <g id="Web-Assets" sketch:type="MSArtboardGroup" transform="translate(-180.000000, -360.000000)" stroke="#7F7F7F" stroke-width="2">
+            <path d="M180,372 L212,361 L290,361" id="pointer" sketch:type="MSShapeGroup"></path>
+        </g>
     </g>
 </svg>
