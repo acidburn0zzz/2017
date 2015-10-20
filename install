@@ -1,8 +1,27 @@
 #!/bin/sh
 
-npm install n -g
-npm install coffee-script -g
-n 0.12.2
+#
+# Make sure coffee-script is installed.
+#
+if hash coffee 2>/dev/null; then
+	echo "Global module coffee-script already installed, skipping installation.\n"
+else
+	npm install coffee-script@1.10.0 -g
+fi
+
+#
+# Make sure n is installed.
+#
+if hash n 2>/dev/null; then
+	echo "Global module n already installed, skipping installation.\n"
+else
+	npm install -g n@2.0.2
+fi
+
+# Set Node version to the latest stable version.
+
+n 4.2.1
+
 npm install
 touch aws-keys.json
 echo '{"key":"", "secret": ""}' > aws-keys.json
