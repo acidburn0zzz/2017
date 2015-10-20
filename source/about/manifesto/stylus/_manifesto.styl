@@ -1,20 +1,50 @@
 .main
 	margin-top TwoLineHeights
+	
+	@media only screen and (min-width 600px)
+		padding-left 0
+		padding-right 0
 
 	.long-title
+		font-family 'Avenir Next', Helvetica, sans-serif
+		margin-bottom OneLineHeight
+		
 		@media only screen and (min-width: 480px)
-			font-size 52px
-			line-height TwoLineHeights
+			font-size 46px
+			line-height OneAndAHalfLineHeights
 
 		@media only screen and (min-width: 650px)
-			font-size 70px
-			line-height ThreeLineHeights
+			font-size 54px
+			line-height OneAndAHalfLineHeights
 	
 	.subheading, .lead-in
+		margin-top OneLineHeight
 		text-align center
+		
+	.subheading
+		font-family "Avenir Next Ultra Light", 'Avenir Next', Helvetica, sans-serif
+		font-weight normal
+		font-size 36px
+		line-height OneAndAHalfLineHeights
+		
+		@media only screen and (min-width: 820px)
+			font-size 42px
+			line-height OneAndAHalfLineHeights
 	
 	.lead-in
+		font-weight bold
+		margin-top OneAndAHalfLineHeights
 		margin-bottom OneAndAHalfLineHeights
+		
+.poster
+	@media only screen and (min-width 600px)
+		-webkit-box-shadow 0 0 3px 0 black-forty
+		box-shadow 0 0 3px 0 black-forty
+		padding-top QuarterLineHeight
+		padding-left OneLineHeight
+		padding-right OneLineHeight
+		padding-bottom OneLineHeight
+	
 
 .three-rs
 	margin-right auto
@@ -93,7 +123,7 @@
 				
 				@media only screen and (min-width: 820px)
 					margin-top 30px
-					margin-left 360px
+					margin-left 345px
 					
 			&.two /* offset by diagonal */
 				@media only screen and (min-width: 580px)
@@ -106,7 +136,7 @@
 					
 				@media only screen and (min-width: 820px)
 					margin-top 40px
-					margin-left 422px
+					margin-left 407px
 			
 			&.one
 				@media only screen and (min-width: 580px)
@@ -119,7 +149,7 @@
 					
 				@media only screen and (min-width: 820px)
 					margin-top 53px
-					margin-left 480px
+					margin-left 465px
 			
 		h3
 			font-size 18px
@@ -216,7 +246,7 @@
 				
 			@media only screen and (min-width: 820px)
 				height 80px
-				margin-left -423px
+				margin-left -408px
 				width 300px
 				
 			
@@ -248,7 +278,7 @@
 				
 			@media only screen and (min-width: 820px)
 				height 74px
-				margin-left -347px /* offset li margin */
+				margin-left -332px /* offset li margin */
 				padding-top 3px
 				width 260px
 			
@@ -279,6 +309,32 @@
 			@media only screen and (min-width: 820px)
 				height 40px
 				margin-top -29px
-				margin-left -222px /* offset li margin */
+				margin-left -207px /* offset li margin */
 				padding-top 1px
 				width 134px
+
+.principles
+	border-top 2px solid black-forty
+	font-size 16px
+	line-height 24px
+	margin-top OneAndAQuarterLineHeights
+	padding-top OneLineHeight
+	
+	.principle
+		margin-bottom HalfLineHeight
+	
+	h2, p
+		font-size 16px
+		line-height 24px
+		margin-top 0
+		margin-bottom HalfLineHeight
+		
+	h2
+		display inline
+	
+	p
+		display inline
+		
+	.overarching
+		margin-top ThreeQuartersLineHeight
+		text-align center
