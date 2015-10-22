@@ -68,35 +68,39 @@
 
 				<h3>Web site badges.</h3>
 
-				<div class='badge'>
-					<div style='display: block; width: 250px; margin-left: auto; margin-right: auto;'>
-						<a href='https://ind.ie/manifesto'><img style='margin-left: auto; margin-right: auto; margin-bottom: 0;' alt='We practice Ethical Design' src='images/ethical-design-manifesto-badge.svg'></a>
-						<p style='text-align:center;'>We practice <strong>Ethical</strong> Design.</p>
+				<div class='badges'>
+					<div class='badge'>
+						<div style='display: block; width: 250px; margin-left: auto; margin-right: auto;'>
+							<a href='https://ind.ie/manifesto'><img style='margin-left: auto; margin-right: auto; margin-bottom: 0;' alt='We practice Ethical Design' src='images/ethical-design-manifesto-badge.svg'></a>
+							<p style='text-align:center;'>We practice <strong>Ethical</strong> Design.</p>
+						</div>
+
+						<pre><code>&lt;div style='display: block; width: 250px; margin-left: auto; margin-right: auto;'&gt;&lt;a href='https://ind.ie/manifesto'&gt;&lt;img style='margin-left: auto; margin-right: auto; margin-bottom: 0;' alt='We practice Ethical Design' src='https://ind.ie/about/manifesto/images/ethical-design-manifesto-badge.svg'&gt;&lt;/a&gt;&lt;p&gt;We practice &lt;strong&gt;Ethical&lt;/strong&gt; Design.&lt;/p&gt;&lt;/div&gt;</code></pre>
 					</div>
 
-					<pre><code>&lt;div style='display: block; width: 250px; margin-left: auto; margin-right: auto;'&gt;&lt;a href='https://ind.ie/manifesto'&gt;&lt;img style='margin-left: auto; margin-right: auto; margin-bottom: 0;' alt='We practice Ethical Design' src='https://ind.ie/about/manifesto/images/ethical-design-manifesto-badge.svg'&gt;&lt;/a&gt;&lt;p&gt;We practice &lt;strong&gt;Ethical&lt;/strong&gt; Design.&lt;/p&gt;&lt;/div&gt;</code></pre>
-				</div>
+					<div class='badge'>
+						<a href='https://ind.ie/manifesto'><img style='width: 135px; margin-left: auto; margin-right: auto;' alt='We practice Ethical Design' src='images/ethical-design-manifesto-badge-small.png'></a>
 
-				<div class='badge'>
-					<a href='https://ind.ie/manifesto'><img style='width: 135px; margin-left: auto; margin-right: auto;' alt='We practice Ethical Design' src='images/ethical-design-manifesto-badge-small.png'></a>
-
-					<pre><code>&lt;a href='https://ind.ie/manifesto'&gt;&lt;img style='width: 135px; margin-left: auto; margin-right: auto;' alt='We practice Ethical Design' src='images/ethical-design-manifesto-badge-small.png'&gt;&lt;/a&gt;</code></pre>
+						<pre><code>&lt;a href='https://ind.ie/manifesto'&gt;&lt;img style='width: 135px; margin-left: auto; margin-right: auto;' alt='We practice Ethical Design' src='images/ethical-design-manifesto-badge-small.png'&gt;&lt;/a&gt;</code></pre>
+					</div>
 				</div>
 
 				<h3>Code repository badges.</h3>
 
 				<p>For indie projects — FOSS projects that practice Ethical Design.</p>
 
-				<div class='badge'>
-					<a href='https://ind.ie/manifesto'><img style='margin-left: auto; margin-right: auto;' alt='We practice Ethical Design' src='https://img.shields.io/badge/Ethical_Design-_▲_❤_-blue.svg'></a>
+				<div class='badges'>
+					<div class='badge'>
+						<a href='https://ind.ie/manifesto'><img style='margin-left: auto; margin-right: auto;' alt='We practice Ethical Design' src='https://img.shields.io/badge/Ethical_Design-_▲_❤_-blue.svg'></a>
 
-					<pre><code>&lt;a href='https://ind.ie/manifesto'&gt;&lt;img style='margin-left: auto; margin-right: auto;' alt='We practice Ethical Design' src='https://img.shields.io/badge/Ethical_Design-_▲_❤_-blue.svg'&gt;&lt;/a&gt;</code></pre>
-				</div>
+						<pre><code>&lt;a href='https://ind.ie/manifesto'&gt;&lt;img style='margin-left: auto; margin-right: auto;' alt='We practice Ethical Design' src='https://img.shields.io/badge/Ethical_Design-_▲_❤_-blue.svg'&gt;&lt;/a&gt;</code></pre>
+					</div>
 
-				<div class='badge'>
-					<a href='https://ind.ie/manifesto'><img style='margin-left: auto; margin-right: auto;' alt='We practice Ethical Design' src='https://img.shields.io/badge/_▲_-_❤_-blue.svg'></a>
+					<div class='badge'>
+						<a href='https://ind.ie/manifesto'><img style='margin-left: auto; margin-right: auto;' alt='We practice Ethical Design' src='https://img.shields.io/badge/_▲_-_❤_-blue.svg'></a>
 
-					<pre><code>&lt;a href='https://ind.ie/manifesto'&gt;&lt;img style='margin-left: auto; margin-right: auto;' alt='We practice Ethical Design' src='https://img.shields.io/badge/_▲_-_❤_-blue.svg'&gt;&lt;/a&gt;</code></pre>
+						<pre><code>&lt;a href='https://ind.ie/manifesto'&gt;&lt;img style='margin-left: auto; margin-right: auto;' alt='We practice Ethical Design' src='https://img.shields.io/badge/_▲_-_❤_-blue.svg'&gt;&lt;/a&gt;</code></pre>
+					</div>
 				</div>
 
 				<h3>Text-only</h3>
@@ -113,36 +117,38 @@
 			<!-- @import '../../assets/includes/_footer.kit' -->
 		</div>
 	</div>
-		// <script>
-		// 	// Progressively enhance the badge copy sections with copy-to-clipboard popups.
-		// 	function copyPromptHandler(){
-		// 		var isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0;
-		// 		var keyPrompt = isMac ? '⌘' : 'Ctrl';
-		// 		var textToCopy = this.getAttribute("data-code");
-		// 		window.prompt("Copy to clipboard with "+keyPrompt+"+C and press return to dismiss.", textToCopy);
-		// 	}
+		<script>
+			// Progressively enhance the badge copy sections with copy-to-clipboard popups.
+			function copyPromptHandler(){
+				var isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0;
+				var keyPrompt = isMac ? '⌘' : 'Ctrl';
+				var textToCopy = this.getAttribute("data-code");
+				window.prompt("Copy to clipboard with "+keyPrompt+"+C and press return to dismiss.", textToCopy);
+			}
 
-		// 	var codeBlocks = document.querySelectorAll('code');
-		// 	for (var i = 0; i < codeBlocks.length; i++)
-		// 	{
-		// 		// Get the code in the block.
-		// 		var codeBlock = codeBlocks[i];
-		// 		var code = codeBlock.innerHTML;
-		// 		code = code.replace(new RegExp('&lt;', 'g'), '<');
-		// 		code = code.replace(new RegExp('&gt;', 'g'), '>');
+			var codeBlocks = document.querySelectorAll('code');
+			for (var i = 0; i < codeBlocks.length; i++)
+			{
+				// Get the code in the block.
+				var codeBlock = codeBlocks[i];
+				var code = codeBlock.innerHTML;
+				code = code.replace(new RegExp('&lt;', 'g'), '<');
+				code = code.replace(new RegExp('&gt;', 'g'), '>');
 
-		// 		// Create the copy to clipboard buton.
-		// 		var copyToClipboardButton = document.createElement('button');
-		// 		copyToClipboardButton.setAttribute("data-code", code);
-		// 		var textNode = document.createTextNode('Copy as HTML');
-		// 		copyToClipboardButton.appendChild(textNode);
-		// 		copyToClipboardButton.style.margin = 0;
-		// 		copyToClipboardButton.addEventListener("click", copyPromptHandler);
+				// Create the copy to clipboard button.
+				var copyToClipboardButton = document.createElement('button');
+				copyToClipboardButton.setAttribute("data-code", code);
+				var textNode = document.createTextNode('Copy as HTML');
+				copyToClipboardButton.appendChild(textNode);
+				copyToClipboardButton.addEventListener("click", copyPromptHandler);
 
-		// 		// Replace the code block with our shiny new button.
-		// 		var preBlock = codeBlock.parentNode;
-		// 		codeBlock.parentNode.replaceChild(copyToClipboardButton, codeBlock);
-		// 	}
-		// </script>
+				// Replace the code block with our shiny new button.
+				var preBlock = codeBlock.parentNode;
+
+				// Give the now-empty pre block a class to help us style it.
+				preBlock.setAttribute("class","button-block");
+				codeBlock.parentNode.replaceChild(copyToClipboardButton, codeBlock);
+			}
+		</script>
 	</body>
 </html>
