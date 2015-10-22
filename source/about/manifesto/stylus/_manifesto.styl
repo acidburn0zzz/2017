@@ -382,16 +382,20 @@
 	p
 		text-align center
 
-pre
-	background black-five
-	font-size 16px
-	text-align left
-	white-space pre-wrap
-		
 code
-	background none
+	background black-five
 	font-size 14px
 	line-height ThreeQuartersLineHeight
+	text-align left
+	margin HalfLineHeight
+	white-space pre-wrap
+	font-family monospace
+	overflow auto
+	padding 5px
+
+	@media only screen and (min-width: 820px)
+		border-radius 5px
+		padding 10px 20px
 	
 .badges
 	.flexbox &
@@ -414,6 +418,10 @@ code
 			-webkit-align-items stretch
 			-ms-flex-align stretch
 			align-items stretch
+		
+		.badge
+			@media only screen and (min-width: 650px)
+				width 40%
 	
 .badge
 	border 1px dashed black-twenty
@@ -422,20 +430,41 @@ code
 	margin-left auto
 	max-width 400px
 	
+	.example
+		background none
+		margin 0
+		padding 0
+		padding-left 20px
+		padding-right 20px
+		width 100%
+	
 	.flexbox &
 		@media only screen and (min-width: 650px)
 			-webkit-flex 1 0 auto
 			-ms-flex 1 0 auto
 			flex 1 0 auto
-			width 40%
+			display -ms-flexbox
+			display -webkit-flex
+			display flex
+			-webkit-flex-direction row
+			-ms-flex-direction row
+			flex-direction row
+			-webkit-flex-wrap wrap
+			-ms-flex-wrap wrap
+			flex-wrap wrap
+			-webkit-justify-content center
+			-ms-flex-pack center
+			justify-content center
+			-webkit-align-content stretch
+			-ms-flex-line-pack stretch
+			align-content stretch
+			-webkit-align-items flex-start
+			-ms-flex-align start
+			align-items flex-start
 			
 			&:nth-of-type(1)
 				margin-right HalfLineHeight
 	
-.button-block
-	background none
-	overflow hidden
-
 	button
 		font-size 16px !important
 		display block
@@ -444,6 +473,11 @@ code
 		margin-right auto
 		margin-left auto
 		margin-top 0
-		margin-bottom 0
+		margin-bottom HalfLineHeight
 		padding-left HalfLineHeight
 		padding-right HalfLineHeight
+		
+		.flexbox &
+			-webkit-align-self flex-end
+			-ms-flex-item-align end
+			align-self flex-end
