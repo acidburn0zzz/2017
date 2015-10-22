@@ -4,7 +4,7 @@
 	text-align center
 
 	img
-		margin-top 0 /* remove margin as it's not collapsing against margin above */
+		margin-top 0 // remove margin as it's not collapsing against margin above
 
 .team-names
 	.hcard
@@ -15,15 +15,25 @@
 		@media only screen and (min-width: 780px)
 			font-size 19px
 
-.h-card
-	.mdash
-		display inline-block
-		padding-right 2px
-		padding-left 2px
+.mdash
+	display inline-block
+	padding-right 2px
+	padding-left 2px
+	
+	@media only screen and (min-width: 780px)
+	// remove m-dashes on wider views
+		display none
 
+.h-card
 	.p-job-title, .p-role
 		color black-seventy
 		font-size 17px
+
+.p-job-title, .founders
+	@media only screen and (min-width: 780px)
+		// move on to second line on wider views
+		display block
+		line-height OneLineHeight
 
 .team
 	.p-name, .p-name a, .p-name span
