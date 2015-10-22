@@ -1,20 +1,45 @@
 .main
 	margin-top TwoLineHeights
+	
+	@media only screen and (min-width 600px)
+		padding-left 0
+		padding-right 0
 
 	.long-title
-		@media only screen and (min-width: 480px)
-			font-size 52px
-			line-height TwoLineHeights
-
-		@media only screen and (min-width: 650px)
-			font-size 70px
+		font-family 'Avenir Next', Helvetica, sans-serif
+		margin-bottom OneLineHeight
+		
+		@media only screen and (min-width: 820px)
 			line-height ThreeLineHeights
 	
 	.subheading, .lead-in
+		margin-top OneLineHeight
 		text-align center
+		
+	.subheading
+		font-family "Avenir Next Ultra Light", 'Avenir Next', Helvetica, sans-serif
+		font-weight normal
+		font-size 36px
+		line-height OneAndAHalfLineHeights
+		
+		@media only screen and (min-width: 820px)
+			font-size 42px
+			line-height OneAndAHalfLineHeights
 	
 	.lead-in
+		font-weight bold
+		margin-top OneAndAHalfLineHeights
 		margin-bottom OneAndAHalfLineHeights
+		
+.poster
+	@media only screen and (min-width 600px)
+		-webkit-box-shadow 0 0 3px 0 black-forty
+		box-shadow 0 0 3px 0 black-forty
+		padding-top QuarterLineHeight
+		padding-left OneLineHeight
+		padding-right OneLineHeight
+		padding-bottom OneLineHeight
+	
 
 .three-rs
 	margin-right auto
@@ -23,7 +48,8 @@
 	
 	@media only screen and (min-width: 580px)
 		width 580px
-		
+	
+	// ensure adjustments made here are also made to print styles	
 	@media only screen and (min-width: 650px)
 		width 650px
 	
@@ -45,7 +71,8 @@
 		
 		@media only screen and (min-width: 340px)
 			margin-left 0
-			
+		
+		// ensure adjustments made here are also made to print styles	
 		@media only screen and (min-width: 820px)
 			background-size 410px auto
 			height 315px
@@ -59,13 +86,15 @@
 			
 			@media only screen and (min-width: 340px)
 				margin-left 70px
-				
+			
+			// ensure adjustments made here are also made to print styles	
 			@media only screen and (min-width: 580px)
 				/* when it's wider, reorder the list items to reverse order (base to top) */
 				margin-left 300px
 				padding-top 30px
 				position absolute
 			
+			// ensure adjustments made here are also made to print styles
 			@media only screen and (min-width: 650px)
 				padding-top 20px
 				
@@ -91,9 +120,10 @@
 				@media only screen and (min-width: 650px)
 					margin-left 280px
 				
+				// ensure adjustments made here are also made to print styles
 				@media only screen and (min-width: 820px)
 					margin-top 30px
-					margin-left 360px
+					margin-left 345px
 					
 			&.two /* offset by diagonal */
 				@media only screen and (min-width: 580px)
@@ -103,10 +133,11 @@
 				
 				@media only screen and (min-width: 650px)
 					margin-left 333px
-					
+				
+				// ensure adjustments made here are also made to print styles	
 				@media only screen and (min-width: 820px)
 					margin-top 40px
-					margin-left 422px
+					margin-left 407px
 			
 			&.one
 				@media only screen and (min-width: 580px)
@@ -116,10 +147,11 @@
 				
 				@media only screen and (min-width: 650px)
 					margin-left 385px
-					
+				
+				// ensure adjustments made here are also made to print styles	
 				@media only screen and (min-width: 820px)
 					margin-top 53px
-					margin-left 480px
+					margin-left 465px
 			
 		h3
 			font-size 18px
@@ -158,7 +190,8 @@
 			
 			@media only screen and (min-width: 650px)
 				margin-top -20px /* no need to offset li padding */
-				
+			
+			// ensure adjustments made here are also made to print styles	
 			@media only screen and (min-width: 820px)
 				font-size 18px
 				line-height 24px
@@ -167,6 +200,7 @@
 				display block
 				font-weight bold
 				
+				// ensure adjustments made here are also made to print styles
 				@media only screen and (min-width: 580px)
 					display none
 					height 0
@@ -174,18 +208,21 @@
 			&.base-tier:before
 				content '1' /* show the corresponding number to the Respect title */
 				
+				// ensure adjustments made here are also made to print styles
 				@media only screen and (min-width: 580px)
 					content '' /* don't show the number as the title is lined up alongside */
 			
 			&.middle-tier:before
 				content '2' /* show the corresponding number to the Respect title */
 				
+				// ensure adjustments made here are also made to print styles
 				@media only screen and (min-width: 580px)
 					content '' /* don't show the number as the title is lined up alongside */
 				
 			&.top-tier:before
 				content '3' /* show the corresponding number to the Respect title */
 				
+				// ensure adjustments made here are also made to print styles
 				@media only screen and (min-width: 580px)
 					content '' /* don't show the number as the title is lined up alongside */
 				
@@ -213,16 +250,16 @@
 			@media only screen and (min-width: 650px)
 				margin-left -345px
 				padding-top 10px
-				
+			
+			// ensure adjustments made here are also made to print styles
 			@media only screen and (min-width: 820px)
 				height 80px
-				margin-left -423px
+				margin-left -408px
 				width 300px
 				
 			
 		.middle-tier /* two */
 			top 86px
-			border-bottom 2px solid black-eighty
 			color black-ninety
 			height 69px
 			margin-left 27px /* -18px offset the list numbers */
@@ -246,15 +283,15 @@
 				margin-left -273px
 				padding-top 10px
 				
+			// ensure adjustments made here are also made to print styles
 			@media only screen and (min-width: 820px)
 				height 74px
-				margin-left -347px /* offset li margin */
+				margin-left -332px /* offset li margin */
 				padding-top 3px
 				width 260px
 			
 		.top-tier /* three */
 			top 0
-			border-bottom 2px solid black-sixty
 			color black-seventy
 			height 51px
 			margin-left 77px /* -18px offset the list numbers */
@@ -276,9 +313,42 @@
 			@media only screen and (min-width: 650px)
 				margin-left -170px
 				
+			// ensure adjustments made here are also made to print styles
 			@media only screen and (min-width: 820px)
 				height 40px
 				margin-top -29px
-				margin-left -222px /* offset li margin */
+				margin-left -207px /* offset li margin */
 				padding-top 1px
 				width 134px
+
+.principles
+	font-size 16px
+	line-height 24px
+	padding-top HalfLineHeight
+	
+	.principle
+		margin-bottom HalfLineHeight
+	
+	h2, p
+		font-size 16px
+		line-height 24px
+		margin-top 0
+		margin-bottom HalfLineHeight
+		
+	h2
+		display inline
+	
+	p
+		display inline
+		
+	.overarching
+		margin-top OneLineHeight
+		text-align center
+
+
+// hide content that's just there for print
+.print-triangle
+	display none
+
+.print-url
+	display none
