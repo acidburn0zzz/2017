@@ -1,0 +1,493 @@
+.main
+	margin-top TwoLineHeights
+	
+	@media only screen and (min-width 600px)
+		padding-left 0
+		padding-right 0
+		
+	// make up for lack of padding on main
+		
+	.manifesto-footers
+		padding-left HalfLineHeight
+		padding-right HalfLineHeight
+
+		@media only screen and (min-width 600px)
+			margin 0 auto
+			max-width 700px
+			padding-left OneAndAHalfLineHeights
+			padding-right OneAndAHalfLineHeights
+
+	.long-title
+		font-family 'Avenir Next', Helvetica, sans-serif
+		margin-bottom OneLineHeight
+		
+		@media only screen and (min-width: 820px)
+			line-height ThreeLineHeights
+	
+	.subheading, .lead-in
+		margin-top OneLineHeight
+		text-align center
+		
+	.subheading
+		font-family "Avenir Next Ultra Light", 'Avenir Next', Helvetica, sans-serif
+		font-weight normal
+		font-size 36px
+		line-height OneAndAHalfLineHeights
+		
+		@media only screen and (min-width: 820px)
+			font-size 42px
+			line-height OneAndAHalfLineHeights
+	
+	.lead-in
+		font-weight bold
+		margin-top OneAndAHalfLineHeights
+		margin-bottom OneAndAHalfLineHeights
+		
+.poster
+	@media only screen and (min-width 600px)
+		-webkit-box-shadow 0 0 3px 0 black-forty
+		box-shadow 0 0 3px 0 black-forty
+		padding-top QuarterLineHeight
+		padding-left OneLineHeight
+		padding-right OneLineHeight
+		padding-bottom OneLineHeight
+	
+
+.three-rs
+	margin-right auto
+	margin-left auto
+	overflow visible
+	
+	// width needs defining so it centres with auto left and right margins
+	@media only screen and (min-width: 350px)
+		width 320px
+		
+	@media only screen and (min-width: 580px)
+		width 580px
+	@media only screen and (min-width: 650px)
+		width 620px
+		
+	@media only screen and (min-width: 680px)
+		width 650px
+	
+	.three-rs-list
+		background-image url('../images/triangle.svg')
+		background-repeat no-repeat
+		background-position 0 0
+		margin-left -14px
+		padding-top 270px
+		position relative
+		width 320px
+		
+		@media only screen and (min-width: 580px)
+			height 240px
+			padding-top 20px
+		
+		.no-svg
+			background-image url('../images/triangle.png')
+		
+		@media only screen and (min-width: 340px)
+			margin-left 0
+	
+		@media only screen and (min-width: 820px)
+			background-size 410px auto
+			height 315px
+			width 410px
+
+		li // show the ordered list numbers
+			font-size 15px // make the numbers not too big
+			margin-top 0
+			margin-bottom 0
+			margin-left 33px
+			
+			@media only screen and (min-width: 340px)
+				margin-left 70px
+			
+			@media only screen and (min-width: 580px)
+				// when it's wider, reorder the list items to reverse order (base to top)
+				margin-left 300px
+				padding-top 30px
+				position absolute
+			
+			// ensure adjustments made here are also made to print styles
+			@media only screen and (min-width: 650px)
+				padding-top 20px
+				
+				:before // on wider views, add the pointers
+					background url('../images/pointer.svg') 0 0 no-repeat
+					content ''
+					display block
+					top 35px
+					height 14px // height of image is 14px, show this much of it
+					width 40px // width of image is 110px, show this much of it
+					position absolute
+					left -70px
+					
+					.no-svg &
+						background-image url('../images/pointer.png')
+						
+			&.three // offset by diagonal
+				@media only screen and (min-width: 580px)
+					height 85px
+					top 0
+					margin-left 230px
+				
+				@media only screen and (min-width: 650px)
+					margin-left 280px
+				
+				// ensure adjustments made here are also made to print styles
+				@media only screen and (min-width: 820px)
+					margin-top 30px
+					margin-left 345px
+					
+			&.two // offset by diagonal
+				@media only screen and (min-width: 580px)
+					height 81px
+					top 86px
+					margin-left 283px
+				
+				@media only screen and (min-width: 650px)
+					margin-left 333px
+				
+
+				@media only screen and (min-width: 820px)
+					margin-top 40px
+					margin-left 407px
+			
+			&.one
+				@media only screen and (min-width: 580px)
+					height 86px
+					top 172px
+					margin-left 335px
+				
+				@media only screen and (min-width: 650px)
+					margin-left 385px
+				
+
+				@media only screen and (min-width: 820px)
+					margin-top 53px
+					margin-left 465px
+			
+		h3
+			font-size 18px
+			line-height OneLineHeight
+			margin-top HalfLineHeight
+			margin-bottom HalfLineHeight
+			
+			@media only screen and (min-width: 580px)
+				font-size 17px
+				height 50px
+				margin-top 0
+				margin-left 3px
+				margin-bottom 0
+				width 230px
+				
+			.one &
+				@media only screen and (min-width: 580px)
+					width 190px // so it doesn't escape the left of the viewport on middle-width views
+			
+		p
+			font-size 15px
+			line-height 19px
+			margin-top 0
+			margin-bottom 0
+			margin-left -18px // offset the list numbers
+			position absolute
+			text-align center
+			
+			@media only screen and (min-width: 340px)
+				margin-left -30px
+				
+			@media only screen and (min-width: 580px)
+				line-height 20px
+				margin-top -30px // offset li padding
+				position relative
+			
+			@media only screen and (min-width: 650px)
+				margin-top -20px // no need to offset li padding
+			
+			@media only screen and (min-width: 820px)
+				font-size 18px
+				line-height 24px
+		
+			&:before
+				display block
+				font-weight bold
+				
+				// ensure adjustments made here are also made to print styles
+				@media only screen and (min-width: 580px)
+					display none
+					height 0
+			
+			&.base-tier:before
+				content '1' // show the corresponding number to the Respect title
+				
+				// ensure adjustments made here are also made to print styles
+				@media only screen and (min-width: 580px)
+					content '' // don't show the number as the title is lined up alongside
+			
+			&.middle-tier:before
+				content '2' // show the corresponding number to the Respect title
+				
+				// ensure adjustments made here are also made to print styles
+				@media only screen and (min-width: 580px)
+					content '' // don't show the number as the title is lined up alongside
+				
+			&.top-tier:before
+				content '3' // show the corresponding number to the Respect title
+				
+				// ensure adjustments made here are also made to print styles
+				@media only screen and (min-width: 580px)
+					content '' // don't show the number as the title is lined up alongside
+				
+		.base-tier // one
+			color black-five
+			height 84px
+			margin-left 3px // -18px offset the list numbers
+			margin-right 21px
+			padding-top 2px
+			top 172px
+			width 250px
+			
+			@media only screen and (min-width: 340px)
+				margin-left -34px
+			
+			@media only screen and (min-width: 580px)
+				// when it's wider, let the triangle text follow the order of the list items
+				height 74px
+				margin-top -68px
+				margin-left -295px
+				margin-right 0
+				padding-top 0
+				top auto
+			
+			@media only screen and (min-width: 650px)
+				margin-left -345px
+				padding-top 10px
+			
+			// ensure adjustments made here are also made to print styles
+			@media only screen and (min-width: 820px)
+				height 80px
+				margin-left -408px
+				width 300px
+				
+			
+		.middle-tier // two
+			top 86px
+			color black-ninety
+			height 69px
+			margin-left 27px // -18px offset the list numbers
+			margin-right 45px
+			padding-top 11px
+			width 200px
+			
+			@media only screen and (min-width: 340px)
+				margin-left -10px
+				
+			@media only screen and (min-width: 580px)
+				// when it's wider, let the triangle text follow the order of the list items
+				height 59px
+				margin-top -59px
+				margin-left -223px
+				margin-right 0
+				padding-top 0
+				top auto
+			
+			@media only screen and (min-width: 650px)
+				margin-left -273px
+				padding-top 10px
+				
+			// ensure adjustments made here are also made to print styles
+			@media only screen and (min-width: 820px)
+				height 74px
+				margin-left -332px // offset li margin
+				padding-top 3px
+				width 260px
+			
+		.top-tier // three
+			top 0
+			color black-seventy
+			height 51px
+			margin-left 77px // -18px offset the list numbers
+			margin-right 95px
+			padding-top 35px
+			width 100px
+			
+			@media only screen and (min-width: 340px)
+				margin-left 40px
+				
+			@media only screen and (min-width: 580px)
+				// when it's wider, let the triangle text follow the order of the list items
+				height 30px
+				margin-left -120px
+				margin-right 0
+				padding-top 7px
+				top auto
+			
+			@media only screen and (min-width: 650px)
+				margin-left -170px
+				
+			// ensure adjustments made here are also made to print styles
+			@media only screen and (min-width: 820px)
+				height 40px
+				margin-top -29px
+				margin-left -207px // offset li margin
+				padding-top 1px
+				width 134px
+
+.principles
+	font-size 16px
+	line-height 24px
+	padding-top HalfLineHeight
+	
+	.principle
+		margin-bottom HalfLineHeight
+	
+	h2, p
+		font-size 16px
+		line-height 24px
+		margin-top 0
+		margin-bottom HalfLineHeight
+		
+	h2
+		display inline
+	
+	p
+		display inline
+		
+	.overarching
+		margin-top OneLineHeight
+		text-align center
+
+
+// hide content that's just there for print
+.print-triangle
+	display none
+
+.print-url
+	display none
+	
+// share buttons
+
+.share	
+	h2, h3
+		text-align center
+		
+	h2
+		@media only screen and (min-width: 580px)
+			margin-bottom 0
+	
+	h3
+		@media only screen and (min-width: 580px)
+			margin-top OneLineHeight
+			
+	p
+		text-align center
+
+code
+	background black-five
+	display block
+	unicode-bidi embed
+	font-family monospace
+	font-size 14px
+	line-height ThreeQuartersLineHeight
+	text-align left
+	margin HalfLineHeight
+	white-space pre-wrap
+	font-family monospace
+	overflow auto
+	padding 5px
+	
+
+	@media only screen and (min-width: 820px)
+		border-radius 5px
+		padding 10px 20px
+	
+.badges
+	.flexbox &
+		@media only screen and (min-width: 650px)
+			display -ms-flexbox
+			display -webkit-flex
+			display flex
+			-webkit-flex-direction row
+			-ms-flex-direction row
+			flex-direction row
+			-webkit-flex-wrap wrap
+			-ms-flex-wrap wrap
+			flex-wrap wrap
+			-webkit-justify-content center
+			-ms-flex-pack center
+			justify-content center
+			-webkit-align-content stretch
+			-ms-flex-line-pack stretch
+			align-content stretch
+			-webkit-align-items stretch
+			-ms-flex-align stretch
+			align-items stretch
+		
+		.badge
+			@media only screen and (min-width: 650px)
+				width 40%
+	
+.badge
+	border 1px dashed black-twenty
+	margin-bottom HalfLineHeight
+	margin-right auto
+	margin-left auto
+	max-width 400px
+	
+	.example
+		background none
+		margin 0
+		padding 0
+		width 100%
+		
+		.flexbox &
+			@media only screen and (min-width: 650px)
+				-webkit-align-self center
+				-ms-flex-item-align center
+				align-self center
+	
+	.flexbox &
+		@media only screen and (min-width: 650px)
+			-webkit-flex 1 0 auto
+			-ms-flex 1 0 auto
+			flex 1 0 auto
+			display -ms-flexbox
+			display -webkit-flex
+			display flex
+			-webkit-flex-direction row
+			-ms-flex-direction row
+			flex-direction row
+			-webkit-flex-wrap wrap
+			-ms-flex-wrap wrap
+			flex-wrap wrap
+			-webkit-justify-content center
+			-ms-flex-pack center
+			justify-content center
+			-webkit-align-content stretch
+			-ms-flex-line-pack stretch
+			align-content stretch
+			-webkit-align-items flex-start
+			-ms-flex-align start
+			align-items flex-start
+			
+			&:nth-of-type(1)
+				margin-right HalfLineHeight
+	
+	button
+		font-size 16px !important
+		display block
+		height 30px
+		line-height 30px
+		margin-right auto
+		margin-left auto
+		margin-top 0
+		margin-bottom HalfLineHeight
+		padding-left HalfLineHeight
+		padding-right HalfLineHeight
+		
+		.flexbox &
+			-webkit-align-self flex-end
+			-ms-flex-item-align end
+			align-self flex-end

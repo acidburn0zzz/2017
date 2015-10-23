@@ -1,0 +1,62 @@
+// *** print styles
+
+// force keep background images and colours
+*
+	-webkit-print-color-adjust exact
+	print-color-adjust exact
+	
+// set page margins (not widely supported)
+@page
+	margin-top 0.1cm !important
+	margin-bottom 0.1cm !important
+	margin-left 0.5cm !important
+	margin-right 0.5cm !important
+
+// hide all these page elements
+.site-header, .manifesto-footers
+	// manifesto-footers is there as it seems asides aren't recognised in print styles :-/
+	display none
+	
+// get rid of gap at the top of the page
+.long-title
+	font-size 73px
+	margin-top 0 !important
+	margin-bottom 10px !important
+	line-height 75px !important
+	
+h2.subheading
+	line-height 45px
+	margin-top 0 !important
+	margin-bottom 20px !important
+
+p.lead-in
+	line-height 36px !important
+	margin-top 0 !important
+	margin-bottom 10px !important
+ 
+.lead-in
+	margin-bottom 0 !important
+	
+// hide most of the poster styles
+.poster
+	box-shadow none
+	padding-top 0
+	padding-bottom 0
+	
+
+// reveal image version of triangle, hide html version
+.print-triangle
+	display block
+	height 65%
+	margin-left auto
+	margin-right auto
+	width 65%
+	
+.three-rs
+	display none
+	
+.print-url
+	color black-seventy
+	display block
+	font-weight bold
+	text-align center
