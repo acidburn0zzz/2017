@@ -56,13 +56,18 @@
 .three-rs
 	margin-right auto
 	margin-left auto
-	width 320px
+	overflow visible
 	
+	// width needs defining so it centres with auto left and right margins
+	@media only screen and (min-width: 350px)
+		width 320px
+		
 	@media only screen and (min-width: 580px)
 		width 580px
-	
-	// ensure adjustments made here are also made to print styles	
 	@media only screen and (min-width: 650px)
+		width 620px
+		
+	@media only screen and (min-width: 680px)
 		width 650px
 	
 	.three-rs-list
@@ -83,8 +88,7 @@
 		
 		@media only screen and (min-width: 340px)
 			margin-left 0
-		
-		// ensure adjustments made here are also made to print styles	
+	
 		@media only screen and (min-width: 820px)
 			background-size 410px auto
 			height 315px
@@ -99,7 +103,6 @@
 			@media only screen and (min-width: 340px)
 				margin-left 70px
 			
-			// ensure adjustments made here are also made to print styles	
 			@media only screen and (min-width: 580px)
 				// when it's wider, reorder the list items to reverse order (base to top)
 				margin-left 300px
@@ -146,7 +149,7 @@
 				@media only screen and (min-width: 650px)
 					margin-left 333px
 				
-				// ensure adjustments made here are also made to print styles	
+
 				@media only screen and (min-width: 820px)
 					margin-top 40px
 					margin-left 407px
@@ -160,7 +163,7 @@
 				@media only screen and (min-width: 650px)
 					margin-left 385px
 				
-				// ensure adjustments made here are also made to print styles	
+
 				@media only screen and (min-width: 820px)
 					margin-top 53px
 					margin-left 465px
@@ -203,7 +206,6 @@
 			@media only screen and (min-width: 650px)
 				margin-top -20px // no need to offset li padding
 			
-			// ensure adjustments made here are also made to print styles	
 			@media only screen and (min-width: 820px)
 				font-size 18px
 				line-height 24px
@@ -434,8 +436,6 @@ code
 		background none
 		margin 0
 		padding 0
-		padding-left 20px
-		padding-right 20px
 		width 100%
 	
 	.flexbox &
