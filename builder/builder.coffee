@@ -799,7 +799,7 @@ deploy = ->
 
 							rsync = new Rsync()
 								.shell("ssh" + sshPublicKeyPath)
-								.flags('v', 'r', 'c', 'progress', 'delete', 'chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r')
+								.flags('rsync-path="sudo /usr/bin/rsync"', 'v', 'r', 'c', 'progress', 'delete', 'chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r')
 								# .exclude(['.*/'])
 								.source(process.cwd() + '/public/')
 								.destination("#{user}static.ind.ie:/var/www/")
