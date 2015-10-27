@@ -835,7 +835,7 @@ deploy = ->
 
 deployAsync = ->
 	rsync = new Rsync()
-		.flags('vaz', 'delete')
+		.flags('v','a','z', 'delete')
 		# .exclude(['.*/'])
 		.source(process.cwd() + '/build/')
 		.destination(process.cwd() + '/public/')
