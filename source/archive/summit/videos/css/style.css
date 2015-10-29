@@ -2672,3 +2672,19 @@ h2.signup--title,
     margin-top: 0;
   }
 }
+
+/* stop slot machine hover */
+.px-video-container button,
+.px-video-container input[type="submit"],
+.px-video-container input[type="button"],
+.px-video-container input[type="reset"] {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  -webkit-transition: all none ease;
+  -moz-transition: all none ease;
+  -ms-transition: all none ease;
+  -o-transition: all none ease;
+  transition: all none ease;
+}
