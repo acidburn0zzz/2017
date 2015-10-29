@@ -2099,16 +2099,14 @@ h2.signup--title,
   background: #4d4d4d;
 }
 .sr-only {
-  position: absolute;
+  position: absolute !important;
   clip: rect(1px, 1px, 1px, 1px);
-  padding: 0  1px 1px;
-/* Make sure that the rule is written out only once in case there is no rem substitution */
-  padding: 0;
-  border: 0;
-  height: 1px;
-  height: 0.0625rem;
-  width: 1px;
-  width: 0.0625rem;
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  height: 0.0625rem !important;
+  width: 1px !important;
+  width: 0.0625rem !important;
   overflow: hidden;
 }
 .hide {
@@ -2118,19 +2116,19 @@ h2.signup--title,
   display: inline-block;
 }
 .px-video-container {
-  overflow: hidden;
-  min-width: 300px;
+  overflow: hidden /* ensure height of video doesn't overlap elements below */;
+  min-width: 300px /* so video controls don't fall in on themselves in narrow browsers */;
 }
 .px-video-img-captions-container {
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 56.25% /* 16:9 */;
   height: 0;
 }
 .px-video {
   position: absolute;
   top: 0;
-  margin-top: 0;
   left: 0;
+  margin-top: 0;
   width: 100%;
   height: 100%;
 }
@@ -2142,7 +2140,7 @@ h2.signup--title,
 }
 .px-video-wrapper {
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 56.25% /* 16:9 */;
   height: 0;
   z-index: 1;
 }
@@ -2158,12 +2156,7 @@ h2.signup--title,
 }
 @media only screen and (min-width: 480px) {
   .progress-bar {
-    width: 90%;
-  }
-}
-@media only screen and (min-width: 480px) {
-  .progress-bar {
-    width: 92.5%;
+    width: 89%;
   }
 }
 @media only screen and (min-width: 970px) {
@@ -2177,10 +2170,10 @@ h2.signup--title,
   }
 }
 .px-video-controls {
-  margin-bottom: 10px;
-  margin-bottom: 0.625rem;
-  margin-top: 10px;
-  margin-top: 0.625rem;
+  margin-bottom: 10px /* a little space below the player */;
+  margin-bottom: 0.625rem /* a little space below the player */;
+  margin-top: 10px /* put some spacing between video and controls to stop mis-tapping/clicking */;
+  margin-top: 0.625rem /* put some spacing between video and controls to stop mis-tapping/clicking */;
 }
 .px-video-controls:after {
   display: block;
@@ -2214,20 +2207,18 @@ h2.signup--title,
   float: right;
   line-height: 30px;
   line-height: 1.875rem;
-  margin-top: -30px;
-  margin-top: -1.875rem;
+  margin-top: -30px /* bring time up alongside progress timeline */;
+  margin-top: -1.875rem /* bring time up alongside progress timeline */;
   font-size: 14px;
   font-size: 0.875rem;
 }
 .px-video-captions {
   box-sizing: border-box;
   position: absolute;
-  top: 1px;
-  top: 0.0625rem;
+  top: 1px /* stop captions background showing above image */;
+  top: 0.0625rem /* stop captions background showing above image */;
   left: 0;
   width: 100%;
-  padding: 0.5em  1px 1px;
-/* Make sure that the rule is written out only once in case there is no rem substitution */
   padding: 0.5em;
   min-height: 2.5em;
   background-color: #000;
@@ -2241,29 +2232,26 @@ h2.signup--title,
   float: left;
   line-height: 20px;
   line-height: 1.25rem;
-  min-width: 145px;
+  min-width: 145px /* accommodate width of buttons */;
 }
 @media only screen and (min-width: 620px) {
   .px-video-playback-buttons {
     float: none;
     left: 50%;
-    margin-left: -120px;
-    margin-left: -7.5rem;
+    margin-left: -120px /* half width of button container + width of repeat button, so play button is central */;
+    margin-left: -7.5rem /* half width of button container + width of repeat button, so play button is central */;
     min-width: 200px;
     position: absolute;
-    width: 200px;
-    width: 12.5rem;
+    width: 200px /* accommodate width of new, wider buttons */;
+    width: 12.5rem /* accommodate width of new, wider buttons */;
   }
 }
 .px-video-controls button {
   border: 1px transparent solid;
   border: 0.0625rem transparent solid;
   background: transparent;
-  padding: 0  1px 1px;
-/* Make sure that the rule is written out only once in case there is no rem substitution */
   padding: 0;
-  margin: 0 5px 1px 1px;
-/* Make sure that the rule is written out only once in case there is no rem substitution */
+  margin: 0 5px;
   margin: 0 0.3125rem;
   width: 25px;
   width: 1.5625rem;
@@ -2271,11 +2259,9 @@ h2.signup--title,
   height: 1.5625rem;
   overflow: hidden;
   background: no-repeat url("/assets/images/px-video-sprite.svg");
-  transition-property: none;
 }
 @media only screen and (min-width: 620px) {
   .px-video-controls button {
-    background-size: 150%  1px 1px;
     background-size: 150%;
     width: 40px;
     width: 2.5rem;
@@ -2398,8 +2384,8 @@ h2.signup--title,
 }
 @media only screen and (min-width: 540px) {
   .px-video-fullscreen-btn-container label {
-    margin-top: 5px;
-    margin-top: 0.3125rem;
+    margin-top: 5px /* line up with big buttons */;
+    margin-top: 0.3125rem /* line up with big buttons */;
   }
 }
 .no-svg .px-video-fullscreen-btn-container {
@@ -2430,10 +2416,10 @@ h2.signup--title,
 @media only screen and (min-width: 540px) {
   .px-video-captions-btn-container {
     clear: none;
-    margin-top: 1px;
-    margin-top: 0.0625rem;
-    margin-left: 10px;
-    margin-left: 0.625rem;
+    margin-top: 1px /* line up with buttons */;
+    margin-top: 0.0625rem /* line up with buttons */;
+    margin-left: 10px /* space between volume slider and captions button */;
+    margin-left: 0.625rem /* space between volume slider and captions button */;
   }
 }
 .px-video-captions-btn-container label {
@@ -2442,15 +2428,15 @@ h2.signup--title,
   width: 1.5625rem;
   height: 20px;
   height: 1.25rem;
-  margin-top: 3px;
-  margin-top: 0.1875rem;
+  margin-top: 3px /* line up with big buttons */;
+  margin-top: 0.1875rem /* line up with big buttons */;
   background: no-repeat url("/assets/images/px-video-sprite.svg");
   background-position: -6px -835px;
 }
 @media only screen and (min-width: 540px) {
   .px-video-captions-btn-container label {
-    margin-top: 4px;
-    margin-top: 0.25rem;
+    margin-top: 4px /* line up with big buttons */;
+    margin-top: 0.25rem /* line up with big buttons */;
   }
 }
 .no-svg .px-video-captions-btn-container label {
@@ -2475,7 +2461,7 @@ h2.signup--title,
 .px-video-volume-controls {
   float: right;
   overflow: hidden;
-  min-width: 133px;
+  min-width: 133px /* width of mute button and width of volume slider */;
 }
 @media only screen and (min-width: 540px) {
   .px-video-volume-controls {
@@ -2485,8 +2471,8 @@ h2.signup--title,
 }
 .px-video-mute-btn-container {
   float: left;
-  width: 26px;
-  width: 1.625rem;
+  width: 26px /* width of mute button */;
+  width: 1.625rem /* width of mute button */;
 }
 .px-video-mute-btn-container label {
   display: inline-block;
@@ -2494,15 +2480,15 @@ h2.signup--title,
   width: 1.5625rem;
   height: 20px;
   height: 1.25rem;
-  margin-top: 3px;
-  margin-top: 0.1875rem;
+  margin-top: 3px /* line up with big buttons */;
+  margin-top: 0.1875rem /* line up with big buttons */;
   background: no-repeat url("/assets/images/px-video-sprite.svg");
   background-position: -6px -476px;
 }
 @media only screen and (min-width: 540px) {
   .px-video-mute-btn-container label {
-    margin-top: 6px;
-    margin-top: 0.375rem;
+    margin-top: 6px /* line up with big buttons */;
+    margin-top: 0.375rem /* line up with big buttons */;
   }
 }
 .no-svg .px-video-mute-btn-container label {
@@ -2530,20 +2516,20 @@ h2.signup--title,
 }
 .px-video-volume-slider {
   float: left;
-  width: 80px;
-  width: 5rem;
+  width: 80px /* width of volume slider */;
+  width: 5rem /* width of volume slider */;
 }
 @media only screen and (min-width: 540px) {
   .px-video-volume-slider {
-    width: 95px;
-    width: 5.9375rem;
+    width: 95px /* width of volume slider */;
+    width: 5.9375rem /* width of volume slider */;
   }
 }
-.px-video-controls .controls {
+.px-video-controls {
   position: relative;
 /* fixing display for IE10+ */
 }
-.px-video-controls .controls input[type='range'] {
+.px-video-controls input[type='range'] {
   -webkit-appearance: none;
   height: 6px;
   height: 0.375rem;
@@ -2558,32 +2544,32 @@ h2.signup--title,
   outline: none;
 }
 @media only screen and (min-width: 540px) {
-  .px-video-controls .controls input[type='range'] {
+  .px-video-controls input[type='range'] {
     margin-top: 12px;
     margin-top: 0.75rem;
     width: 85px;
     width: 5.3125rem;
   }
 }
-.px-video-controls .controls input[type='range']:focus::-webkit-slider-thumb {
+.px-video-controls input[type='range']:focus::-webkit-slider-thumb {
   outline: 1px #999 dotted;
 }
-.px-video-controls .controls input[type='range']::-moz-range-track {
+.px-video-controls input[type='range']::-moz-range-track {
   -moz-appearance: none;
   height: 6px;
   height: 0.375rem;
   background-color: #e6e6e6;
   border: none;
 }
-.px-video-controls .controls input[type='range']::-webkit-slider-thumb {
-  -webkit-appearance: none;
+.px-video-controls input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
   height: 10px;
   height: 0.625rem;
   width: 6px;
   width: 0.375rem;
   background-color: #666;
 }
-.px-video-controls .controls input[type='range']::-moz-range-thumb {
+.px-video-controls input[type='range']::-moz-range-thumb {
   background-color: #666;
   border: none;
   height: 12px;
@@ -2592,47 +2578,97 @@ h2.signup--title,
   width: 0.5rem;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .px-video-controls .controls input[type='range'] {
+  .px-video-controls input[type='range'] {
     position: relative;
-    padding: 0  1px 1px;
-/* Make sure that the rule is written out only once in case there is no rem substitution */
     padding: 0;
     height: 8px;
     height: 0.5rem;
     top: -3px;
     top: -0.1875rem;
   }
-  .px-video-controls .controls .px-video-time {
+  .px-video-controls .px-video-time {
     margin-top: 4px;
     margin-top: 0.25rem;
   }
-  .px-video-controls .controls .px-video-captions {
-    padding: 8px  1px 1px;
-/* Make sure that the rule is written out only once in case there is no rem substitution */
+  .px-video-controls .px-video-captions {
+    padding: 8px;
     padding: 0.5rem;
     min-height: 36px;
   }
 }
-.progress-bar {
-  width: 85%;
+.flexbox.flexwrap .px-video-controls {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+.flexbox.flexwrap .progress-bar {
+  flex-grow: 1;
+  width: 75%;
 }
 @media only screen and (min-width: 480px) {
-  .progress-bar {
-    width: 90%;
+  .flexbox.flexwrap .progress-bar {
+    width: 75%;
   }
 }
-@media only screen and (min-width: 480px) {
-  .progress-bar {
-    width: 90%;
+@media only screen and (min-width: 590px) {
+  .flexbox.flexwrap .progress-bar {
+    width: 85%;
   }
 }
 @media only screen and (min-width: 970px) {
-  .progress-bar {
-    width: 94%;
+  .flexbox.flexwrap .progress-bar {
+    width: 85%;
   }
 }
 @media only screen and (min-width: 1795px) {
-  .progress-bar {
-    width: 94%;
+  .flexbox.flexwrap .progress-bar {
+    width: 85%;
+  }
+}
+.flexbox.flexwrap .px-video-progress {
+  margin-top: 10px;
+  margin-top: 0.625rem;
+  width: 100%;
+}
+.flexbox.flexwrap .px-video-time {
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding-left: 10px;
+  padding-left: 0.625rem;
+  margin-top: 0;
+}
+.flexbox.flexwrap .px-video-playback-buttons {
+  flex-grow: 1;
+  min-width: auto;
+}
+@media only screen and (min-width: 620px) {
+  .flexbox.flexwrap .px-video-playback-buttons {
+    left: auto;
+    margin-left: auto;
+    min-width: auto;
+    position: relative;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding-left: 180px;
+    padding-left: 11.25rem;
+  }
+}
+.flexbox.flexwrap .px-video-controls button {
+  margin: 0;
+}
+.flexbox.flexwrap .px-video-volume-controls {
+  min-width: auto;
+}
+@media only screen and (min-width: 540px) {
+  .flexbox.flexwrap .px-video-volume-controls {
+    margin-top: 0;
   }
 }
