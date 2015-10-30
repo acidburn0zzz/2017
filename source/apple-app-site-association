@@ -4,7 +4,7 @@
 		"details": [
 			{
 				"appID": "5Q42VF5GXA.ind.ie.Blockdown-iOS",
-				"paths":[ "/blockdown/is-active", "/blockdown/is-not-active" ]
+				"paths":[ "*" ]
 			}
 		]
 	}
