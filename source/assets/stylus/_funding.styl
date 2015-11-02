@@ -3,9 +3,19 @@
 	border-bottom 1px solid black-twenty
 	margin-top TwoLineHeights
 	overflow hidden
+	padding HalfLineHeight
+	padding-top 0
 	
 	@media only screen and (min-width: 580px)
 		margin-top FiveLineHeights
+	
+	@media only screen and (min-width 600px)
+		margin-right auto
+		margin-left auto
+		max-width 700px
+		padding-right OneAndAHalfLineHeights
+		padding-left OneAndAHalfLineHeights
+		padding-top 0
 	
 	.flexbox &
 		display -ms-flexbox
