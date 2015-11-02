@@ -14,31 +14,18 @@
 			padding-right OneAndAHalfLineHeights
 			padding-left OneAndAHalfLineHeights
 			padding-top 0
-	
-	.footer-base
-		border-top 1px solid black-twenty
+		
+	.copyright
+		display block
+		font-size 14px
 		margin-top OneAndAHalfLineHeights
 		padding-top HalfLineHeight
+		padding-bottom HalfLineHeight
+		text-align center
 		
 		@media only screen and (min-width 600px)
 			margin-top OneLineHeight
 			padding-top 0
-			
-		p
-			@media only screen and (min-width 600px)
-				margin-top -30px // bring in line with logo
-				margin-bottom 0
-		
-	.copyright
-		border-top 1px solid black-twenty
-		display block
-		margin-top OneLineHeight
-		padding-top HalfLineHeight
-		padding-bottom HalfLineHeight
-		text-align justify
-		
-		@media only screen and (min-width 600px)
-			border-top none
 		
 		a
 			color black-sixty
@@ -63,41 +50,3 @@
 	
 	p
 		text-align center
-
-.site-name
-	margin-top HalfLineHeight
-	margin-bottom HalfLineHeight
-	width 100%
-	
-	@media only screen and (min-width: 600px)
-		float left
-		margin-top 0
-		margin-bottom 0
-		margin-right QuarterLineHeight
-		width auto
-		
-	a
-		background url('/assets/images/indie-balloon-logo-footer.svg') no-repeat center center
-		border-bottom none
-		display block
-		height 0
-		margin-right auto
-		margin-left auto
-		margin-bottom 0
-		overflow hidden
-		padding-top 106px // height of logo
-		padding-left 100% // ensure width of logo doesn't overflow width of container
-		width 0
-
-		.no-svg &
-			background-image url('/assets/images/indie-balloon-logo-footer.png')
-
-		@media only screen and (min-width: 385px)
-			background-size 185px 106px // width and height of logo
-			padding-left 185px // width of logo
-			
-		@media only screen and (min-width: 600px)
-			background-size 95px 55px // width and height of logo
-			margin-top -4px // bring over border line (image has mask)
-			padding-left 95px // width of logo
-			padding-top 55px // height of logo
