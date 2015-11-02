@@ -2,6 +2,7 @@
 	background black-ten
 	clear both
 	margin-top TwoLineHeights
+	padding-top HalfLineHeight
 
 	.footer-wrap
 		padding HalfLineHeight
@@ -14,13 +15,30 @@
 			padding-left OneAndAHalfLineHeights
 			padding-top 0
 	
-	.copyright
+	.footer-base
 		border-top 1px solid black-twenty
-		clear both
-		display block
 		margin-top OneAndAHalfLineHeights
 		padding-top HalfLineHeight
+		
+		@media only screen and (min-width 600px)
+			margin-top OneLineHeight
+			padding-top 0
+			
+		p
+			@media only screen and (min-width 600px)
+				margin-top -30px // bring in line with logo
+				margin-bottom 0
+		
+	.copyright
+		border-top 1px solid black-twenty
+		display block
+		margin-top OneLineHeight
+		padding-top HalfLineHeight
+		padding-bottom HalfLineHeight
 		text-align justify
+		
+		@media only screen and (min-width 600px)
+			border-top none
 		
 		a
 			color black-sixty
@@ -28,40 +46,15 @@
 		abbr
 			border none
 
-	.view-source-wrap
-		border-top 1px solid black-twenty
-		margin-top 15px
-		margin-bottom 30px
-		padding 30px 20px
-
-	.view-source
-		background black-sixty
-		border none
-		border-box()
-		border-radius 5px
-		color white
-		display block
-		font-size 18px
-		line-height OneAndAHalfLineHeights
-		margin HalfLineHeight auto HalfLineHeight auto
-		padding 0 ThreeQuartersLineHeight
-		text-align center
-		text-decoration none
-		transition(.3s)
-		width 150px
-
-		&:hover, &:active, &:focus
-			background black-eighty
+		.view-source
+			color black-eighty
+			
 
 .ethical-design-badge
 	display block
 	width 250px
 	margin-left auto
 	margin-right auto
-	
-	@media only screen and (min-width: 600px)
-		float left
-		width 60%
 	
 	img
 		margin-left auto
@@ -78,12 +71,13 @@
 	
 	@media only screen and (min-width: 600px)
 		float left
-		margin-top OneLineHeight
-		margin-bottom OneLineHeight
-		width 60%
-
+		margin-top 0
+		margin-bottom 0
+		margin-right QuarterLineHeight
+		width auto
+		
 	a
-		background url('/assets/images/indie-balloon-logo.svg') no-repeat center center
+		background url('/assets/images/indie-balloon-logo-footer.svg') no-repeat center center
 		border-bottom none
 		display block
 		height 0
@@ -91,13 +85,19 @@
 		margin-left auto
 		margin-bottom 0
 		overflow hidden
-		padding-top 130px /* height of logo */
-		padding-left 100% /* ensure width of logo doesn't overflow width of container */
+		padding-top 106px // height of logo
+		padding-left 100% // ensure width of logo doesn't overflow width of container
 		width 0
 
 		.no-svg &
-			background-image url('/assets/images/indie-balloon-logo.png')
+			background-image url('/assets/images/indie-balloon-logo-footer.png')
 
 		@media only screen and (min-width: 385px)
-			background-size 300px 130px /* width and height of logo */
-			padding-left 300px /* width of logo */
+			background-size 185px 106px // width and height of logo
+			padding-left 185px // width of logo
+			
+		@media only screen and (min-width: 600px)
+			background-size 95px 55px // width and height of logo
+			margin-top -4px // bring over border line (image has mask)
+			padding-left 95px // width of logo
+			padding-top 55px // height of logo
