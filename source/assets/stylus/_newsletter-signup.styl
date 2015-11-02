@@ -18,66 +18,6 @@
 		margin 0 auto
 		max-width 150px
 
-.email-subscribe-quick
-	background black-ten
-	border-top none
-	border-radius 5px
-	margin-top 30px
-	margin-left -14px /* - HalfLineHeight */ // Pulls box out into margin, so it's full width of viewport (HalfLineHeight is width of page padding)
-	margin-right -14px /* - HalfLineHeight */
-	padding 10px 20px 20px 10px
-
-	@media only screen and (min-width: 700px)
-		margin-left 0
-		margin-right 0
-		padding 10px 20px
-
-		ul
-			display -webkit-flex
-			display flex
-			-webkit-flex-flow row nowrap
-			flex-flow row nowrap
-			-webkit-justify-content center
-			justify-content center
-			-webkit-align-items flex-start
-			-ms-flex-align start
-			align-items flex-start
-			margin 0
-
-			.name-field, .email-field
-				-webkit-flex 1 0 210px
-				flex 1 0 210px
-				margin-right 20px
-
-				label
-					line-height OneAndAHalfLineHeights
-
-				input
-					box-sizing border-box
-					margin 0
-
-			.button-field
-				-webkit-flex 1 0 auto
-				flex 1 0 auto
-
-				.button
-					margin 0
-					margin-top OneAndAHalfLineHeights
-					max-width none
-					padding 0 15px
-					width 100%
-
-	@media only screen and (min-width: 820px)
-
-			.button-field
-				-webkit-flex 1 0 auto
-				flex 1 0 auto
-
-	form
-		margin 0
-		max-width none
-		width 100%
-
 .signup--title, h2.signup--title, .thunderclap .signup--title
 	font-size 28px
 	line-height OneAndAHalfLineHeights

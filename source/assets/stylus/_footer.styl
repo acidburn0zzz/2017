@@ -1,13 +1,26 @@
 .site-footer
+	background black-ten
 	clear both
 	margin-top TwoLineHeights
-	text-align justify
+
+	.footer-wrap
+		padding HalfLineHeight
+		
+		@media only screen and (min-width 600px)
+			margin-right auto
+			margin-left auto
+			max-width 700px
+			padding-right OneAndAHalfLineHeights
+			padding-left OneAndAHalfLineHeights
+			padding-top 0
 	
 	.copyright
 		border-top 1px solid black-twenty
+		clear both
 		display block
 		margin-top OneAndAHalfLineHeights
 		padding-top HalfLineHeight
+		text-align justify
 		
 		a
 			color black-sixty
@@ -40,9 +53,34 @@
 		&:hover, &:active, &:focus
 			background black-eighty
 
+.ethical-design-badge
+	display block
+	width 250px
+	margin-left auto
+	margin-right auto
+	
+	@media only screen and (min-width: 600px)
+		float left
+		width 60%
+	
+	img
+		margin-left auto
+		margin-right auto
+		margin-bottom 0
+	
+	p
+		text-align center
+
 .site-name
+	margin-top HalfLineHeight
 	margin-bottom HalfLineHeight
 	width 100%
+	
+	@media only screen and (min-width: 600px)
+		float left
+		margin-top OneLineHeight
+		margin-bottom OneLineHeight
+		width 60%
 
 	a
 		background url('/assets/images/indie-balloon-logo.svg') no-repeat center center
