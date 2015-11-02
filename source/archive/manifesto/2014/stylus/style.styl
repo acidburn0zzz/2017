@@ -1,0 +1,24 @@
+/* This is where we pull in all our stylus partials to compile a full stylesheet */
+
+/* The core must go first, as it has the CSS reset and other base rules */
+
+/* Tell the core where to find its images and fonts */
+$font-path = '../../../../assets/stylus/indie-style-core/fonts/'
+$image-path = '../../../../assets/stylus/indie-style-core/images/'
+
+/* Tell the core where to find itself (absolute path) */
+@import '../../../../assets/stylus/indie-style-core/_core'
+
+/* apparently if you have the path for the first @import, it'll automatically find all the others */
+@import '../../../../assets/stylus/_footer'
+@import '../../../../assets/stylus/_funding'
+@import '../../../../assets/stylus/_layout'
+@import '../../../../assets/stylus/_funding'
+@import '../../../../assets/stylus/_navigation'
+@import '../../../../assets/stylus/_newsletter-signup'
+@import '../../../../assets/stylus/_sub-navigation'
+@import '../../../../assets/stylus/_video'
+@import _declaration
+
+// TODO: _manifesto is not being loaded it although it exists. Is this on purpose?
+
