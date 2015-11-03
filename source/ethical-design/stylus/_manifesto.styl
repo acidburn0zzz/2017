@@ -475,11 +475,11 @@ code
 			&:nth-of-type(1)
 				margin-right HalfLineHeight
 	
-	button
+	button, .button
 		font-size 14px !important
 		display block
 		height 30px
-		line-height 20px
+		line-height 30px
 		margin-right auto
 		margin-left auto
 		margin-top 0
@@ -493,3 +493,16 @@ code
 			-webkit-align-self flex-end
 			-ms-flex-item-align end
 			align-self flex-end
+	
+	&.print, &.pdf
+		background top center no-repeat
+		padding-top 110px // leave enough room for icons (as specified below)
+		
+	&.print
+		background-image url('../images/print.svg')
+	
+	&.pdf
+		background-image url('../images/pdf.svg')
+		
+		.button
+			max-width 135px
