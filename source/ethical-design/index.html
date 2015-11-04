@@ -124,7 +124,8 @@
 
 				<div class='badges'>
 					<div class='badge print'>
-						<button class='print-button' onclick='document.body.offsetHeight;window.print();'>Print page</button>
+						<p class='print-text'>This page is printable.</p>
+						<!--<button class='print-button' onclick='document.body.offsetHeight;window.print();'>Print page</button>-->
 					</div>
 
 					<div class='badge pdf'>
@@ -166,6 +167,39 @@
 				// Give the now-empty pre block a class to help us style it.
 				codeBlock.parentNode.replaceChild(copyToClipboardButton, codeBlock);
 			}
+
+			function replacePrintTextWithPrintButton() {
+				// create an empty element node
+				// without an ID, any attributes, or any content
+				var printButton = document.createElement("button");
+
+				console.log(printButton);
+
+				// give it a class of 'print-button'
+				printButton.setAttribute("class", "print-button");
+
+				// and onclick behaviour of printing page
+				printButton.setAttribute("onclick", "document.body.offsetHeight;window.print();");
+
+				// give the button some text
+				var printButton_text = document.createTextNode("Print page");
+
+				// apply that text to the new element
+				printButton.appendChild(printButton_text);
+
+				// build a reference to the existing node to be replaced
+				var printText = document.querySelectorAll(".print-text")[0];
+
+				console.log(printText);
+
+				var parentContainer = printText.parentNode;
+
+				console.log(parentContainer);
+
+				// replace existing node printText with the new span element printButton
+				parentContainer.replaceChild(printButton, printText);
+			}
+			replacePrintTextWithPrintButton();
 		</script>
 	</body>
 </html>
