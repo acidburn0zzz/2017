@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- $title:Ind.ie — Ethical Design Manifesto-->
+	<!-- @import '../assets/includes/_head.kit' -->
+	<link rel='stylesheet' type='text/css' href='css/style.css'>
+	<link rel="stylesheet" type="text/css" href="css/print.css" media="print">
+    <link rel='alternate' type='application/rss+xml' title='Ind.ie Blog' href='https://ind.ie/rss/index.xml' />
+    <link rel='image_src' href='https://ind.ie/ethical-design/images/facebook-image.png' />
+</head>
+<body class='ethical-design'>
+	<header class='site-header'>
+		<!-- @import '../assets/includes/_nav.kit' -->
+		<!-- @import '../about/includes/_nav.kit' -->
+	</header>
+	<div class='main'>
+		
+		<h1>Badge test page</h1>
+
+		<div class='badges'>
+			<div class='badge'>
+				<div class='example'>
+					<div style='display: block; width: 250px; margin-left: auto; margin-right: auto;'><a href='https://ind.ie/ethical-design'><img style='margin-left: auto; margin-right: auto; margin-bottom: 0;' alt='' src='https://ind.ie/ethical-design/images/ethical-design-badge-tiny.svg'></a><p>We practice <strong>Ethical</strong> Design.</p></div>
+				</div>
+			</div>
+
+			<div class='badge'>
+				<div class='example'>
+					<a href='https://ind.ie/ethical-design'><img style='width: 180px; margin-left: auto; margin-right: auto;' alt='We practice Ethical Design' src='https://ind.ie/ethical-design/images/ethical-design-badge-small.svg'></a>
+				</div>
+			</div>
+		</div>
+
+		<h3>Code repository badges.</h3>
+
+		<p>For indie projects — FOSS projects that practice Ethical Design.</p>
+
+		<div class='badges'>
+			<div class='badge'>
+				<a href='https://ind.ie/ethical-design'><img style='margin-left: auto; margin-right: auto;' alt='We practice Ethical Design' src='https://img.shields.io/badge/Ethical_Design-_▲_❤_-blue.svg'></a>
+			</div>
+
+			<div class='badge'>
+				<div class='example'>
+					<a href='https://ind.ie/ethical-design'><img style='margin-left: auto; margin-right: auto;' alt='We practice Ethical Design' src='https://img.shields.io/badge/_▲_-_❤_-blue.svg'></a>
+				</div>
+			</div>
+		</div>
+
+		<h3>Text-only</h3>
+
+		<div class='badge'>
+			<div class='example'>
+				<a href='https://ind.ie/ethical-design' style='text-decoration: none; text-align: center;'><div style='display: block;'>▲❤<br><span style='text-decoration: underline;'>We practice <strong>Ethical</strong> Design.</span></div></a>
+			</div>
+		</div>
+	</div>
+	<div class='manifesto-footer-wrap'>
+		<!-- @import '../assets/includes/_footer.kit' -->
+	</div>
+		<script>
+			// Progressively enhance the badge copy sections with copy-to-clipboard popups.
+			function copyPromptHandler(){
+				var isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0;
+				var keyPrompt = isMac ? '⌘' : 'Ctrl';
+				var textToCopy = this.getAttribute("data-code");
+				window.prompt("Copy to clipboard with "+keyPrompt+"+C and press return to dismiss.", textToCopy);
+			}
+
+			var codeBlocks = document.querySelectorAll('code');
+			for (var i = 0; i < codeBlocks.length; i++)
+			{
+				// Get the code in the block.
+				var codeBlock = codeBlocks[i];
+				var code = codeBlock.innerHTML;
+				code = code.replace(new RegExp('&lt;', 'g'), '<');
+				code = code.replace(new RegExp('&gt;', 'g'), '>');
+
+				// Create the copy to clipboard button.
+				var copyToClipboardButton = document.createElement('button');
+				copyToClipboardButton.setAttribute("data-code", code);
+				var textNode = document.createTextNode('Copy as HTML');
+				copyToClipboardButton.appendChild(textNode);
+				copyToClipboardButton.addEventListener("click", copyPromptHandler);
+
+				// Give the now-empty pre block a class to help us style it.
+				codeBlock.parentNode.replaceChild(copyToClipboardButton, codeBlock);
+			}
+
+			function replacePrintTextWithPrintButton() {
+				// create an empty element node
+				// without an ID, any attributes, or any content
+				var printButton = document.createElement("button");
+
+				console.log(printButton);
+
+				// give it a class of 'print-button'
+				printButton.setAttribute("class", "print-button");
+
+				// and onclick behaviour of printing page
+				printButton.setAttribute("onclick", "document.body.offsetHeight;window.print();");
+
+				// give the button some text
+				var printButton_text = document.createTextNode("Print page");
+
+				// apply that text to the new element
+				printButton.appendChild(printButton_text);
+
+				// build a reference to the existing node to be replaced
+				var printText = document.querySelectorAll(".print-text")[0];
+
+				console.log(printText);
+
+				var parentContainer = printText.parentNode;
+
+				console.log(parentContainer);
+
+				// replace existing node printText with the new span element printButton
+				parentContainer.replaceChild(printButton, printText);
+			}
+			replacePrintTextWithPrintButton();
+		</script>
+	</body>
+</html>
