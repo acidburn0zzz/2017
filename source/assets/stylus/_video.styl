@@ -500,8 +500,9 @@
 			align-content center // horizontally centre all content inside container when there are multiple rows
 			padding-left 146px
 			
-			.has-captions &
-				padding-left 180px
+	.has-captions .px-video-playback-buttons
+		@media only screen and (min-width: 620px)
+			padding-left 180px
 			
 	.px-video-controls button
 		margin 0 5px
