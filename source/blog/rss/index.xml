@@ -4,7 +4,7 @@
             <title>Ind.ie News</title>
             <link>https://ind.ie/blog</link>
             <description>The latest news and updates from Ind.ie</description>
-            <atom:link href="https://ind.ie/blog/rss/index.xml" rel="self" type="application/rss+xml" />
+            <atom:link href="https://ind.ie/blog/rss/index.xml" rel="self" type="application/atom+xml" />
             <lastBuildDate>Thu, 5 Nov 2015 17:00:00 GMT</lastBuildDate>
                 <item>
                     <title>Ethical Design Manifesto</title>
