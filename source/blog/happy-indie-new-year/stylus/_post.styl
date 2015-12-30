@@ -1,10 +1,20 @@
+.p-name
+	margin-top 0
+		
 .e-content
 	img
 		margin 0 auto
 		margin-bottom OneLineHeight // because responsive pixels smushes this up if I include it in the rule above
-	
+
 	ul
 		margin-bottom HalfLineHeight
 		
 		li
-			margin-bottom 0
+			margin-bottom HalfLineHeight
+	
+.head-2015
+	margin 0 auto
+	margin-bottom 0
+	
+	@media only screen and (min-width: 420px)
+		max-width 420px
