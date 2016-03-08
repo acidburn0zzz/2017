@@ -1,10 +1,25 @@
-.home
-	.main
-		padding-top OneLineHeight
-
-	.site-footer
-		@media only screen and (min-width: 500px)
-			margin-top TwoLineHeights
+.main
+	padding-top OneLineHeight
+		
+.about-heartbeat
+	margin-top 0
+	
+	.icon
+		margin-left auto
+		margin-right auto
+		margin-bottom HalfLineHeight
+		width 100px
+		height 100px
+		
+		@media only screen and (min-width: 780px)
+			margin-bottom OneLineHeight
+	
+	h2
+		text-align center
+		
+		@media only screen and (min-width: 780px)
+			border-top 7px solid black-twenty
+			padding-top HalfLineHeight
 
 .callouts
 	clear both
@@ -39,33 +54,31 @@
 		a
 			font-weight bold
 			
-	.p-name, .topic
-		font-size 16px
-		margin-top 0
-		margin-bottom QuarterLineHeight
+.callout
+	border-bottom 1px solid black-thirty
+	padding-bottom HalfLineHeight
 	
-	.dt-published, .hot-topic
-		display block
-		font-size 15px
-		line-height 22px
-		margin-bottom QuarterLineHeight
-
-// HOMEPAGE FOOTER callouts	
-.support
 	@media only screen and (min-width: 780px)
-		padding-right HalfLineHeight
-		width 28.4%
+		border-bottom none
+		float left
+		width 29.3%
+
+// HEARTBEAT callouts
+.private
+	@media only screen and (min-width: 780px)
+		padding-right OneLineHeight
 		
-.featured
+.social
 	@media only screen and (min-width: 780px)
 		padding-right HalfLineHeight
 		padding-left HalfLineHeight
-		width 35%
 
-.news
+.web
 	@media only screen and (min-width: 780px)
-		padding-left HalfLineHeight
-		width 28.4%
-
-.callout-link
-	display block
+		padding-left OneLineHeight
+		
+.social .icon
+	margin-bottom -12px
+	
+	@media only screen and (min-width: 780px)
+		margin-bottom OneLineHeight

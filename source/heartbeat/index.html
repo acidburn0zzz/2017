@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- $title:Ind.ie Heartbeat-->
+	<!-- @import '../assets/includes/_head.kit' -->
+	<link rel='stylesheet' type='text/css' href='css/style.css'>
+	<link rel='alternate' type='application/rss+xml' title='Ind.ie Blog' href='https://ind.ie/rss/index.xml' />
+</head>
+<body class='heartbeat'>
+	<!-- @import '../assets/includes/_nav.kit' -->
+
+	<div class='main'>
+		<div class='px-video-container' id='heartbeat-pre-alpha-reveal'>
+			<div class='px-video-img-captions-container'>
+				<div class='px-video-captions hide'></div>
+					<div class='px-video-wrapper'>
+						<video poster='../assets/images/heartbeat/poster.png' class='px-video' alt='Heartbeat' controls>
+							<!-- video files -->
+							<source src='//player.vimeo.com/external/138997351.m3u8?p=high,standard&s=0067fcefaeb26ca2a79897dce983230b' type='application/x-mpegURL' />
+							<source src='//player.vimeo.com/external/138997351.hd.mp4?s=005a55ef37b7d37a887c1caad7ad817a&profile_id=113' type='video/mp4' />
+							<source src='https://ind.ie/videos/heartbeat-pre-alpha-reveal/heartbeat-pre-alpha-reveal.webm' type='video/webm' />
+							<source src='https://ind.ie/videos/heartbeat-pre-alpha-reveal/heartbeat-pre-alpha-reveal.ogv' type='video/ogg' />
+
+							<!-- fallback for browsers that don’t support the video element -->
+							<div>
+								<a href='https://ind.ie/videos/heartbeat-pre-alpha-reveal/heartbeat-pre-alpha-reveal.mp4' title='Heartbeat'>
+								<img src='../heartbeat-pre-alpha-reveal/images/poster-heartbeat-pre-alpha-reveal.jpg' width='640' height='360' alt='download video' />
+								</a>
+							</div>
+						</video>
+					</div>
+				</div><!-- end container for captions and video -->
+			<div class="px-video-controls"></div>
+		</div><!-- end video container -->
+
+		<ul class='callouts about-heartbeat'>
+			<li class='callout private'>
+				<img class='icon' src='../assets/images/heartbeat/private.png' alt='Private: padlock'>
+				<h2>Private</h2>
+				<h3>Just between you and your friends.</h3>
+				<p>Messages stay on your device and on your friends’ devices. In transit, they’re protected by the same technology that protects your bank’s web site.</p>
+			</li>
+			<li class='callout social'>
+				<img class='icon' src='../assets/images/heartbeat/conversations.png' alt='Conversations'>
+				<h2>Social</h2>
+				<h3>Private doesn’t have to mean lonely.</h3>
+				<div class='h-entry'>
+					<p class='p-summary'>Heartbeat is a beautiful, simple Mac app. It’s easy to connect with your friends, chat to them, and share photos, videos, and files.</p>
+					</p>
+				</div>
+			</li>
+			<li class='callout web'>
+				<img class='icon'src='../assets/images/heartbeat/public.png' alt='Public: indie web' style='width: 100px; height; 100px;'>
+				<h2>Web</h2>
+				<h3>Talk to the world on your own terms.</h3>
+				<p>Your <em>public</em> posts appear on your own indie web site and are aggregated on Ind.ie.</p>
+
+				<p>For example, here’s <a href='https://waystone.ind.ie/person/aralbalkan'>Aral’s site</a>.</p>
+			</li>
+		</ul>
+
+		<img class='illustration illustration-person' src='../assets/images/long-road-to-freedom.png' alt='Person looking at the hope balloon as it floats down a path.'>
+
+		<h2 id='early-days'>It’s early days…</h2>
+
+		<p>Heartbeat has just hatched. It’s currently being incubated in <a href='https://forum.ind.ie/t/heartbeat-pre-alpha-release/740'>a private pre-alpha</a>. If you’re technically savvy, you can <a href='https://source.ind.ie/project/heartbeat-cocoa'>grab the source</a> and play with it today. <a href='https://forum.ind.ie'>Join us on the forum</a> to keep up with the community and the latest developments.</p>
+
+		<img class='illustration illustration-people' src='../assets/images/indie-net-and-heartbeat.png' alt='Circle of people connected surrounding the hope balloon'>
+
+	</div>
+	<!-- @import '../assets/includes/_footer.kit' -->
+	<script src="../assets/js/px-video.js"></script>
+	<script>
+		// Initialize
+		new InitPxVideo({
+		    "videoId": "heartbeat-pre-alpha-reveal",
+		    "captionsOnDefault": false,
+		    "seekInterval": 20,
+		    "videoTitle": "Introduction to Heartbeat",
+		    "debug": true
+		});
+	</script>
+</body>
+</html>
