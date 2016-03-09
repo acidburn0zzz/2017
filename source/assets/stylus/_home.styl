@@ -5,6 +5,10 @@
 	.site-footer
 		@media only screen and (min-width: 500px)
 			margin-top TwoLineHeights
+			
+.respect
+	margin-top OneLineHeight
+	margin-bottom 0
 
 .callouts
 	clear both
@@ -13,7 +17,7 @@
 	list-style-type none
 	overflow hidden
 	padding HalfLineHeight 0
-	margin HalfLineHeight 0
+	margin HalfLineHeight 0 0 0
 	
 	h2
 		font-size 21px
@@ -39,16 +43,42 @@
 		a
 			font-weight bold
 			
-	.p-name, .topic
-		font-size 16px
-		margin-top 0
-		margin-bottom QuarterLineHeight
+.ethical-design
+	margin-top 0
 	
-	.dt-published, .hot-topic
-		display block
-		font-size 15px
-		line-height 22px
-		margin-bottom QuarterLineHeight
+	.icon
+		margin-left auto
+		margin-right auto
+		margin-bottom HalfLineHeight
+		width 100px
+		height 100px
+		
+		@media only screen and (min-width: 780px)
+			margin-bottom OneLineHeight
+	
+	h2
+		text-align center
+		
+		@media only screen and (min-width: 780px)
+			border-top 7px solid black-twenty
+			padding-top HalfLineHeight
+			
+	.callout
+		text-align center
+		
+.callout
+	border-bottom 1px solid black-thirty
+	padding-bottom HalfLineHeight
+	
+	@media only screen and (min-width: 780px)
+		border-bottom none
+		float left
+		width 29.3%
+	
+.ethical-design-manifesto-description
+	border-bottom 1px solid black-thirty
+	padding-bottom OneLineHeight
+	text-align center
 
 // HOMEPAGE FOOTER callouts	
 .support
@@ -66,6 +96,38 @@
 	@media only screen and (min-width: 780px)
 		padding-left HalfLineHeight
 		width 28.4%
+	
+// ETHICAL DESIGN callouts
+.human-rights
+	@media only screen and (min-width: 780px)
+		padding-right OneLineHeight
+		
+.human-effort
+	@media only screen and (min-width: 780px)
+		padding-right HalfLineHeight
+		padding-left HalfLineHeight
 
-.callout-link
+.human-experience
+	@media only screen and (min-width: 780px)
+		padding-left OneLineHeight
+		
+.human-effort .icon
+	margin-bottom -12px
+	
+	@media only screen and (min-width: 780px)
+		margin-bottom OneLineHeight
+
+.illustration
 	display block
+	margin-right auto
+	margin-left auto
+	
+.illustration-person
+	width 107px
+	margin-top HalfLineHeight
+	margin-bottom 0
+	height 66px
+
+.illustration-people
+	width 132px
+	height 148px
