@@ -45,7 +45,7 @@ function InitPxVideo(options) {
 	// Display captions container and button (for initialization)
 	function showCaptionContainerAndButton(obj) {
 		obj.captionsBtnContainer.className = "px-video-captions-btn-container show";
-		obj.captionsContainer.parentNode.parentNode.className = "has-captions";
+		obj.captionsContainer.parentNode.parentNode.className += " has-captions";
 		if (obj.isCaptionDefault) {
 			obj.captionsContainer.className = "px-video-captions show";
 			obj.captionsBtn.setAttribute("checked", "checked");
