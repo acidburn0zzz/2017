@@ -44,17 +44,9 @@
 			font-weight bold
 			
 .ethical-design
-	margin-top 0
-	
-	.icon
-		margin-left auto
-		margin-right auto
-		margin-bottom HalfLineHeight
-		width 100px
-		height 100px
-		
+	margin-top OneLineHeight
 		@media only screen and (min-width: 780px)
-			margin-bottom OneLineHeight
+			margin-top HalfLineHeight
 	
 	h2
 		text-align center
@@ -64,7 +56,22 @@
 			padding-top HalfLineHeight
 			
 	.callout
+		margin-top OneLineHeight
+		position relative
 		text-align center
+		
+		&:before
+			content ""
+			display block
+			height 100px
+			margin-right auto
+			margin-bottom OneLineHeight
+			margin-left auto
+			position relative
+			width 100px
+		
+		@media only screen and (min-width: 780px)
+			margin-top 0
 		
 .callout
 	border-bottom 1px solid black-thirty
@@ -74,6 +81,29 @@
 		border-bottom none
 		float left
 		width 29.3%
+		
+// ETHICAL DESIGN callouts
+.human-rights
+	&:before
+		background url('/ethical-design/images/human-rights.svg') top center no-repeat
+	
+	@media only screen and (min-width: 780px)
+		padding-right OneLineHeight
+		
+.human-effort
+	&:before
+		background url('/ethical-design/images/human-effort.svg') top center no-repeat
+	
+	@media only screen and (min-width: 780px)
+		padding-right HalfLineHeight
+		padding-left HalfLineHeight
+
+.human-experience
+	&:before
+		background url('/ethical-design/images/human-experience.svg') top center no-repeat
+	
+	@media only screen and (min-width: 780px)
+		padding-left OneLineHeight
 	
 .ethical-design-manifesto-description
 	border-bottom 1px solid black-thirty
@@ -96,26 +126,6 @@
 	@media only screen and (min-width: 780px)
 		padding-left HalfLineHeight
 		width 28.4%
-	
-// ETHICAL DESIGN callouts
-.human-rights
-	@media only screen and (min-width: 780px)
-		padding-right OneLineHeight
-		
-.human-effort
-	@media only screen and (min-width: 780px)
-		padding-right HalfLineHeight
-		padding-left HalfLineHeight
-
-.human-experience
-	@media only screen and (min-width: 780px)
-		padding-left OneLineHeight
-		
-.human-effort .icon
-	margin-bottom -12px
-	
-	@media only screen and (min-width: 780px)
-		margin-bottom OneLineHeight
 
 .illustration
 	display block
