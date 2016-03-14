@@ -19,29 +19,25 @@
 
 	.long-title
 		font-family 'Avenir Next', Helvetica, sans-serif
+		font-weight bold
 		margin-bottom OneLineHeight
 		
-		@media only screen and (min-width: 820px)
-			line-height ThreeLineHeights
+		@media only screen and (min-width: 780px)
+			font-size 72px
+			font-weight bold
+			line-height 90px
 	
-	.subheading, .lead-in
+	.subheading
 		margin-top OneLineHeight
 		text-align center
 		
 	.subheading
-		font-family "Avenir Next Ultra Light", 'Avenir Next', Helvetica, sans-serif
-		font-weight normal
 		font-size 36px
 		line-height OneAndAHalfLineHeights
 		
 		@media only screen and (min-width: 820px)
 			font-size 42px
 			line-height OneAndAHalfLineHeights
-	
-	.lead-in
-		font-weight bold
-		margin-top OneAndAHalfLineHeights
-		margin-bottom OneAndAHalfLineHeights
 		
 .poster
 	@media only screen and (min-width 600px)
@@ -74,6 +70,7 @@
 		background-image url('../images/triangle.svg')
 		background-repeat no-repeat
 		background-position 0 0
+		list-style-type none
 		margin-left -14px
 		padding-top 270px
 		position relative
@@ -335,29 +332,111 @@
 				padding-top 1px
 				width 134px
 
-.principles
-	font-size 16px
-	line-height 24px
-	padding-top HalfLineHeight
+.callouts
+	clear both
+	font-size 15px
+	line-height 23px
+	list-style-type none
+	padding HalfLineHeight 0
+	margin HalfLineHeight 0 0 0
+
+.ethical-design-principles
+	clear both
+	margin-top OneLineHeight
+	overflow hidden
+	padding-bottom 0
 	
-	.principle
-		margin-bottom HalfLineHeight
+		@media only screen and (min-width: 780px)
+			margin-top HalfLineHeight
 	
-	h2, p
-		font-size 16px
-		line-height 24px
-		margin-top 0
-		margin-bottom HalfLineHeight
-		
 	h2
-		display inline
-	
-	p
-		display inline
-		
-	.overarching
-		margin-top OneLineHeight
 		text-align center
+		
+		@media only screen and (min-width: 780px)
+			border-top 7px solid black-twenty
+			line-height 36px
+			margin-top OneLineHeight
+			padding-top HalfLineHeight
+			
+	.callout
+		list-style-type none
+		margin-top OneLineHeight
+		position relative
+		
+		p
+			hyphens auto
+		
+		&:before
+			content ""
+			display block
+			height 100px
+			margin-right auto
+			margin-bottom 0
+			margin-left auto
+			position relative
+			width 100px
+		
+		@media only screen and (min-width: 780px)
+			margin-top 0
+		
+.callout
+	border-bottom 1px solid black-thirty
+	padding-bottom HalfLineHeight
+	
+	@media only screen and (min-width: 780px)
+		border-bottom none
+		float left
+		width 28.9%
+		
+// ETHICAL DESIGN callouts
+.human-rights
+	&:before
+		background url('/ethical-design/images/human-rights.svg') top center no-repeat
+	
+	@media only screen and (min-width: 780px)
+		padding-right OneLineHeight
+		
+.human-effort
+	&:before
+		background url('/ethical-design/images/human-effort.svg') top center no-repeat
+	
+	@media only screen and (min-width: 780px)
+		padding-right HalfLineHeight
+		padding-left HalfLineHeight
+		
+	span.split-lines
+		display block
+		font-weight bold
+		text-align center
+		
+		@media only screen and (min-width: 780px)
+			margin-left auto
+			margin-right auto
+			max-width 170px /* constrain width to force text on to two lines */
+
+.human-experience
+	&:before
+		background url('/ethical-design/images/human-experience.svg') top center no-repeat
+	
+	@media only screen and (min-width: 780px)
+		padding-left OneLineHeight
+	
+.ethical-design-manifesto-description
+	border-bottom 1px solid black-thirty
+	padding-bottom OneLineHeight
+	text-align center
+	
+	@media only screen and (min-width: 780px)
+		padding-bottom TwoLineHeights
+
+.ethical-design-manifesto-icon
+	background url('/ethical-design/images/manifesto-document-icon.svg') top center no-repeat
+	display block
+	font-size 24px
+	font-weight bold
+	line-height OneAndAHalfLineHeights
+	padding-top 144px /* height of icon + padding */
+	text-decoration none
 
 
 // hide content that's just there for print
