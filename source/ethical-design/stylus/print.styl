@@ -19,15 +19,16 @@
 	
 // get rid of gap at the top of the page
 .long-title
-	font-size 73px
-	margin-top 0 !important
+	font-size 86px !important
+	margin-top 20px !important
 	margin-bottom 10px !important
-	line-height 75px !important
+	line-height 100px !important
 	
 h2.subheading
-	line-height 45px
+	font-size 52px !important
+	line-height 52px !important
 	margin-top 0 !important
-	margin-bottom 20px !important
+	margin-bottom 15px !important
 	
 // hide most of the poster styles
 .poster
@@ -39,16 +40,80 @@ h2.subheading
 // reveal image version of triangle, hide html version
 .print-triangle
 	display block
-	height 65%
+	height 75%
 	margin-left auto
 	margin-right auto
-	width 65%
+	margin-bottom 0
+	width 75%
 	
 .three-rs
 	display none
 	
-.print-url
-	color black-seventy
+// ETHICAL DESIGN callouts
+.callouts
+	margin-top 0 !important
+	margin-bottom 0 !important
+	margin-left auto
+	margin-right auto
+	padding-bottom 0 !important
+	width 90%
+	
+.callout	
+	border-bottom none
+	float left
+	margin-top 0 !important
+	margin-bottom 0 !important
+	padding-bottom 0 !important
+	width 33%
+
+	h2
+		line-height 36px
+		margin-top 0 !important
+		padding-top HalfLineHeight
+		padding-left 12px !important
+		padding-right 12px !important
+		
+	p
+		font-size 13px
+		line-height 18px
+		padding-left 12px !important
+		padding-right 12px !important
+		
+	&:before
+		height 118px !important
+		margin-left auto !important
+		margin-right auto
+		width 180px !important
+	
+.human-rights
+	&:before
+		background url('/ethical-design/images/human-rights-print.svg') top center no-repeat
+		background-size 100%
+		
+	h2
+		margin-left auto
+		margin-right auto
+		width 120px
+		
+.human-effort
+	&:before
+		background url('/ethical-design/images/human-effort-print.svg') top center no-repeat
+		background-size 100%
+		
+	h2
+		margin-left auto
+		margin-right auto
+		width 120px
+
+.human-experience
+	&:before
+		background url('/ethical-design/images/human-experience-print.svg') top center no-repeat
+		background-size 100%
+		
+.print-logo
 	display block
-	font-weight bold
-	text-align center
+	margin-top -40px !important
+	margin-right auto
+	margin-left auto
+	margin-bottom -10px !important
+	width 110px
