@@ -1,7 +1,12 @@
 .main
-	margin-top TwoLineHeights
+	margin-top 0
+	overflow hidden /* so overflowing triangle doesn't cause horizontal scroll */
+	
+	@media only screen and (min-width 400px)
+		overflow visible
 	
 	@media only screen and (min-width 600px)
+		margin-top TwoLineHeights
 		padding-left 0
 		padding-right 0
 		
@@ -35,7 +40,7 @@
 		font-size 36px
 		line-height OneAndAHalfLineHeights
 		
-		@media only screen and (min-width: 820px)
+		@media only screen and (min-width: 580px)
 			font-size 42px
 			line-height OneAndAHalfLineHeights
 		
@@ -55,29 +60,31 @@
 	overflow visible
 	
 	// width needs defining so it centres with auto left and right margins
-	@media only screen and (min-width: 350px)
+	@media only screen and (min-width: 320px)
+		width 250px
+		
+	@media only screen and (min-width: 340px)
 		width 320px
 		
 	@media only screen and (min-width: 580px)
-		width 580px
-	@media only screen and (min-width: 650px)
-		width 620px
+		width 550px
 		
-	@media only screen and (min-width: 680px)
-		width 650px
+	@media only screen and (min-width: 780px)
+		margin-top OneLineHeight
+		width 415px /* centre so tip of triangle lines up with p in Respect */
 	
 	.three-rs-list
 		background-image url('../images/triangle.svg')
 		background-repeat no-repeat
 		background-position 0 0
-		list-style-type none
-		margin-left -14px
+		margin-left -35px /* so middle of triangle is visible */
 		padding-top 270px
 		position relative
 		width 320px
 		
 		@media only screen and (min-width: 580px)
 			height 240px
+			list-style-type none
 			padding-top 20px
 		
 		.no-svg
@@ -86,7 +93,7 @@
 		@media only screen and (min-width: 340px)
 			margin-left 0
 	
-		@media only screen and (min-width: 820px)
+		@media only screen and (min-width: 580px)
 			background-size 410px auto
 			height 315px
 			width 410px
@@ -95,7 +102,7 @@
 			font-size 15px // make the numbers not too big
 			margin-top 0
 			margin-bottom 0
-			margin-left 33px
+			margin-left 70px
 			
 			@media only screen and (min-width: 340px)
 				margin-left 70px
@@ -105,65 +112,27 @@
 				margin-left 300px
 				padding-top 30px
 				position absolute
-			
-			// ensure adjustments made here are also made to print styles
-			@media only screen and (min-width: 650px)
-				padding-top 20px
-				
-				:before // on wider views, add the pointers
-					background url('../images/pointer.svg') 0 0 no-repeat
-					content ''
-					display block
-					top 35px
-					height 14px // height of image is 14px, show this much of it
-					width 40px // width of image is 110px, show this much of it
-					position absolute
-					left -70px
-					
-					.no-svg &
-						background-image url('../images/pointer.png')
 						
 			&.three // offset by diagonal
 				@media only screen and (min-width: 580px)
 					height 85px
 					top 0
-					margin-left 230px
-				
-				@media only screen and (min-width: 650px)
-					margin-left 280px
-				
-				// ensure adjustments made here are also made to print styles
-				@media only screen and (min-width: 820px)
-					margin-top 30px
-					margin-left 345px
+					margin-top 21px
+					margin-left 290px
 					
 			&.two // offset by diagonal
 				@media only screen and (min-width: 580px)
 					height 81px
 					top 86px
-					margin-left 283px
-				
-				@media only screen and (min-width: 650px)
-					margin-left 333px
-				
-
-				@media only screen and (min-width: 820px)
-					margin-top 40px
-					margin-left 407px
+					margin-top 31px
+					margin-left 352px
 			
 			&.one
 				@media only screen and (min-width: 580px)
 					height 86px
 					top 172px
-					margin-left 335px
-				
-				@media only screen and (min-width: 650px)
-					margin-left 385px
-				
-
-				@media only screen and (min-width: 820px)
-					margin-top 53px
-					margin-left 465px
+					margin-top 44px
+					margin-left 410px
 			
 		h3
 			font-size 18px
@@ -172,16 +141,15 @@
 			margin-bottom HalfLineHeight
 			
 			@media only screen and (min-width: 580px)
-				font-size 17px
 				height 50px
 				margin-top 0
 				margin-left 3px
 				margin-bottom 0
-				width 230px
+				width 135px
 				
-			.one &
-				@media only screen and (min-width: 580px)
-					width 190px // so it doesn't escape the left of the viewport on middle-width views
+		.three h3
+			@media only screen and (min-width: 580px)
+				width 190px // the top of the triangle can have more space for the longer title
 			
 		p
 			font-size 15px
@@ -196,12 +164,10 @@
 				margin-left -30px
 				
 			@media only screen and (min-width: 580px)
-				line-height 20px
-				margin-top -30px // offset li padding
-				position relative
-			
-			@media only screen and (min-width: 650px)
+				font-size 18px
+				line-height 24px
 				margin-top -20px // no need to offset li padding
+				position relative
 			
 			@media only screen and (min-width: 820px)
 				font-size 18px
@@ -238,9 +204,9 @@
 					content '' // don't show the number as the title is lined up alongside
 				
 		.base-tier // one
-			color black-five
+			color black-ninety
 			height 84px
-			margin-left 3px // -18px offset the list numbers
+			margin-left -35px // -18px offset the list numbers
 			margin-right 21px
 			padding-top 2px
 			top 172px
@@ -251,29 +217,19 @@
 			
 			@media only screen and (min-width: 580px)
 				// when it's wider, let the triangle text follow the order of the list items
-				height 74px
-				margin-top -68px
-				margin-left -295px
-				margin-right 0
-				padding-top 0
-				top auto
-			
-			@media only screen and (min-width: 650px)
-				margin-left -345px
-				padding-top 10px
-			
-			// ensure adjustments made here are also made to print styles
-			@media only screen and (min-width: 820px)
 				height 80px
-				margin-left -408px
+				margin-top -68px
+				margin-left -353px
+				margin-right 0
+				padding-top 10px
+				top auto
 				width 300px
-				
 			
 		.middle-tier // two
 			top 86px
 			color black-ninety
 			height 69px
-			margin-left 27px // -18px offset the list numbers
+			margin-left -10px // -18px offset the list numbers
 			margin-right 45px
 			padding-top 11px
 			width 200px
@@ -283,29 +239,19 @@
 				
 			@media only screen and (min-width: 580px)
 				// when it's wider, let the triangle text follow the order of the list items
-				height 59px
-				margin-top -59px
-				margin-left -223px
-				margin-right 0
-				padding-top 0
-				top auto
-			
-			@media only screen and (min-width: 650px)
-				margin-left -273px
-				padding-top 10px
-				
-			// ensure adjustments made here are also made to print styles
-			@media only screen and (min-width: 820px)
 				height 74px
-				margin-left -332px // offset li margin
+				margin-top -59px
+				margin-left -275px // offset li margin
+				margin-right 0
 				padding-top 3px
+				top auto
 				width 260px
 			
 		.top-tier // three
 			top 0
-			color black-seventy
+			color black-ninety
 			height 51px
-			margin-left 77px // -18px offset the list numbers
+			margin-left 40px // -18px offset the list numbers
 			margin-right 95px
 			padding-top 35px
 			width 100px
@@ -315,21 +261,12 @@
 				
 			@media only screen and (min-width: 580px)
 				// when it's wider, let the triangle text follow the order of the list items
-				height 30px
-				margin-left -120px
-				margin-right 0
-				padding-top 7px
-				top auto
-			
-			@media only screen and (min-width: 650px)
-				margin-left -170px
-				
-			// ensure adjustments made here are also made to print styles
-			@media only screen and (min-width: 820px)
 				height 40px
 				margin-top -29px
-				margin-left -207px // offset li margin
+				margin-left -152px // offset li margin
+				margin-right 0
 				padding-top 1px
+				top auto
 				width 134px
 
 .callouts
@@ -369,12 +306,12 @@
 		&:before
 			content ""
 			display block
-			height 100px
+			height 80px
 			margin-right auto
 			margin-bottom 0
 			margin-left auto
 			position relative
-			width 100px
+			width 80px
 		
 		@media only screen and (min-width: 780px)
 			margin-top 0
@@ -392,6 +329,7 @@
 .human-rights
 	&:before
 		background url('/ethical-design/images/human-rights.svg') top center no-repeat
+		background-size 80px
 	
 	@media only screen and (min-width: 780px)
 		padding-right OneLineHeight
@@ -399,6 +337,7 @@
 .human-effort
 	&:before
 		background url('/ethical-design/images/human-effort.svg') top center no-repeat
+		background-size 80px
 	
 	@media only screen and (min-width: 780px)
 		padding-right HalfLineHeight
@@ -417,6 +356,7 @@
 .human-experience
 	&:before
 		background url('/ethical-design/images/human-experience.svg') top center no-repeat
+		background-size 80px
 	
 	@media only screen and (min-width: 780px)
 		padding-left OneLineHeight
