@@ -5,7 +5,16 @@
             <link>https://ind.ie</link>
             <description>The latest news and updates from the Ind.ie blog and Ind.ie labs blog</description>
             <atom:link href="https://ind.ie/rss/index.xml" rel="self" type="application/atom+xml" />
-            <lastBuildDate>Fri, 1 Jan 2016 12:00:00 GMT</lastBuildDate>
+            <lastBuildDate>Wed, 16 Mar 2016 10:00:00 GMT</lastBuildDate>
+                <item>
+                    <title>Ethical Design Manifesto Refresh</title>
+                    <link>https://ind.ie/blog/ethical-design-manifesto-refresh</link>
+                    <guid>https://ind.ie/blog/ethical-design-manifesto-refresh</guid>
+                    <description>&lt;p&gt;We&apos;ve just refreshed the Ind.ie web site with an iteration of the Ethical Design Manifesto that is even simpler and more accessible&hellip;&quot;&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://ind.ie/blog/ethical-design-manifesto-refresh&quot;&gt;Read the full post on the Ind.ie blog&lt;/a&gt;.&lt;/p&gt;
+                    </description>
+                    <pubDate>Wed, 16 Mar 2016 10:00:00 GMT</pubDate>
+                    <author>aral@ind.ie (Aral Balkan)</author>
+                </item>
                 <item>
                     <title>Happy Ind.ie New Year</title>
                     <link>https://ind.ie/blog/happy-indie-new-year</link>
