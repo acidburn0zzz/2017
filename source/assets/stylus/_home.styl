@@ -6,9 +6,38 @@
 		@media only screen and (min-width: 500px)
 			margin-top TwoLineHeights
 			
-.respect
+.coming-soon
+	background url('../../../better/images/better.svg') top center no-repeat
+	color black-eighty
+	font-family "Avenir Next", Avenir, 'Helvetica Neue', Helvetica, sans-serif
+	font-size 30px
+	font-weight bold
+	line-height OneAndAHalfLineHeights
+	margin-top OneAndAHalfLineHeights
+	margin-bottom HalfLineHeight
+	padding-top 212px
+
+	@media only screen and (min-width: 820px)
+		font-size 36px
+		line-height TwoLineHeights
+		margin-bottom ThreeQuartersLineHeight
+
+.better-web
+	font-size 24px
+	font-weight bold
+	line-height OneLineHeight
 	margin-top OneLineHeight
-	margin-bottom 0
+	margin-bottom HalfLineHeight
+	text-align center
+	
+	em
+		font-style italic
+		font-weight bold
+
+	@media only screen and (min-width: 820px)
+		font-size 30px
+		line-height OneAndAHalfLineHeights
+		margin-bottom ThreeQuartersLineHeight
 
 .callouts
 	clear both
@@ -42,40 +71,6 @@
 		
 		a
 			font-weight bold
-			
-.ethical-design-principles
-	margin-top OneLineHeight
-	padding-bottom 0
-	
-		@media only screen and (min-width: 780px)
-			margin-top HalfLineHeight
-	
-	h2
-		text-align center
-		
-		@media only screen and (min-width: 780px)
-			border-top 7px solid black-twenty
-			padding-top HalfLineHeight
-			
-	.callout
-		margin-top OneLineHeight
-		position relative
-		
-		p
-			hyphens auto
-		
-		&:before
-			content ""
-			display block
-			height 100px
-			margin-right auto
-			margin-bottom OneLineHeight
-			margin-left auto
-			position relative
-			width 100px
-		
-		@media only screen and (min-width: 780px)
-			margin-top 0
 		
 .callout
 	border-bottom 1px solid black-thirty
@@ -86,46 +81,6 @@
 		float left
 		width 29.3%
 		
-// ETHICAL DESIGN callouts
-.human-rights
-	&:before
-		background url('/ethical-design/images/human-rights.svg') top center no-repeat
-	
-	@media only screen and (min-width: 780px)
-		padding-right OneLineHeight
-		
-.human-effort
-	&:before
-		background url('/ethical-design/images/human-effort.svg') top center no-repeat
-	
-	@media only screen and (min-width: 780px)
-		padding-right HalfLineHeight
-		padding-left HalfLineHeight
-
-.human-experience
-	&:before
-		background url('/ethical-design/images/human-experience.svg') top center no-repeat
-	
-	@media only screen and (min-width: 780px)
-		padding-left OneLineHeight
-	
-.ethical-design-manifesto-description
-	border-bottom 1px solid black-thirty
-	padding-bottom OneLineHeight
-	text-align center
-	
-	@media only screen and (min-width: 780px)
-		padding-bottom TwoLineHeights
-
-.ethical-design-manifesto-icon
-	background url('/ethical-design/images/manifesto-document-icon.svg') top center no-repeat
-	display block
-	font-size 24px
-	font-weight bold
-	line-height OneAndAHalfLineHeights
-	padding-top 144px /* height of icon + padding */
-	text-decoration none
-
 // HOMEPAGE FOOTER callouts	
 .support
 	@media only screen and (min-width: 780px)
