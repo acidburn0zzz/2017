@@ -10,31 +10,7 @@
 	<!-- @import 'assets/includes/_nav.kit' -->
 
 	<div class='main'>
-		<div class='px-video-container' id='ethical-design-manifesto'>
-			<div class='px-video-img-captions-container'>
-				<div class='px-video-captions hide'></div>
-					<div class='px-video-wrapper'>
-						<video poster='/ethical-design/video/poster-ethical-design-manifesto.png' class='px-video' alt='Heartbeat' controls>
-							<!-- video files -->
-							<!-- <source src='//player.vimeo.com/external/158879739.m3u8?s=3e9e6a06c8cecc41202865096871665ec4a2bca6' type='application/x-mpegURL' /> -->
-							<source src='//player.vimeo.com/external/158879739.hd.mp4?s=9da6255938b7f66f9661ece752f84300cebaca55&profile_id=119' type='video/mp4' />
-							<source src='https://ind.ie/videos/ethical-design-manifesto/ethical-design-manifesto.webm' type='video/webm' />
-							<source src='https://ind.ie/videos/ethical-design-manifesto/ethical-design-manifesto.ogv' type='video/ogg' />
-
-							<!-- text track file -->
-							<track kind='captions' label='English captions' src='/ethical-design/captions-ethical-design-manifesto-en.vtt' srclang='en' default />
-
-							<!-- fallback for browsers that don’t support the video element -->
-							<div>
-								<a href='https://ind.ie/videos/ethical-design-manifesto/ethical-design-manifesto.mp4' title='Heartbeat'>
-								<img src='/ethical-design/video/poster-ethical-design-manifesto.png' width='640' height='360' alt='download video' />
-								</a>
-							</div>
-						</video>
-					</div>
-				</div><!-- end container for captions and video -->
-			<div class="px-video-controls"></div>
-		</div><!-- end video container -->
+		
 
 		<h1 class='respect'>Respect</h1>
 
@@ -82,16 +58,5 @@
 		</ul>
 	</div>
 	<!-- @import '/assets/includes/_footer.kit' -->
-	<script src="/assets/js/px-video.js"></script>
-	<script>
-		// Initialize
-		new InitPxVideo({
-		    "videoId": "ethical-design-manifesto",
-		    "captionsOnDefault": false,
-		    "seekInterval": 20,
-		    "videoTitle": "Ethical Design Manifesto",
-		    "debug": true
-		});
-	</script>
 </body>
 </html>
