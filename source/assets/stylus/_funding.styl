@@ -1,6 +1,8 @@
 .fund-us
 	border 1px solid black-twenty
 	overflow hidden
+	margin-right HalfLineHeight
+	margin-left HalfLineHeight
 	padding HalfLineHeight
 	padding-top QuarterLineHeight
 	
@@ -34,9 +36,13 @@
 		padding-top QuarterLineHeight
 	
 	h2
-		font-size 26px
-		line-height 35px
+		font-size 21px
+		line-height 32px
 		margin-top OneLineHeight
+		
+		@media only screen and (min-width: 420px)
+			font-size 26px
+			line-height 35px
 		
 		.flexbox &
 			-webkit-flex 0 0 100%

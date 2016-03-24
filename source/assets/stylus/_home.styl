@@ -9,6 +9,12 @@
 .respect
 	margin-top OneLineHeight
 	margin-bottom 0
+	font-size 60px /* bump up to bigger size early (compared to other h1s) */
+	line-height ThreeLineHeights
+	
+	@media only screen and (min-width: 820px)
+		font-size 90px
+		line-height FiveLineHeights
 
 .callouts
 	clear both
@@ -17,7 +23,7 @@
 	list-style-type none
 	overflow hidden
 	padding HalfLineHeight 0
-	margin HalfLineHeight 0 0 0
+	margin 0
 	
 	h2
 		font-size 21px
@@ -51,14 +57,12 @@
 			margin-top HalfLineHeight
 	
 	h2
-		text-align center
-		
 		@media only screen and (min-width: 780px)
 			border-top 7px solid black-twenty
 			padding-top HalfLineHeight
 			
 	.callout
-		margin-top OneLineHeight
+		margin-top 0
 		position relative
 		
 		p
@@ -74,17 +78,18 @@
 			position relative
 			width 100px
 		
-		@media only screen and (min-width: 780px)
-			margin-top 0
-		
 .callout
-	border-bottom 1px solid black-thirty
 	padding-bottom HalfLineHeight
 	
 	@media only screen and (min-width: 780px)
-		border-bottom none
 		float left
 		width 29.3%
+		
+	h2, h3
+		text-align center
+		
+		@media only screen and (min-width: 500px)
+			text-align left
 		
 // ETHICAL DESIGN callouts
 .human-rights
