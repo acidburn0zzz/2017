@@ -95,11 +95,6 @@
 				left 72px /* width of image and surrounding padding */
 				width 28px
 				
-		&:nth-of-type(even) blockquote:after /* for every other quote, mirror the structure */
-			background url('../../../assets/images/better/quote-tails.svg') bottom left no-repeat
-			left auto
-			right 72px /* width of image and surrounding padding */
-
 		.quote-from
 			display -ms-flexbox
 			display -webkit-flex
@@ -131,7 +126,6 @@
 				padding-right HalfLineHeight
 				text-decoration none
 				word-wrap break-word
-				text-align right
 				
 			img
 				border-radius 50% /* half height/width to make image round */
@@ -146,19 +140,6 @@
 				-ms-flex-order 1
 				order 1
 				width 60px
-			
-		&:nth-of-type(even) .quote-from a /* for every other quote, mirror the structure */
-			-webkit-order 1
-			-ms-flex-order 1
-			order 1
-			text-align left
-		
-		&:nth-of-type(even) .quote-from img /* for every other quote, mirror the structure */
-			-webkit-order 2
-			-ms-flex-order 2
-			order 2
-			margin-right 0
-			margin-left OneLineHeight /* leave space for quote tail */
 
 .callouts
 	clear both
