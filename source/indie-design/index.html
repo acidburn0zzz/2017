@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- $title:Ind.ie — Indie Design -->
+	<!-- @import '../assets/includes/_head.kit' -->
+	<link rel='stylesheet' type='text/css' href='css/style.css'>
+	<link rel='alternate' type='application/rss+xml' title='Ind.ie Blog' href='https://ind.ie/rss/index.xml' />
+</head>
+<body class='camera-panopticon videos'>
+	<header class="site-header">
+		<!-- @import '../assets/includes/_nav.kit' -->
+	</header>
+	<div class='main'>
+		<h1 class='long-title'>Indie Design</h1>
+		<div class='px-video-container' id='indie-design'>
+			<div class='px-video-img-captions-container'>
+				<div class='px-video-captions hide'></div>
+					<div class='px-video-wrapper'>
+						<video poster='images/poster-indie-design.jpg' class='px-video' controls>
+							<!-- video files -->
+							<!-- <source src='//player.vimeo.com/external/159785471.m3u8?s=618458431608f05cc9fb7b3e67b8f789f2f8c83b' type='application/x-mpegURL' /> -->
+							<source src='//player.vimeo.com/external/159785471.hd.mp4?s=f173d76d1d660ed620d6ce63692474686ba2715c&profile_id=113' type='video/mp4' />
+							<source src='https://ind.ie/videos/indie-design/laura-kalbag-indie-design.webm' type='video/webm' />
+							<source src='https://ind.ie/videos/indie-design/laura-kalbag-indie-design.ogv' type='video/ogg' />
+
+							<!-- fallback for browsers that don’t support the video element -->
+							<div>
+								<a href='https://ind.ie/videos/indie-design/laura-kalbag-indie-design.mp4'>
+								<img src='images/poster-indie-design.jpg' width='640' height='360' alt='download video' />
+								</a>
+							</div>
+						</video>
+					</div>
+				</div><!-- end container for captions and video -->
+			<div class="px-video-controls"></div>
+		</div><!-- end video container -->
+		<p>Laura giving a talk at WordCamp London in March 2015.</p>
+		<script src="/assets/js/px-video.js"></script>
+		<script>
+			// Initialize
+			new InitPxVideo({
+			    "videoId": "indie-design",
+			    "captionsOnDefault": false,
+			    "seekInterval": 20,
+			    "videoTitle": "Indie Design",
+			    "debug": true
+			});
+		</script>
+		 
+	</div>
+	<!-- @import '../assets/includes/_footer.kit' -->
+</body>
+</html>

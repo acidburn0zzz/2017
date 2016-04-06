@@ -27,17 +27,13 @@
 	font-weight bold
 	line-height OneLineHeight
 	margin-top OneLineHeight
-	margin-bottom HalfLineHeight
-	text-align center
+	margin-bottom 0
+	font-size 60px /* bump up to bigger size early (compared to other h1s) */
+	line-height ThreeLineHeights
 	
-	em
-		font-style italic
-		font-weight bold
-
 	@media only screen and (min-width: 820px)
-		font-size 30px
-		line-height OneAndAHalfLineHeights
-		margin-bottom ThreeQuartersLineHeight
+		font-size 90px
+		line-height FiveLineHeights
 
 .callouts
 	clear both
@@ -46,7 +42,7 @@
 	list-style-type none
 	overflow hidden
 	padding HalfLineHeight 0
-	margin HalfLineHeight 0 0 0
+	margin 0
 	
 	h2
 		font-size 21px
@@ -73,11 +69,9 @@
 			font-weight bold
 		
 .callout
-	border-bottom 1px solid black-thirty
 	padding-bottom HalfLineHeight
 	
 	@media only screen and (min-width: 780px)
-		border-bottom none
 		float left
 		width 29.3%
 		
