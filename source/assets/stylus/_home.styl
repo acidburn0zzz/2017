@@ -27,13 +27,138 @@
 	font-weight bold
 	line-height OneLineHeight
 	margin-top OneLineHeight
-	margin-bottom 0
-	font-size 60px /* bump up to bigger size early (compared to other h1s) */
-	line-height ThreeLineHeights
+	margin-bottom OneLineHeight
+	text-align center
+	
+	@media only screen and (min-width: 480px)
+		font-size 60px /* bump up to bigger size early (compared to other h1s) */
+		line-height ThreeLineHeights
 	
 	@media only screen and (min-width: 820px)
 		font-size 90px
 		line-height FiveLineHeights
+		
+.better-web-quotes
+	display -ms-flexbox
+	display -webkit-flex
+	display flex
+	-webkit-flex-direction row
+	-ms-flex-direction row
+	flex-direction row
+	-webkit-flex-wrap wrap
+	-ms-flex-wrap wrap
+	flex-wrap wrap
+	-webkit-justify-content center
+	-ms-flex-pack center
+	justify-content center
+	-webkit-align-content stretch
+	-ms-flex-line-pack stretch
+	align-content stretch
+	-webkit-align-items flex-start
+	-ms-flex-align start
+	align-items flex-start
+	margin 0 0 OneLineHeight 0
+	
+	li
+		margin 0 0 HalfLineHeight 0
+		list-style-type none
+		overflow hidden /* don’t let contained floats break the block */
+		padding 0
+		
+		@media only screen and (min-width: 780px)
+			max-width 338px
+			margin-right 12px
+			
+			&:nth-of-type(even)
+				margin-left 12px
+				margin-right 0
+		
+		blockquote
+			background black-ten
+			border-radius HalfLineHeight
+			border-left none
+			margin-left 0
+			padding HalfLineHeight ThreeQuartersLineHeight
+			position relative
+			
+			p
+				color black-eighty
+				margin-bottom 0
+				
+			&:after
+				background url('../../../assets/images/better/quote-tails.svg') bottom right no-repeat
+				bottom -28px /* position under box, height of tail */
+				content ''
+				display block
+				height 28px
+				position absolute
+				left 72px /* width of image and surrounding padding */
+				width 28px
+				
+		&:nth-of-type(even) blockquote:after /* for every other quote, mirror the structure */
+			background url('../../../assets/images/better/quote-tails.svg') bottom left no-repeat
+			left auto
+			right 72px /* width of image and surrounding padding */
+
+		.quote-from
+			display -ms-flexbox
+			display -webkit-flex
+			display flex
+			-webkit-flex-direction row
+			-ms-flex-direction row
+			flex-direction row
+			-webkit-flex-wrap nowrap
+			-ms-flex-wrap nowrap
+			flex-wrap nowrap
+			-webkit-justify-content flex-start
+			-ms-flex-pack start
+			justify-content flex-start
+			-webkit-align-content stretch
+			-ms-flex-line-pack stretch
+			align-content stretch
+				
+			a
+				display block
+				font-size 16px
+				line-height OneLineHeight
+				-webkit-flex 1 1 auto
+				-ms-flex 1 1 auto
+				flex 1 1 auto
+				-webkit-order 2
+				-ms-flex-order 2
+				order 2
+				padding-left HalfLineHeight
+				padding-right HalfLineHeight
+				text-decoration none
+				word-wrap break-word
+				text-align right
+				
+			img
+				border-radius 50% /* half height/width to make image round */
+				display block
+				-webkit-flex 0 0 60px
+				-ms-flex 0 0 60px
+				flex 0 0 60px
+				height 60px
+				margin 0 
+				margin-right OneLineHeight /* leave space for quote tail */
+				-webkit-order 1
+				-ms-flex-order 1
+				order 1
+				width 60px
+			
+		&:nth-of-type(even) .quote-from a /* for every other quote, mirror the structure */
+			-webkit-order 1
+			-ms-flex-order 1
+			order 1
+			text-align left
+		
+		&:nth-of-type(even) .quote-from img /* for every other quote, mirror the structure */
+			-webkit-order 2
+			-ms-flex-order 2
+			order 2
+			margin-right 0
+			margin-left OneLineHeight /* leave space for quote tail */
 
 .callouts
 	clear both
@@ -91,18 +216,3 @@
 	@media only screen and (min-width: 780px)
 		padding-left HalfLineHeight
 		width 28.4%
-
-.illustration
-	display block
-	margin-right auto
-	margin-left auto
-	
-.illustration-person
-	width 107px
-	margin-top HalfLineHeight
-	margin-bottom 0
-	height 66px
-
-.illustration-people
-	width 132px
-	height 148px
