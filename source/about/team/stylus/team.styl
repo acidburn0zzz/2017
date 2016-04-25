@@ -7,11 +7,11 @@
 		margin-top 0 // remove margin as it's not collapsing against margin above
 
 .team-names
-	.hcard
+	.hcard	
 		@media only screen and (min-width: 780px)
 			font-size 21px
 			
-	.founders, .punctuation
+	.punctuation
 		@media only screen and (min-width: 780px)
 			font-size 19px
 
@@ -24,12 +24,7 @@
 	// remove m-dashes on wider views
 		display none
 
-.h-card
-	.p-job-title, .p-role
-		color black-seventy
-		font-size 17px
-
-.p-job-title, .founders
+.p-job-title
 	@media only screen and (min-width: 780px)
 		// move on to second line on wider views
 		display block
@@ -70,6 +65,7 @@
 	.h-card
 		display block
 		text-align center
+		margin-bottom OneLineHeight
 
 		@media only screen and (min-width: 780px)
 			width 31%
