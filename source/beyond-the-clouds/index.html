@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- $title:Ind.ie — Beyond The Clouds -->
+	<!-- @import '../assets/includes/_head.kit' -->
+	<link rel='stylesheet' type='text/css' href='css/style.css'>
+	<link rel='alternate' type='application/rss+xml' title='Ind.ie Blog' href='https://ind.ie/rss/index.xml' />
+</head>
+<body class='camera-panopticon videos'>
+	<header class="site-header">
+		<!-- @import '../assets/includes/_nav.kit' -->
+	</header>
+	<div class='main'>
+		<h1 class='long-title'>Beyond The Clouds</h1>
+		<div class='px-video-container' id='beyond-the-clouds'>
+			<div class='px-video-img-captions-container'>
+				<div class='px-video-captions hide'></div>
+					<div class='px-video-wrapper'>
+						<video poster='images/poster-beyond-the-clouds.jpg' class='px-video' controls>
+							<!-- video files -->
+							<source src='//player.vimeo.com/external/167697982.hd.mp4?s=f646f132d371370826e8f163889917349e8d9ae6&profile_id=174' type='video/mp4' />
+
+							<!-- fallback for browsers that don’t support the video element -->
+							<div>
+								<a href='https://ind.ie/videos/beyond-the-clouds/beyond-the-clouds.mp4'>
+								<img src='images/poster-beyond-the-clouds.jpg' width='640' height='360' alt='download video' />
+								</a>
+							</div>
+						</video>
+					</div>
+				</div><!-- end container for captions and video -->
+			<div class="px-video-controls"></div>
+		</div><!-- end video container -->
+		<script src="/assets/js/px-video.js"></script>
+		<script>
+			// Initialize
+			new InitPxVideo({
+			    "videoId": "beyond-the-clouds",
+			    "captionsOnDefault": false,
+			    "seekInterval": 20,
+			    "videoTitle": "Beyond The Clouds",
+			    "debug": true
+			});
+		</script>
+		 
+	</div>
+	<!-- @import '../assets/includes/_footer.kit' -->
+</body>
+</html>
