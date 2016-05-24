@@ -9,7 +9,7 @@
 .coming-soon
 	background url('../../../better/images/better.svg') top center no-repeat
 	color black-eighty
-	font-family "Avenir Next", Avenir, 'Helvetica Neue', Helvetica, sans-serif
+	font-family 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, sans-serif
 	font-size 30px
 	font-weight bold
 	line-height OneAndAHalfLineHeights
@@ -94,3 +94,250 @@
 	@media only screen and (min-width: 780px)
 		padding-left HalfLineHeight
 		width 28.4%
+		
+/****************************************************************************
+ *							Match homepage to Better.fyi					*
+ ****************************************************************************/
+
+.home
+	h1
+		margin-top HalfLineHeight
+		margin-bottom HalfLineHeight
+		
+		a
+			text-decoration none
+			
+	h2
+		text-align center
+
+.download-on-the-app-store
+	display block
+	height 42px
+	margin-top OneLineHeight /* space between button and video */
+	margin-right auto
+	margin-bottom OneLineHeight
+	margin-left auto
+	width 134px
+
+	@media only screen and (min-width: 480px)
+		margin-top 42px /* space between button and video */
+		margin-bottom 42px
+
+.love
+	background center center no-repeat url('/better/images/love.svg')
+	background-size 22px
+	display inline-block
+	height 0
+	overflow hidden
+	padding-top 24px
+	padding-left 25px
+	position relative
+	top 3px
+	width 0
+
+	@media only screen and (min-width: 580px)
+		background-size 26px
+		padding-left 26px
+		top 1px
+
+.thankyou
+	margin-top 24px
+	margin-bottom OneLineHeight
+	text-align center
+
+	@media only screen and (min-width: 750px) 
+		margin-top 30px
+
+
+/****************************************************************************
+ *							Improvement statistics							*
+ ****************************************************************************/
+
+ .improvements
+	display -ms-flexbox
+	display -webkit-flex
+	display flex
+	-webkit-flex-direction row
+	-ms-flex-direction row
+	flex-direction row
+	-webkit-flex-wrap wrap
+	-ms-flex-wrap wrap
+	flex-wrap wrap
+	-webkit-justify-content center
+	-ms-flex-pack center
+	justify-content center
+	-webkit-align-content stretch
+	-ms-flex-line-pack stretch
+	align-content stretch
+	-webkit-align-items flex-start
+	-ms-flex-align start
+	align-items flex-start
+	list-style-type none
+	margin 18px 0 0 0
+
+	@media only screen and (min-width: 500px) 
+		margin-top 24px
+
+	@media only screen and (min-width: 700px) 
+		margin-bottom 24px
+
+.improvements li
+	background top center no-repeat /* icon styles */
+	background-size 52.5px
+	margin-right 5px
+	margin-bottom 18px
+	margin-left 5px
+	padding-top 69px /* space for icon */
+	text-align center
+	width 80px
+
+	@media only screen and (min-width: 340px)
+		margin-right 10px
+		margin-left 10px
+		
+	@media only screen and (min-width: 400px)
+		width 90px
+	
+	@media only screen and (min-width: 500px)
+		width 110px
+		
+	@media only screen and (min-width: 500px)
+		width 120px
+		
+	@media only screen and (min-width: 760px)
+		background-size 70px
+		padding-top 90px /* space for icon */
+		width 125px
+
+.improvements .requests
+	background-image url('/better/images/safer.svg')
+
+.improvements .weight
+	background-image url('/better/images/lighter.svg')
+
+.improvements .speed
+	background-image url('/better/images/faster.svg')
+
+.improvements h3
+	margin-top 12px
+	margin-bottom 12px
+
+	@media only screen and (min-width: 420px)
+		margin-top 18px
+
+.improvements h4
+	font-size 19px
+	line-height 36px
+	margin-top 12px
+	margin-bottom 6px
+
+	@media only screen and (min-width: 340px)
+		font-size 21px
+
+	@media only screen and (min-width: 460px) 
+		margin-bottom 12px
+
+.improvements .amount
+	font-size 22px
+	display block /* put amount on its own line */
+
+	@media only screen and (min-width: 340px)
+		font-size 24px
+
+	@media only screen and (min-width: 460px) 
+		font-size 28px
+
+.improvements .type
+	font-weight normal
+
+.improvements .details
+	font-size 12px
+	line-height 18px
+
+	@media only screen and (min-width: 460px) 
+		font-size 14px
+		line-height 21px
+
+.improvements .details strong
+	font-weight normal
+	
+	@media only screen and (min-width: 500px)
+		display block
+
+	.improvements .primary
+		@media only screen and (min-width: 560px) 
+			display block /* put text on its own line */
+
+	.improvements .details strong
+		font-weight bold
+
+/****************************************************************************
+ *							Statistics table								*
+ ****************************************************************************/
+
+.home table
+	margin-bottom 18px
+
+	th
+		font-size 12px
+		
+		@media only screen and (min-width: 390px)
+			font-size 14px
+
+		@media only screen and (min-width: 340px)
+			&:nth-of-type(1)
+				width 12px
+
+	tbody th
+		background center left no-repeat
+		text-indent -9999px /* hide text */
+		padding 3px 9px /* 9px padding width accounts for 24px wide icons (and some padding) */
+		width 12px
+
+		@media only screen and (min-width: 400px)
+			text-indent 30px
+
+		&.weight
+			background-image url('/better/images/weight-small.svg')
+
+		&.speed
+			background-image url('/better/images/speed-small.svg')
+
+		&.requests
+			background-image url('/better/images/resources-small.svg')
+
+			@media only screen and (min-width: 460px)
+				background-image url('/better/images/resources-small-top-aligned.svg')
+
+	thead tr th:nth-of-type(1) /* select empty column heading */
+		max-width 12px
+
+	thead tr th:nth-of-type(4) /* select improvements column heading */ /* wrap the heading text and hide overflow */
+		max-width 52px
+		word-wrap normal
+		overflow hidden
+		padding-right 0
+		text-overflow ellipsis
+
+		@media only screen and (min-width: 330px)
+			max-width 100%
+			padding-right 3px
+
+	tbody tr:nth-of-type(1) td, tbody tr:nth-of-type(1) th /* first row */
+		padding-top 12px /* add space between table heading and data */
+
+	tbody td
+		line-height 18px
+		padding 6px
+
+		@media only screen and (min-width: 480px)
+			width: 30%;
+
+		&:nth-of-type(3) /* centre improvements data early */
+			text-align center
+
+			@media only screen and (min-width: 370px)
+				text-align: center;
+
+table td .units
+	font-variant small-caps
