@@ -139,6 +139,18 @@
 		margin-top 42px /* space between button and video */
 		margin-bottom 42px
 
+.home-statistics p
+	font-size 12px
+	line-height 18px
+	text-align center
+	
+	@media only screen and (min-width: 460px) 
+		font-size 14px
+		line-height 21px
+		margin-right auto
+		margin-left auto
+		max-width 580px
+
 .love
 	background center center no-repeat url('/better/images/love.svg')
 	background-size 22px
@@ -223,7 +235,7 @@
 	@media only screen and (min-width: 760px)
 		background-size 70px
 		padding-top 90px /* space for icon */
-		width 125px
+		width 170px
 
 .improvements .requests
 	background-image url('/better/images/safer.svg')
@@ -240,6 +252,12 @@
 
 	@media only screen and (min-width: 420px)
 		margin-top 18px
+
+.improvements h3 strong,
+.improvements h3 .type,
+.improvements .details strong
+	font-family "Avenir Next Medium", "Avenir" Avenir, 'Helvetica Neue', Helvetica, sans-serif
+	font-weight normal
 
 .improvements h4
 	font-size 19px
@@ -292,7 +310,10 @@
  ****************************************************************************/
 
 .home table
+	margin-right auto
+	margin-left auto
 	margin-bottom 18px
+	max-width 580px
 
 	th
 		font-size 12px
