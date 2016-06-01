@@ -5,38 +5,6 @@
 	.site-footer
 		@media only screen and (min-width: 500px)
 			margin-top TwoLineHeights
-			
-.coming-soon
-	background url('../../../better/images/better.svg') top center no-repeat
-	color black-eighty
-	font-family 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, sans-serif
-	font-size 30px
-	font-weight bold
-	line-height OneAndAHalfLineHeights
-	margin-top OneAndAHalfLineHeights
-	margin-bottom HalfLineHeight
-	padding-top 212px
-
-	@media only screen and (min-width: 820px)
-		font-size 36px
-		line-height TwoLineHeights
-		margin-bottom ThreeQuartersLineHeight
-
-.better-web
-	font-size 24px
-	font-weight bold
-	line-height OneLineHeight
-	margin-top OneLineHeight
-	margin-bottom OneLineHeight
-	text-align center
-	
-	@media only screen and (min-width: 480px)
-		font-size 60px /* bump up to bigger size early (compared to other h1s) */
-		line-height ThreeLineHeights
-	
-	@media only screen and (min-width: 820px)
-		font-size 90px
-		line-height FiveLineHeights
 		
 .callouts
 	clear both
@@ -98,17 +66,65 @@
 /****************************************************************************
  *							Match homepage to Better.fyi					*
  ****************************************************************************/
+ 
+/* Leader image */
 
-.home
-	h1
-		margin-top HalfLineHeight
-		margin-bottom HalfLineHeight
+.device-wrap
+	background-color #1a9bfc
+	background-image url('/better/images/starburst.svg')
+	background-position bottom center
+	background-repeat no-repeat
+	background-size auto 1000%
+
+.device-wrap-inner
+	background-image url('/better/images/clouds-white.svg')
+	background-position bottom center
+	background-repeat repeat-x, no-repeat
+	background-size 644px 61px
+	padding 12px 6px 0 6px
+
+	@media only screen and (min-width: 600px)
+		background-size 1237px 120px
+		padding 18px 12px 0 12px
+
+	@media only screen and (min-width: 650px)
+		padding-top 36px
+	
+	@media only screen and (min-width: 815px)
+		padding 48px 0 0 0
+
+
+.device-wrap img
+	margin 0 auto
+	max-width 625px
+	width 100%
+
+.home h1
+	color #191919
+	font-family "Avenir Next", Avenir, 'Helvetica Neue', Helvetica, sans-serif
+	font-size 36px
+	line-height OneAndAHalfLineHeights
+	margin-top HalfLineHeight
+	margin-bottom OneAndAHalfLineHeights
+	text-align center
+
+	@media only screen and (min-width: 480px)
+		font-size 42px
+		line-height TwoLineHeights
+
+	@media only screen and (min-width: 820px)
+		font-size 50px
+		line-height ThreeLineHeights
 		
-		a
-			text-decoration none
+	a
+		text-decoration none
+		
+	strong
+		font-family "Avenir Next Medium", "Avenir" Avenir, 'Helvetica Neue', Helvetica, sans-serif
+		font-weight normal
 			
-	h2
-		text-align center
+.home h2
+	text-align center
 
 .download-on-the-app-store
 	display block
