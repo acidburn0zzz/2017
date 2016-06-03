@@ -5,7 +5,16 @@
             <link>https://ind.ie</link>
             <description>The latest news and updates from the Ind.ie blog and Ind.ie labs blog</description>
             <atom:link href="https://ind.ie/rss/index.xml" rel="self" type="application/atom+xml" />
-            <lastBuildDate>Tue, 12 Apr 2016 16:00:00 GMT</lastBuildDate>
+            <lastBuildDate>Fri, 3 Jun 2016 15:00:00 GMT</lastBuildDate>
+                <item>
+                    <title>Introducing Better</title>
+                    <link>https://ind.ie/blog/better</link>
+                    <guid>https://ind.ie/blog/better</guid>
+                    <description>&lt;p&gt;Today we&apos;re releasing a new app. It&apos;s called &lt;p&gt;&lt;a href=&quot;https://better.fyi&quot;&gt;Better&lt;/a&gt; and it&apos;s a content blocker for iPhone and iPad.
+                    </description>
+                    <pubDate>Fri, 3 Jun 2016 15:00:00 GMT</pubDate>
+                    <author>aral@ind.ie (Aral Balkan)</author>
+                </item>
                  <item>
                     <title>Support IMMI</title>
                     <link>https://ind.ie/blog/support-immi</link>
