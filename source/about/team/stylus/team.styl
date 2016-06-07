@@ -1,10 +1,45 @@
 .full-time
 	clear both
-	overflow hidden
+	margin-bottom TwoLineHeights
 	text-align center
 
-	img
-		margin-top 0 // remove margin as it's not collapsing against margin above
+	/* Photo frame. Technique courtesy of http://zurb.com/playground/css3-polaroids */
+	.photo-frame:after
+		content attr(title);
+
+	.photo-frame
+		background-color #fff
+		box-shadow 0 3px 6px rgba(0,0,0,.25)
+		color #303030 /* dark grey – crest blue in greyscale */
+		display block
+		font-family "Avenir Next Medium","Avenir Next", Avenir, Helvetica, sans-serif
+		font-size 19px
+		line-height 24px
+		margin-top 0
+		margin-right auto
+		margin-left auto
+		padding 12px 12px 12px 12px
+		text-align center
+		text-decoration none
+		transform rotate(-1.5deg)
+		width 80%
+		
+		@media only screen and (min-width: 540px)
+			font-size 21px
+			line-height 30px
+			margin-top 36px
+			margin-bottom ThreeLineHeights
+			max-width 460px
+			width 50%
+
+
+	.team-photo
+		margin-top 0
+		margin-bottom 12px
+
+		@media only screen and (min-width: 540px)
+			margin-bottom 12px
+
 
 .team-names
 	.hcard	
