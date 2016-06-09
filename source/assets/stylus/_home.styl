@@ -138,6 +138,175 @@
 	@media only screen and (min-width: 480px)
 		margin-top 42px /* space between button and video */
 		margin-bottom 42px
+		
+/****************************************************************************
+ *									Reviews									*
+ ****************************************************************************/
+		
+.home .reviews
+	list-style-type none
+	margin 0
+	overflow hidden
+
+	@media only screen and (min-width: 750px)
+		display -ms-flexbox
+		display -webkit-flex
+		display flex
+		-webkit-flex-direction row
+		-ms-flex-direction row
+		flex-direction row
+		-webkit-flex-wrap wrap
+		-ms-flex-wrap wrap
+		flex-wrap wrap
+		-webkit-justify-content center
+		-ms-flex-pack center
+		justify-content center
+		-webkit-align-content center
+		-ms-flex-line-pack center
+		align-content center
+		-webkit-align-items center
+		-ms-flex-align center
+		align-items center
+
+	@media only screen and (min-width: 800px)
+		margin-left -40px
+		margin-right -40px
+
+	@media only screen and (min-width: 1000px)
+		margin-left -70px
+		margin-right -70px
+
+.home .review
+	font-size 21px
+	font-family "Avenir Next Medium", "Avenir Next", Avenir, Helvetica, sans-serif
+	font-weight normal
+	line-height 30px
+	margin-top 18px
+	margin-left auto
+	margin-bottom 24px
+	margin-right auto
+	max-width 320px
+	padding-left 12px
+	padding-right 12px
+	text-align center
+
+	@media only screen and (min-width: 750px)
+		font-size 24px
+		line-height 36px
+		margin-top 18px
+		margin-bottom 18px
+		width 190px
+
+.review .rating
+	background url('/better/images/stars.svg') center center no-repeat
+	display block
+	height 30px
+	margin-top 3px
+	margin-right auto
+	margin-left auto
+	text-indent -3000px
+	width 100%
+
+	@media only screen and (min-width: 600px)
+		display inline-block
+		height 36px
+		margin-top 0
+		max-width 127px
+		
+.review .credit
+	text-align center
+
+.home .reviews-link
+	display block
+	font-size 15px
+	line-height 24px
+	margin-top 12px
+
+@media only screen and (min-width: 750px)
+	.home .last-review
+		font-size 17px
+		line-height 24px
+		-webkit-flex 0 1 100%
+		-ms-flex 0 1 100%
+		flex 0 1 100%
+		margin-top 24px
+		margin-bottom 0
+		max-width 240px
+
+	.home .reviews-link
+		font-size 17px
+		line-height 24px
+		margin-top 18px
+		margin-bottom 0
+		margin-left -60px
+		margin-right -60px
+
+	.home .last-review .rating
+		background-size 100px
+		height 24px
+		margin-top 3px
+
+@media only screen and (min-width: 1000px)
+	.home .last-review
+		-webkit-flex 0 1 auto
+		-ms-flex 0 1 auto
+		flex 0 1 auto
+
+/* Add nicer quotes */
+
+.left-quote, 
+.right-quote
+	display inline-block
+	position relative
+	text-indent -3000px
+	width 0
+
+.left-quote:before, 
+.right-quote:after, 
+.review .description .left-quote:before, 
+.review .description .right-quote:after
+	background top left no-repeat
+	background-size 11px 11px
+	content ""
+	display block
+	height 14px
+	position absolute
+	top 6px
+	width 14px
+
+@media only screen and (min-width: 750px)
+	.left-quote:before, 
+	.right-quote:after
+		top 8px
+
+	.last-review .left-quote:before, 
+	.last-review .right-quote:after
+		background-size 9px 9px
+		top 5px
+
+/* LEFT */
+
+.left-quote:before, 
+.review .description .left-quote:before
+	background-image url('/better/images/left-quote.svg')
+	left -14px
+
+	@media only screen and (min-width: 750px)
+		.last-review .left-quote:before
+			left -12px
+
+		.left-quote:before, 
+		.review .description .left-quote:before
+			left -16px
+
+/* RIGHT */
+
+.right-quote:after, 
+.review .description .right-quote:after
+	background-image url('/better/images/right-quote.svg')
+	left 1px
+
+/* end Reviews */
 
 .home-statistics p
 	font-size 12px
