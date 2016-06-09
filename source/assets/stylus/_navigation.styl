@@ -38,22 +38,6 @@
 				background black-seventy
 				border-bottom none
 
-		/* don't have gap between balloon link and about link, 
-		fill the space with button padding because it looks less odd */
-		&.about-link a
-			padding-left HalfLineHeight
-
-			@media only screen and (min-width: 770px)
-				padding-left 17px
-
-			&:hover, &:active, &:focus
-				margin-left 2px
-				padding-left 12px
-
-				@media only screen and (min-width: 770px)
-					margin-left 2px
-					padding-left 15px
-
 		&.home-link
 			padding 0
 
@@ -129,23 +113,3 @@
 	a
 		background black-thirty
 		color black-ninety
-
-/* Add gap to left of active about navigation so there's space between link and balloon */
-.about .site-navigation .about-link,
-.manifesto .site-navigation .about-link,
-.ethical-design .site-navigation .about-link,
-.declaration .site-navigation .about-link,
-.team .site-navigation .about-link,
-.archive .site-navigation .about-link,
-.privacy .site-navigation .about-link,
-.press .site-navigation .about-link,
-.talks .site-navigation .about-link,
-.consulting .site-navigation .about-link,
-.contact .site-navigation .about-link
-	a, a:hover, a:active, a:focus
-		margin-left 5px
-		padding-left 10px
-
-		@media only screen and (min-width: 770px)
-			margin-left 2px
-			padding-left 15px
