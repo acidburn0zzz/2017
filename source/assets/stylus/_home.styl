@@ -126,18 +126,57 @@
 .home h2
 	text-align center
 
-.download-on-the-app-store
+.downloads
+
+	@media only screen and (min-width: 480px)
+		display -ms-flexbox
+		display -webkit-flex
+		display flex
+		-webkit-flex-direction row
+		-ms-flex-direction row
+		flex-direction row
+		-webkit-flex-wrap nowrap
+		-ms-flex-wrap nowrap
+		flex-wrap nowrap
+		-webkit-justify-content center
+		-ms-flex-pack center
+		justify-content center
+		-webkit-align-content center
+		-ms-flex-line-pack center
+		align-content center
+		-webkit-align-items flex-start
+		-ms-flex-align start
+		align-items flex-start
+
+.download-on-the-app-store, .downloads a
 	display block
 	height 42px
-	margin-top OneLineHeight /* space between button and video */
 	margin-right auto
-	margin-bottom OneLineHeight
+	margin-bottom 24px
 	margin-left auto
 	width 134px
 
-	@media only screen and (min-width: 480px)
-		margin-top 42px /* space between button and video */
-		margin-bottom 42px
+@media only screen and (max-width: 480px)
+	.downloads .download-extension
+		margin-bottom 12px
+
+@media only screen and (min-width: 480px)
+	.home .download-on-the-app-store, .downloads a
+		margin-left 20px
+		margin-right 20px
+
+.download-on-the-app-store img, .downloads a img
+	margin-top 0
+
+.home .download-on-the-app-store, .home .downloads a
+	margin-top 0
+
+	@media only screen and (min-width: 520px)
+		margin-bottom 18px
+
+	@media only screen and (min-width: 660px)
+		margin-bottom 24px
+
 		
 /****************************************************************************
  *									Reviews									*
