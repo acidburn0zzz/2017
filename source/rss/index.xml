@@ -5,7 +5,34 @@
             <link>https://ind.ie</link>
             <description>The latest news and updates from the Ind.ie blog and Ind.ie labs blog</description>
             <atom:link href="https://ind.ie/rss/index.xml" rel="self" type="application/atom+xml" />
-            <lastBuildDate>Fri, 3 Jun 2016 15:00:00 GMT</lastBuildDate>
+            <lastBuildDate>Fri, 29 Jul 2016 05:00:00 GMT</lastBuildDate>
+                <item>
+                    <title>A note about client-side-only JavaScript in Set templates</title>
+                    <link>https://forum.ind.ie/t/a-note-about-client-side-only-javascript-in-set-templates/1277</link>
+                    <guid>https://forum.ind.ie/t/a-note-about-client-side-only-javascript-in-set-templates/1277</guid>
+                    <description>&lt;p&gt;Separating client-side and server-side functionality.&quot;&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://forum.ind.ie/t/a-note-about-client-side-only-javascript-in-set-templates/1277&quot;&gt;Read the full post on the Ind.ie forum&lt;/a&gt;.&lt;/p&gt;
+                    </description>
+                    <pubDate>Fri, 29 Jul 2016 16:12:00 GMT</pubDate>
+                    <author>aral@ind.ie (Aral Balkan)</author>
+                </item>
+                <item>
+                    <title>Update to GitLab Admin</title>
+                    <link>https://forum.ind.ie/t/update-to-gitlab-admin/1272</link>
+                    <guid>https://forum.ind.ie/t/update-to-gitlab-admin/1272</guid>
+                    <description>&lt;p&gt;Useful if you’re working with the GitLab API and need quick access to group, project, and milestone IDs.&quot;&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;    <guid>https://forum.ind.ie/t/update-to-gitlab-admin/1272&quot;&gt;Read the full post on the Ind.ie forum&lt;/a&gt;.&lt;/p&gt;
+                    </description>
+                    <pubDate>Thu, 21 Jul 2016 15:16:00 GMT</pubDate>
+                    <author>aral@ind.ie (Aral Balkan)</author>
+                </item>
+                <item>
+                    <title>Swift libraries</title>
+                    <link>https://forum.ind.ie/t/all-our-swift-libraries-now-support-swift-2-2-1-swift-2-3-and-swift-3/1263</link>
+                    <guid>https://forum.ind.ie/t/all-our-swift-libraries-now-support-swift-2-2-1-swift-2-3-and-swift-3/1263</guid>
+                    <description>&lt;p&gt;All our Swift libraries now support Swift 2.2.1, Swift 2.3, and Swift 3.&quot;&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://forum.ind.ie/t/all-our-swift-libraries-now-support-swift-2-2-1-swift-2-3-and-swift-3/1263&quot;&gt;Read the full post on the Ind.ie forum&lt;/a&gt;.&lt;/p&gt;
+                    </description>
+                    <pubDate>Mon, 18 Jul 2016 11:52:00 GMT</pubDate>
+                    <author>aral@ind.ie (Aral Balkan)</author>
+                </item>
                 <item>
                     <title>Introducing Better</title>
                     <link>https://ind.ie/blog/better</link>
@@ -23,6 +50,24 @@
                     </description>
                     <pubDate>Tue, 12 Apr 2016 16:00:00 GMT</pubDate>
                     <author>laura@ind.ie (Laura Kalbag)</author>
+                </item>
+                <item>
+                    <title>Running Fastlane Boarding on Dokku</title>
+                    <link>https://forum.ind.ie/t/running-fastlane-boarding-on-dokku/1128</link>
+                    <guid>https://forum.ind.ie/t/running-fastlane-boarding-on-dokku/1128</guid>
+                    <description>&lt;p&gt;Boarding is a Ruby on Rails app for setting up a TestFlight sign-up page for your app…&quot;&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://forum.ind.ie/t/running-fastlane-boarding-on-dokku/1128&quot;&gt;Read the full post on the Ind.ie forum&lt;/a&gt;.&lt;/p&gt;
+                    </description>
+                    <pubDate>Tue, 29 Mar 2016 15:25:00 GMT</pubDate>
+                    <author>aral@ind.ie (Aral Balkan)</author>
+                </item>
+                <item>
+                    <title>Setting up GitHub single sign-on</title>
+                    <link>https://forum.ind.ie/t/setting-up-github-single-sign-on-via-omniauth-on-gitlab-omnibus-package/1126</link>
+                    <guid>https://forum.ind.ie/t/setting-up-github-single-sign-on-via-omniauth-on-gitlab-omnibus-package/1126</guid>
+                    <description>&lt;p&gt;Via OmniAuth on GitLab (Omnibus package)&quot;&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://forum.ind.ie/t/setting-up-github-single-sign-on-via-omniauth-on-gitlab-omnibus-package/1126&quot;&gt;Read the full post on the Ind.ie forum&lt;/a&gt;.&lt;/p&gt;
+                    </description>
+                    <pubDate>Mon, 28 Mar 2016 11:37:00 GMT</pubDate>
+                    <author>aral@ind.ie (Aral Balkan)</author>
                 </item>
                 <item>
                     <title>Ethical Design Manifesto Refresh</title>
@@ -43,6 +88,24 @@
                     <author>aral@ind.ie (Aral Balkan)</author>
                 </item>
                 <item>
+                    <title>New Handle (v2.0.7) and Delay (v1.0.7) Swift micro-library releases</title>
+                    <link>https://forum.ind.ie/t/new-handle-v2-0-7-and-delay-v1-0-7-swift-micro-library-releases/1038</link>
+                    <guid>https://forum.ind.ie/t/new-handle-v2-0-7-and-delay-v1-0-7-swift-micro-library-releases/1038</guid>
+                    <description>&lt;p&gt;Both libraries are now fat frameworks that build seamlessly for iOS and OS X and are Carthage compatible.&quot;&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://forum.ind.ie/t/new-handle-v2-0-7-and-delay-v1-0-7-swift-micro-library-releases/1038&quot;&gt;Read the full post on the Ind.ie forum&lt;/a&gt;.&lt;/p&gt;
+                    </description>
+                    <pubDate>Tue, 15 Dec 2015 14:15:00 GMT</pubDate>
+                    <author>aral@ind.ie (Aral Balkan)</author>
+                </item>
+                <item>
+                    <title>Caching page view controllers in UIPageViewController</title>
+                    <link>https://forum.ind.ie/t/caching-page-view-controllers-in-uipageviewcontroller/1029/1</link>
+                    <guid>https://forum.ind.ie/t/caching-page-view-controllers-in-uipageviewcontroller/1029/1</guid>
+                    <description>&lt;p&gt;I’ve seen a number of tutorials on the web where a…&quot;&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://forum.ind.ie/t/caching-page-view-controllers-in-uipageviewcontroller/1029/1&quot;&gt;Read the full post on the Ind.ie forum&lt;/a&gt;.&lt;/p&gt;
+                    </description>
+                    <pubDate>Tue, 1 Dec 2015 13:53:00 GMT</pubDate>
+                    <author>aral@ind.ie (Aral Balkan)</author>
+                </item>
+                <item>
                     <title>Ethical Design Manifesto</title>
                     <link>https://ind.ie/blog/ethical-design-manifesto</link>
                     <guid>https://ind.ie/blog/ethical-design-manifesto</guid>
@@ -59,6 +122,15 @@
                     </description>
                     <pubDate>Fri, 23 Oct 2015 16:00:00 GMT</pubDate>
                     <author>laura@ind.ie (Laura Kalbag)</author>
+                </item>
+                <item>
+                <title>Set 2.0 release</title>
+                    <link>https://forum.ind.ie/t/set-2-0-release/978</link>
+                    <guid>https://forum.ind.ie/t/set-2-0-release/978</guid>
+                    <description>&lt;p&gt;I just released version 2.0 of Set, my unobtrusive JavaScript template engine for Node.js and browsers.&quot;&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;    <guid>https://forum.ind.ie/t/set-2-0-release/978&quot;&gt;Read the full post on the Ind.ie forum&lt;/a&gt;.&lt;/p&gt;
+                    </description>
+                    <pubDate>Fri, 23 Oct 2015 14:12:00 GMT</pubDate>
+                    <author>aral@ind.ie (Aral Balkan)</author>
                 </item>
                 <item>
                     <title>October Update</title>
