@@ -105,7 +105,7 @@
 	font-size 36px
 	line-height OneAndAHalfLineHeights
 	margin-top HalfLineHeight
-	margin-bottom OneAndAHalfLineHeights
+	margin-bottom 0
 	text-align center
 
 	@media only screen and (min-width: 480px)
@@ -133,11 +133,15 @@
 	margin-top 24px
 	overflow hidden
 
-	@media only screen and (min-width: 400px)
+	@media only screen and (min-width: 360px)
 		margin-top 18px
 		margin-left auto
 		margin-right auto
+		margin-bottom OneLineHeight
 		width 314px
+		
+	@media only screen and (min-width: 520px)
+		margin-bottom OneAndAHalfLineHeights
 
 .download-on-the-app-store, .download-on-mac-app-store
 	display block
@@ -148,6 +152,8 @@
 	
 	@media only screen and (min-width: 360px)
 		float left
+		margin-right 0
+		margin-left 0
 		
 	@media only screen and (min-width: 520px)
 		margin-top 18px
@@ -166,7 +172,8 @@
 	width 165px
 
 .download-on-the-app-store
-	margin-right 12px
+	@media only screen and (min-width: 360px)
+		margin-right 12px
 
 @media only screen and (max-width: 480px)
 	.downloads .download-on-mac-app-store
