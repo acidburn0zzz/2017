@@ -4,42 +4,51 @@
 .summary, .summary a
 	font-weight bold
 		
-.e-content
-	img
-		border 1px solid black-ten
-		display block
-		margin-top 0
-		margin-right auto
-		margin-left auto
-		margin-bottom OneLineHeight
+.downloads
+	margin-top 24px
+	overflow hidden
 
-	figure
-		margin-bottom OneAndAHalfLineHeights
-		
-		@media only screen and (min-width: 560px)
-			margin-top OneAndAHalfLineHeights
-			margin-bottom OneAndAHalfLineHeights
-			
-		@media only screen and (min-width: 770px)
-			margin-bottom OneAndThreeQuartersLineHeights
-			
-	figcaption
-		@media only screen and (min-width: 770px)
-			margin-left TwoLineHeights
-			margin-right TwoLineHeights
-		
-	ul
-		margin-bottom HalfLineHeight
-		
-		li
-			margin-bottom HalfLineHeight
-			
-	.with-love
-		margin-bottom 0
+	@media only screen and (min-width: 360px)
+		margin-top 18px
+		margin-left auto
+		margin-right auto
+		width 314px
+
+.download-on-the-app-store, .download-on-mac-app-store
+	display block
+	margin-top 12px
+	margin-right auto
+	margin-left auto
+	margin-bottom 24px
 	
-	.ps
-		font-size 15px
-		font-style italic
-		line-height ThreeQuartersLineHeight
-		margin-top HalfLineHeight
-		margin-bottom OneLineHeight
+	@media only screen and (min-width: 360px)
+		float left
+		margin-right 0
+		margin-left 0
+		
+	@media only screen and (min-width: 520px)
+		margin-top 18px
+		margin-bottom 18px
+		
+	.download-on-the-app-store, .download-on-mac-app-store
+		margin-top 30px
+		margin-bottom 24px
+
+.download-on-the-app-store, .download-on-the-app-store img
+	height 40px
+	width 134px
+
+.download-on-mac-app-store, .download-on-mac-app-store img
+	height 40px
+	width 165px
+
+.download-on-the-app-store
+	@media only screen and (min-width: 360px)
+		margin-right 12px
+
+@media only screen and (max-width: 480px)
+	.downloads .download-on-mac-app-store
+		margin-bottom 12px
+
+.download-on-the-app-store img, .download-on-mac-app-store img
+	margin-top 0
