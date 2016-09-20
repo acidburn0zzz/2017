@@ -5,7 +5,16 @@
             <link>https://ind.ie/blog</link>
             <description>The latest news and updates from Ind.ie</description>
             <atom:link href="https://ind.ie/blog/rss/index.xml" rel="self" type="application/atom+xml" />
-            <lastBuildDate>Fri, 3 Jun 2016 15:00:00 GMT</lastBuildDate>
+            <lastBuildDate>Tue, 20 Sep 2016 22:30:00 GMT</lastBuildDate>
+                <item>
+                    <title>Your Mac, now Better.</title>
+                    <link>https://ind.ie/blog/better-for-mac</link>
+                    <guid>https://ind.ie/blog/better-for-mac</guid>
+                    <description>&lt;p&gt;Today we&apos;re releasing  &lt;p&gt;&lt;a href=&quot;https://better.fyi&quot;&gt;Better for Mac&lt;/a&gt; alongside Better for iPhone and iPad
+                    </description>
+                    <pubDate>Tue, 20 Sep 2016 22:30:00 GMT</pubDate>
+                    <author>aral@ind.ie (Aral Balkan)</author>
+                </item>
                 <item>
                     <title>Introducing Better</title>
                     <link>https://ind.ie/blog/better</link>

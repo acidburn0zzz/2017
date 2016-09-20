@@ -5,7 +5,16 @@
             <link>https://ind.ie</link>
             <description>The latest news and updates from the Ind.ie blog and Ind.ie labs blog</description>
             <atom:link href="https://ind.ie/rss/index.xml" rel="self" type="application/atom+xml" />
-            <lastBuildDate>Fri, 29 Jul 2016 05:00:00 GMT</lastBuildDate>
+            <lastBuildDate>Tue, 20 Sep 2016 22:30:00 GMT</lastBuildDate>
+                <item>
+                    <title>Your Mac, now Better.</title>
+                    <link>https://ind.ie/blog/better-for-mac</link>
+                    <guid>https://ind.ie/blog/better-for-mac</guid>
+                    <description>&lt;p&gt;Today we&apos;re releasing  &lt;p&gt;&lt;a href=&quot;https://better.fyi&quot;&gt;Better for Mac&lt;/a&gt; alongside Better for iPhone and iPad
+                    </description>
+                    <pubDate>Tue, 20 Sep 2016 22:30:00 GMT</pubDate>
+                    <author>aral@ind.ie (Aral Balkan)</author>
+                </item>
                 <item>
                     <title>A note about client-side-only JavaScript in Set templates</title>
                     <link>https://forum.ind.ie/t/a-note-about-client-side-only-javascript-in-set-templates/1277</link>
@@ -756,103 +765,4 @@
                 <link>https://ind.ie/blog/new-blog/</link>
                 <guid>https://ind.ie/blog/new-blog/</guid>
                 <title>New ind.ie blog </title>
-                <description>&lt;p&gt;&lt;a href=&quot;https://ind.ie/blog/new-blog/&quot;&gt;Read the full post on the Ind.ie Blog&lt;/a&gt;.&lt;/p&gt;</description>
-            </item>
-            <item>
-                <pubDate>Tue, 9 Sep 2014 00:00:00 GMT</pubDate>
-                <link>https://ind.ie/blog/2014-09-08/</link>
-                <guid>https://ind.ie/blog/2014-09-08/</guid>
-                <title>Summit videos, ind.ie and important dates </title>
-                <author>laura@ind.ie (Laura Kalbag)</author
-                <description>&lt;p&gt;Crowdfunding, Thunderclap and changes to our privacy policy.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://ind.ie/blog/2014-09-08/&quot;&gt;Read the full post on the Ind.ie Blog&lt;/a&gt;.&lt;/p&gt;</description>
-            </item>
-            <item>
-                <pubDate>Mon, 26 May 2014 00:00:00 GMT</pubDate>
-                <link>https://ind.ie/blog/2014-05-26/</link>
-                <guid>https://ind.ie/blog/2014-05-26/</guid>
-                <title>Summer Update </title>
-                <author>aral@ind.ie (Aral Balkan)</author>
-                <description>&lt;p&gt;Indie Tech Summit, funds, jobs, Indie Phone on Sky News and trolling Eric Schmidt for charity.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://ind.ie/blog/2014-05-26/&quot;&gt;Read the full post on the Ind.ie Blog&lt;/a&gt;.&lt;/p&gt;</description>
-            </item>
-            <item>
-                <pubDate>Wed, 30 Apr 2014 00:00:00 GMT</pubDate>
-                <link>https://ind.ie/blog/2014-04-30/</link>
-                <guid>https://ind.ie/blog/2014-04-30/</guid>
-                <title>The Next Web </title>
-                <author>jo@ind.ie (Jo Porter)</author>
-                <description>&lt;p&gt;Aral and Jo visit Amsterdam, where Aral presents ‘Free is a Lie&apos; at The Next Web.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://ind.ie/blog/2014-04-30/&quot;&gt;Read the full post on the Ind.ie Blog&lt;/a&gt;.&lt;/p&gt;</description>
-            </item>
-            <item>
-                <pubDate>Thu, 20 Mar 2014 00:00:00 GMT</pubDate>
-                <link>https://ind.ie/blog/2014-03-20/</link>
-                <guid>https://ind.ie/blog/2014-03-20/</guid>
-                <title>RSA Talks — Free is a Lie </title>
-                <author>laura@ind.ie (Laura Kalbag)</author
-                <description>&lt;p&gt;Aral Balkan to speak about Indie Technology at The Royal Society of Arts to on April 10 2014 00:00:00 GMT.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://ind.ie/blog/2014-03-20/&quot;&gt;Read the full post on the Ind.ie Blog&lt;/a&gt;.&lt;/p&gt;</description>
-            </item>
-            <item>
-                <pubDate>Mon, 17 Mar 2014 00:00:00 GMT</pubDate>
-                <link>https://ind.ie/blog/2014-03-17/</link>
-                <guid>https://ind.ie/blog/2014-03-17/</guid>
-                <title>The Knight News Challenge </title>
-                <author>laura@ind.ie (Laura Kalbag)</author
-                <description>&lt;p&gt;We have applied for The Knight News Challenge and need your support to get funding. (Also, other updates of press coverage, bootstrapping news, and upcoming talks and events.)&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://ind.ie/blog/2014-03-17/&quot;&gt;Read the full post on the Ind.ie Blog&lt;/a&gt;.&lt;/p&gt;</description>
-            </item>
-            <item>
-                <pubDate>Tue, 18 Feb 2014 00:00:00 GMT</pubDate>
-                <link>https://ind.ie/blog/2014-02-18/</link>
-                <guid>https://ind.ie/blog/2014-02-18/</guid>
-                <title>The 50 most exciting lean hardware startups in Europe </title>
-                <author>laura@ind.ie (Laura Kalbag)</author
-                <description>&lt;p&gt;Tech.eu says that Indie Phone is one of them.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://ind.ie/blog/2014-02-18/&quot;&gt;Read the full post on the Ind.ie Blog&lt;/a&gt;.&lt;/p&gt;</description>
-            </item>
-            <item>
-                <pubDate>Fri, 14 Feb 2014 00:00:00 GMT</pubDate>
-                <link>https://ind.ie/blog/2014-02-14/</link>
-                <guid>https://ind.ie/blog/2014-02-14/</guid>
-                <title>A sneak peek! </title>
-                <author>laura@ind.ie (Laura Kalbag)</author
-                <description>&lt;p&gt;Will you be our valentine?&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://ind.ie/blog/2014-02-14/&quot;&gt;Read the full post on the Ind.ie Blog&lt;/a&gt;.&lt;/p&gt;</description>
-            </item>
-            <item>
-                <pubDate>Wed, 29 Jan 2014 00:00:00 GMT</pubDate>
-                <link>https://ind.ie/blog/2014-01-29/</link>
-                <guid>https://ind.ie/blog/2014-01-29/</guid>
-                <title>Indie Phone nominated as Game Changer of the Year </title>
-                <author>laura@ind.ie (Laura Kalbag)</author
-                <description>&lt;p&gt;at The Net Awards. We need your votes to make it to the finals.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://ind.ie/blog/2014-01-29/&quot;&gt;Read the full post on the Ind.ie Blog&lt;/a&gt;.&lt;/p&gt;</description>
-            </item>
-            <item>
-                <pubDate>Mon, 13 Jan 2014 00:00:00 GMT</pubDate>
-                <link>https://ind.ie/blog/2</link>
-                <guid>https://ind.ie/blog/2</guid>
-                <title>Indie Newsletter #2: </title>
-                <author>laura@ind.ie (Laura Kalbag)</author
-                <description>&lt;p&gt;A trip to Amsterdam to meet Fairphone and Philips and an update on the bootstrapping.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://ind.ie/blog/2&quot;&gt;Read the full post on the Ind.ie Blog&lt;/a&gt;.&lt;/p&gt;</description>
-            </item>
-            <item>
-                <pubDate>Tue, 31 Dec 2013 00:00:00 GMT</pubDate>
-                <link>http://aralbalkan.com/notes/2014-the-rise-of-indie-tech/</link>
-                <guid>http://aralbalkan.com/notes/2014-the-rise-of-indie-tech/</guid>
-                <title>2014: The Rise of Indie Tech </title>
-                <author>laura@ind.ie (Laura Kalbag)</author
-                <description>&lt;p&gt;End‐of‐year blog post by Aral Balkan: ‘The post-Snowden world is not necessarily all doom-and-gloom. People around the world — including myself — are working to redecentralise the web and to create a new breed of independent technologies.&apos;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://aralbalkan.com/notes/2014-the-rise-of-indie-tech/&quot;&gt;Read the full post on Aral&apos;s blog&lt;/a&gt;.&lt;/p&gt;</description>
-            </item>
-            <item>
-                <pubDate>Fri, 6 Dec 2013 00:00:00 GMT</pubDate>
-                <link>https://ind.ie/blog/1</link>
-                <guid>https://ind.ie/blog/1</guid>
-                <title>Indie Newsletter #1 </title>
-                <author>laura@ind.ie (Laura Kalbag)</author
-                <description>&lt;p&gt;News of the Indie launch, including the transcript of the talk by Aral Balkan in Cardiff.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://ind.ie/blog/1&quot;&gt;Read the full post on Aral&apos;s blog&lt;/a&gt;.&lt;/p&gt;</description>
-            </item>
-            <item>
-                <pubDate>Thu, 28 Nov 2013 00:00:00 GMT</pubDate>
-                <link>http://thelink.is/indielaunch</link>
-                <guid>http://thelink.is/indielaunch</guid>
-                <title>Indie Phone launched at Handheld Conference </title>
-                <author>laura@ind.ie (Laura Kalbag)</author
-                <description>&lt;p&gt;in Cardiff in front of 1,200 designers and developers. &lt;a href=&quot;http://thelink.is/indielaunch'>Watch the video.&lt;/a&gt;</description>
-            </item>
-        </channel>
-    </rss>
+                <description>&lt;p&gt;&lt;a href=&q
