@@ -5,7 +5,16 @@
             <link>https://ind.ie/blog</link>
             <description>The latest news and updates from Ind.ie</description>
             <atom:link href="https://ind.ie/blog/rss/index.xml" rel="self" type="application/atom+xml" />
-            <lastBuildDate>Tue, 20 Sep 2016 22:30:00 GMT</lastBuildDate>
+            <lastBuildDate>Tue, 29 Nov 2016 13:30:00 GMT</lastBuildDate>
+                <item>
+                    <title>Listen to Aral on the Boss Level Podcast</title>
+                    <link>https://ind.ie/blog/aral-on-boss-level-podcast</link>
+                    <guid>https://ind.ie/blog/aral-on-boss-level-podcast</guid>
+                    <description>&lt;p&gt;It&quot;s one of Aral&quot;s best interviews to date, where he explains how we must change mainstream technology.
+                    </description>
+                    <pubDate>Tue, 29 Nov 2016 13:30:00 GMT</pubDate>
+                    <author>laura@ind.ie (Laura Kalbag)</author>
+                </item>
                 <item>
                     <title>Your Mac, now Better.</title>
                     <link>https://ind.ie/blog/better-for-mac</link>
