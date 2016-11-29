@@ -5,7 +5,16 @@
             <link>https://ind.ie</link>
             <description>The latest news and updates from the Ind.ie blog and Ind.ie labs blog</description>
             <atom:link href="https://ind.ie/rss/index.xml" rel="self" type="application/atom+xml" />
-            <lastBuildDate>Tue, 20 Sep 2016 22:30:00 GMT</lastBuildDate>
+            <lastBuildDate>Tue, 29 Nov 2016 11:55:00 GMT</lastBuildDate>
+                <item>
+                    <title>Overhauling Better&quot;s CSS</title>
+                    <link>https://ind.ie/labs/blog/better-css-overhaul</link>
+                    <guid>https://ind.ie/labs/blog/better-css-overhaul</guid>
+                    <description>&lt;p&gt;Using ems, reducing repetition, and improving SVG icons.&quot;&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://ind.ie/labs/blog/better-css-overhaul&quot;&gt;Read the full post on the Ind.ie forum&lt;/a&gt;.&lt;/p&gt;
+                    </description>
+                    <pubDate>Tue, 29 Nov 2016 11:55:00 GMT</pubDate>
+                    <author>laura@ind.ie (Laura Kalbag)</author>
+                </item>
                 <item>
                     <title>Your Mac, now Better.</title>
                     <link>https://ind.ie/blog/better-for-mac</link>
