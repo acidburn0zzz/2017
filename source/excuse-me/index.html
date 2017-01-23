@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- $title:Ind.ie — Excuse Me, Your Unicorn Keeps Shitting In My Back Yard, Can He Please Not? -->
+	<!-- @import '../assets/includes/_head.kit' -->
+	<link rel='stylesheet' type='text/css' href='css/style.css'>
+	<link rel='alternate' type='application/rss+xml' title='Ind.ie Blog' href='https://ind.ie/rss/index.xml' />
+</head>
+<body class='excuse-me videos'>
+	<header class="site-header">
+		<!-- @import '../assets/includes/_nav.kit' -->
+	</header>
+	<div class='main'>
+		<h1 class='long-title'>Excuse Me, Your Unicorn Keeps Shitting In My Back Yard, Can He Please Not?</h1>
+		<div class='px-video-container' id='excuse-me'>
+			<div class='px-video-img-captions-container'>
+				<div class='px-video-captions hide'></div>
+					<div class='px-video-wrapper'>
+						<video poster='images/poster-excuse-me.jpg' class='px-video' controls>
+							<!-- video files -->
+							<source src='//player.vimeo.com/external/200666291.sd.mp4?s=81e7c0f03da00d53f752f400c0133ecdf13f8769&profile_id=165' />
+
+							<!-- fallback for browsers that don’t support the video element -->
+							<div>
+								<a href='https://ind.ie/videos/excuse-me/excuse-me.mp4'>
+								<img src='images/poster-excuse-me.jpg' width='640' height='360' alt='download video' />
+								</a>
+							</div>
+						</video>
+					</div>
+				</div><!-- end container for captions and video -->
+			<div class="px-video-controls"></div>
+		</div><!-- end video container -->
+		<script src="/assets/js/px-video.js"></script>
+		<script>
+			// Initialize
+			new InitPxVideo({
+			    "videoId": "excuse-me",
+			    "captionsOnDefault": false,
+			    "seekInterval": 20,
+			    "videoTitle": "Excuse Me, Your Unicorn Keeps Shitting In My Back Yard, Can He Please Not?",
+			    "debug": true
+			});
+		</script>
+		 
+	</div>
+	<!-- @import '../assets/includes/_footer.kit' -->
+</body>
+</html>
