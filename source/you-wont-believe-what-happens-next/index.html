@@ -15,20 +15,28 @@
 
 		<p>The talk I (Laura) gave at DIBI Conference in Edinburgh in March 2017. Many people asked me for my slides, but I wanted to include them in context, with accessible links. This is roughly how it went:</p>
 
+		<img src='images/001.jpg' alt='Digital Assistants, Facebook Quizzes, And Fake News! You Won’t Believe What Happens Next @laurakalbag @indie @betterbyindie https://ind.ie https://better.fyi'/>
+
 		<h2>Performance!</h2>
 
 <p>Nowadays performance seems to be the hot topic of the web industry. So let’s have a look at how we might improve the speed of a web page.</p>
+
+<img src='images/006.jpg' alt='Screenshot of the Onion homepage'/>
 
 <p>Looking at <a href='http://www.theonion.com'>the Onion homepage</a>, you can see it’s loading lots of images and a few videos. It’s mostly images and text content. There’s a big sticky ad at the bottom of the viewport that takes a while to load.</p>
 
 <p>If you look at what’s loading behind the scenes, you can see a the layout being rendered, loading in all the content first, then more and more requests as new stuff is being loaded in. All in all, they’re loading 384 resources, coming in at 8MB, taking 15.24 seconds minimum to load. (There’s also 205 errors which may well be impacting that load time.)</p>
 
+<img src='images/009.jpg' alt='Safari Web Inspector for The Onion: 384 resources, 8MB, 15.24 seconds, 205 errors, 8 warnings'/>
+
 <p>If we look at Safari’s Network Requests tab, we can see a little more of what’s being loaded in. If we look at the requests by size:</p>
+
+<img src='images/011.jpg' alt='Screenshot of Safari web inspector’s resources. Showing the files listed below'/>
 
 <ul>
 	<li><strong>.html</strong> the primary HTML document is only the 19th largest file being loaded</li>
-	<li><strong>.js</strong> is a biggish javascript file, that’s fairly standard</li>
-	<li><strong>.js</strong> is a lightbox script, there’s an external <abbr title='Content Delivery Network'>CDN</abbr> for fast loading, that’s fine.</li>
+	<li>The largest file is <strong>.js</strong>, a biggish javascript file, that’s fairly standard</li>
+	<li>The next <strong>.js</strong> file is a lightbox script, there’s an external <abbr title='Content Delivery Network'>CDN</abbr> for fast loading, that’s fine.</li>
 	<li><strong>.css</strong> is CSS, which is very important!</li>
 	<li><strong>.js</strong> is jQuery, fine if you must…</li>
 	<li><strong>.jpg</strong> is a big picture of houses</li>
@@ -56,6 +64,8 @@
 
 <p>What would happen if we just load the main page without any third party tracking scripts? Let’s look again at that timeline, but this time with those third party tracking scripts blocked:</p>
 
+<img src='images/034.jpg' alt='Safari Web Inspector for The Onion: 115 resources, 2.95MB, 2.27 seconds, 1 error, 9 warnings'/>
+
 <p>The Onion now has 115 requests, coming in at 2.95MB, loading in just 2.27 seconds.</p>
 
 <p>Comparing the before and after, that’s 269 requests, 5.11MB and 12.97 seconds caused by third party trackers.</p>
@@ -65,11 +75,17 @@ for little to nothing if your organisation’s business model requires a gazilli
 
 <h2>Facebook</h2>
 
+<img src='images/044.jpg' alt='Screenshot of my Facebook profile'/>
+
 <p>Let’s look at this phenomenon from the perspective of the people browsing the web. We feel like we know Facebook’s game. They show us adverts, and we get to socialise for free. Simple as that?</p>
 
 <p>I don’t give Facebook much info, I get ads for the average 30 year old woman: washing liquid, shampoo, makeup, dresses, more dresses, and sometimes a wild card ad for pregnancy tests. But what happens when Facebook gets a bit more information?</p>
 
+<img src='images/051.jpg' alt='Ads I’ve seen on Facebook for washing liquid, shampoo, makeup, dresses, more dresses, and a pregnancy test'/>
+
 <p>Nearly two years ago, my mother died. We didn’t want any of our friends and family finding out from a poorly thought-out tweet or Facebook post… so we didn’t post anything on social media. We rang people to let them know. And then Facebook suggested I might be interested in… Goodwill Family Funeral Directors.</p>
+
+<img src='images/056.jpg' alt='Facebook ad for Goodwill Family Funeral Directors'/>
 
 <p>Surely just a coincidence?</p>
 
@@ -79,15 +95,21 @@ for little to nothing if your organisation’s business model requires a gazilli
 
 <p>My sister had use some key words in a Facebook message to her friend Maddy, Facebook may have made the connection that I’m her sister, figured out that I might want a Funeral Director and stuck that ad in my feed. It just goes to show how much Facebook knows, and how much complexity it can grasp, despite my not telling it anything.</p>
 
+<img src='images/068.jpg' alt='Diagram showing my sister talking to her friend on Facebook, Facebook knowing I’m her sister, and the funeral director ad I got in my Facebook feed'/>
+
 <h3>How do they know?</h3>
 
 <p>But how else could Facebook have known?</p>
 
-<a href='http://www.sbs.com.au/news/article/2016/03/10/facebook-button-violates-privacy'>http://www.sbs.com.au/news/article/2016/03/10/facebook-button-violates-privacy</a>
+<a href='http://www.sbs.com.au/news/article/2016/03/10/facebook-button-violates-privacy'><img src='images/074.jpg' alt='Screenshot of CBS news article on Facebook buttons violating privacy'/></a>
 
 <p>If I was browsing funeral-related sites, maybe Facebook would have that information if those sites had Facebook Share Buttons or Facebook login. As <a href='http://www.sbs.com.au/news/article/2016/03/10/facebook-button-violates-privacy'>this article in SBS News</a> points out, those Facebook buttons track you across the web, violating your privacy. (Also note the hypocrisy of this news site using multiple Facebook buttons on this article.)</p>
 
 <p>You can find out some of the things Facebook knows about you in your Ad Preferences.</p>
+
+<img src='images/078.jpg' alt='Some of my Facebook ad preferences including Online Advertising, Machine (mechanical), Espresso Machine, Time, Studio, Year, Michelle Dockery, and Phil Spector'/>
+
+<img src='images/078.jpg' alt='More of my Facebook ad preferences including Away from Family, Expat (UK), iPhone 7, Frequent International Travellers, All iOS Devices'/>
 
 <p>But as ProPublica point out, Facebook doesn’t tell its users everything it really knows about them:</p>
 
@@ -103,6 +125,8 @@ for little to nothing if your organisation’s business model requires a gazilli
 
 <p>If your first thought is “but isn’t that what we’re all trying to do”, you need to watch some sci-fi. The Nosedive episode from Black Mirror series 3 may seem far-fetched, but we are already participating in this ranking. It’s just not visible to us.</p>
 
+<img src='images/082.jpg' alt='Still from Black Mirror’s Nosedive episode showing the main character with her online rating'/>
+
 <p>“But you don’t have to be on Facebook!” We hear this all the time from people who have never joined Facebook, have no intention of leaving Facebook, who don’t socialise, or who are generally pedantic and tedious. My answer is: NOPE.</p>
 
 <h3>You can’t just leave Facebook</h3>
@@ -112,6 +136,8 @@ if you do leave, or if you never joined, <a href='http://www.zdnet.com/article/f
 
 <p>If a friend or acquaintance has used the Find Friends functionality, or used Facebook Messenger on their phone,
 they gave Facebook access to their Contacts. Facebook uses those names, email addresses, and phone numbers to build their shadow profiles.</p>
+
+<img src='images/088.jpg' alt='Screenshot of all the different input forms for Facebook’s Find Friends, including email addresses and passwords'/>
 
 <p>The following quote is nearly four years old:</p>
 
@@ -124,6 +150,8 @@ they gave Facebook access to their Contacts. Facebook uses those names, email ad
 
 <p>Facebook isn’t the only place this happens. If I go to the Spotify website, just to download Spotify, using Firefox and their <a href='https://mozilla.org/lightbeam'>Lightbeam extension</a>. (Lightbeam is a Firefox add-on. It shows you who is tracking you via third-party scripts.) Lightbeam shows me that Spotify sends my data to 25 sites.</p>
 
+<img src='images/097.jpg' alt='The Lightbeam interface on Firefox, showing 25 sites that Spotify passes my data on to'/>
+
 <p>Let’s have a closer look at these sites… there are a few that are familiar to developers…</p>
 
 <ul>
@@ -133,9 +161,15 @@ they gave Facebook access to their Contacts. Facebook uses those names, email ad
 
 <p>But that leaves 21 more mysterious scripts… Let’s have a close look at one of those sites…</p>
 
+<img src='images/109.jpg' alt='The Lightbeam interface highlighting adsrvr.org'/>
+
 <h2>What is adsrvr.org?</h2>
 
+<img src='images/110.jpg' alt='Screenshot of adsrvr.org'/>
+
 <p>A quick search of adsrvr.org brings me to an opt-out page which shows me this site belongs to the The Trade Desk. The Trade Desk is apparently: “true buying power” and “omnichannel buying capabilities and industry - leading tech” Whatever that means.</p>
+
+<img src='images/111.jpg' alt='Screenshot of The Trade Desk’s homepage saying they have “True Buying Power”'/>
 
 <p>At <a href='https://ind.ie'>Ind.ie</a>, we’ve been doing a lot of research into trackers lately, and here’s a top tip: always check out the privacy policy. Most tracking companies are the clearest about their agendas in their privacy policies.</p>
 
@@ -167,6 +201,8 @@ they gave Facebook access to their Contacts. Facebook uses those names, email ad
 
 <p>Take my IP address where I work in Malmö… it can pinpoint me to exactly where I am 25% of the time. And then if you add in my age, gender and education (which is all easily available on Facebook, Linkedin, etc)… How many 30 year old women who studied in Somerset in the UK are working in that building in Malmö 800 miles away? It’s definitely this idiot.</p>
 
+<img src='images/146.jpg' alt='My IP address, age, gender and education overlayed on a map of Malmö, where I work'/>
+
 <p>But they “don’t share it.” “It’s non-personally identifiable information.” But how true is that really? In <a href='http://archive.wired.com/politics/security/commentary/securitymatters/2007/12/securitymatters_1213'>‘Why “Anonymous” Data Sometimes Isn’t’</a>, Bruce Schneier, a cryptographer, computer security and privacy expert says:</p>
 
 <blockquote>
@@ -191,7 +227,7 @@ they gave Facebook access to their Contacts. Facebook uses those names, email ad
 	<p>“Inputting 70 ‘Likes’ allowed it to obtain a truer picture of someone’s character than a friend or room-mate, while 150 ‘Likes’ outperformed a parent, sibling or partners.”—<a href='http://www.telegraph.co.uk/news/science/science-news/11340166/Facebook-knows-you-better-than-your-members-of-your-own-family.html'>Sarah Knapton, Science Editor, Daily Telegraph. January 2015</a></p>
 </blockquote>
 
-<a href='http://www.pnas.org/content/112/4/1036/F2.large.jpg'>http://www.pnas.org/content/112/4/1036/F2.large.jpg</a>
+<a href='http://www.pnas.org/content/112/4/1036/F2.large.jpg'><img src='images/161.jpg' alt='Diagram showing the correlation between how many likes on Facebook and how well the algorithm knows you'/></a>
 
 <blockquote>
 	<p>“It took 300 ‘Likes’ before the programme was able to judge character better than a spouse.”—<a href='http://www.telegraph.co.uk/news/science/science-news/11340166/Facebook-knows-you-better-than-your-members-of-your-own-family.html'>Sarah Knapton, Science Editor, Daily Telegraph. January 2015</a></p>
@@ -203,6 +239,8 @@ they gave Facebook access to their Contacts. Facebook uses those names, email ad
 	<p>“Belgian police now says that the site [Facebook] is using them as a way of collecting information about people and deciding how best to advertise to them. As such, it has warned people that they should avoid using the buttons if they want to preserve their privacy.”—<a href='http://www.independent.co.uk/life-style/gadgets-and-tech/news/facebook-reactions- belgian-police-warn-citizens-not-to-react-to-posts-on-social-media-a7027786.html'>The Independent</a></p>
 </blockquote>
 
+<img src='images/163.jpg' alt='Facebook reactions: Like, Love, Haha, Wow, Sad, Angry'/>
+
 <blockquote>
 	<p>“By limiting the number of icons to six, Facebook is counting on you to express your thoughts more easily so that the algorithms that run in the background are more effective,” the post continues. “By mouse clicks you can let them know what makes you happy.”—<a href='http://www.independent.co.uk/life-style/gadgets-and-tech/news/facebook-reactions- belgian-police-warn-citizens-not-to-react-to-posts-on-social-media-a7027786.html'>The Independent</a></p>
 </blockquote>
@@ -213,22 +251,32 @@ they gave Facebook access to their Contacts. Facebook uses those names, email ad
 
 <p>And this is why data brokers exist. They are corporations whose business it is to collect and combine data sets:</p>
 
+<img src='images/170.jpg' alt='LexisNexis homepage'/>
+
 <blockquote>
 	<p>“LexisNexis helps uncover the information that commercial organizations, government agencies and nonprofits need to get a complete picture of individuals, businesses and assets…”</p>
 </blockquote>
+
+<img src='images/172.jpg' alt='Acxiom homepage'/>
 
 <blockquote>
 	<p>“Only Acxiom connects people across channels, time and name change at scale by linking our vast repository of o ine data to the online environment”</p>
 </blockquote>
 
 <p>It’s a big money business, and the different ways to monetise you are endless. For example, a couple of years ago, Facebook was granted a patent:</p>
+
+<img src='images/176.jpg' alt='Facebook’s patent'/>
   
 <blockquote>
 	<p>“When an individual applies for a loan, the lender ” examines the credit ratings of members of the individual’s social network who are connected to the individual through authorized nodes. If the average credit rating of these members is at least a minimum credit score, the lender continues to process the loan application. Otherwise, the loan application is rejected.”</p>
 </blockquote>
 
 <p>Yes, that means what you think it does. It means they want to approve loans based on the financial records of your Facebook friends. And would that make you think about your friends in a different light? What about when your friend unfriends you on Facebook because you’re too poor?</p>
-  
+
+<h2>Governments and corporations</h2>
+
+<img src='images/182.jpg' alt='Donald Trump meeting with tech leaders from Silicon Valley'/>
+
 <p>Privacy advocates have long worried about the data that is collected by corporations getting into the hands of unfriendly governments. With the political situation we find ourselves in now, those privacy advocates are unfortunately being proved right:</p>
  
 <p><a href='http://www.theverge.com/2017/1/30/14438280/trump-border-agents-search-social-media-instagram'>Border controls across the world using social media to discriminate against travellers</a>, even demanding those under scrutiny enter their password to allow authorities access to their accounts. Of course, this disproportionately affects people of colour and other victims of bigoted profiling. <a href='https://www.engadget.com/2017/02/10/inauguration-protest-arrests-lead-to-facebook-data-prosecution/'>People arrested during protests on Trump’s Inauguration Day had investigators requesting their data from Facebook to help incriminate them</a>. And <a href='https://rewire.news/article/2016/05/25/anti-choice-groups-deploy-smartphone-surveillance-target-abortion-minded-women-clinic-visits/'>anti-choice groups have used behavioural advertising on phones to target women in healthcare clinics</a>. Erin Kissane put it best in her post on how to “Be More Careful on Facebook” when she said:</p>
@@ -256,6 +304,8 @@ they gave Facebook access to their Contacts. Facebook uses those names, email ad
 </ul>
 
 <p>And have you ever wondered how many calories you’re burning during intercourse? How many thrusts? Speed of your thrusts? The duration of your sessions? Frequency? How many different positions you use in the period of a week, month or year? Then you want the <a href='http://britishcondoms.uk/i-con-smart-condom.html'>iCondom</a>.</p>
+
+<img src='images/211.jpg' alt='iCondom packaging'/>
 
 <p>That’s assuming you want all that information shared with advertisers, insurers, your government, and whoever else wants to buy it…</p>
 
@@ -297,8 +347,18 @@ they gave Facebook access to their Contacts. Facebook uses those names, email ad
 	<p>“This form of digital advertising [adtech] has turned into a massive industry, driven by an assumption that the best advertising is also the most targeted, the most real-time, the most data-driven, the most personal”—<a href='https://artplusmarketing.com/brands-need-to-fire-adtech-f9d18edd2f9a'>Doc Searls, Brands need to fire adtech, March 2017</a></p>
 </blockquote>
 
-<p>The problem is that adtech powers the ads that show alongside everything. Adtech is behind the pay-per-click ads that show you things that are relevant to the article or to you. Adtech is the ads that follow you around the web. Adtech is the clickbait of intriguing stories that are sometimes dressed up as “Other articles you might like”, “Promoted links,” or “Sponsored content.”</p>
-  
+<p>The problem is that adtech powers the ads that show alongside everything. Adtech is behind the pay-per-click ads that show you things that are relevant to the article or to you.</p>
+
+<img src='images/228.jpg' alt='Facebook ad alongside Facebook feed'/>
+
+<p>Adtech is the ads that follow you around the web.</p>
+
+<img src='images/229.jpg' alt='Amazon ads for things you’ve browsed following you around the web'/>
+
+<p>Adtech is the clickbait of intriguing stories that are sometimes dressed up as “Other articles you might like”, “Promoted links,” or “Sponsored content.”</p>
+
+<img src='images/230.jpg' alt='Outbrain “promoted links from around the web” on The Guardian'/>
+
 <blockquote>
 	<ol>
 		<li>“1. It’s adtech that spies on people and violates their privacy.</li>
@@ -359,7 +419,9 @@ they gave Facebook access to their Contacts. Facebook uses those names, email ad
 
 <p>This is what Shoshana Zuboff coined as “Surveillance capitalism.” Also know as “corporate surveillance” or more simply, “people farming.”</p>
 
-<p>Some people recognising this problem have started using ad blockers to block ads and third party scripts. As consumers of the web, we use them, but as web builders, they can inconvenience us if they block what we’ve created.</p>
+<img src='images/260.jpg' alt='Horrible clickbait on LifeBuzz such as “Mirror cakes are the new food porn and they WILL excite you'/>
+
+<p>Some people recognising this problem have started using ad blockers to block ads and third party scripts. As consumers of the web, we often use ad blockers, but as web builders, they can inconvenience us if they block what we’ve created.</p>
 
 <p>When it comes to ad blockers, it bears repeating: ads are not the problem. Trackers are the problem. There are some horrifying ads and clickbait out there, but many of these blockers are not doing exactly what you think they are. For example, <a href='https://adblockplus.org/en/acceptable-ads' rel='nofollow'>Adblock Plus</a> has a whitelist called Acceptable Ads which are ads and trackers that they just let through:</p>
 
@@ -384,6 +446,8 @@ they gave Facebook access to their Contacts. Facebook uses those names, email ad
 <h3>Can we still have behavioural ads?</h3>
 
 <p>The benefit of The Deck was that it showed static ads to a niche audience, but what about behavioural ads? We could still show relevant ads based on behaviour. Advertising does not need to phone home to the cloud. You could still have behavioural advertising that keeps your information private by doing all the behavioural analysis and decision-making on the device itself. So it could work in theory, but who is going to use these systems when your personal information is so lucrative?</p>
+
+<img src='images/275.jpg' alt='The Deck’s privacy policy which said “We’re fine with knowing nothing”'/>
 
 <h3>Analytics</h3>
 
@@ -421,7 +485,7 @@ This come with the understanding that code is not neutral, that whatever we buil
 
 <p>At Ind.ie, we decided we need an <a href='https://ind.ie/ethical-design'>Ethical Design Manifesto</a> for the things we use every day:</p>
 
-<img src='ethical-design'>
+<img src='images/ethical-design-manifesto.gif' alt=''>
 
 <p>I’ll explain a bit more about these founding requirements…</p>
 
@@ -430,6 +494,8 @@ This come with the understanding that code is not neutral, that whatever we buil
 <h3>Decentralised</h3>
 
 <p>Decentralisation is something we talk about as developers as being a good thing because we don’t like to rely on centralised systems. It’s why we don’t hotlink all our images and scripts from other sites, and why nobody gets any work done when Github is down. We understand that if it’s not on our computers or servers, it’s not under our control. But for some reason we’re happy to give <em>corporations</em> control over all of our data.</p>
+
+<img src='images/317.jpg' alt='GitHub’s timeout status page'/>
 
 <p>With control over data comes power. After the Snowden revelations, people were rightly outraged by how much access our governments had to our browsing information, but not so many people were angry with the corporations who were collecting that information, and handing it right over to the governments. As Bruce Schneier said:</p>
 
@@ -492,6 +558,8 @@ and it’s highly likely they’re going to rely on selling your data for profit
 <p>But as an industry, we hail these products. We call them the “disruptors.” In the dictionary, “to disrupt” means “to interrupt (an event, activity, or process) by causing a disturbance or problem.”
 People making these products call themselves disruptors because they “disrupt” a market. They take down existing sustainable businesses and kill them off. They monopolise and they dump. We need to disrupt the disruptors. We need to disrupt their disruption.</p>
 
+<img src='images/375.jpg' alt='Silicon Valley landscape'>
+
 <h2>We need to ask ourselves these questions</h2>
 
 <p>We need to ask ourselves these questions about what we build. Because we are the gatekeepers of what we create. We don’t have to add tracking to everything, it’s already gotten out of our control.</p>
@@ -537,8 +605,14 @@ Is that fair?</p>
 
 <p>Corporations need to stop treating us like we’re greedy lab rats, making outrageous demands by saying please don’t experiment on us. We must question and challenge these unethical practices. And we need to learn to see past the PR. We shouldn’t engage in this PR ourselves. We need to make real things that have meaning, rather than the illusion of having meaning. Don’t be the person shaving a few kilobytes off an image file when someone else is adding 5MB of trackers.</p>
 
-<p>We should also be selfish. Building ethical alternatives to centralised technologies will save our jobs. <a href='http://www.nytimes.com/2016/05/06/business/facebook-bends-the-rules-of-audience-engagement-to-its-advantage.html'>The average Facebook user spends 50 minutes on Facebook a day</a>. Facebook’s functionality has replaced status updates, photo sharing, company sites, news, and chat, to name just a few. When it comes to our business use, what Facebook hasn’t got covered, Google has a product for you. If we want jobs that aren’t at Facebook or Google,
+<p>We should also be selfish. Building ethical alternatives to centralised technologies will save our jobs. <a href='http://www.nytimes.com/2016/05/06/business/facebook-bends-the-rules-of-audience-engagement-to-its-advantage.html'>The average Facebook user spends 50 minutes on Facebook a day</a>. Facebook’s functionality has replaced status updates, photo sharing, company sites, news, and chat, to name just a few.</p>
+
+<img src='images/435.jpg' alt='Status updates, Instagram, Facebook Messenger, Facebook Pages'>
+
+<p>When it comes to our business use, what Facebook hasn’t got covered, Google has a product for you. If we want jobs that aren’t at Facebook or Google,
 we’re going to need to make sure the rest of the web actually exists.</p>
+
+<img src='images/436.jpg' alt='All the Google products'>
 
 <h2>Build and support alternatives</h2>
 
