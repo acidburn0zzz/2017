@@ -5,7 +5,16 @@
 			<link>https://ind.ie</link>
 			<description>The latest news and updates from the Ind.ie blog and Ind.ie labs blog</description>
 			<atom:link href="https://ind.ie/rss/index.xml" rel="self" type="application/atom+xml" />
-			<lastBuildDate>Tue, 29 Nov 2016 13:30:00 GMT</lastBuildDate>
+			<lastBuildDate>Wed, 24 May 2017 17:00:00 GMT</lastBuildDate>
+				<item>
+					<title>Aral joins DiEM25 Advisory Panel to help draft progressive tech policy for Europe</title>
+					<link>https://ind.ie/blog/aral-joins-diem25</link>
+					<guid>https://ind.ie/blog/aral-joins-diem25</guid>
+					<description>&lt;p&gt;It will form DiEM25&quot;s 7th pillar.
+					</description>
+					<pubDate>Wed, 24 May 2017 17:00:00 GMT</pubDate>
+					<author>laura@ind.ie (Laura Kalbag)</author>
+				</item>
 				<item>
 					<title>Listen to Aral on the Boss Level Podcast</title>
 					<link>https://ind.ie/blog/aral-on-boss-level-podcast</link>
