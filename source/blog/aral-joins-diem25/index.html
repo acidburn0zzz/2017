@@ -27,22 +27,21 @@
 
       <p>Keep in touch with us on the <a href='https://forum.ind.ie'>Ind.ie forum</a>.</p>
 
-    </div>
+      <div id='discourse-comments'></div>
    
     </div>
   </div>
   <!-- @import '../../assets/includes/_footer.kit' -->
-<div id='discourse-comments'></div>
 
-<script type="text/javascript">
-  DiscourseEmbed = { discourseUrl: 'https://forum.ind.ie/',
-  discourseEmbedUrl: 'https://ind.ie/blog/aral-joins-diem25' };
+  <script type='text/javascript'>
+      var discourseUrl = 'https://forum.ind.ie/',
+        discourseEmbedUrl = 'https://ind.ie/blog/aral-joins-diem25/';
 
-  (function() {
-    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
-    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
-  })();
-</script>
+      (function() {
+        var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+        d.src = discourseUrl + 'javascripts/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+      })();
+    </script>
 </body>
 </html>
