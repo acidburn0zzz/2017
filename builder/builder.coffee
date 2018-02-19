@@ -802,7 +802,7 @@ deploy = ->
 								.flags('rsync-path="sudo /usr/bin/rsync"', 'v', 'r', 'c', 'progress', 'delete', 'chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r')
 								# .exclude(['.*/'])
 								.source(process.cwd() + '/public/')
-								.destination("#{user}static.ind.ie:/var/www/")
+								.destination("#{user}static.ind.ie:/var/2017/")
 								# .flags('delete')
 								# .dry()
 								.output (data) ->
